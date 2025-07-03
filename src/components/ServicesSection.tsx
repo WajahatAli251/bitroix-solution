@@ -87,6 +87,46 @@ const ServicesSection = () => {
                   </Link>
                 );
               }
+              if (service.title === "DevOps & MLOps") {
+                return (
+                  <Link 
+                    to="/devops-mlops"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                  >
+                    {children}
+                  </Link>
+                );
+              }
+              if (service.title === "Data Analytics") {
+                return (
+                  <Link 
+                    to="/data-analytics"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                  >
+                    {children}
+                  </Link>
+                );
+              }
+              if (service.title === "Team as a Service (TaaS)") {
+                return (
+                  <Link 
+                    to="/team-as-service"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                  >
+                    {children}
+                  </Link>
+                );
+              }
+              if (service.title === "Design Consultancy") {
+                return (
+                  <Link 
+                    to="/design-consultancy"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                  >
+                    {children}
+                  </Link>
+                );
+              }
               return (
                 <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
                   {children}
