@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 const ServicesSection = () => {
   const services = [
     {
@@ -63,18 +65,35 @@ const ServicesSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100"
-            >
-              <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mb-4 text-2xl`}>
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">{service.title}</h3>
-              <p className="text-slate-600 leading-relaxed">{service.description}</p>
-            </div>
-          ))}
+          {services.map((service, index) => {
+            const ServiceCard = ({ children }: { children: React.ReactNode }) => {
+              if (service.title === "Web Development") {
+                return (
+                  <Link 
+                    to="/web-development"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                  >
+                    {children}
+                  </Link>
+                );
+              }
+              return (
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                  {children}
+                </div>
+              );
+            };
+
+            return (
+              <ServiceCard key={index}>
+                <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mb-4 text-2xl`}>
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">{service.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{service.description}</p>
+              </ServiceCard>
+            );
+          })}
         </div>
       </div>
     </section>
