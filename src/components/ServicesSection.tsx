@@ -77,6 +77,16 @@ const ServicesSection = () => {
                   </Link>
                 );
               }
+              if (service.title === "UI/UX Design") {
+                return (
+                  <Link 
+                    to="/ui-ux-design"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                  >
+                    {children}
+                  </Link>
+                );
+              }
               return (
                 <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
                   {children}
