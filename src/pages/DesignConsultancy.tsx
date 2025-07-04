@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowUp } from "lucide-react";
+import designImage from '@/assets/ui-ux-design.jpg';
 
 const DesignConsultancy = () => {
   const scrollToTop = () => {

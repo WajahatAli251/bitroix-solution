@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowUp, Users } from "lucide-react";
+import teamImage from '@/assets/team-collaboration.jpg';
 
 const TeamAsService = () => {
   const scrollToTop = () => {

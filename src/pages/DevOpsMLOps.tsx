@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowUp, Database, Cloud, Monitor, Shield } from "lucide-react";
+import devopsImage from '@/assets/devops-infrastructure.jpg';
 
 const DevOpsMLOps = () => {
   const scrollToTop = () => {

@@ -167,7 +167,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Email</h4>
-                    <p className="text-slate-600">contact@bitroix.com</p>
+                    <p className="text-slate-600">bitroixsolution@gmail.com</p>
                   </div>
                 </div>
 
@@ -177,7 +177,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Phone</h4>
-                    <p className="text-slate-600">+92 XXX XXXXXXX</p>
+                    <p className="text-slate-600">+92 3352222578</p>
+                    <p className="text-slate-600">+92 321 2345194</p>
                   </div>
                 </div>
 
@@ -187,7 +188,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Location</h4>
-                    <p className="text-slate-600">Pakistan</p>
+                    <p className="text-slate-600">Karachi, Pakistan</p>
                   </div>
                 </div>
               </div>
@@ -197,17 +198,11 @@ const ContactSection = () => {
             <div className="bg-gradient-to-br from-slate-900 to-blue-900 p-8 rounded-xl text-white">
               <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                  <span className="text-blue-400">📘</span>
-                </a>
-                <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                  <span className="text-pink-400">📷</span>
-                </a>
-                <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                <a href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
                   <span className="text-blue-400">💼</span>
                 </a>
-                <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                  <span className="text-gray-400">🐙</span>
+                <a href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                  <span className="text-pink-400">📷</span>
                 </a>
               </div>
             </div>

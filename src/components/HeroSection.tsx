@@ -1,4 +1,6 @@
 
+import teamImage from '@/assets/team-collaboration.jpg';
+
 const HeroSection = () => {
   const scrollToServices = () => {
     const element = document.getElementById('services');
@@ -55,26 +57,22 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Content - Tech Visualization */}
+          {/* Right Content - Hero Image */}
           <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-              {/* Central Core */}
-              <div className="absolute inset-1/4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full animate-pulse shadow-2xl shadow-blue-500/25"></div>
+            <div className="relative w-full max-w-lg">
+              <img 
+                src={teamImage} 
+                alt="Professional tech team collaboration" 
+                className="w-full h-auto rounded-2xl shadow-2xl shadow-blue-500/25 border border-slate-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent rounded-2xl"></div>
               
-              {/* Orbiting Elements */}
-              <div className="absolute inset-0 animate-spin" style={{ animationDuration: '20s' }}>
-                <div className="absolute top-0 left-1/2 w-4 h-4 bg-green-400 rounded-full -translate-x-1/2 shadow-lg shadow-green-400/50"></div>
-                <div className="absolute bottom-0 left-1/2 w-4 h-4 bg-blue-400 rounded-full -translate-x-1/2 shadow-lg shadow-blue-400/50"></div>
-                <div className="absolute left-0 top-1/2 w-4 h-4 bg-purple-400 rounded-full -translate-y-1/2 shadow-lg shadow-purple-400/50"></div>
-                <div className="absolute right-0 top-1/2 w-4 h-4 bg-pink-400 rounded-full -translate-y-1/2 shadow-lg shadow-pink-400/50"></div>
+              {/* Floating Tech Icons */}
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg animate-bounce">
+                AI
               </div>
-
-              {/* Tech Icons Floating */}
-              <div className="absolute inset-8 animate-spin" style={{ animationDuration: '30s', animationDirection: 'reverse' }}>
-                <div className="absolute top-0 left-0 w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center text-blue-400 text-sm font-bold shadow-lg">AI</div>
-                <div className="absolute top-0 right-0 w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center text-green-400 text-xs font-bold shadow-lg">ML</div>
-                <div className="absolute bottom-0 left-0 w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center text-purple-400 text-xs font-bold shadow-lg">CV</div>
-                <div className="absolute bottom-0 right-0 w-8 h-8 bg-slate-700 rounded-lg flex items-center justify-center text-pink-400 text-xs font-bold shadow-lg">UI</div>
+              <div className="absolute -bottom-4 -left-4 w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">
+                ML
               </div>
             </div>
           </div>

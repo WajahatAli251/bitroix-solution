@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import uiuxImage from '@/assets/ui-ux-design.jpg';
 
 const UIUXDesign = () => {
   const approachSteps = [

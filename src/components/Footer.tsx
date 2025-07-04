@@ -21,17 +21,11 @@ const Footer = () => {
               Building the future, one solution at a time.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
-                <span className="text-blue-400">📘</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
-                <span className="text-pink-400">📷</span>
-              </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+              <a href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
                 <span className="text-blue-400">💼</span>
               </a>
-              <a href="#" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
-                <span className="text-gray-400">🐙</span>
+              <a href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
+                <span className="text-pink-400">📷</span>
               </a>
             </div>
           </div>
@@ -79,9 +73,10 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>📧 contact@bitroix.com</li>
-              <li>📱 +92 XXX XXXXXXX</li>
-              <li>📍 Pakistan</li>
+              <li>📧 bitroixsolution@gmail.com</li>
+              <li>📱 +92 3352222578</li>
+              <li>📱 +92 321 2345194</li>
+              <li>📍 Karachi, Pakistan</li>
             </ul>
           </div>
         </div>

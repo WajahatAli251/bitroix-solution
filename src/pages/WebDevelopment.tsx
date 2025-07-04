@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import webDevImage from '@/assets/web-development.jpg';
 
 const WebDevelopment = () => {
   const approachSteps = [
