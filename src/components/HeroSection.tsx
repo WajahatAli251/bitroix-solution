@@ -57,25 +57,6 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Content - Hero Image */}
-          <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-lg">
-              <img 
-                src={teamImage} 
-                alt="Professional tech team collaboration" 
-                className="w-full h-auto rounded-2xl shadow-2xl shadow-blue-500/25 border border-slate-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent rounded-2xl"></div>
-              
-              {/* Floating Tech Icons */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg animate-bounce">
-                AI
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg animate-pulse">
-                ML
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
