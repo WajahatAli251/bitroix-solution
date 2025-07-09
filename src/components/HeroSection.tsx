@@ -1,5 +1,5 @@
 
-import teamImage from '@/assets/team-collaboration.jpg';
+import itConceptsImage from '@/assets/it-concepts-revolving.jpg';
 
 const HeroSection = () => {
   const scrollToServices = () => {
@@ -54,6 +54,18 @@ const HeroSection = () => {
               >
                 Let's Build Together
               </button>
+            </div>
+          </div>
+
+          {/* Right Content - IT Concepts Revolving */}
+          <div className="flex-1 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-lg">
+              <img 
+                src={itConceptsImage} 
+                alt="AI, ML, DevOps, Computer Vision revolving around IT concepts" 
+                className="w-full h-auto rounded-2xl shadow-2xl shadow-blue-500/25 border border-slate-700/50 animate-pulse"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent rounded-2xl"></div>
             </div>
           </div>
 
