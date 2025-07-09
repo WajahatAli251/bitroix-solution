@@ -10,6 +10,7 @@ import DevOpsMLOps from "./pages/DevOpsMLOps";
 import DataAnalytics from "./pages/DataAnalytics";
 import TeamAsService from "./pages/TeamAsService";
 import DesignConsultancy from "./pages/DesignConsultancy";
+import MeetingScheduler from "./pages/MeetingScheduler";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/data-analytics" element={<DataAnalytics />} />
           <Route path="/team-as-service" element={<TeamAsService />} />
           <Route path="/design-consultancy" element={<DesignConsultancy />} />
+          <Route path="/schedule-meeting" element={<MeetingScheduler />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
@@ -11,6 +12,7 @@ const ContactSection = () => {
     message: ''
   });
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -84,7 +86,15 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-100">
-            <h3 className="text-2xl font-semibold text-slate-900 mb-6">Let's Talk</h3>
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-semibold text-slate-900">Let's Talk</h3>
+              <button
+                onClick={() => navigate('/schedule-meeting')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-md text-sm"
+              >
+                Schedule Meeting
+              </button>
+            </div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
