@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
 
 const ServicesSection = () => {
   const services = [
@@ -59,9 +60,14 @@ const ServicesSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-slate-900 mb-6">Our Services</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
             We offer comprehensive digital solutions to transform your business and drive growth
           </p>
+          <Link to="/schedule-meeting">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg">
+              Schedule a Meeting
+            </Button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
