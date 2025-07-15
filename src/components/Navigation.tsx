@@ -67,6 +67,12 @@ const Navigation = () => {
                 Solutions
               </button>
               <button 
+                onClick={() => navigate('/projects')}
+                className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              >
+                Projects
+              </button>
+              <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
@@ -115,6 +121,12 @@ const Navigation = () => {
                 className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left"
               >
                 Solutions
+              </button>
+              <button 
+                onClick={() => navigate('/projects')}
+                className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+              >
+                Projects
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
