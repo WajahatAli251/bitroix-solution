@@ -71,3 +71,39 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## EmailJS Setup for Meeting Scheduling
+
+To enable email confirmations, you need to:
+
+1. **Create EmailJS Account**: Go to https://emailjs.com and create a free account
+2. **Get Service ID**: Create a new email service (Gmail, Outlook, etc.)
+3. **Create Email Templates**: 
+   - One for client confirmation
+   - One for company notification
+4. **Get Public Key**: From your EmailJS dashboard
+5. **Update the code**: Replace placeholder values in `src/components/ScheduleMeeting.tsx`:
+   - `your_public_key_here` with your EmailJS public key
+   - `service_id` with your EmailJS service ID
+   - `template_client_id` with your client template ID
+   - `template_company_id` with your company template ID
+
+## Template Variables for EmailJS
+
+### Client Template Variables:
+- `{{to_email}}` - Client's email
+- `{{to_name}}` - Client's name
+- `{{meeting_date}}` - Meeting date
+- `{{meeting_time}}` - Meeting time
+- `{{company}}` - Client's company
+- `{{message}}` - Client's message
+
+### Company Template Variables:
+- `{{from_name}}` - Client's name
+- `{{from_email}}` - Client's email
+- `{{company}}` - Client's company
+- `{{meeting_date}}` - Meeting date
+- `{{meeting_time}}` - Meeting time
+- `{{message}}` - Client's message
+
+Once configured, both you and your clients will receive email confirmations for every meeting booking.

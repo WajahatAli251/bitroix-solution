@@ -9,14 +9,45 @@ import { Badge } from '@/components/ui/badge';
 import { Clock, User, Mail, MessageSquare, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
-// Temporary simulation - in production this would connect to your Supabase instance
-const simulateBooking = async (bookingData: any) => {
-  // Simulate API call delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  
-  // Simulate success (in real app, this would save to Supabase)
-  console.log('Meeting booked:', bookingData);
-  return { success: true };
+// EmailJS configuration for sending emails
+import emailjs from '@emailjs/browser';
+
+const sendConfirmationEmails = async (bookingData: any) => {
+  try {
+    // Email to client
+    const clientEmailParams = {
+      to_email: bookingData.client_email,
+      to_name: bookingData.client_name,
+      meeting_date: bookingData.meeting_date,
+      meeting_time: bookingData.meeting_time,
+      company: bookingData.client_company || 'Not specified',
+      message: bookingData.message || 'No additional message'
+    };
+
+    // Email to company
+    const companyEmailParams = {
+      from_name: bookingData.client_name,
+      from_email: bookingData.client_email,
+      company: bookingData.client_company || 'Not specified',
+      meeting_date: bookingData.meeting_date,
+      meeting_time: bookingData.meeting_time,
+      message: bookingData.message || 'No additional message'
+    };
+
+    // Initialize EmailJS (replace with your actual keys)
+    emailjs.init('your_public_key_here');
+    
+    // Send both emails
+    await Promise.all([
+      emailjs.send('service_id', 'template_client_id', clientEmailParams),
+      emailjs.send('service_id', 'template_company_id', companyEmailParams)
+    ]);
+
+    return { success: true };
+  } catch (error) {
+    console.error('Error sending emails:', error);
+    throw error;
+  }
 };
 
 interface TimeSlot {
@@ -84,7 +115,8 @@ const ScheduleMeeting = () => {
         status: 'scheduled'
       };
 
-      const result = await simulateBooking(bookingData);
+      // Send confirmation emails
+      await sendConfirmationEmails(bookingData);
 
       setIsBooked(true);
       toast({

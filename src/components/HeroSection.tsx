@@ -1,5 +1,5 @@
 
-import itConceptsImage from '@/assets/it-concepts-revolving.jpg';
+// Logo will be loaded from public folder
 
 const HeroSection = () => {
   const scrollToServices = () => {
@@ -57,15 +57,14 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Content - IT Concepts Revolving */}
+          {/* Right Content - Bitroix Logo */}
           <div className="flex-1 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-lg">
               <img 
-                src={itConceptsImage} 
-                alt="AI, ML, DevOps, Computer Vision revolving around IT concepts" 
-                className="w-full h-auto rounded-2xl shadow-2xl shadow-blue-500/25 border border-slate-700/50 animate-pulse"
+                src="/bitroix-logo.png" 
+                alt="Bitroix Solution - Innovating Digital Future" 
+                className="w-full h-auto max-w-md mx-auto filter drop-shadow-2xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent rounded-2xl"></div>
             </div>
           </div>
 
