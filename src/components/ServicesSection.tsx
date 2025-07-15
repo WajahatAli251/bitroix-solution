@@ -57,14 +57,14 @@ const ServicesSection = () => {
   return (
     <section id="services" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">Our Services</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl font-bold text-slate-900 mb-6 hover:scale-105 transition-transform duration-300">Our Services</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 animate-scale-in"></div>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
             We offer comprehensive digital solutions to transform your business and drive growth
           </p>
-          <Link to="/schedule-meeting">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg">
+          <Link to="/schedule-meeting" className="animate-fade-in inline-block" style={{animationDelay: '0.4s'}}>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
               Schedule a Meeting
             </Button>
           </Link>
@@ -77,7 +77,7 @@ const ServicesSection = () => {
                 return (
                   <Link 
                     to="/web-development"
-                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-4 border border-gray-100 block hover:scale-105 hover:border-blue-200 group"
                   >
                     {children}
                   </Link>
@@ -87,7 +87,7 @@ const ServicesSection = () => {
                 return (
                   <Link 
                     to="/ui-ux-design"
-                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-4 border border-gray-100 block hover:scale-105 hover:border-green-200 group"
                   >
                     {children}
                   </Link>
@@ -97,7 +97,7 @@ const ServicesSection = () => {
                 return (
                   <Link 
                     to="/devops-mlops"
-                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-4 border border-gray-100 block hover:scale-105 hover:border-gray-300 group"
                   >
                     {children}
                   </Link>
@@ -107,7 +107,7 @@ const ServicesSection = () => {
                 return (
                   <Link 
                     to="/data-analytics"
-                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-4 border border-gray-100 block hover:scale-105 hover:border-indigo-200 group"
                   >
                     {children}
                   </Link>
@@ -117,7 +117,7 @@ const ServicesSection = () => {
                 return (
                   <Link 
                     to="/team-as-service"
-                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-4 border border-gray-100 block hover:scale-105 hover:border-emerald-200 group"
                   >
                     {children}
                   </Link>
@@ -127,27 +127,29 @@ const ServicesSection = () => {
                 return (
                   <Link 
                     to="/design-consultancy"
-                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 block"
+                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-4 border border-gray-100 block hover:scale-105 hover:border-yellow-200 group"
                   >
                     {children}
                   </Link>
                 );
               }
               return (
-                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+                <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-4 border border-gray-100 hover:scale-105 group">
                   {children}
                 </div>
               );
             };
 
             return (
-              <ServiceCard key={index}>
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mb-4 text-2xl`}>
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">{service.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{service.description}</p>
-              </ServiceCard>
+              <div className="animate-fade-in" style={{animationDelay: `${index * 0.1}s`}} key={index}>
+                <ServiceCard>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mb-4 text-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">{service.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{service.description}</p>
+                </ServiceCard>
+              </div>
             );
           })}
         </div>

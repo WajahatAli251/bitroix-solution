@@ -30,10 +30,10 @@ const SolutionsSection = () => {
   return (
     <section id="solutions" className="py-20 bg-gradient-to-br from-slate-900 to-blue-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6">Innovative Solutions We Leverage</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl font-bold text-white mb-6 hover:scale-105 transition-transform duration-300">Innovative Solutions We Leverage</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8 animate-scale-in"></div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
             Cutting-edge technologies that power our services and drive innovation
           </p>
         </div>
@@ -42,12 +42,13 @@ const SolutionsSection = () => {
           {solutions.map((solution, index) => (
             <div 
               key={index}
-              className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-2 group"
+              className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in"
+              style={{animationDelay: `${index * 0.15}s`}}
             >
-              <div className={`w-20 h-20 bg-gradient-to-br ${solution.color} rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-20 h-20 bg-gradient-to-br ${solution.color} rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500`}>
                 {solution.icon}
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-4">{solution.title}</h3>
+              <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">{solution.title}</h3>
               <p className="text-gray-300 leading-relaxed">{solution.description}</p>
             </div>
           ))}

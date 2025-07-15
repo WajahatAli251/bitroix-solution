@@ -75,22 +75,22 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6">Contact Us</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl font-bold text-slate-900 mb-6 hover:scale-105 transition-transform duration-300">Contact Us</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 animate-scale-in"></div>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
             Ready to transform your business? Let's discuss your project and build something amazing together.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-100">
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-100 animate-fade-in hover:shadow-xl hover:scale-105 transition-all duration-500" style={{animationDelay: '0.1s'}}>
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-2xl font-semibold text-slate-900">Let's Talk</h3>
               <button
                 onClick={() => navigate('/schedule-meeting')}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-md text-sm"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-110 hover:shadow-lg shadow-md text-sm"
               >
                 Schedule Meeting
               </button>
@@ -158,7 +158,7 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 shadow-lg"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg pulse"
               >
                 Send Message
               </button>
@@ -166,13 +166,13 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
-            <div className="bg-slate-50 p-8 rounded-xl border border-slate-200">
+          <div className="space-y-8 animate-fade-in" style={{animationDelay: '0.3s'}}>
+            <div className="bg-slate-50 p-8 rounded-xl border border-slate-200 hover:shadow-lg hover:-translate-y-2 transition-all duration-500">
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">Get in Touch</h3>
               
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start space-x-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <span className="text-white text-xl">📧</span>
                   </div>
                   <div>
@@ -181,8 +181,8 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start space-x-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-teal-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <span className="text-white text-xl">📱</span>
                   </div>
                   <div>
@@ -192,8 +192,8 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start space-x-4 group">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                     <span className="text-white text-xl">📍</span>
                   </div>
                   <div>
@@ -205,13 +205,13 @@ const ContactSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="bg-gradient-to-br from-slate-900 to-blue-900 p-8 rounded-xl text-white">
+            <div className="bg-gradient-to-br from-slate-900 to-blue-900 p-8 rounded-xl text-white hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
               <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                <a href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 hover:scale-110 hover:rotate-12 transition-all duration-300">
                   <span className="text-blue-400">💼</span>
                 </a>
-                <a href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                <a href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 hover:scale-110 hover:rotate-12 transition-all duration-300">
                   <span className="text-pink-400">📷</span>
                 </a>
               </div>
