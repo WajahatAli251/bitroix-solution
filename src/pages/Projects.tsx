@@ -222,6 +222,102 @@ const Projects = () => {
     },
     {
       id: 9,
+      title: "E-Commerce Platform",
+      category: "Web Development",
+      description: "A comprehensive e-commerce solution with real-time inventory management, payment integration, and advanced analytics dashboard.",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
+      features: [
+        "Real-time inventory tracking",
+        "Multi-payment gateway integration",
+        "Advanced analytics dashboard",
+        "Mobile-responsive design",
+        "SEO optimized"
+      ],
+      results: {
+        improvement: "300% increase in online sales",
+        timeframe: "6 months",
+        users: "10,000+ active users"
+      },
+      liveUrl: "#",
+      githubUrl: "#",
+      completedDate: "August 2023",
+      client: "RetailMax Solutions"
+    },
+    {
+      id: 10,
+      title: "AI-Powered Analytics Dashboard",
+      category: "Data Analytics",
+      description: "Machine learning-driven analytics platform providing predictive insights and automated reporting for business intelligence.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      technologies: ["Python", "TensorFlow", "React", "D3.js", "PostgreSQL"],
+      features: [
+        "Predictive analytics models",
+        "Real-time data visualization",
+        "Automated report generation",
+        "Custom dashboard creation",
+        "API integration"
+      ],
+      results: {
+        improvement: "85% faster decision making",
+        timeframe: "4 months",
+        users: "200+ business analysts"
+      },
+      liveUrl: "#",
+      githubUrl: "#",
+      completedDate: "July 2023",
+      client: "DataFlow Technologies"
+    },
+    {
+      id: 11,
+      title: "Mobile Banking Application",
+      category: "FinTech",
+      description: "Secure mobile banking solution with biometric authentication, real-time transactions, and comprehensive financial management tools.",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      technologies: ["React Native", "Node.js", "MongoDB", "Blockchain", "AWS"],
+      features: [
+        "Biometric authentication",
+        "Real-time transaction processing",
+        "Budget tracking and analytics",
+        "Investment portfolio management",
+        "Multi-currency support"
+      ],
+      results: {
+        improvement: "60% increase in user engagement",
+        timeframe: "10 months",
+        users: "50,000+ active users"
+      },
+      liveUrl: "#",
+      githubUrl: "#",
+      completedDate: "June 2023",
+      client: "SecureBank Ltd"
+    },
+    {
+      id: 12,
+      title: "Educational Learning Platform",
+      category: "EdTech",
+      description: "Comprehensive online learning management system with interactive courses, progress tracking, and virtual classroom capabilities.",
+      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop",
+      technologies: ["React", "Node.js", "WebRTC", "MongoDB", "Socket.io"],
+      features: [
+        "Interactive course creation",
+        "Live virtual classrooms",
+        "Progress tracking and analytics",
+        "Assignment and quiz system",
+        "Certificate generation"
+      ],
+      results: {
+        improvement: "90% course completion rate",
+        timeframe: "7 months",
+        users: "15,000+ students"
+      },
+      liveUrl: "#",
+      githubUrl: "#",
+      completedDate: "May 2023",
+      client: "EduLearn Academy"
+    },
+    {
+      id: 13,
       title: "Brand Identity & Logo Design Portfolio",
       category: "UI/UX & Branding",
       description: "Comprehensive brand identity design including business logos, character design, and complete visual identity systems for various clients.",
@@ -246,7 +342,7 @@ const Projects = () => {
       client: "Various Business Clients"
     },
     {
-      id: 10,
+      id: 14,
       title: "UI/UX Design System",
       category: "UI/UX & Design",
       description: "Modern user interface and experience design with comprehensive design systems, mobile app interfaces, and user-centered design principles.",
@@ -282,6 +378,10 @@ const Projects = () => {
     "DevOps & Cloud", 
     "API Integration", 
     "DevSecOps & Cloud", 
+    "Web Development",
+    "Data Analytics",
+    "FinTech",
+    "EdTech",
     "UI/UX & Branding", 
     "UI/UX & Design"
   ];
