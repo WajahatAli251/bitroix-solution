@@ -1,6 +1,6 @@
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import webDevImage from '@/assets/web-development.jpg';
 
 const WebDevelopment = () => {
   const approachSteps = [
@@ -54,8 +54,18 @@ const WebDevelopment = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="pt-24 pb-12 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+        {/* Background Image with Transparency */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: "url('/lovable-uploads/eb7b0242-9c5d-4d81-9044-abe3320bd683.png')"
+          }}
+        />
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-slate-900/40" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Web <span className="text-blue-400">Development</span>
           </h1>
