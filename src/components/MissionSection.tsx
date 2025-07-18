@@ -28,25 +28,46 @@ const MissionSection = () => {
           </div>
 
           <div className="space-y-8">
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.1s'}}>
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-xl">
-                <span className="text-2xl font-bold text-white">🚀</span>
+            <div className="text-center animate-fade-in relative" style={{animationDelay: '0.1s'}}>
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-xl relative overflow-hidden">
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                  style={{
+                    backgroundImage: "url('/lovable-uploads/0f40bbf6-4d8b-4465-b3fb-ea78c3c26da6.png')"
+                  }}
+                />
+                <span className="text-2xl font-bold text-white relative z-10">🚀</span>
               </div>
               <h4 className="text-xl font-semibold text-slate-900 mb-2 hover:text-blue-600 transition-colors duration-300">Innovation First</h4>
               <p className="text-slate-600">Pushing boundaries with cutting-edge technology solutions</p>
             </div>
 
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.3s'}}>
-              <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-xl">
-                <span className="text-2xl font-bold text-white">🤝</span>
+            <div className="text-center animate-fade-in relative" style={{animationDelay: '0.3s'}}>
+              <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-xl relative overflow-hidden">
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                  style={{
+                    backgroundImage: "url('/lovable-uploads/686cd42c-ad4d-462e-a245-872be0dbcc50.png')"
+                  }}
+                />
+                <span className="text-2xl font-bold text-white relative z-10">🤝</span>
               </div>
               <h4 className="text-xl font-semibold text-slate-900 mb-2 hover:text-green-600 transition-colors duration-300">Integrity</h4>
               <p className="text-slate-600">Building trust through transparent and ethical practices</p>
             </div>
 
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.5s'}}>
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-xl">
-                <span className="text-2xl font-bold text-white">📈</span>
+            <div className="text-center animate-fade-in relative" style={{animationDelay: '0.5s'}}>
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-xl relative overflow-hidden">
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                  style={{
+                    backgroundImage: "url('/lovable-uploads/d5ab1a33-ea91-4095-a0cf-5ee283b6a191.png')"
+                  }}
+                />
+                <span className="text-2xl font-bold text-white relative z-10">📈</span>
               </div>
               <h4 className="text-xl font-semibold text-slate-900 mb-2 hover:text-purple-600 transition-colors duration-300">Impact</h4>
               <p className="text-slate-600">Creating meaningful change that drives business growth</p>
