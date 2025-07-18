@@ -20,13 +20,19 @@ const Footer = () => {
               Empowering businesses through cutting-edge software solutions, cloud innovation, and AI integration. 
               Building the future, one solution at a time.
             </p>
-            <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                <span className="text-blue-400">💼</span>
-              </a>
-              <a href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
-                <span className="text-pink-400">📷</span>
-              </a>
+            <div className="flex space-x-6">
+              <div className="text-center">
+                <a href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
+                  <span className="text-blue-400">💼</span>
+                </a>
+                <p className="text-xs text-gray-400 mt-1">LinkedIn</p>
+              </div>
+              <div className="text-center">
+                <a href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
+                  <span className="text-pink-400">📷</span>
+                </a>
+                <p className="text-xs text-gray-400 mt-1">Instagram</p>
+              </div>
             </div>
           </div>
 

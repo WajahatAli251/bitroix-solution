@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 
+import pythonLogo from '@/assets/python-logo.png';
+
 const TechCarousel = () => {
   const technologies = [
     { name: 'React', logo: '⚛️' },
     { name: 'Node.js', logo: '🟢' },
-    { name: 'Python', logo: '🐍' },
+    { name: 'Python', logo: pythonLogo, isImage: true },
     { name: 'AWS', logo: '☁️' },
     { name: 'Docker', logo: '🐳' },
     { name: 'MongoDB', logo: '🍃' },
@@ -54,7 +56,13 @@ const TechCarousel = () => {
             {technologies.map((tech, index) => (
               <div key={index} className="embla__slide flex-none w-48 mr-8">
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
-                  <div className="text-4xl mb-4">{tech.logo}</div>
+                  <div className="h-16 mb-4 flex items-center justify-center">
+                    {tech.isImage ? (
+                      <img src={tech.logo} alt={tech.name} className="h-12 w-12 object-contain" />
+                    ) : (
+                      <span className="text-4xl">{tech.logo}</span>
+                    )}
+                  </div>
                   <h3 className="text-lg font-semibold text-slate-900">{tech.name}</h3>
                 </div>
               </div>
@@ -63,7 +71,13 @@ const TechCarousel = () => {
             {technologies.map((tech, index) => (
               <div key={`duplicate-${index}`} className="embla__slide flex-none w-48 mr-8">
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
-                  <div className="text-4xl mb-4">{tech.logo}</div>
+                  <div className="h-16 mb-4 flex items-center justify-center">
+                    {tech.isImage ? (
+                      <img src={tech.logo} alt={tech.name} className="h-12 w-12 object-contain" />
+                    ) : (
+                      <span className="text-4xl">{tech.logo}</span>
+                    )}
+                  </div>
                   <h3 className="text-lg font-semibold text-slate-900">{tech.name}</h3>
                 </div>
               </div>

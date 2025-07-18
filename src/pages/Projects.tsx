@@ -142,7 +142,7 @@ const Projects = () => {
       },
       liveUrl: "#",
       githubUrl: "#",
-      completedDate: "December 2023",
+      completedDate: "December 2024",
       client: "City General Hospital"
     },
     {
@@ -192,7 +192,7 @@ const Projects = () => {
       },
       liveUrl: "#",
       githubUrl: "#",
-      completedDate: "October 2023",
+      completedDate: "October 2024",
       client: "Music Tech Innovation"
     },
     {
@@ -217,7 +217,7 @@ const Projects = () => {
       },
       liveUrl: "#",
       githubUrl: "#",
-      completedDate: "September 2023",
+      completedDate: "September 2024",
       client: "StreamTech Media"
     },
     {
@@ -241,7 +241,7 @@ const Projects = () => {
       },
       liveUrl: "#",
       githubUrl: "#",
-      completedDate: "August 2023",
+      completedDate: "August 2024",
       client: "RetailMax Solutions"
     },
     {
@@ -265,7 +265,7 @@ const Projects = () => {
       },
       liveUrl: "#",
       githubUrl: "#",
-      completedDate: "July 2023",
+      completedDate: "July 2024",
       client: "DataFlow Technologies"
     },
     {
@@ -289,7 +289,7 @@ const Projects = () => {
       },
       liveUrl: "#",
       githubUrl: "#",
-      completedDate: "June 2023",
+      completedDate: "June 2024",
       client: "SecureBank Ltd"
     },
     {
@@ -313,7 +313,7 @@ const Projects = () => {
       },
       liveUrl: "#",
       githubUrl: "#",
-      completedDate: "May 2023",
+      completedDate: "May 2024",
       client: "EduLearn Academy"
     },
     {
