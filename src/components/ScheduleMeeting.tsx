@@ -43,7 +43,7 @@ const sendConfirmationEmails = async (bookingData: any) => {
     // Send confirmation email to client
     await emailjs.send(
       "service_71sdi9c",
-      "template_l4rv4an",
+      "template_client_confirm", // Client confirmation template
       clientEmailParams,
       "kDAb1P11SWMi_soaj"
     );
@@ -51,7 +51,7 @@ const sendConfirmationEmails = async (bookingData: any) => {
     // Send notification email to company
     await emailjs.send(
       "service_71sdi9c",
-      "template_l4rv4an", // Using same template for now
+      "template_l4rv4an", // Company notification template
       companyEmailParams,
       "kDAb1P11SWMi_soaj"
     );
