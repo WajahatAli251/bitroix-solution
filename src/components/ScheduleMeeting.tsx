@@ -15,7 +15,7 @@ import emailjs from '@emailjs/browser';
 const sendConfirmationEmails = async (bookingData: any) => {
   try {
     // Initialize EmailJS with your public key
-    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // Replace with your actual public key
+    emailjs.init("kDAb1P11SWMi_soaj");
 
     // Email template parameters for client confirmation
     const clientEmailParams = {
@@ -42,18 +42,18 @@ const sendConfirmationEmails = async (bookingData: any) => {
 
     // Send confirmation email to client
     await emailjs.send(
-      "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-      "YOUR_CLIENT_TEMPLATE_ID", // Replace with your client email template ID
+      "service_71sdi9c",
+      "template_l4rv4an",
       clientEmailParams,
-      "YOUR_EMAILJS_PUBLIC_KEY" // Replace with your actual public key
+      "kDAb1P11SWMi_soaj"
     );
 
     // Send notification email to company
     await emailjs.send(
-      "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-      "YOUR_COMPANY_TEMPLATE_ID", // Replace with your company email template ID
+      "service_71sdi9c",
+      "template_l4rv4an", // Using same template for now
       companyEmailParams,
-      "YOUR_EMAILJS_PUBLIC_KEY" // Replace with your actual public key
+      "kDAb1P11SWMi_soaj"
     );
 
     console.log('Confirmation emails sent successfully');
