@@ -14,33 +14,49 @@ import emailjs from '@emailjs/browser';
 
 const sendConfirmationEmails = async (bookingData: any) => {
   try {
-    // Email to client
+    // Initialize EmailJS with your public key
+    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // Replace with your actual public key
+
+    // Email template parameters for client confirmation
     const clientEmailParams = {
       to_email: bookingData.client_email,
       to_name: bookingData.client_name,
       meeting_date: bookingData.meeting_date,
       meeting_time: bookingData.meeting_time,
       company: bookingData.client_company || 'Not specified',
-      message: bookingData.message || 'No additional message'
+      message: bookingData.message || 'No additional message',
+      subject: 'Meeting Confirmation - Bitroix Solution'
     };
 
-    // Email to company
+    // Email template parameters for company notification
     const companyEmailParams = {
       from_name: bookingData.client_name,
       from_email: bookingData.client_email,
       company: bookingData.client_company || 'Not specified',
       meeting_date: bookingData.meeting_date,
       meeting_time: bookingData.meeting_time,
-      message: bookingData.message || 'No additional message'
+      message: bookingData.message || 'No additional message',
+      to_email: "your-company-email@bitroixsolution.com", // Replace with your company email
+      subject: 'New Meeting Scheduled'
     };
 
-    // For demo purposes, we'll simulate successful email sending
-    // In production, you would configure EmailJS with your actual service details
-    console.log('Meeting scheduled:', bookingData);
-    
-    // Simulate email sending delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Send confirmation email to client
+    await emailjs.send(
+      "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+      "YOUR_CLIENT_TEMPLATE_ID", // Replace with your client email template ID
+      clientEmailParams,
+      "YOUR_EMAILJS_PUBLIC_KEY" // Replace with your actual public key
+    );
 
+    // Send notification email to company
+    await emailjs.send(
+      "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+      "YOUR_COMPANY_TEMPLATE_ID", // Replace with your company email template ID
+      companyEmailParams,
+      "YOUR_EMAILJS_PUBLIC_KEY" // Replace with your actual public key
+    );
+
+    console.log('Confirmation emails sent successfully');
     return { success: true };
   } catch (error) {
     console.error('Error sending emails:', error);
