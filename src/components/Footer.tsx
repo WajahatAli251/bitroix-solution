@@ -8,89 +8,119 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">
-              Bitroix <span className="text-blue-400">Solution</span>
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-md">
-              Empowering businesses through cutting-edge software solutions, cloud innovation, and AI integration. 
-              Building the future, one solution at a time.
-            </p>
-            <div className="flex space-x-6">
-              <div className="text-center">
-                <a href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors">
-                  <span className="text-blue-400">💼</span>
-                </a>
-                <p className="text-xs text-gray-400 mt-1">LinkedIn</p>
+    <footer className="bg-background dark:bg-background border-t border-border">
+      <div className="gradient-navy min-h-[400px] relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-primary rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="col-span-1 md:col-span-2">
+              <h3 className="text-3xl font-bold mb-6 text-white">
+                Bitroix <span className="text-gradient">Solution</span>
+              </h3>
+              <p className="text-muted-foreground dark:text-gray-300 mb-8 max-w-md text-lg leading-relaxed">
+                Empowering businesses through cutting-edge software solutions, cloud innovation, and AI integration. 
+                Building the future, one solution at a time.
+              </p>
+              <div className="flex space-x-6">
+                <div className="text-center group">
+                  <a 
+                    href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110 glow-primary group-hover:glow-tech"
+                  >
+                    <span className="text-primary group-hover:text-white text-xl">💼</span>
+                  </a>
+                  <p className="text-sm text-muted-foreground dark:text-gray-400 mt-2 font-medium">LinkedIn</p>
+                </div>
+                <div className="text-center group">
+                  <a 
+                    href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110 glow-primary group-hover:glow-tech"
+                  >
+                    <span className="text-primary group-hover:text-white text-xl">📷</span>
+                  </a>
+                  <p className="text-sm text-muted-foreground dark:text-gray-400 mt-2 font-medium">Instagram</p>
+                </div>
               </div>
-              <div className="text-center">
-                <a href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-pink-600 transition-colors">
-                  <span className="text-pink-400">📷</span>
-                </a>
-                <p className="text-xs text-gray-400 mt-1">Instagram</p>
-              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-xl font-bold mb-6 text-white">Quick Links</h4>
+              <ul className="space-y-3">
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('home')}
+                    className="text-muted-foreground dark:text-gray-300 hover:text-primary transition-colors duration-300 text-left font-medium hover:translate-x-1 transform"
+                  >
+                    Home
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('mission')}
+                    className="text-muted-foreground dark:text-gray-300 hover:text-primary transition-colors duration-300 text-left font-medium hover:translate-x-1 transform"
+                  >
+                    About Us
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('services')}
+                    className="text-muted-foreground dark:text-gray-300 hover:text-primary transition-colors duration-300 text-left font-medium hover:translate-x-1 transform"
+                  >
+                    Services
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('solutions')}
+                    className="text-muted-foreground dark:text-gray-300 hover:text-primary transition-colors duration-300 text-left font-medium hover:translate-x-1 transform"
+                  >
+                    Solutions
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="text-xl font-bold mb-6 text-white">Contact</h4>
+              <ul className="space-y-3">
+                <li className="flex items-center space-x-3 text-muted-foreground dark:text-gray-300">
+                  <span className="text-primary text-lg">📧</span>
+                  <span className="font-medium">bitroixsolution@gmail.com</span>
+                </li>
+                <li className="flex items-center space-x-3 text-muted-foreground dark:text-gray-300">
+                  <span className="text-primary text-lg">📱</span>
+                  <span className="font-medium">+92 3352222578</span>
+                </li>
+                <li className="flex items-center space-x-3 text-muted-foreground dark:text-gray-300">
+                  <span className="text-primary text-lg">📱</span>
+                  <span className="font-medium">+92 321 2345194</span>
+                </li>
+                <li className="flex items-center space-x-3 text-muted-foreground dark:text-gray-300">
+                  <span className="text-primary text-lg">📍</span>
+                  <span className="font-medium">Karachi, Pakistan</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li>
-                <button 
-                  onClick={() => scrollToSection('home')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('mission')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('services')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('solutions')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Solutions
-                </button>
-              </li>
-            </ul>
+          <div className="border-t border-border dark:border-gray-700 mt-12 pt-8 text-center">
+            <p className="text-muted-foreground dark:text-gray-400 text-lg">
+              © 2024 <span className="text-primary font-bold">Bitroix Solution</span>. All rights reserved. Built with innovation and integrity.
+            </p>
           </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>📧 bitroixsolution@gmail.com</li>
-              <li>📱 +92 3352222578</li>
-              <li>📱 +92 321 2345194</li>
-              <li>📍 Karachi, Pakistan</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-slate-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400">
-            © 2024 Bitroix Solution. All rights reserved. Built with innovation and integrity.
-          </p>
         </div>
       </div>
     </footer>
