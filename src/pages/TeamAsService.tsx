@@ -3,6 +3,16 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowUp, Users } from "lucide-react";
 import teamImage from '@/assets/team-collaboration.jpg';
+import slackLogo from '@/assets/tech-logos/slack.svg';
+import jiraLogo from '@/assets/tech-logos/jira.png';
+import confluenceLogo from '@/assets/tech-logos/confluence.svg';
+import notionLogo from '@/assets/tech-logos/notion.png';
+import trelloLogo from '@/assets/tech-logos/trello.png';
+import asanaLogo from '@/assets/tech-logos/asana.svg';
+import zoomLogo from '@/assets/tech-logos/zoom.svg';
+import gitLogo from '@/assets/tech-logos/git.png';
+import githubLogo from '@/assets/tech-logos/github.png';
+import gitlabLogo from '@/assets/tech-logos/gitlab.png';
 
 const TeamAsService = () => {
   const scrollToTop = () => {
@@ -36,15 +46,20 @@ const TeamAsService = () => {
     }
   ];
 
-  const technologies = [
-    { name: "React", icon: "⚛️" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Python", icon: "🐍" },
-    { name: "Java", icon: "☕" },
-    { name: "Angular", icon: "🅰️" },
-    { name: "Vue.js", icon: "💚" },
-    { name: "Flutter", icon: "🦋" },
-    { name: "Swift", icon: "🍎" }
+  const collaborationTools = [
+    { name: "Slack", logo: slackLogo },
+    { name: "Zoom", logo: zoomLogo },
+    { name: "Jira", logo: jiraLogo },
+    { name: "Confluence", logo: confluenceLogo },
+    { name: "Notion", logo: notionLogo },
+    { name: "Trello", logo: trelloLogo },
+    { name: "Asana", logo: asanaLogo }
+  ];
+
+  const developmentTools = [
+    { name: "Git", logo: gitLogo },
+    { name: "GitHub", logo: githubLogo },
+    { name: "GitLab", logo: gitlabLogo }
   ];
 
   return (
@@ -140,15 +155,45 @@ const TeamAsService = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">Technologies We Have Experts In</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">Team Collaboration & Management Tools</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {technologies.map((tech, index) => (
-              <div key={index} className="text-center">
-                <div className="text-6xl mb-4">{tech.icon}</div>
-                <h3 className="text-lg font-medium text-slate-900">{tech.name}</h3>
-              </div>
-            ))}
+          
+          {/* Collaboration Tools */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-slate-800 text-center mb-8">Communication & Project Management</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 justify-items-center">
+              {collaborationTools.map((tool, index) => (
+                <div key={index} className="group text-center transition-transform duration-300 hover:scale-105">
+                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center bg-white rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors duration-300">{tool.name}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Development Tools */}
+          <div>
+            <h3 className="text-2xl font-semibold text-slate-800 text-center mb-8">Version Control & Development</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center max-w-2xl mx-auto">
+              {developmentTools.map((tool, index) => (
+                <div key={index} className="group text-center transition-transform duration-300 hover:scale-105">
+                  <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center bg-white rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors duration-300">{tool.name}</h4>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

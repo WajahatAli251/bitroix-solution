@@ -3,6 +3,14 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowUp } from "lucide-react";
 import designImage from '@/assets/ui-ux-design.jpg';
+import figmaLogo from '@/assets/tech-logos/figma.svg';
+import adobeXDLogo from '@/assets/tech-logos/adobe-xd.png';
+import sketchLogo from '@/assets/tech-logos/sketch.png';
+import invisionLogo from '@/assets/tech-logos/invision.png';
+import illustratorLogo from '@/assets/tech-logos/adobe-illustrator.png';
+import photoshopLogo from '@/assets/tech-logos/adobe-photoshop.svg';
+import miroLogo from '@/assets/tech-logos/miro.png';
+import framerLogo from '@/assets/tech-logos/framer.png';
 
 const DesignConsultancy = () => {
   const scrollToTop = () => {
@@ -55,15 +63,15 @@ const DesignConsultancy = () => {
     }
   ];
 
-  const technologies = [
-    { name: "Figma", icon: "🎨" },
-    { name: "Adobe XD", icon: "🔷" },
-    { name: "Sketch", icon: "💎" },
-    { name: "InVision", icon: "🔮" },
-    { name: "Principle", icon: "⚡" },
-    { name: "Framer", icon: "🖼️" },
-    { name: "Miro", icon: "📝" },
-    { name: "Hotjar", icon: "📊" }
+  const designTools = [
+    { name: "Figma", logo: figmaLogo },
+    { name: "Adobe XD", logo: adobeXDLogo },
+    { name: "Sketch", logo: sketchLogo },
+    { name: "InVision", logo: invisionLogo },
+    { name: "Illustrator", logo: illustratorLogo },
+    { name: "Photoshop", logo: photoshopLogo },
+    { name: "Miro", logo: miroLogo },
+    { name: "Framer", logo: framerLogo }
   ];
 
   return (
@@ -152,13 +160,19 @@ const DesignConsultancy = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">Technologies We Have Experts In</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">Design & Prototyping Tools</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {technologies.map((tech, index) => (
-              <div key={index} className="text-center">
-                <div className="text-6xl mb-4">{tech.icon}</div>
-                <h3 className="text-lg font-medium text-slate-900">{tech.name}</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+            {designTools.map((tool, index) => (
+              <div key={index} className="group text-center transition-transform duration-300 hover:scale-105">
+                <div className="w-16 h-16 mx-auto mb-3 flex items-center justify-center bg-white rounded-lg shadow-md group-hover:shadow-lg transition-shadow duration-300">
+                  <img 
+                    src={tool.logo} 
+                    alt={`${tool.name} logo`}
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <h4 className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors duration-300">{tool.name}</h4>
               </div>
             ))}
           </div>
