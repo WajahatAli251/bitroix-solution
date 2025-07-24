@@ -8,50 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Modern vibrant color palette */
-    --background: 250 100% 98%;
-    --foreground: 220 20% 10%;
+    /* Midnight Tech Theme - Modern Navy & Electric Blue */
+    --background: 220 40% 98%;
+    --foreground: 220 40% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 220 40% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 220 40% 8%;
 
-    /* Vibrant purple-blue gradient primary */
-    --primary: 260 100% 65%;
+    /* Electric Blue Primary */
+    --primary: 194 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 280 100% 75%;
+    --primary-glow: 194 100% 60%;
 
-    /* Electric cyan secondary */
-    --secondary: 190 100% 60%;
-    --secondary-foreground: 220 20% 10%;
+    /* Deep Navy Secondary */
+    --secondary: 220 40% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 10% 96%;
-    --muted-foreground: 220 15% 50%;
+    --muted: 220 20% 96%;
+    --muted-foreground: 220 20% 45%;
 
-    /* Bright accent orange */
-    --accent: 25 100% 60%;
-    --accent-foreground: 0 0% 100%;
+    /* Silver Accent */
+    --accent: 210 20% 90%;
+    --accent-foreground: 220 40% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 15% 90%;
-    --input: 240 15% 95%;
-    --ring: 260 100% 65%;
+    --border: 220 20% 88%;
+    --input: 220 20% 95%;
+    --ring: 194 100% 50%;
 
     --radius: 0.75rem;
 
-    /* Custom gradient colors */
-    --gradient-start: 260 100% 65%;
-    --gradient-middle: 280 100% 75%;
-    --gradient-end: 190 100% 60%;
+    /* Midnight Tech Gradients */
+    --gradient-start: 220 40% 8%;
+    --gradient-middle: 220 40% 15%;
+    --gradient-end: 194 100% 50%;
 
-    /* Glow effects */
-    --glow-primary: 260 100% 65%;
-    --glow-secondary: 190 100% 60%;
-    --glow-accent: 25 100% 60%;
+    /* Tech Glow Effects */
+    --glow-primary: 194 100% 50%;
+    --glow-secondary: 220 40% 15%;
+    --glow-accent: 210 20% 85%;
 
     /* Sidebar colors */
     --sidebar-background: 250 100% 98%;
@@ -65,43 +65,43 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode with neon accents */
-    --background: 220 30% 8%;
-    --foreground: 0 0% 95%;
+    /* Midnight Tech Dark Mode */
+    --background: 220 40% 8%;
+    --foreground: 210 20% 95%;
 
-    --card: 220 25% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 220 40% 10%;
+    --card-foreground: 210 20% 95%;
 
-    --popover: 220 25% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 40% 10%;
+    --popover-foreground: 210 20% 95%;
 
-    --primary: 260 100% 70%;
-    --primary-foreground: 220 30% 8%;
-    --primary-glow: 280 100% 80%;
+    --primary: 194 100% 60%;
+    --primary-foreground: 220 40% 8%;
+    --primary-glow: 194 100% 70%;
 
-    --secondary: 190 100% 65%;
-    --secondary-foreground: 220 30% 8%;
+    --secondary: 220 40% 20%;
+    --secondary-foreground: 210 20% 95%;
 
-    --muted: 220 20% 15%;
-    --muted-foreground: 220 10% 70%;
+    --muted: 220 30% 15%;
+    --muted-foreground: 210 20% 70%;
 
-    --accent: 25 100% 65%;
-    --accent-foreground: 220 30% 8%;
+    --accent: 210 20% 25%;
+    --accent-foreground: 210 20% 95%;
 
     --destructive: 0 84% 65%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 20%;
-    --input: 220 20% 18%;
-    --ring: 260 100% 70%;
+    --border: 220 30% 18%;
+    --input: 220 30% 15%;
+    --ring: 194 100% 60%;
 
-    --gradient-start: 260 100% 70%;
-    --gradient-middle: 280 100% 80%;
-    --gradient-end: 190 100% 65%;
+    --gradient-start: 220 40% 8%;
+    --gradient-middle: 220 40% 15%;
+    --gradient-end: 194 100% 60%;
 
-    --glow-primary: 260 100% 70%;
-    --glow-secondary: 190 100% 65%;
-    --glow-accent: 25 100% 65%;
+    --glow-primary: 194 100% 60%;
+    --glow-secondary: 220 40% 20%;
+    --glow-accent: 210 20% 30%;
 
     --sidebar-background: 220 30% 8%;
     --sidebar-foreground: 0 0% 90%;
@@ -126,41 +126,57 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Gradient backgrounds */
+  /* Midnight Tech Gradient Backgrounds */
   .gradient-primary {
     background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)), hsl(var(--gradient-end)));
   }
 
   .gradient-secondary {
-    background: linear-gradient(45deg, hsl(var(--glow-secondary)), hsl(var(--glow-accent)));
+    background: linear-gradient(45deg, hsl(var(--glow-secondary)), hsl(var(--glow-primary)));
   }
 
-  /* Glow effects */
+  .gradient-tech {
+    background: linear-gradient(135deg, hsl(220 40% 8%), hsl(194 100% 50%));
+  }
+
+  .gradient-navy {
+    background: linear-gradient(180deg, hsl(220 40% 8%), hsl(220 40% 15%));
+  }
+
+  /* Electric Blue Glow Effects */
   .glow-primary {
-    box-shadow: 0 0 30px hsl(var(--glow-primary) / 0.3);
+    box-shadow: 0 0 30px hsl(194 100% 50% / 0.4);
   }
 
   .glow-secondary {
-    box-shadow: 0 0 20px hsl(var(--glow-secondary) / 0.4);
+    box-shadow: 0 0 20px hsl(220 40% 15% / 0.3);
   }
 
   .glow-accent {
-    box-shadow: 0 0 25px hsl(var(--glow-accent) / 0.3);
+    box-shadow: 0 0 25px hsl(210 20% 85% / 0.2);
   }
 
-  /* Text gradients */
+  .glow-tech {
+    box-shadow: 0 0 40px hsl(194 100% 50% / 0.6);
+  }
+
+  /* Tech-Inspired Text Gradients */
   .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-middle)));
+    background: linear-gradient(135deg, hsl(194 100% 50%), hsl(220 40% 15%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-accent {
-    background: linear-gradient(45deg, hsl(var(--glow-secondary)), hsl(var(--glow-accent)));
+    background: linear-gradient(45deg, hsl(194 100% 60%), hsl(210 20% 85%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-electric {
+    color: hsl(194 100% 50%);
   }
 
   /* Hover animations */
