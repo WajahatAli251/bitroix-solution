@@ -234,6 +234,38 @@ const UIUXDesign = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <img 
+                  src="/lovable-uploads/3e881009-4665-4ed6-bb89-ce79ed6092ab.png" 
+                  alt="Azam Khan Artist Business Card - Dark Green with Gold Accents"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/f091ac58-58b7-460b-9945-9e4d90478c20.png" 
+                  alt="Raj Patel Graphic Designer Business Card - Blue Gradient"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/37e4eb15-b9a8-4e36-9e73-9dfba8dc36c2.png" 
+                  alt="Rufus Durterte Tyre Specialist Business Card - Black with Purple"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/41bed1ea-35ec-4ef7-aab7-4f0d0759bcba.png" 
+                  alt="Hamza Ahsan CEO Business Card - Dark Navy with Green"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
                   src="/lovable-uploads/ce1ab72f-139a-433a-9c84-30c28f897910.png" 
                   alt="Professional Business Design"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -244,14 +276,6 @@ const UIUXDesign = () => {
                 <img 
                   src="/lovable-uploads/02467343-b283-453d-9f09-96771685b840.png" 
                   alt="Athletic Character Design"
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
-              </div>
-              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <img 
-                  src="/lovable-uploads/9057bf22-b516-4979-a89b-fa9b26b808e0.png" 
-                  alt="Nature Scene Illustration"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
