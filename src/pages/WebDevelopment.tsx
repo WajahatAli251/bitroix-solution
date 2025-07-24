@@ -2,6 +2,24 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+// Technology Logo Imports
+import reactLogo from '@/assets/tech-logos/react.svg';
+import nextjsLogo from '@/assets/tech-logos/nextjs.png';
+import nodejsLogo from '@/assets/tech-logos/nodejs.svg';
+import typescriptLogo from '@/assets/tech-logos/typescript.svg';
+import javascriptLogo from '@/assets/tech-logos/javascript.png';
+import html5Logo from '@/assets/tech-logos/html5.png';
+import css3Logo from '@/assets/tech-logos/css3.png';
+import tailwindLogo from '@/assets/tech-logos/tailwind.png';
+import bootstrapLogo from '@/assets/tech-logos/bootstrap.png';
+import djangoLogo from '@/assets/tech-logos/django.png';
+import laravelLogo from '@/assets/tech-logos/laravel.png';
+import expressLogo from '@/assets/tech-logos/express.png';
+import mongodbLogo from '@/assets/tech-logos/mongodb.png';
+import postgresqlLogo from '@/assets/tech-logos/postgresql.png';
+import mysqlLogo from '@/assets/tech-logos/mysql.png';
+import pythonLogo from '@/assets/tech-logos/python.png';
+
 const WebDevelopment = () => {
   const approachSteps = [
     {
@@ -36,17 +54,29 @@ const WebDevelopment = () => {
     }
   ];
 
-  const technologies = [
-    { name: "HTML 5", icon: "🌐" },
-    { name: "CSS 3", icon: "🎨" },
-    { name: "JavaScript", icon: "⚡" },
-    { name: "React.js", icon: "⚛️" },
-    { name: "Node.js", icon: "🟢" },
-    { name: "Python", icon: "🐍" },
-    { name: "Java", icon: "☕" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: ".NET", icon: "🔷" }
+  const frontendTechnologies = [
+    { name: "React.js", logo: reactLogo, category: "Frontend Framework" },
+    { name: "Next.js", logo: nextjsLogo, category: "React Framework" },
+    { name: "TypeScript", logo: typescriptLogo, category: "Language" },
+    { name: "JavaScript", logo: javascriptLogo, category: "Language" },
+    { name: "HTML5", logo: html5Logo, category: "Markup" },
+    { name: "CSS3", logo: css3Logo, category: "Styling" },
+    { name: "Tailwind CSS", logo: tailwindLogo, category: "CSS Framework" },
+    { name: "Bootstrap", logo: bootstrapLogo, category: "CSS Framework" }
+  ];
+
+  const backendTechnologies = [
+    { name: "Node.js", logo: nodejsLogo, category: "Runtime" },
+    { name: "Express.js", logo: expressLogo, category: "Backend Framework" },
+    { name: "Python", logo: pythonLogo, category: "Language" },
+    { name: "Django", logo: djangoLogo, category: "Python Framework" },
+    { name: "Laravel", logo: laravelLogo, category: "PHP Framework" }
+  ];
+
+  const databaseTechnologies = [
+    { name: "MongoDB", logo: mongodbLogo, category: "NoSQL Database" },
+    { name: "PostgreSQL", logo: postgresqlLogo, category: "SQL Database" },
+    { name: "MySQL", logo: mysqlLogo, category: "SQL Database" }
   ];
 
   return (
@@ -144,23 +174,81 @@ const WebDevelopment = () => {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-background dark:bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Technologies <span className="text-gray-500">We Have Experts In</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-6">
+              Technologies <span className="text-primary">We Master</span>
             </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Cutting-edge tools and frameworks for building modern web applications
+            </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-            {technologies.map((tech, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                  <span className="text-3xl">{tech.icon}</span>
+          {/* Frontend Technologies */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Frontend & <span className="text-primary">User Interface</span>
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+              {frontendTechnologies.map((tech, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tech.logo} 
+                      alt={`${tech.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tech.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tech.category}</p>
                 </div>
-                <h3 className="font-semibold text-gray-900">{tech.name}</h3>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Backend Technologies */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Backend & <span className="text-primary">Server Technologies</span>
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+              {backendTechnologies.map((tech, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tech.logo} 
+                      alt={`${tech.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tech.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tech.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Database Technologies */}
+          <div>
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Database & <span className="text-primary">Storage Solutions</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              {databaseTechnologies.map((tech, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tech.logo} 
+                      alt={`${tech.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tech.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tech.category}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

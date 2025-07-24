@@ -4,6 +4,17 @@ import Footer from "@/components/Footer";
 import { ArrowUp, Database, Monitor, Shield } from "lucide-react";
 import dataAnalyticsImage from '@/assets/data-analytics.jpg';
 
+// Technology Logo Imports for Data Analytics
+import pythonLogo from '@/assets/tech-logos/python.png';
+import powerbiLogo from '@/assets/tech-logos/powerbi.png';
+import tableauLogo from '@/assets/tech-logos/tableau.png';
+import pandasLogo from '@/assets/tech-logos/pandas.png';
+import numpyLogo from '@/assets/tech-logos/numpy.png';
+import jupyterLogo from '@/assets/tech-logos/jupyter.png';
+import sqlLogo from '@/assets/tech-logos/sql.png';
+import sparkLogo from '@/assets/tech-logos/spark.png';
+import excelLogo from '@/assets/tech-logos/excel.png';
+
 const DataAnalytics = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -54,15 +65,22 @@ const DataAnalytics = () => {
     }
   ];
 
-  const technologies = [
-    { name: "Python", icon: "🐍" },
-    { name: "R Programming", icon: "📊" },
-    { name: "Tableau", icon: "📈" },
-    { name: "Power BI", icon: "⚡" },
-    { name: "Apache Spark", icon: "✨" },
-    { name: "TensorFlow", icon: "🧠" },
-    { name: "Jupyter", icon: "📓" },
-    { name: "SQL", icon: "🗄️" }
+  const visualizationTools = [
+    { name: "Power BI", logo: powerbiLogo, category: "Microsoft BI" },
+    { name: "Tableau", logo: tableauLogo, category: "Data Visualization" },
+    { name: "Excel", logo: excelLogo, category: "Spreadsheet Analysis" }
+  ];
+
+  const programmingTools = [
+    { name: "Python", logo: pythonLogo, category: "Programming Language" },
+    { name: "Pandas", logo: pandasLogo, category: "Data Manipulation" },
+    { name: "NumPy", logo: numpyLogo, category: "Numerical Computing" },
+    { name: "Jupyter", logo: jupyterLogo, category: "Interactive Computing" }
+  ];
+
+  const databaseAnalyticsTools = [
+    { name: "SQL", logo: sqlLogo, category: "Query Language" },
+    { name: "Apache Spark", logo: sparkLogo, category: "Big Data Processing" }
   ];
 
   return (
@@ -148,18 +166,81 @@ const DataAnalytics = () => {
       </section>
 
       {/* Technologies */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-background dark:bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">Technologies We Have Experts In</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6">
+              Technologies <span className="text-primary">We Master</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Professional tools for data analysis, visualization, and business intelligence
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {technologies.map((tech, index) => (
-              <div key={index} className="text-center">
-                <div className="text-6xl mb-4">{tech.icon}</div>
-                <h3 className="text-lg font-medium text-slate-900">{tech.name}</h3>
-              </div>
-            ))}
+          
+          {/* Data Visualization Tools */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Visualization & <span className="text-primary">BI Tools</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              {visualizationTools.map((tool, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tool.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Programming & Analysis Tools */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Programming & <span className="text-primary">Analysis Tools</span>
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {programmingTools.map((tool, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tool.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Database & Big Data Tools */}
+          <div>
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Database & <span className="text-primary">Big Data</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {databaseAnalyticsTools.map((tool, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tool.category}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
