@@ -4,6 +4,22 @@ import Footer from "@/components/Footer";
 import { ArrowUp, Database, Cloud, Monitor, Shield } from "lucide-react";
 import devopsImage from '@/assets/devops-infrastructure.jpg';
 
+// Technology Logo Imports for DevOps/MLOps
+import dockerLogo from '@/assets/tech-logos/docker.png';
+import kubernetesLogo from '@/assets/tech-logos/kubernetes.png';
+import jenkinsLogo from '@/assets/tech-logos/jenkins.png';
+import githubActionsLogo from '@/assets/tech-logos/github-actions.png';
+import gitlabLogo from '@/assets/tech-logos/gitlab.png';
+import terraformLogo from '@/assets/tech-logos/terraform.png';
+import ansibleLogo from '@/assets/tech-logos/ansible.png';
+import awsLogo from '@/assets/tech-logos/aws.png';
+import azureLogo from '@/assets/tech-logos/azure.png';
+import gcpLogo from '@/assets/tech-logos/gcp.png';
+import prometheusLogo from '@/assets/tech-logos/prometheus.png';
+import grafanaLogo from '@/assets/tech-logos/grafana.png';
+import mlflowLogo from '@/assets/tech-logos/mlflow.png';
+import dvcLogo from '@/assets/tech-logos/dvc.png';
+
 const DevOpsMLOps = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -54,15 +70,36 @@ const DevOpsMLOps = () => {
     }
   ];
 
-  const technologies = [
-    { name: "Docker", icon: "🐳" },
-    { name: "Kubernetes", icon: "⚓" },
-    { name: "Amazon Web Services", icon: "☁️" },
-    { name: "Microsoft Azure", icon: "🔷" },
-    { name: "Google Cloud Platform", icon: "🌩️" },
-    { name: "Jenkins", icon: "🔧" },
-    { name: "Terraform", icon: "🏗️" },
-    { name: "Ansible", icon: "⚙️" }
+  const containerizationTools = [
+    { name: "Docker", logo: dockerLogo, category: "Containerization" },
+    { name: "Kubernetes", logo: kubernetesLogo, category: "Orchestration" }
+  ];
+
+  const cicdTools = [
+    { name: "Jenkins", logo: jenkinsLogo, category: "CI/CD Platform" },
+    { name: "GitHub Actions", logo: githubActionsLogo, category: "GitHub CI/CD" },
+    { name: "GitLab CI/CD", logo: gitlabLogo, category: "GitLab CI/CD" }
+  ];
+
+  const infrastructureTools = [
+    { name: "Terraform", logo: terraformLogo, category: "Infrastructure as Code" },
+    { name: "Ansible", logo: ansibleLogo, category: "Configuration Management" }
+  ];
+
+  const cloudPlatforms = [
+    { name: "AWS", logo: awsLogo, category: "Amazon Cloud" },
+    { name: "Azure", logo: azureLogo, category: "Microsoft Cloud" },
+    { name: "GCP", logo: gcpLogo, category: "Google Cloud" }
+  ];
+
+  const monitoringTools = [
+    { name: "Prometheus", logo: prometheusLogo, category: "Monitoring" },
+    { name: "Grafana", logo: grafanaLogo, category: "Visualization" }
+  ];
+
+  const mlopsTools = [
+    { name: "MLflow", logo: mlflowLogo, category: "ML Lifecycle" },
+    { name: "DVC", logo: dvcLogo, category: "Data Version Control" }
   ];
 
   return (
@@ -148,18 +185,147 @@ const DevOpsMLOps = () => {
       </section>
 
       {/* Technologies */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-background dark:bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">Technologies We Have Experts In</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6">
+              Technologies <span className="text-primary">We Master</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive DevOps and MLOps tools for modern software delivery
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {technologies.map((tech, index) => (
-              <div key={index} className="text-center">
-                <div className="text-6xl mb-4">{tech.icon}</div>
-                <h3 className="text-lg font-medium text-slate-900">{tech.name}</h3>
-              </div>
-            ))}
+          
+          {/* Containerization & Orchestration */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Containerization & <span className="text-primary">Orchestration</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {containerizationTools.map((tool, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tool.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CI/CD Tools */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              CI/CD & <span className="text-primary">Automation</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {cicdTools.map((tool, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tool.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Infrastructure as Code */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Infrastructure as <span className="text-primary">Code</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {infrastructureTools.map((tool, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tool.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Cloud Platforms */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Cloud <span className="text-primary">Platforms</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {cloudPlatforms.map((platform, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={platform.logo} 
+                      alt={`${platform.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{platform.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{platform.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Monitoring & Observability */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Monitoring & <span className="text-primary">Observability</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {monitoringTools.map((tool, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tool.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* MLOps Tools */}
+          <div>
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              MLOps & <span className="text-primary">ML Lifecycle</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              {mlopsTools.map((tool, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tool.logo} 
+                      alt={`${tool.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tool.category}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
