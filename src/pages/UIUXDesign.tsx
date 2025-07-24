@@ -3,6 +3,22 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import uiuxImage from '@/assets/ui-ux-design.jpg';
 
+// Technology Logo Imports
+import figmaLogo from '@/assets/tech-logos/figma.svg';
+import adobeIllustratorLogo from '@/assets/tech-logos/adobe-illustrator.png';
+import adobePhotoshopLogo from '@/assets/tech-logos/adobe-photoshop.svg';
+import adobeXdLogo from '@/assets/tech-logos/adobe-xd.png';
+import miroLogo from '@/assets/tech-logos/miro.png';
+import sketchLogo from '@/assets/tech-logos/sketch.png';
+import invisionLogo from '@/assets/tech-logos/invision.png';
+import framerLogo from '@/assets/tech-logos/framer.png';
+import reactLogo from '@/assets/tech-logos/react.svg';
+import typescriptLogo from '@/assets/tech-logos/typescript.svg';
+import nodejsLogo from '@/assets/tech-logos/nodejs.svg';
+import dockerLogo from '@/assets/tech-logos/docker.png';
+import awsLogo from '@/assets/tech-logos/aws.png';
+import mongodbLogo from '@/assets/tech-logos/mongodb.png';
+
 const UIUXDesign = () => {
   const approachSteps = [
     {
@@ -32,17 +48,24 @@ const UIUXDesign = () => {
     }
   ];
 
-  const technologies = [
-    { name: "Figma", icon: "🎨" },
-    { name: "Adobe Illustrator", icon: "🔶" },
-    { name: "Adobe Photoshop", icon: "🟦" },
-    { name: "Miro", icon: "💡" },
-    { name: "Sketch", icon: "💎" },
-    { name: "Adobe XD", icon: "🔮" },
-    { name: "InVision", icon: "🎯" },
-    { name: "Principle", icon: "⚡" },
-    { name: "Framer", icon: "🎭" },
-    { name: "Zeplin", icon: "📐" }
+  const uiuxTechnologies = [
+    { name: "Figma", logo: figmaLogo, category: "Design" },
+    { name: "Adobe Illustrator", logo: adobeIllustratorLogo, category: "Design" },
+    { name: "Adobe Photoshop", logo: adobePhotoshopLogo, category: "Design" },
+    { name: "Adobe XD", logo: adobeXdLogo, category: "Design" },
+    { name: "Miro", logo: miroLogo, category: "Collaboration" },
+    { name: "Sketch", logo: sketchLogo, category: "Design" },
+    { name: "InVision", logo: invisionLogo, category: "Prototyping" },
+    { name: "Framer", logo: framerLogo, category: "Prototyping" }
+  ];
+
+  const developmentTechnologies = [
+    { name: "React", logo: reactLogo, category: "Frontend" },
+    { name: "TypeScript", logo: typescriptLogo, category: "Language" },
+    { name: "Node.js", logo: nodejsLogo, category: "Backend" },
+    { name: "Docker", logo: dockerLogo, category: "DevOps" },
+    { name: "AWS", logo: awsLogo, category: "Cloud" },
+    { name: "MongoDB", logo: mongodbLogo, category: "Database" }
   ];
 
   const handleScheduleMeeting = () => {
@@ -270,23 +293,59 @@ const UIUXDesign = () => {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-background dark:bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Technologies <span className="text-gray-500">We Have Experts In</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-6">
+              Technologies <span className="text-primary">We Master</span>
             </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Professional tools and technologies we use to create stunning digital experiences
+            </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-            {technologies.map((tech, index) => (
-              <div key={index} className="text-center group">
-                <div className="w-20 h-20 mx-auto mb-4 bg-white rounded-lg shadow-md flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                  <span className="text-3xl">{tech.icon}</span>
+          {/* UI/UX Design Tools */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Design & <span className="text-primary">Prototyping Tools</span>
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+              {uiuxTechnologies.map((tech, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tech.logo} 
+                      alt={`${tech.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tech.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tech.category}</p>
                 </div>
-                <h3 className="font-semibold text-gray-900">{tech.name}</h3>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Development Technologies */}
+          <div>
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+              Development & <span className="text-primary">Infrastructure</span>
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+              {developmentTechnologies.map((tech, index) => (
+                <div key={index} className="group text-center hover-lift">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-card rounded-xl shadow-lg flex items-center justify-center group-hover:shadow-xl transition-all duration-300 glow-primary group-hover:glow-tech">
+                    <img 
+                      src={tech.logo} 
+                      alt={`${tech.name} logo`}
+                      className="w-12 h-12 object-contain"
+                    />
+                  </div>
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tech.name}</h4>
+                  <p className="text-sm text-muted-foreground mt-1">{tech.category}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
