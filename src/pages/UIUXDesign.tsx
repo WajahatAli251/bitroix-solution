@@ -231,7 +231,7 @@ const UIUXDesign = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
               Business Card & <span className="text-yellow-500">Print Design</span>
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <img 
                   src="/lovable-uploads/3e881009-4665-4ed6-bb89-ce79ed6092ab.png" 
@@ -260,22 +260,6 @@ const UIUXDesign = () => {
                 <img 
                   src="/lovable-uploads/41bed1ea-35ec-4ef7-aab7-4f0d0759bcba.png" 
                   alt="Hamza Ahsan CEO Business Card - Dark Navy with Green"
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
-              </div>
-              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <img 
-                  src="/lovable-uploads/ce1ab72f-139a-433a-9c84-30c28f897910.png" 
-                  alt="Professional Business Design"
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
-              </div>
-              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <img 
-                  src="/lovable-uploads/02467343-b283-453d-9f09-96771685b840.png" 
-                  alt="Athletic Character Design"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
