@@ -46,18 +46,24 @@ const SolutionsSection = () => {
           {solutions.map((solution, index) => (
             <div 
               key={index}
-              className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in"
+              className="relative bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in overflow-hidden"
               style={{animationDelay: `${index * 0.15}s`}}
             >
-              <div className="w-20 h-20 flex items-center justify-center mb-6 text-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
-                {solution.isImage ? (
-                  <img src={solution.icon} alt={solution.title} className="h-16 w-16 object-contain" />
-                ) : (
-                  solution.icon
-                )}
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                style={{
+                  backgroundImage: `url(${solution.icon})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              />
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">{solution.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{solution.description}</p>
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">{solution.title}</h3>
-              <p className="text-gray-300 leading-relaxed">{solution.description}</p>
             </div>
           ))}
         </div>
