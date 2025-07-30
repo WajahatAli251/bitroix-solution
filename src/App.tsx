@@ -10,6 +10,7 @@ import DevOpsMLOps from "./pages/DevOpsMLOps";
 import DataAnalytics from "./pages/DataAnalytics";
 import TeamAsService from "./pages/TeamAsService";
 import DesignConsultancy from "./pages/DesignConsultancy";
+import AIChatbots from "./pages/AIChatbots";
 import MeetingScheduler from "./pages/MeetingScheduler";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/data-analytics" element={<DataAnalytics />} />
           <Route path="/team-as-service" element={<TeamAsService />} />
           <Route path="/design-consultancy" element={<DesignConsultancy />} />
+          <Route path="/ai-chatbots" element={<AIChatbots />} />
           <Route path="/schedule-meeting" element={<MeetingScheduler />} />
           <Route path="/projects" element={<Projects />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

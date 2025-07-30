@@ -12,9 +12,9 @@ const ServicesSection = () => {
       isImage: true
     },
     {
-      icon: "📱",
-      title: "Mobile App Development",
-      description: "Cross-platform apps with seamless UX and rich functionality.",
+      icon: "🤖",
+      title: "AI Chatbots",
+      description: "Intelligent conversational AI solutions for enhanced customer engagement.",
       gradient: "from-purple-600 to-pink-600",
       isImage: false
     },
@@ -121,6 +121,13 @@ const ServicesSection = () => {
               if (service.title === "Design Consultancy") {
                 return (
                   <Link to="/design-consultancy" className={baseClasses}>
+                    {children}
+                  </Link>
+                );
+              }
+              if (service.title === "AI Chatbots") {
+                return (
+                  <Link to="/ai-chatbots" className={baseClasses}>
                     {children}
                   </Link>
                 );
