@@ -49,9 +49,9 @@ const SolutionsSection = () => {
               className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in"
               style={{animationDelay: `${index * 0.15}s`}}
             >
-              <div className={`w-20 h-20 bg-gradient-to-br ${solution.color} rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500`}>
+              <div className="w-20 h-20 flex items-center justify-center mb-6 text-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500">
                 {solution.isImage ? (
-                  <img src={solution.icon} alt={solution.title} className="h-12 w-12 object-contain" />
+                  <img src={solution.icon} alt={solution.title} className="h-16 w-16 object-contain" />
                 ) : (
                   solution.icon
                 )}
