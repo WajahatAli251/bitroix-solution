@@ -14,52 +14,26 @@ import emailjs from '@emailjs/browser';
 
 const sendConfirmationEmails = async (bookingData: any) => {
   try {
-    // Initialize EmailJS with your public key
-    emailjs.init("kDAb1P11SWMi_soaj");
-
-    // Email template parameters for client confirmation
-    const clientEmailParams = {
-      to_email: bookingData.client_email,
-      to_name: bookingData.client_name,
-      meeting_date: bookingData.meeting_date,
-      meeting_time: bookingData.meeting_time,
-      company: bookingData.client_company || 'Not specified',
-      message: bookingData.message || 'No additional message',
-      subject: 'Meeting Confirmation - Bitroix Solution'
-    };
-
-    // Email template parameters for company notification
-    const companyEmailParams = {
-      from_name: bookingData.client_name,
-      from_email: bookingData.client_email,
-      company: bookingData.client_company || 'Not specified',
-      meeting_date: bookingData.meeting_date,
-      meeting_time: bookingData.meeting_time,
-      message: bookingData.message || 'No additional message',
-      to_email: "your-company-email@bitroixsolution.com", // Replace with your company email
-      subject: 'New Meeting Scheduled'
-    };
-
-    // Send confirmation email to client
-    await emailjs.send(
-      "service_71sdi9c",
-      "template_client_confirm", // Client confirmation template
-      clientEmailParams,
-      "kDAb1P11SWMi_soaj"
+    // Create mailto link with meeting details
+    const subject = encodeURIComponent("New Meeting Scheduled - Bitroix Solution");
+    const body = encodeURIComponent(
+      `Meeting Request Details:\n\n` +
+      `Client Name: ${bookingData.client_name}\n` +
+      `Email: ${bookingData.client_email}\n` +
+      `Company: ${bookingData.client_company || 'Not specified'}\n` +
+      `Meeting Date: ${bookingData.meeting_date}\n` +
+      `Meeting Time: ${bookingData.meeting_time} PKT\n\n` +
+      `Message:\n${bookingData.message || 'No additional message'}\n\n` +
+      `Please confirm this meeting by replying to this email.`
     );
+    
+    const mailtoLink = `mailto:bitroixsolution@gmail.com?subject=${subject}&body=${body}`;
+    window.open(mailtoLink, '_blank');
 
-    // Send notification email to company
-    await emailjs.send(
-      "service_71sdi9c",
-      "template_l4rv4an", // Company notification template
-      companyEmailParams,
-      "kDAb1P11SWMi_soaj"
-    );
-
-    console.log('Confirmation emails sent successfully');
+    console.log('Opening email client for meeting confirmation');
     return { success: true };
   } catch (error) {
-    console.error('Error sending emails:', error);
+    console.error('Error opening email client:', error);
     throw error;
   }
 };
@@ -134,8 +108,8 @@ const ScheduleMeeting = () => {
 
       setIsBooked(true);
       toast({
-        title: "Meeting Scheduled!",
-        description: `Your meeting is confirmed for ${selectedDate.toLocaleDateString()} at ${selectedTime}. We'll send you a confirmation email shortly.`,
+        title: "Meeting Request Sent!",
+        description: `Your meeting request for ${selectedDate.toLocaleDateString()} at ${selectedTime} has been sent. We'll confirm via email shortly.`,
       });
 
       // Reset form

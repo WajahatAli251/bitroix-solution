@@ -2,28 +2,28 @@
 const SolutionsSection = () => {
   const solutions = [
     {
-      icon: "/lovable-uploads/686cd42c-ad4d-462e-a245-872be0dbcc50.png", // AWS cloud icon
+      icon: "/lovable-uploads/3b0518a5-1130-4236-ab3f-b056fd7a3879.png", // Cloud Computing
       title: "Cloud Computing",
       description: "Scale smarter with cloud-first solutions.",
       color: "from-blue-500 to-cyan-500",
       isImage: true
     },
     {
-      icon: "/lovable-uploads/37e4eb15-b9a8-4e36-9e73-9dfba8dc36c2.png", // AI/Vision icon
+      icon: "/lovable-uploads/5af0699a-3f6c-47ca-9296-6f77370abaed.png", // Computer Vision
       title: "Computer Vision",
       description: "Transforming how systems see and understand images.",
       color: "from-purple-500 to-pink-500",
       isImage: true
     },
     {
-      icon: "/lovable-uploads/6bc497dc-4abf-4ad9-b275-57af6930b6a5.png", // Security icon
+      icon: "/lovable-uploads/5ce753d6-53a1-44a0-8c73-950373ffbf91.png", // Fraud Detection
       title: "Fraud Detection",
       description: "AI-driven fraud analytics to protect your assets.",
       color: "from-red-500 to-orange-500",
       isImage: true
     },
     {
-      icon: "/lovable-uploads/9a5b5349-376f-4606-acdf-25f2b6941152.png", // AI brain icon
+      icon: "/lovable-uploads/95adaf87-9edd-406f-a56a-7bbb4c50786a.png", // Artificial Intelligence
       title: "Artificial Intelligence",
       description: "From automation to prediction, powered by AI.",
       color: "from-green-500 to-teal-500",
