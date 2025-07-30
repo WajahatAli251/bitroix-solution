@@ -91,12 +91,12 @@ const ReviewsSection = () => {
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-xl">
+          <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-8 rounded-xl">
             <h3 className="text-2xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
             <p className="text-lg mb-6 opacity-90">Let's discuss how we can help transform your business</p>
             <button
               onClick={() => window.location.href = "mailto:bitroixsolution@gmail.com?subject=Project Inquiry"}
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+              className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
             >
               Start Your Project
             </button>

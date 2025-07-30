@@ -62,7 +62,7 @@ const SolutionsSection = () => {
               {/* Content */}
               <div className="relative z-10">
                 <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">{solution.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{solution.description}</p>
+                <p className="text-gray-300 leading-relaxed text-base">{solution.description}</p>
               </div>
             </div>
           ))}

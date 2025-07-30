@@ -12,11 +12,11 @@ const ServicesSection = () => {
       isImage: true
     },
     {
-      icon: "🤖",
+      icon: "/lovable-uploads/1f62994e-f120-42bf-a904-aa533ce1bce1.png",
       title: "AI Chatbots",
       description: "Intelligent conversational AI solutions for enhanced customer engagement.",
       gradient: "from-purple-600 to-pink-600",
-      isImage: false
+      isImage: true
     },
     {
       icon: "/lovable-uploads/593872ff-f750-4ed1-a46b-40c29bde3106.png",
@@ -40,11 +40,11 @@ const ServicesSection = () => {
       isImage: true
     },
     {
-      icon: "⚙️",
+      icon: "/lovable-uploads/eeaca5fc-07f0-4302-8f4d-913c56069ea2.png",
       title: "DevOps & MLOps",
       description: "CI/CD pipelines, automation, and model deployment done right.",
       gradient: "from-gray-600 to-slate-600",
-      isImage: false
+      isImage: true
     },
     {
       icon: "/lovable-uploads/c762a07b-6757-48c3-9700-91a8784506bb.png",
@@ -162,7 +162,7 @@ const ServicesSection = () => {
                       </div>
                     )}
                     <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300 flex-shrink-0">{service.title}</h3>
-                    <p className="text-gray-300 leading-relaxed flex-grow">{service.description}</p>
+                    <p className="text-gray-300 leading-relaxed flex-grow text-base">{service.description}</p>
                   </div>
                 </ServiceCard>
               </div>
