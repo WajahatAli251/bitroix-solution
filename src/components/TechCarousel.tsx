@@ -1,26 +1,38 @@
 import { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 
-import pythonLogo from '@/assets/python-logo.png';
+import pythonLogo from '@/assets/tech-logos/python.png';
+import reactLogo from '@/assets/tech-logos/react.svg';
+import nodejsLogo from '@/assets/tech-logos/nodejs.svg';
+import awsLogo from '@/assets/tech-logos/aws.png';
+import dockerLogo from '@/assets/tech-logos/docker.png';
+import mongodbLogo from '@/assets/tech-logos/mongodb.png';
+import postgresqlLogo from '@/assets/tech-logos/postgresql.png';
+import typescriptLogo from '@/assets/tech-logos/typescript.svg';
+import nextjsLogo from '@/assets/tech-logos/nextjs.png';
+import kubernetesLogo from '@/assets/tech-logos/kubernetes.png';
+import jenkinsLogo from '@/assets/tech-logos/jenkins.png';
+import gitLogo from '@/assets/tech-logos/git.png';
+import figmaLogo from '@/assets/tech-logos/figma.svg';
 
 const TechCarousel = () => {
   const technologies = [
-    { name: 'React', logo: '⚛️' },
-    { name: 'Node.js', logo: '🟢' },
+    { name: 'React', logo: reactLogo, isImage: true },
+    { name: 'Node.js', logo: nodejsLogo, isImage: true },
     { name: 'Python', logo: pythonLogo, isImage: true },
-    { name: 'AWS', logo: '☁️' },
-    { name: 'Docker', logo: '🐳' },
-    { name: 'MongoDB', logo: '🍃' },
-    { name: 'PostgreSQL', logo: '🐘' },
-    { name: 'Redis', logo: '🔴' },
-    { name: 'GraphQL', logo: '💎' },
-    { name: 'TypeScript', logo: '💙' },
-    { name: 'Next.js', logo: '▲' },
-    { name: 'Kubernetes', logo: '⚙️' },
-    { name: 'Jenkins', logo: '🏗️' },
-    { name: 'Git', logo: '🌳' },
-    { name: 'Figma', logo: '🎨' },
-    { name: 'Firebase', logo: '🔥' }
+    { name: 'AWS', logo: awsLogo, isImage: true },
+    { name: 'Docker', logo: dockerLogo, isImage: true },
+    { name: 'MongoDB', logo: mongodbLogo, isImage: true },
+    { name: 'PostgreSQL', logo: postgresqlLogo, isImage: true },
+    { name: 'TypeScript', logo: typescriptLogo, isImage: true },
+    { name: 'Next.js', logo: nextjsLogo, isImage: true },
+    { name: 'Kubernetes', logo: kubernetesLogo, isImage: true },
+    { name: 'Jenkins', logo: jenkinsLogo, isImage: true },
+    { name: 'Git', logo: gitLogo, isImage: true },
+    { name: 'Figma', logo: figmaLogo, isImage: true },
+    { name: 'JavaScript', logo: '/lovable-uploads/ea84eed2-aedd-4e10-bf63-c50b58e678d0.png', isImage: true },
+    { name: 'HTML5', logo: '/lovable-uploads/f091ac58-58b7-460b-9945-9e4d90478c20.png', isImage: true },
+    { name: 'CSS3', logo: '/lovable-uploads/eb7b0242-9c5d-4d81-9044-abe3320bd683.png', isImage: true }
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 

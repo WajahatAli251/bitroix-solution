@@ -2,28 +2,32 @@
 const SolutionsSection = () => {
   const solutions = [
     {
-      icon: "☁️",
+      icon: "/lovable-uploads/686cd42c-ad4d-462e-a245-872be0dbcc50.png", // AWS cloud icon
       title: "Cloud Computing",
       description: "Scale smarter with cloud-first solutions.",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      isImage: true
     },
     {
-      icon: "👁️",
+      icon: "/lovable-uploads/37e4eb15-b9a8-4e36-9e73-9dfba8dc36c2.png", // AI/Vision icon
       title: "Computer Vision",
       description: "Transforming how systems see and understand images.",
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      isImage: true
     },
     {
-      icon: "🛡️",
+      icon: "/lovable-uploads/6bc497dc-4abf-4ad9-b275-57af6930b6a5.png", // Security icon
       title: "Fraud Detection",
       description: "AI-driven fraud analytics to protect your assets.",
-      color: "from-red-500 to-orange-500"
+      color: "from-red-500 to-orange-500",
+      isImage: true
     },
     {
-      icon: "🧠",
+      icon: "/lovable-uploads/9a5b5349-376f-4606-acdf-25f2b6941152.png", // AI brain icon
       title: "Artificial Intelligence",
       description: "From automation to prediction, powered by AI.",
-      color: "from-green-500 to-teal-500"
+      color: "from-green-500 to-teal-500",
+      isImage: true
     }
   ];
 
@@ -46,7 +50,11 @@ const SolutionsSection = () => {
               style={{animationDelay: `${index * 0.15}s`}}
             >
               <div className={`w-20 h-20 bg-gradient-to-br ${solution.color} rounded-full flex items-center justify-center mb-6 text-3xl group-hover:scale-125 group-hover:rotate-12 transition-all duration-500`}>
-                {solution.icon}
+                {solution.isImage ? (
+                  <img src={solution.icon} alt={solution.title} className="h-12 w-12 object-contain" />
+                ) : (
+                  solution.icon
+                )}
               </div>
               <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">{solution.title}</h3>
               <p className="text-gray-300 leading-relaxed">{solution.description}</p>

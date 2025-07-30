@@ -34,42 +34,30 @@ const ContactSection = () => {
       return;
     }
 
-    try {
-      // Initialize EmailJS with public key
-      emailjs.init('1KEgFrhFRNBUv46i5');
-      
-      // Send email using EmailJS
-      await emailjs.send(
-        'service_71sdi9c',
-        'template_l4rv4an',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-        }
-      );
+    // Create mailto link with form data
+    const subject = encodeURIComponent("New Contact Form Submission");
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || 'Not provided'}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    const mailtoLink = `mailto:bitroixsolution@gmail.com?subject=${subject}&body=${body}`;
+    window.open(mailtoLink, '_blank');
 
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours."
-      });
+    toast({
+      title: "Opening email client...",
+      description: "Your default email client will open with the message prepared."
+    });
 
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('EmailJS error:', error);
-      toast({
-        title: "Failed to send message",
-        description: "Please try again or contact us directly.",
-        variant: "destructive"
-      });
-    }
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    });
   };
 
   return (
