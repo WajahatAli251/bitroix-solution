@@ -54,11 +54,11 @@ const ServicesSection = () => {
       isImage: true
     },
     {
-      icon: "💡",
+      icon: "/lovable-uploads/4935cf0a-16b7-4f03-905d-3165d10f4581.png",
       title: "Design Consultancy",
       description: "Creative direction and digital design strategy to future-proof your product.",
       gradient: "from-yellow-600 to-orange-600",
-      isImage: false
+      isImage: true
     }
   ];
 
@@ -81,7 +81,7 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => {
             const ServiceCard = ({ children }: { children: React.ReactNode }) => {
-              const baseClasses = "relative bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-4 hover:scale-105 group overflow-hidden";
+              const baseClasses = "relative bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-4 hover:scale-105 group overflow-hidden h-full min-h-[280px] flex flex-col";
               
               if (service.title === "Web Development") {
                 return (
@@ -133,7 +133,7 @@ const ServicesSection = () => {
             };
 
             return (
-              <div className="animate-fade-in" style={{animationDelay: `${index * 0.1}s`}} key={index}>
+              <div className="animate-fade-in h-full" style={{animationDelay: `${index * 0.1}s`}} key={index}>
                 <ServiceCard>
                   {/* Background Image for services with images */}
                   {service.isImage && (
@@ -148,14 +148,14 @@ const ServicesSection = () => {
                   )}
                   
                   {/* Content */}
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     {!service.isImage && (
-                      <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mb-4 text-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500`}>
+                      <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mb-4 text-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 flex-shrink-0`}>
                         {service.icon}
                       </div>
                     )}
-                    <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">{service.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{service.description}</p>
+                    <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300 flex-shrink-0">{service.title}</h3>
+                    <p className="text-gray-300 leading-relaxed flex-grow">{service.description}</p>
                   </div>
                 </ServiceCard>
               </div>
