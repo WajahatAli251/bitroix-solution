@@ -40,7 +40,7 @@ const HeroSection = () => {
               We empower businesses through cutting-edge software solutions, cloud innovation, and AI integration.
             </p>
 
-            <div className="mb-12 p-6 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 animate-slide-in-left glow-secondary" style={{animationDelay: '0.4s'}}>
+            <div className="mb-12 animate-slide-in-left" style={{animationDelay: '0.4s'}}>
               <p className="text-white/90 leading-relaxed">
                 Bitroix Solution is a software company focused on delivering intelligent, scalable, and future-ready digital solutions. 
                 From enterprise-grade systems to consumer-facing apps, we enable growth through innovation.
