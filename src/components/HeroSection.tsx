@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-slide-in-left">
               Innovating the{' '}
-              <span className="text-white animate-pulse-glow" style={{textShadow: '0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6)'}}>
+              <span className="text-white">
                 Digital Future
               </span>{' '}
               with Smart Technology
