@@ -95,7 +95,7 @@ const ReviewsSection = () => {
             <h3 className="text-2xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
             <p className="text-lg mb-6 opacity-90">Let's discuss how we can help transform your business</p>
             <button
-              onClick={() => window.location.href = "mailto:bitroixsolution@gmail.com?subject=Project Inquiry"}
+              onClick={() => window.location.href = "mailto:info@bitroixsolution.com?subject=Project Inquiry"}
               className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
             >
               Start Your Project

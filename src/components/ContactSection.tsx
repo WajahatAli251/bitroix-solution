@@ -43,7 +43,7 @@ const ContactSection = () => {
       `Message:\n${formData.message}`
     );
     
-    const mailtoLink = `mailto:bitroixsolution@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:info@bitroixsolution.com?subject=${subject}&body=${body}`;
     window.open(mailtoLink, '_blank');
 
     toast({
@@ -165,7 +165,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Email</h4>
-                    <p className="text-slate-600">bitroixsolution@gmail.com</p>
+                    <p className="text-slate-600">info@bitroixsolution.com</p>
                   </div>
                 </div>
 

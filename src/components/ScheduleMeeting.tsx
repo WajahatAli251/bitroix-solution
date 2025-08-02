@@ -27,7 +27,7 @@ const sendConfirmationEmails = async (bookingData: any) => {
       `Please confirm this meeting by replying to this email.`
     );
     
-    const mailtoLink = `mailto:bitroixsolution@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:info@bitroixsolution.com?subject=${subject}&body=${body}`;
     window.open(mailtoLink, '_blank');
 
     console.log('Opening email client for meeting confirmation');

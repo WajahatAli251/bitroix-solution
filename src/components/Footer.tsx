@@ -98,7 +98,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3 text-muted-foreground dark:text-gray-300">
                   <span className="text-primary text-lg">📧</span>
-                  <span className="font-medium">bitroixsolution@gmail.com</span>
+                  <span className="font-medium">info@bitroixsolution.com</span>
                 </li>
                 <li className="flex items-center space-x-3 text-muted-foreground dark:text-gray-300">
                   <span className="text-primary text-lg">📱</span>
