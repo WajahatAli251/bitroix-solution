@@ -15,7 +15,7 @@ import emailjs from '@emailjs/browser';
 const sendConfirmationEmails = async (bookingData: any) => {
   try {
     // Create mailto link with meeting details
-    const subject = encodeURIComponent("New Meeting Scheduled - Bitroix Solution");
+    const subject = encodeURIComponent("New Meeting Scheduled - Bitroix Solution LLC");
     const body = encodeURIComponent(
       `Meeting Request Details:\n\n` +
       `Client Name: ${bookingData.client_name}\n` +
@@ -208,7 +208,7 @@ const ScheduleMeeting = () => {
                   ))}
                 </div>
                 <p className="text-xs text-muted-foreground mt-2">
-                  * All times are in PKT (Pakistan Standard Time)
+                  * All times are in PST (Pacific Standard Time)
                 </p>
               </div>
             )}
@@ -291,7 +291,7 @@ const ScheduleMeeting = () => {
             </Button>
 
             <p className="text-xs text-muted-foreground text-center">
-              By scheduling this meeting, you agree to receive communication from Bitroix Solution
+              By scheduling this meeting, you agree to receive communication from Bitroix Solution LLC
             </p>
           </CardContent>
         </Card>

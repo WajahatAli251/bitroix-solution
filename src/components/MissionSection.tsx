@@ -13,7 +13,7 @@ const MissionSection = () => {
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-100 hover:shadow-lg hover:-translate-y-2 transition-all duration-500 animate-fade-in hover:scale-105">
               <h3 className="text-2xl font-semibold text-slate-900 mb-4">Why We Exist</h3>
               <p className="text-lg text-slate-700 leading-relaxed">
-                At Bitroix Solution, our mission is to harness the power of emerging technologies to deliver smart, secure, 
+                At Bitroix Solution LLC, our mission is to harness the power of emerging technologies to deliver smart, secure, 
                 and sustainable software systems that accelerate business transformation worldwide.
               </p>
             </div>

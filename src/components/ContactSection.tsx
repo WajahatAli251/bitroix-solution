@@ -125,7 +125,7 @@ const ContactSection = () => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="+92 XXX XXXXXXX"
+                  placeholder="+1 (XXX) XXX-XXXX"
                 />
               </div>
 
@@ -175,8 +175,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Phone</h4>
-                    <p className="text-slate-600">+92 3352222578</p>
-                    <p className="text-slate-600">+92 321 2345194</p>
+                    <p className="text-slate-600">+1 (628) 291-2760</p>
                   </div>
                 </div>
 
@@ -186,7 +185,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Location</h4>
-                    <p className="text-slate-600">Karachi, Pakistan</p>
+                    <p className="text-slate-600">Pacific Ave, San Francisco, CA 94109, USA</p>
                   </div>
                 </div>
               </div>

@@ -21,7 +21,7 @@ const Footer = () => {
             {/* Company Info */}
             <div className="col-span-1 md:col-span-2">
               <h3 className="text-3xl font-bold mb-6 text-white">
-                Bitroix <span className="text-gradient">Solution</span>
+                Bitroix <span className="text-gradient">Solution LLC</span>
               </h3>
               <p className="text-muted-foreground dark:text-gray-300 mb-8 max-w-md text-lg leading-relaxed">
                 Empowering businesses through cutting-edge software solutions, cloud innovation, and AI integration. 
@@ -102,15 +102,11 @@ const Footer = () => {
                 </li>
                 <li className="flex items-center space-x-3 text-muted-foreground dark:text-gray-300">
                   <span className="text-primary text-lg">📱</span>
-                  <span className="font-medium">+92 3352222578</span>
-                </li>
-                <li className="flex items-center space-x-3 text-muted-foreground dark:text-gray-300">
-                  <span className="text-primary text-lg">📱</span>
-                  <span className="font-medium">+92 321 2345194</span>
+                  <span className="font-medium">+1 (628) 291-2760</span>
                 </li>
                 <li className="flex items-center space-x-3 text-muted-foreground dark:text-gray-300">
                   <span className="text-primary text-lg">📍</span>
-                  <span className="font-medium">Karachi, Pakistan</span>
+                  <span className="font-medium">Pacific Ave, San Francisco, CA 94109, USA</span>
                 </li>
               </ul>
             </div>
@@ -118,7 +114,7 @@ const Footer = () => {
 
           <div className="border-t border-border dark:border-gray-700 mt-12 pt-8 text-center">
             <p className="text-muted-foreground dark:text-gray-400 text-lg">
-              © 2024 <span className="text-primary font-bold">Bitroix Solution</span>. All rights reserved. Built with innovation and integrity.
+              © 2024 <span className="text-primary font-bold">Bitroix Solution LLC</span>. All rights reserved. Built with innovation and integrity.
             </p>
           </div>
         </div>

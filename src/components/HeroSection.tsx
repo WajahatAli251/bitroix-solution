@@ -42,7 +42,7 @@ const HeroSection = () => {
 
             <div className="mb-12 animate-slide-in-left" style={{animationDelay: '0.4s'}}>
               <p className="text-white/90 leading-relaxed">
-                Bitroix Solution is a software company focused on delivering intelligent, scalable, and future-ready digital solutions. 
+                Bitroix Solution LLC is a software company focused on delivering intelligent, scalable, and future-ready digital solutions. 
                 From enterprise-grade systems to consumer-facing apps, we enable growth through innovation.
               </p>
             </div>

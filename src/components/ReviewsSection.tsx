@@ -7,7 +7,7 @@ const ReviewsSection = () => {
       company: "TechCorp Solutions",
       position: "CTO",
       rating: 5,
-      comment: "Bitroix Solution transformed our digital infrastructure completely. Their expertise in cloud migration and DevOps implementation helped us reduce deployment time by 80%. Exceptional team with outstanding communication skills.",
+      comment: "Bitroix Solution LLC transformed our digital infrastructure completely. Their expertise in cloud migration and DevOps implementation helped us reduce deployment time by 80%. Exceptional team with outstanding communication skills.",
       avatar: "👩‍💼"
     },
     {
