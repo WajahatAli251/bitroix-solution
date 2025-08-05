@@ -30,9 +30,9 @@ const TechCarousel = () => {
     { name: 'Jenkins', logo: jenkinsLogo, isImage: true },
     { name: 'Git', logo: gitLogo, isImage: true },
     { name: 'Figma', logo: figmaLogo, isImage: true },
-    { name: 'JavaScript', logo: '/lovable-uploads/ea84eed2-aedd-4e10-bf63-c50b58e678d0.png', isImage: true },
-    { name: 'HTML5', logo: '/lovable-uploads/f091ac58-58b7-460b-9945-9e4d90478c20.png', isImage: true },
-    { name: 'CSS3', logo: '/lovable-uploads/eb7b0242-9c5d-4d81-9044-abe3320bd683.png', isImage: true }
+    { name: 'HTML5', logo: '/lovable-uploads/ef0428f3-6e15-4ddb-b663-413981cfa279.png', isImage: true },
+    { name: 'CSS3', logo: '/lovable-uploads/ad733c59-7366-45bc-bc79-5662c8d51a89.png', isImage: true },
+    { name: 'JavaScript', logo: '/lovable-uploads/c756960a-e602-4ebc-9c72-e51c64fab3dd.png', isImage: true }
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
