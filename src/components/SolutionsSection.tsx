@@ -45,25 +45,25 @@ const SolutionsSection = () => {
   };
 
   return (
-    <section id="solutions" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #0C1A2E 0%, #0F172A 50%, #00C2FF 50%, #00E0FF 100%)'}}>
+    <section id="solutions" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #0A1628 0%, #1E3A8A 50%, #0EA5E9 100%)'}}>
       {/* Futuristic 3D Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-32 left-20 w-80 h-80 bg-gradient-to-br from-purple-400/15 to-pink-500/15 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-20 w-96 h-96 bg-gradient-to-tr from-cyan-400/15 to-blue-500/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
-        <div className="absolute top-20 right-1/3 w-64 h-64 bg-gradient-to-r from-blue-300/10 to-cyan-400/10 rounded-full blur-xl animate-bounce" style={{animationDelay: '0.5s'}}></div>
-        <div className="absolute bottom-1/4 left-1/4 w-40 h-40 bg-gradient-to-r from-purple-400/20 to-cyan-400/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-32 left-20 w-80 h-80 bg-gradient-to-br from-purple-400/10 to-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-20 w-96 h-96 bg-gradient-to-tr from-cyan-400/10 to-blue-500/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute top-20 right-1/3 w-64 h-64 bg-gradient-to-r from-blue-300/8 to-cyan-400/8 rounded-full blur-xl animate-bounce" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute bottom-1/4 left-1/4 w-40 h-40 bg-gradient-to-r from-purple-400/15 to-cyan-400/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Headline */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-in-left">
-            Not Getting <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-300">Leads</span>?<br />
-            Let's Fix That — <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Fast</span>.
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-in-left drop-shadow-lg">
+            Not Getting <span className="text-cyan-300 drop-shadow-md">Leads</span>?<br />
+            Let's Fix That — <span className="text-cyan-300 drop-shadow-md">Fast</span>.
           </h2>
           <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-8 animate-scale-in rounded-full shadow-lg shadow-cyan-500/50"></div>
-          <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: '0.3s'}}>
-            We help businesses grow with powerful marketing automation, SEO, and paid ads — <span className="text-cyan-300 font-semibold">all under one roof</span>.
+          <p className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed animate-fade-in drop-shadow-md" style={{animationDelay: '0.3s'}}>
+            We help businesses grow with powerful marketing automation, SEO, and paid ads — <span className="text-cyan-200 font-semibold">all under one roof</span>.
           </p>
         </div>
 
@@ -81,10 +81,10 @@ const SolutionsSection = () => {
                 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h4 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
+                  <h4 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300 drop-shadow-md">
                     {service.title}
                   </h4>
-                  <p className="text-gray-200 leading-relaxed mb-6">
+                  <p className="text-white leading-relaxed mb-6 drop-shadow-sm">
                     {service.hook}
                   </p>
                   <button
