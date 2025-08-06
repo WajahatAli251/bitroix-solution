@@ -63,7 +63,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #0C1A2E 0%, #0F172A 50%, #00C2FF 50%, #00E0FF 100%)'}}>
+    <section id="services" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, <section id="services" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #0A1628 0%, #1E3A8A 50%, #0EA5E9 100%)'}}>>)'}}>
       {/* Futuristic 3D Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
