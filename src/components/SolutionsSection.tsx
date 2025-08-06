@@ -123,7 +123,7 @@ const SolutionsSection = () => {
         </div>
 
         {/* Final CTA */}
-        <div className="text-center backdrop-blur-md rounded-3xl p-12 animate-fade-in shadow-2xl transition-all duration-500" style={{animationDelay: '0.8s', background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653', borderWidth: '2px', borderStyle: 'solid', boxShadow: '0 20px 50px rgba(51, 243, 255, 0.15)'}}>
+        <div className="text-center backdrop-blur-md rounded-3xl p-12 animate-fade-in shadow-2xl transition-all duration-500" style={{animationDelay: '0.8s', <div className="text-center p-12 animate-fade-in transition-all duration-500" style={{animationDelay: '0.8s'}}>>}}>
           <h3 className="text-4xl md:text-5xl font-bold mb-6 animate-pulse-glow tracking-tight" style={{color: '#F0F4F8'}}>
             Let's Turn Your Website into a <span style={{color: '#00BFFF'}}>Growth Machine</span>
           </h3>
