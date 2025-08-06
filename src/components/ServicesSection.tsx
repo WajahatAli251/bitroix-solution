@@ -62,23 +62,31 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #0A1628 0%, #1E3A8A 50%, #0EA5E9 100%)'}}>
+    <section id="services" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(to right, #0D1B2A, #1B263B)'}}>
       {/* Futuristic 3D Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-tr from-purple-500/20 to-pink-500/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-300/10 to-blue-400/10 rounded-full blur-xl animate-bounce"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse" style={{backgroundColor: '#33F3FF10'}}></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-tr from-cyan-400/20 to-blue-500/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s', backgroundColor: '#00BFFF10'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-300/10 to-blue-400/10 rounded-full blur-xl animate-bounce" style={{backgroundColor: '#1EC8E810'}}></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl font-bold text-white mb-6 hover:scale-105 transition-transform duration-300 tracking-tight">Our Services</h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-8 animate-scale-in rounded-full shadow-lg shadow-cyan-500/50"></div>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8 animate-fade-in leading-relaxed" style={{animationDelay: '0.2s'}}>
+          <h2 className="text-5xl font-bold mb-6 hover:scale-105 transition-transform duration-300 tracking-tight drop-shadow-lg" style={{color: '#F0F4F8'}}>Our Services</h2>
+          <div className="w-32 h-1 mx-auto mb-8 animate-scale-in rounded-full shadow-lg" style={{background: 'linear-gradient(to right, #00BFFF, #33F3FF)', boxShadow: '0 0 20px #33F3FF50'}}></div>
+          <p className="text-xl max-w-3xl mx-auto mb-8 animate-fade-in leading-relaxed drop-shadow-md" style={{animationDelay: '0.2s', color: '#9BE3FF'}}>
             We offer comprehensive digital solutions to transform your business and drive growth
           </p>
           <Link to="/schedule-meeting" className="animate-fade-in inline-block" style={{animationDelay: '0.4s'}}>
-            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 border border-cyan-400/30 hover:border-cyan-300/60 backdrop-blur-sm">
+            <Button 
+              className="px-10 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition-all duration-300 backdrop-blur-sm border-2 hover:shadow-xl"
+              style={{
+                background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
+                color: '#0D1B2A',
+                borderColor: '#264653',
+                boxShadow: '0 10px 30px #00BFFF30'
+              }}
+            >
               Schedule a Meeting
             </Button>
           </Link>
@@ -87,59 +95,66 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => {
             const ServiceCard = ({ children }: { children: React.ReactNode }) => {
-              const baseClasses = "relative bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition-all duration-500 hover:-translate-y-6 hover:scale-105 group overflow-hidden h-full min-h-[320px] flex flex-col shadow-2xl hover:shadow-cyan-500/25";
+              const baseClasses = "relative backdrop-blur-md p-8 rounded-2xl transition-all duration-500 hover:-translate-y-6 hover:scale-105 group overflow-hidden h-full min-h-[320px] flex flex-col shadow-2xl";
+              const cardStyle = {
+                background: 'rgba(13, 27, 42, 0.3)',
+                borderColor: '#264653',
+                borderWidth: '2px',
+                borderStyle: 'solid',
+                boxShadow: '0 10px 30px rgba(51, 243, 255, 0.1)'
+              };
               
               if (service.title === "Web Development") {
                 return (
-                  <Link to="/web-development" className={baseClasses}>
+                  <Link to="/web-development" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
               if (service.title === "UI/UX Design") {
                 return (
-                  <Link to="/ui-ux-design" className={baseClasses}>
+                  <Link to="/ui-ux-design" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
               if (service.title === "DevOps & MLOps") {
                 return (
-                  <Link to="/devops-mlops" className={baseClasses}>
+                  <Link to="/devops-mlops" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
               if (service.title === "Data Analytics") {
                 return (
-                  <Link to="/data-analytics" className={baseClasses}>
+                  <Link to="/data-analytics" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
               if (service.title === "Team as a Service (TaaS)") {
                 return (
-                  <Link to="/team-as-service" className={baseClasses}>
+                  <Link to="/team-as-service" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
               if (service.title === "Design Consultancy") {
                 return (
-                  <Link to="/design-consultancy" className={baseClasses}>
+                  <Link to="/design-consultancy" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
               if (service.title === "AI Chatbots") {
                 return (
-                  <Link to="/ai-chatbots" className={baseClasses}>
+                  <Link to="/ai-chatbots" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
               return (
-                <div className={baseClasses}>
+                <div className={baseClasses} style={cardStyle}>
                   {children}
                 </div>
               );
@@ -167,8 +182,8 @@ const ServicesSection = () => {
                         {service.icon}
                       </div>
                     )}
-                    <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300 flex-shrink-0">{service.title}</h3>
-                    <p className="text-gray-300 leading-relaxed flex-grow text-base">{service.description}</p>
+                    <h3 className="text-xl font-semibold mb-4 transition-colors duration-300 flex-shrink-0" style={{color: '#F0F4F8'}}>{service.title}</h3>
+                    <p className="leading-relaxed flex-grow text-base" style={{color: '#9BE3FF'}}>{service.description}</p>
                   </div>
                 </ServiceCard>
               </div>
