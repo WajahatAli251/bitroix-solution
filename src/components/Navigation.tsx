@@ -34,7 +34,10 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-white hover-lift cursor-pointer text-gradient-accent">
+            <h1 
+              onClick={() => navigate('/')} 
+              className="text-2xl font-bold text-white hover-lift cursor-pointer text-gradient-accent"
+            >
               Bitroix <span className="text-gradient">Solution</span>
             </h1>
           </div>

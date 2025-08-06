@@ -25,7 +25,7 @@ const Projects = () => {
       title: "Smart Refreshable Braille Display",
       category: "IoT & Accessibility",
       description: "Assistive technology device that converts digital text to tactile Braille characters using servo motors and OCR technology for visually impaired users.",
-      image: brailleDisplayImage,
+      image: "/lovable-uploads/9e75146a-f90f-4b39-99f4-35651bc5cdd0.png",
       technologies: ["Python", "OpenCV", "Tesseract OCR", "gTTS", "Arduino", "Raspberry Pi", "Servo Motors", "GPIO"],
       features: [
         "Text-to-Braille conversion system",
@@ -50,7 +50,7 @@ const Projects = () => {
       title: "IoT-Based Smart House",
       category: "IoT & Automation",
       description: "Intelligent home automation system with environmental sensors, mobile app control, and automated adjustments based on sunlight and temperature.",
-      image: iotSmartHouseImage,
+      image: "/lovable-uploads/823b9214-d7da-4aa7-bbcf-7497179730b2.png",
       technologies: ["Arduino", "ESP32", "DHT11/DHT22", "LDR Sensors", "Relay Modules", "Blynk", "Python", "C++", "MQTT"],
       features: [
         "Sunlight-based light automation",
@@ -75,7 +75,7 @@ const Projects = () => {
       title: "MCB Sorting Machine",
       category: "AI & Robotics",
       description: "Automated robotic system using computer vision and machine learning to sort and orient MCB circuit breakers with precise robotic arm control.",
-      image: mcbSortingImage,
+      image: "/lovable-uploads/6c2a8cbf-5ada-4515-b392-de7a2629ce57.png",
       technologies: ["Python", "OpenCV", "TensorFlow", "Scikit-learn", "Raspberry Pi", "Arduino", "Servo Motors", "6DOF Robotic Arm"],
       features: [
         "Computer vision orientation detection",
@@ -273,7 +273,7 @@ const Projects = () => {
       title: "Mobile Banking Application",
       category: "FinTech",
       description: "Secure mobile banking solution with biometric authentication, real-time transactions, and comprehensive financial management tools.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      image: "/lovable-uploads/cb321e58-6ac2-4276-82a1-24918eabda03.png",
       technologies: ["React Native", "Node.js", "MongoDB", "Blockchain", "AWS"],
       features: [
         "Biometric authentication",
