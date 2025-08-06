@@ -156,6 +156,135 @@ const DesignConsultancy = () => {
         </div>
       </section>
 
+      {/* Portfolio Showcase Section */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Our <span className="text-purple-600">Portfolio</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Explore our diverse range of design work across different categories
+            </p>
+          </div>
+
+          {/* Character Design/Illustration */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+              Character Design & <span className="text-yellow-500">Illustration</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/493057ed-0ac4-4d3e-8757-4d74738ae407.png" 
+                  alt="Dog Walker Character Illustration"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/d2c59e78-f414-40f1-8239-a8d004e25144.png" 
+                  alt="Astronaut Character Design"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/a68b44d7-785d-4ffa-af57-1847ab8e3d37.png" 
+                  alt="Professional Character Design"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/9a5b5349-376f-4606-acdf-25f2b6941152.png" 
+                  alt="Contemplative Character"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Logo/Brand Designs */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+              Logo & <span className="text-purple-600">Brand Designs</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/ea84eed2-aedd-4e10-bf63-c50b58e678d0.png" 
+                  alt="Artist Character Design"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/6bc497dc-4abf-4ad9-b275-57af6930b6a5.png" 
+                  alt="Night City Illustration"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/c8ef734b-337b-463d-b2bc-fb0cf9520acd.png" 
+                  alt="Sunset City Scene"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Business Card */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+              Business Card & <span className="text-yellow-500">Print Design</span>
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/3e881009-4665-4ed6-bb89-ce79ed6092ab.png" 
+                  alt="Azam Khan Artist Business Card - Dark Green with Gold Accents"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/f091ac58-58b7-460b-9945-9e4d90478c20.png" 
+                  alt="Raj Patel Graphic Designer Business Card - Blue Gradient"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/37e4eb15-b9a8-4e36-9e73-9dfba8dc36c2.png" 
+                  alt="Rufus Durterte Tyre Specialist Business Card - Black with Purple"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+              <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <img 
+                  src="/lovable-uploads/41bed1ea-35ec-4ef7-aab7-4f0d0759bcba.png" 
+                  alt="Hamza Ahsan CEO Business Card - Dark Navy with Green"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Technologies */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
