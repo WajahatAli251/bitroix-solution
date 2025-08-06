@@ -146,7 +146,23 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg pulse"
+                className="w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg border-2"
+                style={{
+                  background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
+                  color: '#0D1B2A',
+                  borderColor: '#264653',
+                  boxShadow: '0 10px 30px rgba(0, 191, 255, 0.3)'
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLButtonElement;
+                  target.style.background = 'linear-gradient(to right, #1EC8E8, #33F3FF)';
+                  target.style.boxShadow = '0 15px 40px rgba(30, 200, 232, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLButtonElement;
+                  target.style.background = 'linear-gradient(to right, #00BFFF, #33F3FF)';
+                  target.style.boxShadow = '0 10px 30px rgba(0, 191, 255, 0.3)';
+                }}
               >
                 Send Message
               </button>
