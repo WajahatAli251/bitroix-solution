@@ -63,7 +63,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-slate-900 to-blue-900">
+    <section id="services" className="py-20" style={{background: 'linear-gradient(135deg, #001f3f 0%, #003d66 50%, #005580 100%)'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl font-bold text-white mb-6 hover:scale-105 transition-transform duration-300">Our Services</h2>
@@ -72,7 +72,7 @@ const ServicesSection = () => {
             We offer comprehensive digital solutions to transform your business and drive growth
           </p>
           <Link to="/schedule-meeting" className="animate-fade-in inline-block" style={{animationDelay: '0.4s'}}>
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg text-lg hover:scale-105 hover:shadow-lg transition-all duration-300">
+            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-3 rounded-lg text-lg hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 border border-cyan-400/30 hover:border-cyan-300/60">
               Schedule a Meeting
             </Button>
           </Link>
