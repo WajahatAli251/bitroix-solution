@@ -214,11 +214,11 @@ const ContactSection = () => {
             <div className="bg-gradient-to-br from-slate-900 to-blue-900 p-8 rounded-xl text-white hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
               <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 hover:scale-110 hover:rotate-12 transition-all duration-300">
-                  <span className="text-blue-400">💼</span>
+                <a href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-white/90 hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md">
+                  <img src="/lovable-uploads/03513845-3b13-4cf0-87af-8293cad1a3e8.png" alt="LinkedIn" className="w-6 h-6" />
                 </a>
-                <a href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 hover:scale-110 hover:rotate-12 transition-all duration-300">
-                  <span className="text-pink-400">📷</span>
+                <a href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-white/90 hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md">
+                  <img src="/lovable-uploads/89639b18-4900-4542-9ccd-d1afd27ac2c9.png" alt="Instagram" className="w-6 h-6" />
                 </a>
               </div>
             </div>
