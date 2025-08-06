@@ -175,13 +175,16 @@ const ContactSection = () => {
               <h3 className="text-2xl font-semibold text-slate-900 mb-6">Get in Touch</h3>
               
               <div className="space-y-6">
-                <div className="flex items-start space-x-4 group">
+                <div 
+                  className="flex items-start space-x-4 group cursor-pointer" 
+                  onClick={() => window.open('mailto:info@bitroixsolution.com', '_blank')}
+                >
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-md">
                     <img src="/lovable-uploads/191a40b9-2313-4c17-babe-1602398a5d77.png" alt="Email" className="w-8 h-8" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Email</h4>
-                    <p className="text-slate-600">info@bitroixsolution.com</p>
+                    <p className="text-slate-600 hover:text-blue-600 transition-colors">info@bitroixsolution.com</p>
                   </div>
                 </div>
 
