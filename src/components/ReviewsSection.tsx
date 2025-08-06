@@ -91,15 +91,21 @@ const ReviewsSection = () => {
         </div>
 
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-8 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4">Ready to Join Our Success Stories?</h3>
-            <p className="text-lg mb-6 opacity-90">Let's discuss how we can help transform your business</p>
-            <button
-              onClick={() => window.location.href = "mailto:info@bitroixsolution.com?subject=Project Inquiry"}
-              className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
-            >
-              Start Your Project
-            </button>
+          <div className="bg-gradient-to-br from-[#001f3f] via-[#003d66] to-[#005580] text-white p-8 rounded-xl relative overflow-hidden animate-fade-in">
+            {/* Background overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5"></div>
+            
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4 animate-fade-in" style={{animationDelay: '0.2s'}}>Ready to Join Our Success Stories?</h3>
+              <p className="text-lg mb-6 opacity-90 animate-fade-in" style={{animationDelay: '0.3s'}}>Let's discuss how we can help transform your business</p>
+              <button
+                onClick={() => window.location.href = "mailto:info@bitroixsolution.com?subject=Project Inquiry"}
+                className="bg-gradient-to-r from-[#00bfff] to-[#0077cc] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 animate-fade-in"
+                style={{animationDelay: '0.4s'}}
+              >
+                Start Your Project
+              </button>
+            </div>
           </div>
         </div>
       </div>
