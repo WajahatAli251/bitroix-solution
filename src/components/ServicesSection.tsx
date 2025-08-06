@@ -63,16 +63,23 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-20" style={{background: 'linear-gradient(135deg, #001f3f 0%, #003d66 50%, #005580 100%)'}}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #0C1A2E 0%, #0F172A 50%, #00C2FF 50%, #00E0FF 100%)'}}>
+      {/* Futuristic 3D Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-tr from-purple-500/20 to-pink-500/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-300/10 to-blue-400/10 rounded-full blur-xl animate-bounce"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl font-bold text-white mb-6 hover:scale-105 transition-transform duration-300">Our Services</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto mb-8 animate-scale-in"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
+          <h2 className="text-5xl font-bold text-white mb-6 hover:scale-105 transition-transform duration-300 tracking-tight">Our Services</h2>
+          <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-8 animate-scale-in rounded-full shadow-lg shadow-cyan-500/50"></div>
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8 animate-fade-in leading-relaxed" style={{animationDelay: '0.2s'}}>
             We offer comprehensive digital solutions to transform your business and drive growth
           </p>
           <Link to="/schedule-meeting" className="animate-fade-in inline-block" style={{animationDelay: '0.4s'}}>
-            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-8 py-3 rounded-lg text-lg hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 border border-cyan-400/30 hover:border-cyan-300/60">
+            <Button className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 border border-cyan-400/30 hover:border-cyan-300/60 backdrop-blur-sm">
               Schedule a Meeting
             </Button>
           </Link>
@@ -81,7 +88,7 @@ const ServicesSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => {
             const ServiceCard = ({ children }: { children: React.ReactNode }) => {
-              const baseClasses = "relative bg-slate-800/50 backdrop-blur-sm p-8 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-4 hover:scale-105 group overflow-hidden h-full min-h-[280px] flex flex-col";
+              const baseClasses = "relative bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:border-cyan-400/50 transition-all duration-500 hover:-translate-y-6 hover:scale-105 group overflow-hidden h-full min-h-[320px] flex flex-col shadow-2xl hover:shadow-cyan-500/25";
               
               if (service.title === "Web Development") {
                 return (

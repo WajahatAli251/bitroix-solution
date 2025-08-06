@@ -45,21 +45,25 @@ const SolutionsSection = () => {
   };
 
   return (
-    <section id="solutions" className="py-20 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-cyan-600/5"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(6,182,212,0.1),transparent_50%)]"></div>
+    <section id="solutions" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #0C1A2E 0%, #0F172A 50%, #00C2FF 50%, #00E0FF 100%)'}}>
+      {/* Futuristic 3D Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-32 left-20 w-80 h-80 bg-gradient-to-br from-purple-400/15 to-pink-500/15 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-20 w-96 h-96 bg-gradient-to-tr from-cyan-400/15 to-blue-500/15 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute top-20 right-1/3 w-64 h-64 bg-gradient-to-r from-blue-300/10 to-cyan-400/10 rounded-full blur-xl animate-bounce" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute bottom-1/4 left-1/4 w-40 h-40 bg-gradient-to-r from-purple-400/20 to-cyan-400/20 rounded-full blur-2xl animate-pulse" style={{animationDelay: '2s'}}></div>
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Headline */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight animate-slide-in-left">
-            Not Getting <span className="text-cyan-400">Leads</span>?<br />
-            Let's Fix That — <span className="text-gradient bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Fast</span>.
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight animate-slide-in-left">
+            Not Getting <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-300">Leads</span>?<br />
+            Let's Fix That — <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Fast</span>.
           </h2>
-          <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-8"></div>
-          <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: '0.3s'}}>
-            We help businesses grow with powerful marketing automation, SEO, and paid ads — <span className="text-cyan-400 font-semibold">all under one roof</span>.
+          <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-8 animate-scale-in rounded-full shadow-lg shadow-cyan-500/50"></div>
+          <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed animate-fade-in" style={{animationDelay: '0.3s'}}>
+            We help businesses grow with powerful marketing automation, SEO, and paid ads — <span className="text-cyan-300 font-semibold">all under one roof</span>.
           </p>
         </div>
 
@@ -69,23 +73,23 @@ const SolutionsSection = () => {
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="bg-slate-800/40 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105 group animate-fade-in relative overflow-hidden"
+                className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:border-cyan-400/60 transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in relative overflow-hidden shadow-2xl hover:shadow-cyan-500/25"
                 style={{animationDelay: service.delay}}
               >
-                {/* Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 group-hover:from-cyan-500/10 group-hover:to-blue-500/10 transition-all duration-500"></div>
+                {/* Enhanced Gradient Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-500/5 group-hover:from-cyan-400/15 group-hover:to-blue-500/15 transition-all duration-500"></div>
                 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h4 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                  <h4 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
                     {service.title}
                   </h4>
-                  <p className="text-slate-300 leading-relaxed mb-6">
+                  <p className="text-gray-200 leading-relaxed mb-6">
                     {service.hook}
                   </p>
                   <button
                     onClick={() => handleCTAClick(service.title)}
-                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25 group-hover:animate-pulse"
+                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/40 border border-cyan-400/30 hover:border-cyan-300/60"
                   >
                     {service.cta} →
                   </button>
@@ -96,20 +100,20 @@ const SolutionsSection = () => {
         </div>
 
         {/* Final CTA */}
-        <div className="text-center bg-gradient-to-r from-cyan-500/10 to-blue-500/10 backdrop-blur-sm rounded-3xl p-12 border border-cyan-400/20 animate-fade-in" style={{animationDelay: '0.8s'}}>
-          <h3 className="text-4xl font-bold text-white mb-6 animate-pulse-glow">
-            Let's Turn Your Website into a <span className="text-cyan-400">Growth Machine</span>
+        <div className="text-center bg-white/10 backdrop-blur-md rounded-3xl p-12 border border-white/30 hover:border-cyan-400/50 animate-fade-in shadow-2xl hover:shadow-cyan-500/25 transition-all duration-500" style={{animationDelay: '0.8s'}}>
+          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-pulse-glow tracking-tight">
+            Let's Turn Your Website into a <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Growth Machine</span>
           </h3>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button
               onClick={() => handleCTAClick('Strategy Call')}
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/30"
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-cyan-500/40 border border-cyan-400/30 hover:border-cyan-300/60"
             >
               Schedule Free Strategy Call
             </button>
             <button
               onClick={() => handleCTAClick('Full Services')}
-              className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-slate-900 font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 hover:scale-110"
+              className="border-2 border-cyan-400 text-cyan-300 hover:bg-cyan-400 hover:text-slate-900 font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm bg-white/5"
             >
               Explore Full Services
             </button>
