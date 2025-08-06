@@ -33,9 +33,9 @@ const Footer = () => {
                     href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110 glow-primary group-hover:glow-tech"
+                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110 glow-primary group-hover:glow-tech shadow-md"
                   >
-                    <span className="text-primary group-hover:text-white text-xl">💼</span>
+                    <img src="/lovable-uploads/872e0de5-5323-4cb9-8adb-e7a04b2523c9.png" alt="LinkedIn" className="w-6 h-6" />
                   </a>
                   <p className="text-sm text-muted-foreground dark:text-gray-400 mt-2 font-medium">LinkedIn</p>
                 </div>
@@ -44,9 +44,9 @@ const Footer = () => {
                     href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110 glow-primary group-hover:glow-tech"
+                    className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110 glow-primary group-hover:glow-tech shadow-md"
                   >
-                    <span className="text-primary group-hover:text-white text-xl">📷</span>
+                    <img src="/lovable-uploads/a8c010da-52d0-4d7f-83db-1d1de7330de8.png" alt="Instagram" className="w-6 h-6" />
                   </a>
                   <p className="text-sm text-muted-foreground dark:text-gray-400 mt-2 font-medium">Instagram</p>
                 </div>
