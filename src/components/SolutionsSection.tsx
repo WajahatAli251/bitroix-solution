@@ -164,6 +164,107 @@ const SolutionsSection = () => {
             </button>
           </div>
         </div>
+
+        {/* Platform Integrations */}
+        <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '1s'}}>
+          <h4 className="text-2xl md:text-3xl font-bold mb-8" style={{color: '#F0F4F8'}}>
+            Launch Your Campaign from <span style={{color: '#00BFFF'}}>One Platform</span>
+          </h4>
+          <p className="text-lg mb-10 max-w-3xl mx-auto" style={{color: '#9BE3FF'}}>
+            Launch and promote your content with ease using our integrated advertising platform.
+          </p>
+          
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            {/* Google */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{background: 'linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335)'}}>
+                <span className="text-white font-bold text-xs">G</span>
+              </div>
+            </div>
+
+            {/* Gmail */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#EA4335'}}>
+                <span className="text-white font-bold text-xs">M</span>
+              </div>
+            </div>
+
+            {/* AdWords */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#4285F4'}}>
+                <span className="text-white font-bold text-xs">A</span>
+              </div>
+            </div>
+
+            {/* Instagram */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{background: 'linear-gradient(45deg, #F56040, #F77737, #FCAF45, #FFDC80)'}}>
+                <span className="text-white font-bold text-xs">📷</span>
+              </div>
+            </div>
+
+            {/* Meta */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#1877F2'}}>
+                <span className="text-white font-bold text-xs">f</span>
+              </div>
+            </div>
+
+            {/* Central Platform (Rocket) */}
+            <div className="w-20 h-20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 relative" 
+                 style={{background: 'linear-gradient(135deg, #00BFFF, #33F3FF)', borderColor: '#264653', boxShadow: '0 0 30px rgba(51, 243, 255, 0.5)'}}>
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{backgroundColor: '#0D1B2A'}}>
+                <span className="text-2xl">🚀</span>
+              </div>
+              <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
+            </div>
+
+            {/* LinkedIn */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#0077B5'}}>
+                <span className="text-white font-bold text-xs">in</span>
+              </div>
+            </div>
+
+            {/* YouTube */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#FF0000'}}>
+                <span className="text-white font-bold text-xs">▶</span>
+              </div>
+            </div>
+
+            {/* Reddit */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#FF4500'}}>
+                <span className="text-white font-bold text-xs">r</span>
+              </div>
+            </div>
+
+            {/* Pinterest */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#E60023'}}>
+                <span className="text-white font-bold text-xs">P</span>
+              </div>
+            </div>
+
+            {/* X (Twitter) */}
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
+                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#000000'}}>
+                <span className="text-white font-bold text-xs">X</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
