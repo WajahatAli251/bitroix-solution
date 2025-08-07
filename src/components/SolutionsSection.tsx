@@ -174,123 +174,64 @@ const SolutionsSection = () => {
             Launch and promote your content with ease using our integrated advertising platform.
           </p>
           
-          {/* Moving Platform Icons */}
+          {/* Moving Platform Icons - Carousel Style */}
           <div className="relative w-full overflow-hidden">
-            <div className="flex items-center gap-6 animate-[moveRightToLeft_20s_linear_infinite] whitespace-nowrap">
+            <div className="flex gap-8 animate-[moveRightToLeft_30s_linear_infinite]">
               {/* First set */}
-              <div className="flex items-center gap-6 flex-shrink-0">
-                {/* Google */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/google.svg" alt="Google" className="w-10 h-10 object-contain" />
+              <div className="flex gap-8 flex-shrink-0">
+                <img src="/src/assets/platform-logos/google.svg" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/gmail.svg" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/google-ads.svg" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/instagram.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/meta.png" alt="Meta" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                
+                {/* Bitroix Logo - Larger */}
+                <div className="relative">
+                  <img src="/lovable-uploads/7748c8e2-43ed-4252-b3ca-868247963c13.png" alt="Bitroix Solution" className="h-16 w-16 object-contain hover:scale-110 transition-transform duration-300" />
+                  <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
                 </div>
-
-                {/* Gmail */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/gmail.svg" alt="Gmail" className="w-10 h-10 object-contain" />
-                </div>
-
-                {/* Google Ads */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/google-ads.svg" alt="Google Ads" className="w-10 h-10 object-contain" />
-                </div>
-
-                {/* Instagram */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/instagram.png" alt="Instagram" className="w-10 h-10 object-contain rounded-lg" />
-                </div>
-
-                {/* Meta */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/meta.png" alt="Meta" className="w-10 h-10 object-contain" />
-                </div>
-
-                {/* Central Platform (Bitroix Logo) */}
-                <div className="w-20 h-20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 relative flex-shrink-0" 
-                     style={{background: 'linear-gradient(135deg, #00BFFF, #33F3FF)', borderColor: '#264653', boxShadow: '0 0 30px rgba(51, 243, 255, 0.5)'}}>
-                  <img src="/lovable-uploads/7748c8e2-43ed-4252-b3ca-868247963c13.png" alt="Bitroix Solution" className="w-12 h-12 object-contain" />
-                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
-                </div>
-
-                {/* LinkedIn */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/linkedin.png" alt="LinkedIn" className="w-10 h-10 object-contain" />
-                </div>
-
-                {/* YouTube */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/youtube.svg" alt="YouTube" className="w-10 h-10 object-contain" />
-                </div>
-
-                {/* Pinterest */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/pinterest.png" alt="Pinterest" className="w-10 h-10 object-contain" />
-                </div>
+                
+                <img src="/src/assets/platform-logos/linkedin.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/youtube.svg" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/pinterest.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
               </div>
 
               {/* Duplicate set for seamless loop */}
-              <div className="flex items-center gap-6 flex-shrink-0">
-                {/* Google */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/google.svg" alt="Google" className="w-10 h-10 object-contain" />
+              <div className="flex gap-8 flex-shrink-0">
+                <img src="/src/assets/platform-logos/google.svg" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/gmail.svg" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/google-ads.svg" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/instagram.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/meta.png" alt="Meta" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                
+                {/* Bitroix Logo - Larger */}
+                <div className="relative">
+                  <img src="/lovable-uploads/7748c8e2-43ed-4252-b3ca-868247963c13.png" alt="Bitroix Solution" className="h-16 w-16 object-contain hover:scale-110 transition-transform duration-300" />
+                  <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
                 </div>
+                
+                <img src="/src/assets/platform-logos/linkedin.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/youtube.svg" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/pinterest.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+              </div>
 
-                {/* Gmail */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/gmail.svg" alt="Gmail" className="w-10 h-10 object-contain" />
+              {/* Third set for extra smoothness */}
+              <div className="flex gap-8 flex-shrink-0">
+                <img src="/src/assets/platform-logos/google.svg" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/gmail.svg" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/google-ads.svg" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/instagram.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/meta.png" alt="Meta" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                
+                {/* Bitroix Logo - Larger */}
+                <div className="relative">
+                  <img src="/lovable-uploads/7748c8e2-43ed-4252-b3ca-868247963c13.png" alt="Bitroix Solution" className="h-16 w-16 object-contain hover:scale-110 transition-transform duration-300" />
+                  <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
                 </div>
-
-                {/* Google Ads */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/google-ads.svg" alt="Google Ads" className="w-10 h-10 object-contain" />
-                </div>
-
-                {/* Instagram */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/instagram.png" alt="Instagram" className="w-10 h-10 object-contain rounded-lg" />
-                </div>
-
-                {/* Meta */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/meta.png" alt="Meta" className="w-10 h-10 object-contain" />
-                </div>
-
-                {/* Central Platform (Bitroix Logo) */}
-                <div className="w-20 h-20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 relative flex-shrink-0" 
-                     style={{background: 'linear-gradient(135deg, #00BFFF, #33F3FF)', borderColor: '#264653', boxShadow: '0 0 30px rgba(51, 243, 255, 0.5)'}}>
-                  <img src="/lovable-uploads/7748c8e2-43ed-4252-b3ca-868247963c13.png" alt="Bitroix Solution" className="w-12 h-12 object-contain" />
-                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
-                </div>
-
-                {/* LinkedIn */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/linkedin.png" alt="LinkedIn" className="w-10 h-10 object-contain" />
-                </div>
-
-                {/* YouTube */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/youtube.svg" alt="YouTube" className="w-10 h-10 object-contain" />
-                </div>
-
-                {/* Pinterest */}
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
-                     style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-                  <img src="/src/assets/platform-logos/pinterest.png" alt="Pinterest" className="w-10 h-10 object-contain" />
-                </div>
+                
+                <img src="/src/assets/platform-logos/linkedin.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/youtube.svg" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/src/assets/platform-logos/pinterest.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
               </div>
             </div>
           </div>
