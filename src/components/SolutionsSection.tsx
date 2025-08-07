@@ -166,7 +166,7 @@ const SolutionsSection = () => {
         </div>
 
         {/* Platform Integrations */}
-        <div className="text-center mt-16 animate-fade-in" style={{animationDelay: '1s'}}>
+        <div className="text-center mt-16 animate-fade-in overflow-hidden" style={{animationDelay: '1s'}}>
           <h4 className="text-2xl md:text-3xl font-bold mb-8" style={{color: '#F0F4F8'}}>
             Launch Your Campaign from <span style={{color: '#00BFFF'}}>One Platform</span>
           </h4>
@@ -174,93 +174,80 @@ const SolutionsSection = () => {
             Launch and promote your content with ease using our integrated advertising platform.
           </p>
           
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            {/* Google */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{background: 'linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335)'}}>
-                <span className="text-white font-bold text-xs">G</span>
+          {/* Moving Platform Icons */}
+          <div className="relative">
+            <div className="flex items-center justify-center gap-6 animate-[moveRightToLeft_15s_linear_infinite]">
+              {/* Google */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <img src="/src/assets/platform-logos/google.svg" alt="Google" className="w-10 h-10 object-contain" />
               </div>
-            </div>
 
-            {/* Gmail */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#EA4335'}}>
-                <span className="text-white font-bold text-xs">M</span>
+              {/* Gmail */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <img src="/src/assets/platform-logos/gmail.svg" alt="Gmail" className="w-10 h-10 object-contain" />
               </div>
-            </div>
 
-            {/* AdWords */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#4285F4'}}>
-                <span className="text-white font-bold text-xs">A</span>
+              {/* Google Ads */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <img src="/src/assets/platform-logos/google-ads.svg" alt="Google Ads" className="w-10 h-10 object-contain" />
               </div>
-            </div>
 
-            {/* Instagram */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{background: 'linear-gradient(45deg, #F56040, #F77737, #FCAF45, #FFDC80)'}}>
-                <span className="text-white font-bold text-xs">📷</span>
+              {/* Instagram */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <img src="/src/assets/platform-logos/instagram.png" alt="Instagram" className="w-10 h-10 object-contain rounded-lg" />
               </div>
-            </div>
 
-            {/* Meta */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#1877F2'}}>
-                <span className="text-white font-bold text-xs">f</span>
+              {/* Meta */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <img src="/src/assets/platform-logos/meta.png" alt="Meta" className="w-10 h-10 object-contain" />
               </div>
-            </div>
 
-            {/* Central Platform (Rocket) */}
-            <div className="w-20 h-20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 relative" 
-                 style={{background: 'linear-gradient(135deg, #00BFFF, #33F3FF)', borderColor: '#264653', boxShadow: '0 0 30px rgba(51, 243, 255, 0.5)'}}>
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{backgroundColor: '#0D1B2A'}}>
-                <span className="text-2xl">🚀</span>
+              {/* Central Platform (Rocket) */}
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 relative flex-shrink-0" 
+                   style={{background: 'linear-gradient(135deg, #00BFFF, #33F3FF)', borderColor: '#264653', boxShadow: '0 0 30px rgba(51, 243, 255, 0.5)'}}>
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{backgroundColor: '#0D1B2A'}}>
+                  <span className="text-2xl">🚀</span>
+                </div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
               </div>
-              <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
-            </div>
 
-            {/* LinkedIn */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#0077B5'}}>
-                <span className="text-white font-bold text-xs">in</span>
+              {/* LinkedIn */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <img src="/src/assets/platform-logos/linkedin.png" alt="LinkedIn" className="w-10 h-10 object-contain" />
               </div>
-            </div>
 
-            {/* YouTube */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#FF0000'}}>
-                <span className="text-white font-bold text-xs">▶</span>
+              {/* YouTube */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <img src="/src/assets/platform-logos/youtube.svg" alt="YouTube" className="w-10 h-10 object-contain" />
               </div>
-            </div>
 
-            {/* Reddit */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#FF4500'}}>
-                <span className="text-white font-bold text-xs">r</span>
+              {/* Reddit */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#FF4500'}}>
+                  <span className="text-white font-bold text-xs">r</span>
+                </div>
               </div>
-            </div>
 
-            {/* Pinterest */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#E60023'}}>
-                <span className="text-white font-bold text-xs">P</span>
+              {/* Pinterest */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <img src="/src/assets/platform-logos/pinterest.png" alt="Pinterest" className="w-10 h-10 object-contain" />
               </div>
-            </div>
 
-            {/* X (Twitter) */}
-            <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2" 
-                 style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#000000'}}>
-                <span className="text-white font-bold text-xs">X</span>
+              {/* X (Twitter) */}
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg border-2 flex-shrink-0" 
+                   style={{background: 'rgba(13, 27, 42, 0.4)', borderColor: '#264653'}}>
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{backgroundColor: '#000000'}}>
+                  <span className="text-white font-bold text-xs">X</span>
+                </div>
               </div>
             </div>
           </div>
