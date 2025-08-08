@@ -32,9 +32,9 @@ const MissionSection = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-xl relative overflow-hidden">
                 {/* Background Image */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                   style={{
-                    backgroundImage: "url('/lovable-uploads/0f40bbf6-4d8b-4465-b3fb-ea78c3c26da6.png')"
+                    backgroundImage: "url('/src/assets/it-concepts-revolving.jpg')"
                   }}
                 />
                 <span className="text-2xl font-bold text-white relative z-10">🚀</span>
@@ -47,9 +47,9 @@ const MissionSection = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-xl relative overflow-hidden">
                 {/* Background Image */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                   style={{
-                    backgroundImage: "url('/lovable-uploads/686cd42c-ad4d-462e-a245-872be0dbcc50.png')"
+                    backgroundImage: "url('/src/assets/team-collaboration.jpg')"
                   }}
                 />
                 <span className="text-2xl font-bold text-white relative z-10">🤝</span>
@@ -62,9 +62,9 @@ const MissionSection = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full mx-auto mb-4 flex items-center justify-center hover:scale-110 hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-xl relative overflow-hidden">
                 {/* Background Image */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
                   style={{
-                    backgroundImage: "url('/lovable-uploads/d5ab1a33-ea91-4095-a0cf-5ee283b6a191.png')"
+                    backgroundImage: "url('/src/assets/data-analytics.jpg')"
                   }}
                 />
                 <span className="text-2xl font-bold text-white relative z-10">📈</span>

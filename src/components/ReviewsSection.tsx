@@ -66,15 +66,10 @@ const ReviewsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
             <div key={index} className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xl mr-4">
-                  {review.avatar}
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-slate-900">{review.name}</h4>
-                  <p className="text-sm text-slate-600">{review.position}</p>
-                  <p className="text-sm text-blue-600 font-medium">{review.company}</p>
-                </div>
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-slate-900">{review.name}</h4>
+                <p className="text-sm text-slate-600">{review.position}</p>
+                <p className="text-sm text-blue-600 font-medium">{review.company}</p>
               </div>
 
               <div className="flex mb-4">
