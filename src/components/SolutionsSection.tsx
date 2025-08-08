@@ -5,44 +5,49 @@ const SolutionsSection = () => {
     {
       title: "Lead Generation Systems",
       hook: "Say goodbye to cold outreach. Our systems deliver hot leads — automatically.",
-      cta: "Book Free Demo",
-      delay: "0s"
+      cta: "Learn More",
+      delay: "0s",
+      link: "/solutions/lead-generation"
     },
     {
       title: "SEO That Dominates",
       hook: "Be found by customers who are already searching. Top Google rankings, guaranteed.",
-      cta: "Start Ranking",
-      delay: "0.1s"
+      cta: "Learn More",
+      delay: "0.1s",
+      link: "/solutions/seo-dominance"
     },
     {
       title: "Paid Ads Management",
       hook: "Stop wasting ad spend. We run performance-focused Google & Meta ads that bring results.",
-      cta: "Launch My Campaign",
-      delay: "0.2s"
+      cta: "Learn More",
+      delay: "0.2s",
+      link: "/solutions/paid-ads-management"
     },
     {
       title: "Marketing Automation",
       hook: "Work smarter, not harder. Automate follow-ups, lead nurturing, and reporting.",
-      cta: "Automate My Marketing",
-      delay: "0.3s"
+      cta: "Learn More",
+      delay: "0.3s",
+      link: "/solutions/marketing-automation"
     },
     {
       title: "Conversion Rate Optimization (CRO)",
       hook: "Visitors aren't buying? We fix that. Smart UI/UX + psychology-backed CTAs.",
-      cta: "Fix My Funnel",
-      delay: "0.4s"
+      cta: "Learn More",
+      delay: "0.4s",
+      link: "/solutions/conversion-optimization"
     },
     {
       title: "Social Media Growth",
       hook: "Build a brand that people follow, trust, and buy from. No fluff — just ROI.",
-      cta: "Boost My Socials",
-      delay: "0.5s"
+      cta: "Learn More",
+      delay: "0.5s",
+      link: "/solutions/social-media-growth"
     }
   ];
 
-  const handleCTAClick = (service: string) => {
-    // Redirect to schedule meeting or contact form
-    window.location.href = '/schedule-meeting';
+  const handleCTAClick = (link: string) => {
+    window.location.href = link;
   };
 
   return (
@@ -96,7 +101,7 @@ const SolutionsSection = () => {
                     {service.hook}
                   </p>
                   <button
-                    onClick={() => handleCTAClick(service.title)}
+                    onClick={() => handleCTAClick(service.link)}
                     className="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl border-2"
                     style={{
                       background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
@@ -130,7 +135,7 @@ const SolutionsSection = () => {
           </h3>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button
-              onClick={() => handleCTAClick('Strategy Call')}
+              onClick={() => handleCTAClick('/schedule-meeting')}
               className="font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl border-2"
               style={{
                 background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
@@ -142,7 +147,7 @@ const SolutionsSection = () => {
               Schedule Free Strategy Call
             </button>
             <button
-              onClick={() => handleCTAClick('Full Services')}
+              onClick={() => handleCTAClick('/')}
               className="font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border-2"
               style={{
                 background: 'rgba(13, 27, 42, 0.2)',

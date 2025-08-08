@@ -14,6 +14,12 @@ import AIChatbots from "./pages/AIChatbots";
 import MeetingScheduler from "./pages/MeetingScheduler";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
+import LeadGeneration from "./pages/solutions/LeadGeneration";
+import SEODominance from "./pages/solutions/SEODominance";
+import PaidAdsManagement from "./pages/solutions/PaidAdsManagement";
+import MarketingAutomation from "./pages/solutions/MarketingAutomation";
+import ConversionOptimization from "./pages/solutions/ConversionOptimization";
+import SocialMediaGrowth from "./pages/solutions/SocialMediaGrowth";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +40,12 @@ const App = () => (
           <Route path="/ai-chatbots" element={<AIChatbots />} />
           <Route path="/schedule-meeting" element={<MeetingScheduler />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/solutions/lead-generation" element={<LeadGeneration />} />
+          <Route path="/solutions/seo-dominance" element={<SEODominance />} />
+          <Route path="/solutions/paid-ads-management" element={<PaidAdsManagement />} />
+          <Route path="/solutions/marketing-automation" element={<MarketingAutomation />} />
+          <Route path="/solutions/conversion-optimization" element={<ConversionOptimization />} />
+          <Route path="/solutions/social-media-growth" element={<SocialMediaGrowth />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
