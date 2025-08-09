@@ -62,7 +62,7 @@ const SEODominance = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/src/assets/web-development.jpg" alt="SEO Strategy" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/74657b6a-cd12-40ee-b239-66b76822d751.png" alt="SEO Strategy" className="rounded-xl shadow-xl" />
             </div>
           </div>
         </div>

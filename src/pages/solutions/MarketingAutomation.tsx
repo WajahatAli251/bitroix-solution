@@ -62,7 +62,7 @@ const MarketingAutomation = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/src/assets/devops-infrastructure.jpg" alt="Marketing Automation" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/4ba4056f-25de-476f-8515-6edff94dbe63.png" alt="Marketing Automation" className="rounded-xl shadow-xl" />
             </div>
           </div>
         </div>

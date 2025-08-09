@@ -62,7 +62,7 @@ const SocialMediaGrowth = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/src/assets/team-collaboration.jpg" alt="Social Media Strategy" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/a95641c7-884d-48c4-976d-019c9672302b.png" alt="Social Media Growth" className="rounded-xl shadow-xl" />
             </div>
           </div>
         </div>

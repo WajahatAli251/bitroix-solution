@@ -62,7 +62,7 @@ const LeadGeneration = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/src/assets/data-analytics.jpg" alt="Lead Generation Analytics" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/976ae802-eca8-4e3b-980e-5670c46536ef.png" alt="Lead Generation Systems" className="rounded-xl shadow-xl" />
             </div>
           </div>
         </div>

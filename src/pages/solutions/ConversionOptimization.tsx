@@ -62,7 +62,7 @@ const ConversionOptimization = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/src/assets/ui-ux-design.jpg" alt="Conversion Optimization" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/35a9e2d4-2082-408b-ab86-d95889dc822f.png" alt="Conversion Optimization" className="rounded-xl shadow-xl" />
             </div>
           </div>
         </div>

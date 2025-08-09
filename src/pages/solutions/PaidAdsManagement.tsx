@@ -62,7 +62,7 @@ const PaidAdsManagement = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/src/assets/data-analytics.jpg" alt="Paid Ads Analytics" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/bec8f18d-ee2a-4a17-bd69-6a1ee4845629.png" alt="Paid Ads Management" className="rounded-xl shadow-xl" />
             </div>
           </div>
         </div>
