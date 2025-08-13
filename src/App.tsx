@@ -13,6 +13,7 @@ import DesignConsultancy from "./pages/DesignConsultancy";
 import AIChatbots from "./pages/AIChatbots";
 import MeetingScheduler from "./pages/MeetingScheduler";
 import Projects from "./pages/Projects";
+import Products from "./pages/Products";
 import NotFound from "./pages/NotFound";
 import LeadGeneration from "./pages/solutions/LeadGeneration";
 import SEODominance from "./pages/solutions/SEODominance";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/ai-chatbots" element={<AIChatbots />} />
           <Route path="/schedule-meeting" element={<MeetingScheduler />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/solutions/lead-generation" element={<LeadGeneration />} />
           <Route path="/solutions/seo-dominance" element={<SEODominance />} />
           <Route path="/solutions/paid-ads-management" element={<PaidAdsManagement />} />
