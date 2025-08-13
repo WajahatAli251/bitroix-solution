@@ -184,11 +184,11 @@ const SolutionsSection = () => {
             <div className="flex gap-8 animate-[moveRightToLeft_30s_linear_infinite]">
               {/* First set */}
               <div className="flex gap-8 flex-shrink-0">
-                <img src="/src/assets/platform-logos/google.svg" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/gmail.svg" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/google-ads.svg" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/instagram.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/meta.png" alt="Meta" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/cea41c57-635d-4dfa-b81a-9c8bd784b5e9.png" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/8c65f578-4125-440e-a866-fe1ea674ae17.png" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/3d04489a-89f5-4052-8646-c5530a128f37.png" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/bbc26383-9a27-4521-a917-896380b74f93.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/aa4b3aaf-8361-4187-a853-095c5711ffc2.png" alt="Facebook" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
                 
                 {/* Bitroix Logo - Larger */}
                 <div className="relative">
@@ -196,18 +196,18 @@ const SolutionsSection = () => {
                   <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
                 </div>
                 
-                <img src="/src/assets/platform-logos/linkedin.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/youtube.svg" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/pinterest.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/96a1d62d-0760-4240-baba-49ada83ac158.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/9ed3812d-81ea-4710-b5a0-0cd445a12116.png" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/a78b49d3-6ebe-4e39-af48-feb615ca9d7d.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
               </div>
 
               {/* Duplicate set for seamless loop */}
               <div className="flex gap-8 flex-shrink-0">
-                <img src="/src/assets/platform-logos/google.svg" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/gmail.svg" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/google-ads.svg" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/instagram.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/meta.png" alt="Meta" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/cea41c57-635d-4dfa-b81a-9c8bd784b5e9.png" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/8c65f578-4125-440e-a866-fe1ea674ae17.png" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/3d04489a-89f5-4052-8646-c5530a128f37.png" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/bbc26383-9a27-4521-a917-896380b74f93.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/aa4b3aaf-8361-4187-a853-095c5711ffc2.png" alt="Facebook" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
                 
                 {/* Bitroix Logo - Larger */}
                 <div className="relative">
@@ -215,18 +215,18 @@ const SolutionsSection = () => {
                   <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
                 </div>
                 
-                <img src="/src/assets/platform-logos/linkedin.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/youtube.svg" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/pinterest.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/96a1d62d-0760-4240-baba-49ada83ac158.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/9ed3812d-81ea-4710-b5a0-0cd445a12116.png" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/a78b49d3-6ebe-4e39-af48-feb615ca9d7d.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
               </div>
 
               {/* Third set for extra smoothness */}
               <div className="flex gap-8 flex-shrink-0">
-                <img src="/src/assets/platform-logos/google.svg" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/gmail.svg" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/google-ads.svg" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/instagram.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/meta.png" alt="Meta" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/cea41c57-635d-4dfa-b81a-9c8bd784b5e9.png" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/8c65f578-4125-440e-a866-fe1ea674ae17.png" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/3d04489a-89f5-4052-8646-c5530a128f37.png" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/bbc26383-9a27-4521-a917-896380b74f93.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/aa4b3aaf-8361-4187-a853-095c5711ffc2.png" alt="Facebook" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
                 
                 {/* Bitroix Logo - Larger */}
                 <div className="relative">
@@ -234,9 +234,9 @@ const SolutionsSection = () => {
                   <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
                 </div>
                 
-                <img src="/src/assets/platform-logos/linkedin.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/youtube.svg" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/src/assets/platform-logos/pinterest.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/96a1d62d-0760-4240-baba-49ada83ac158.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/9ed3812d-81ea-4710-b5a0-0cd445a12116.png" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                <img src="/lovable-uploads/a78b49d3-6ebe-4e39-af48-feb615ca9d7d.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
               </div>
             </div>
           </div>
