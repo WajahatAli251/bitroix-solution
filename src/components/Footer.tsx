@@ -41,7 +41,7 @@ const Footer = () => {
                 </div>
                 <div className="text-center group">
                   <a 
-                    href="https://www.instagram.com/bitroixsolution?igsh=MTNzNnM4NWhqMWVsZw==&utm_source=ig_contact_invite" 
+                    href="https://www.instagram.com/bitroix_solution/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110 glow-primary group-hover:glow-tech shadow-md"
