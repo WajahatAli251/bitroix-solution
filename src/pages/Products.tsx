@@ -9,15 +9,40 @@ import { FileText, Download, Eye } from "lucide-react";
 const Products = () => {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
 
-  const handleViewPDF = () => {
+  const handleViewPDF = (productId: string) => {
     // Create a new window to display the PDF-like content
     const pdfWindow = window.open('', '_blank');
     if (pdfWindow) {
+      let content = '';
+      let title = '';
+      
+      if (productId === 'ai-chatbot') {
+        title = 'AI Chatbot Solutions - Product Brochure';
+        content = `
+          <img src="/lovable-uploads/fbc5a87d-fe27-4132-b43b-2802be689b95.png" alt="AI Chatbot Page 1" class="pdf-page" />
+          <img src="/lovable-uploads/41d3d1a8-5e47-43a7-a682-e9ce3a9a8c55.png" alt="AI Chatbot Page 2" class="pdf-page" />
+        `;
+      } else if (productId === 'hotel-management') {
+        title = 'Hotel Management System - Product Brochure';
+        content = `
+          <img src="/lovable-uploads/bb83b64e-6281-470e-bf08-f83ef102e0ef.png" alt="Hotel Management Page 1" class="pdf-page" />
+          <img src="/lovable-uploads/19347c78-e62d-49cc-b8e1-1656a2115fec.png" alt="Hotel Management Page 2" class="pdf-page" />
+          <img src="/lovable-uploads/756c1b02-038f-4f31-bd1c-b63ab31dcfbd.png" alt="Hotel Management Page 3" class="pdf-page" />
+        `;
+      } else {
+        title = 'Exhibition Management System - Product Brochure';
+        content = `
+          <img src="/lovable-uploads/066e6a18-ccee-45a9-b6dc-65874a0d41c4.png" alt="Exhibition Page 1" class="pdf-page" />
+          <img src="/lovable-uploads/db7579c0-e7b2-4de5-b840-b26ebacef273.png" alt="Exhibition Page 2" class="pdf-page" />
+          <img src="/lovable-uploads/2e9340e1-b3f9-4c4a-bd4b-075696e2b6b0.png" alt="Exhibition Page 3" class="pdf-page" />
+        `;
+      }
+
       pdfWindow.document.write(`
         <!DOCTYPE html>
         <html>
         <head>
-          <title>Exhibition Management System - Product Brochure</title>
+          <title>${title}</title>
           <style>
             body { margin: 0; padding: 20px; font-family: Arial, sans-serif; background: #f5f5f5; }
             .pdf-container { max-width: 800px; margin: 0 auto; background: white; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
@@ -29,13 +54,11 @@ const Products = () => {
         </head>
         <body>
           <div class="header">
-            <h1>Exhibition Management System - Product Brochure</h1>
+            <h1>${title}</h1>
             <button class="download-btn" onclick="window.print()">Print/Save as PDF</button>
           </div>
           <div class="pdf-container">
-            <img src="/lovable-uploads/066e6a18-ccee-45a9-b6dc-65874a0d41c4.png" alt="Page 1" class="pdf-page" />
-            <img src="/lovable-uploads/db7579c0-e7b2-4de5-b840-b26ebacef273.png" alt="Page 2" class="pdf-page" />
-            <img src="/lovable-uploads/2e9340e1-b3f9-4c4a-bd4b-075696e2b6b0.png" alt="Page 3" class="pdf-page" />
+            ${content}
           </div>
         </body>
         </html>
@@ -45,6 +68,42 @@ const Products = () => {
   };
 
   const products = [
+    {
+      id: "ai-chatbot",
+      title: "AI Chatbot Solutions",
+      description: "The future of customer interaction powered by Artificial Intelligence and Natural Language Processing for seamless customer experiences.",
+      features: [
+        "Customer Service Bots - Handle inquiries, complaints, and FAQs 24/7",
+        "Sales Bots - Engage leads and close deals automatically",
+        "Scheduling Bots - Book meetings and manage calendars",
+        "E-commerce Bots - Assist with product selection and checkout",
+        "Enterprise Bots - For HR, Operations, Sales, and Finance automation",
+        "Banking & Trading Bots - Assist with investments and transactions",
+        "Food & Restaurant Bots - Recommend meals and take orders",
+        "Third-Party Integrations - Enrich chats with external services"
+      ],
+      image: "/lovable-uploads/fbc5a87d-fe27-4132-b43b-2802be689b95.png",
+      category: "AI Solutions",
+      status: "Available"
+    },
+    {
+      id: "hotel-management",
+      title: "Hotel Management System",
+      description: "Revolutionizing hotel operations with a cutting-edge, web-based platform designed to streamline and automate all aspects of hotel management.",
+      features: [
+        "Quick & Simple Bookings - Hassle-free reservations anytime, anywhere",
+        "Fast & Friendly Contact - Keep guests connected with responsive communication tools",
+        "Exceptional Staff Tools - Manage cheerful, knowledgeable staff with ease",
+        "Unified Dashboard - All hotel functions in one place",
+        "Smooth Check-in & Check-out - No delays, no confusion",
+        "Room & Category Management - Handle availability, pricing, and types effortlessly",
+        "Automation at Its Best - Reduce manual workload and maximize efficiency",
+        "Secure Payments - Multiple payment modes with real-time confirmation"
+      ],
+      image: "/lovable-uploads/bb83b64e-6281-470e-bf08-f83ef102e0ef.png",
+      category: "Hospitality",
+      status: "Available"
+    },
     {
       id: "exhibition-management",
       title: "Exhibition Management System",
@@ -166,7 +225,7 @@ const Products = () => {
                     
                     <Button 
                       size="sm" 
-                      onClick={handleViewPDF}
+                      onClick={() => handleViewPDF(product.id)}
                       className="flex-1"
                     >
                       <FileText className="w-4 h-4 mr-2" />
