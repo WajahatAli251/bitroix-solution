@@ -11,6 +11,7 @@ const ContactSection = () => {
     phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -34,30 +35,67 @@ const ContactSection = () => {
       return;
     }
 
-    // Create mailto link with form data
-    const subject = encodeURIComponent("New Contact Form Submission");
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Phone: ${formData.phone || 'Not provided'}\n\n` +
-      `Message:\n${formData.message}`
-    );
-    
-    const mailtoLink = `mailto:info@bitroixsolution.com?subject=${subject}&body=${body}`;
-    window.open(mailtoLink, '_blank');
+    setIsSubmitting(true);
 
-    toast({
-      title: "Opening email client...",
-      description: "Your default email client will open with the message prepared."
-    });
+    try {
+      // Initialize EmailJS with public key
+      emailjs.init('EetNNBAg1nuOPQjlT');
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_l5hd8qo', // Service ID
+        'template_txvc1qq', // Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || 'Not provided',
+          message: formData.message,
+        }
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours."
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      
+      // Fallback to mailto
+      const subject = encodeURIComponent("New Contact Form Submission");
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Phone: ${formData.phone || 'Not provided'}\n\n` +
+        `Message:\n${formData.message}`
+      );
+      
+      const mailtoLink = `mailto:info@bitroixsolution.com?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, '_blank');
+
+      toast({
+        title: "Opening email client...",
+        description: "Please send the message from your email client."
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -146,7 +184,10 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                className="w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg border-2"
+                disabled={isSubmitting}
+                className={`w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg border-2 ${
+                  isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                }`}
                 style={{
                   background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
                   color: '#0D1B2A',
@@ -154,17 +195,21 @@ const ContactSection = () => {
                   boxShadow: '0 10px 30px rgba(0, 191, 255, 0.3)'
                 }}
                 onMouseEnter={(e) => {
-                  const target = e.target as HTMLButtonElement;
-                  target.style.background = 'linear-gradient(to right, #1EC8E8, #33F3FF)';
-                  target.style.boxShadow = '0 15px 40px rgba(30, 200, 232, 0.4)';
+                  if (!isSubmitting) {
+                    const target = e.target as HTMLButtonElement;
+                    target.style.background = 'linear-gradient(to right, #1EC8E8, #33F3FF)';
+                    target.style.boxShadow = '0 15px 40px rgba(30, 200, 232, 0.4)';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  const target = e.target as HTMLButtonElement;
-                  target.style.background = 'linear-gradient(to right, #00BFFF, #33F3FF)';
-                  target.style.boxShadow = '0 10px 30px rgba(0, 191, 255, 0.3)';
+                  if (!isSubmitting) {
+                    const target = e.target as HTMLButtonElement;
+                    target.style.background = 'linear-gradient(to right, #00BFFF, #33F3FF)';
+                    target.style.boxShadow = '0 10px 30px rgba(0, 191, 255, 0.3)';
+                  }
                 }}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
