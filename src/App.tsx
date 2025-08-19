@@ -21,6 +21,7 @@ import PaidAdsManagement from "./pages/solutions/PaidAdsManagement";
 import MarketingAutomation from "./pages/solutions/MarketingAutomation";
 import ConversionOptimization from "./pages/solutions/ConversionOptimization";
 import SocialMediaGrowth from "./pages/solutions/SocialMediaGrowth";
+import Career from "./pages/Career";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/solutions/marketing-automation" element={<MarketingAutomation />} />
           <Route path="/solutions/conversion-optimization" element={<ConversionOptimization />} />
           <Route path="/solutions/social-media-growth" element={<SocialMediaGrowth />} />
+          <Route path="/career" element={<Career />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
