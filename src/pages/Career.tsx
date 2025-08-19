@@ -9,58 +9,26 @@ const Career = () => {
   const jobOpenings = [
     {
       id: 1,
-      title: "Senior Full-Stack Developer",
-      department: "Engineering",
-      location: "Remote / Hybrid",
-      type: "Full-time",
-      salary: "$80,000 - $120,000",
-      experience: "5+ years",
-      skills: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"],
-      description: "Join our engineering team to build cutting-edge web applications and help shape the future of digital solutions."
-    },
-    {
-      id: 2,
-      title: "UI/UX Designer",
-      department: "Design",
-      location: "Remote",
-      type: "Full-time",
-      salary: "$60,000 - $90,000",
-      experience: "3+ years",
-      skills: ["Figma", "Adobe Creative Suite", "User Research", "Prototyping"],
-      description: "Create beautiful and intuitive user experiences that delight our clients and drive business success."
-    },
-    {
-      id: 3,
-      title: "DevOps Engineer",
-      department: "Infrastructure",
-      location: "Remote / On-site",
-      type: "Full-time",
-      salary: "$70,000 - $110,000",
-      experience: "4+ years",
-      skills: ["Docker", "Kubernetes", "AWS", "Terraform", "CI/CD"],
-      description: "Build and maintain robust infrastructure that powers our applications and ensures high availability."
-    },
-    {
-      id: 4,
-      title: "Data Scientist",
-      department: "Analytics",
-      location: "Remote",
-      type: "Full-time",
-      salary: "$75,000 - $115,000",
-      experience: "3+ years",
-      skills: ["Python", "Machine Learning", "SQL", "TensorFlow", "Statistics"],
-      description: "Turn data into actionable insights and help our clients make data-driven decisions."
-    },
-    {
-      id: 5,
-      title: "Digital Marketing Specialist",
-      department: "Marketing",
-      location: "Remote / Hybrid",
-      type: "Full-time",
-      salary: "$45,000 - $70,000",
-      experience: "2+ years",
-      skills: ["SEO", "Google Ads", "Social Media", "Content Marketing", "Analytics"],
-      description: "Drive growth through innovative digital marketing strategies and help our clients reach their target audience."
+      title: "Web Developer Intern",
+      department: "Development",
+      location: "Remote / Flexible",
+      type: "Internship",
+      salary: "Paid Internship",
+      experience: "Freshly graduate or final year students",
+      skills: ["Website Maintenance", "Website Upgrading", "SEO Optimization"],
+      description: "We are looking for a Web Developer Intern to join our remote team of creatives!",
+      requirements: [
+        "Maintaining & upgrading our company website",
+        "Performing SEO optimization",
+        "Must be freshly graduate or final year students"
+      ],
+      benefits: [
+        "Paid Internship",
+        "Remote Work/ Flexible",
+        "Completion Certificate",
+        "Duration (3 - 6 Months)"
+      ],
+      contactEmail: "Info@bitroixsolution.com"
     }
   ];
 
@@ -188,8 +156,8 @@ const Career = () => {
                     </div>
                   </div>
                   
-                  <div className="mb-4">
-                    <p className="text-sm font-medium text-foreground mb-2">Required Experience: {job.experience}</p>
+                  <div className="mb-6">
+                    <p className="text-sm font-medium text-foreground mb-2">Target Candidates: {job.experience}</p>
                     <div className="flex flex-wrap gap-2">
                       {job.skills.map((skill, index) => (
                         <Badge key={index} variant="secondary" className="text-xs">
@@ -198,6 +166,42 @@ const Career = () => {
                       ))}
                     </div>
                   </div>
+
+                  {job.requirements && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-foreground mb-3">Requirements:</h4>
+                      <ul className="space-y-2">
+                        {job.requirements.map((req, index) => (
+                          <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                            <span className="text-primary mt-1">•</span>
+                            <span>{req}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {job.benefits && (
+                    <div className="mb-6">
+                      <h4 className="text-lg font-semibold text-foreground mb-3">What We Offer:</h4>
+                      <ul className="space-y-2">
+                        {job.benefits.map((benefit, index) => (
+                          <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                            <span className="text-primary mt-1">•</span>
+                            <span>{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {job.contactEmail && (
+                    <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+                      <p className="text-sm text-muted-foreground mb-2">Apply Here:</p>
+                      <p className="text-primary font-medium">{job.contactEmail}</p>
+                      <p className="text-xs text-muted-foreground mt-2">For more info visit: bitroixsolution.com</p>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
