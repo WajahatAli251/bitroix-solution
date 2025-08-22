@@ -8,7 +8,6 @@ import TechCarousel from "@/components/TechCarousel";
 import ReviewsSection from "@/components/ReviewsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   return (
@@ -22,7 +21,6 @@ const Index = () => {
       <ReviewsSection />
       <ContactSection />
       <Footer />
-      <Chatbot />
     </div>
   );
 };
