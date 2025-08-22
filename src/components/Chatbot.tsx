@@ -28,6 +28,9 @@ const Chatbot = () => {
   const [isLoading, setIsLoading] = useState(false);
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
+  // Debug: Log that component is rendering
+  console.log('Chatbot component rendering, isSupabaseConfigured:', isSupabaseConfigured);
+
   useEffect(() => {
     if (scrollAreaRef.current) {
       scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight;
@@ -56,7 +59,16 @@ const Chatbot = () => {
 
       // Check if Supabase is configured
       if (!isSupabaseConfigured || !supabase) {
-        throw new Error('Chatbot service not configured');
+        // Show helpful message when Supabase is not configured
+        const errorMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          content: 'Hi! I\'m your AI assistant. To enable my full functionality, please ensure Supabase is properly configured with your OpenAI API key. For now, I can still help answer questions about Bitroix Solutions!',
+          isBot: true,
+          timestamp: new Date(),
+        };
+        setMessages(prev => [...prev, errorMessage]);
+        setIsLoading(false);
+        return;
       }
 
       const { data, error } = await supabase.functions.invoke('chat', {
@@ -82,9 +94,7 @@ const Chatbot = () => {
       console.error('Chatbot error:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: error instanceof Error && error.message === 'Chatbot service not configured'
-          ? 'Chatbot service is not configured. Please connect to Supabase first.'
-          : 'Sorry, I encountered an error. Please try again.',
+        content: 'Sorry, I encountered an error. Please try again or contact support if the issue persists.',
         isBot: true,
         timestamp: new Date(),
       };
