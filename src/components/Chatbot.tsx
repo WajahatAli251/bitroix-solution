@@ -78,7 +78,10 @@ const Chatbot = () => {
         },
       });
 
+      console.log('Supabase function response:', { data, error });
+
       if (error) {
+        console.error('Supabase function error:', error);
         throw new Error(error.message || 'Failed to get response');
       }
 
