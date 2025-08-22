@@ -1,8 +1,12 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Origin': 'https://loving-ettore-bitroix-b3e5c8e3.lovableproject.com',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'X-XSS-Protection': '1; mode=block',
 };
 
 interface ChatMessage {
@@ -24,11 +28,61 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { message, history }: ChatRequest = await req.json();
+    const body = await req.text();
+    let parsedBody;
+    
+    try {
+      parsedBody = JSON.parse(body);
+    } catch {
+      return new Response(
+        JSON.stringify({ error: 'Invalid JSON' }),
+        { 
+          status: 400, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
 
+    const { message, history }: ChatRequest = parsedBody;
+
+    // Enhanced input validation
     if (!message || typeof message !== 'string') {
       return new Response(
         JSON.stringify({ error: 'Message is required' }),
+        { 
+          status: 400, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
+
+    // Message length validation
+    if (message.length > 1000) {
+      return new Response(
+        JSON.stringify({ error: 'Message too long' }),
+        { 
+          status: 400, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
+
+    // Content filtering - basic inappropriate content check
+    const inappropriatePattern = /(hack|exploit|inject|script|malware|virus)/i;
+    if (inappropriatePattern.test(message)) {
+      return new Response(
+        JSON.stringify({ error: 'Message contains inappropriate content' }),
+        { 
+          status: 400, 
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+        }
+      );
+    }
+
+    // Validate history array
+    if (history && !Array.isArray(history)) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid history format' }),
         { 
           status: 400, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
@@ -95,12 +149,12 @@ Deno.serve(async (req) => {
     });
 
     if (!response.ok) {
-      const errorData = await response.text();
-      console.error('OpenAI API error:', errorData);
+      // Log error for debugging but don't expose details to client
+      console.error('OpenAI API error:', response.status, response.statusText);
       return new Response(
-        JSON.stringify({ error: 'Failed to get AI response' }),
+        JSON.stringify({ error: 'Service temporarily unavailable' }),
         { 
-          status: 500, 
+          status: 503, 
           headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
         }
       );
@@ -118,9 +172,10 @@ Deno.serve(async (req) => {
     );
 
   } catch (error) {
-    console.error('Error in chat function:', error);
+    // Log error for debugging but provide generic message to client
+    console.error('Chat function error:', error instanceof Error ? error.message : 'Unknown error');
     return new Response(
-      JSON.stringify({ error: 'Internal server error' }),
+      JSON.stringify({ error: 'Service temporarily unavailable' }),
       { 
         status: 500, 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' } 

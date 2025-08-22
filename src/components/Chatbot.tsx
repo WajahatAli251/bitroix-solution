@@ -48,10 +48,16 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      // Input validation
+      if (input.length > 1000) {
+        throw new Error('Message too long');
+      }
+
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
         },
         body: JSON.stringify({
           message: input,
