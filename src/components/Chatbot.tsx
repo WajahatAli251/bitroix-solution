@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 interface Message {
   id: string;
@@ -54,6 +54,11 @@ const Chatbot = () => {
         throw new Error('Message too long');
       }
 
+      // Check if Supabase is configured
+      if (!isSupabaseConfigured || !supabase) {
+        throw new Error('Chatbot service not configured');
+      }
+
       const { data, error } = await supabase.functions.invoke('chat', {
         body: {
           message: input,
@@ -74,9 +79,12 @@ const Chatbot = () => {
 
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
+      console.error('Chatbot error:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: 'Sorry, I encountered an error. Please try again.',
+        content: error instanceof Error && error.message === 'Chatbot service not configured'
+          ? 'Chatbot service is not configured. Please connect to Supabase first.'
+          : 'Sorry, I encountered an error. Please try again.',
         isBot: true,
         timestamp: new Date(),
       };
