@@ -64,12 +64,12 @@ const SolutionsSection = () => {
         {/* Main Headline */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight animate-slide-in-left drop-shadow-lg" style={{color: '#F0F4F8'}}>
-            Not Getting <span style={{color: '#00BFFF'}}>Leads</span>?<br />
-            Let's Fix That — <span style={{color: '#00BFFF'}}>Fast</span>.
+            Increase Website <span style={{color: '#00BFFF'}}>Traffic</span> & <span style={{color: '#00BFFF'}}>Sales</span><br />
+            With Proven Digital Marketing
           </h2>
           <div className="w-32 h-1 mx-auto mb-8 animate-scale-in rounded-full shadow-lg" style={{background: 'linear-gradient(to right, #00BFFF, #33F3FF)', boxShadow: '0 0 20px #33F3FF50'}}></div>
           <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed animate-fade-in drop-shadow-md" style={{animationDelay: '0.3s', color: '#9BE3FF'}}>
-            We help businesses grow with powerful marketing automation, SEO, and paid ads — <span style={{color: '#F0F4F8', fontWeight: '600'}}>all under one roof</span>.
+            Professional SEO services, PPC advertising, social media marketing, and conversion optimization to <span style={{color: '#F0F4F8', fontWeight: '600'}}>boost your online presence and revenue</span>.
           </p>
         </div>
 

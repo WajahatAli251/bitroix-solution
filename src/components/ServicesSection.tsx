@@ -5,57 +5,57 @@ const ServicesSection = () => {
   const services = [
     {
       icon: "/lovable-uploads/cd558444-e92e-4a4d-96ba-889921baf64a.png",
-      title: "Web Development",
-      description: "Modern, scalable, and secure websites built to meet your business goals.",
+      title: "Custom Web Development",
+      description: "Responsive websites, e-commerce platforms, and web applications built with modern frameworks. SEO-optimized, mobile-friendly, and conversion-focused development.",
       gradient: "from-blue-600 to-cyan-600",
       isImage: true
     },
     {
       icon: "/lovable-uploads/1f62994e-f120-42bf-a904-aa533ce1bce1.png",
-      title: "AI Chatbots",
-      description: "Intelligent conversational AI solutions for enhanced customer engagement.",
+      title: "AI Chatbots & Automation",
+      description: "Intelligent AI chatbots for customer support, lead generation, and sales automation. 24/7 customer service with natural language processing capabilities.",
       gradient: "from-purple-600 to-pink-600",
       isImage: true
     },
     {
       icon: "/lovable-uploads/593872ff-f750-4ed1-a46b-40c29bde3106.png",
-      title: "UI/UX Design",
-      description: "Designing human-centered, interactive, and intuitive digital experiences.",
+      title: "UI/UX Design Services",
+      description: "Professional website design, user experience optimization, and conversion rate optimization (CRO). Mobile-first design that drives user engagement and sales.",
       gradient: "from-green-600 to-teal-600",
       isImage: true
     },
     {
       icon: "/lovable-uploads/eaca2941-4b1b-4f28-8826-23cc0619f641.png",
-      title: "Social Media Marketing",
-      description: "Helping your brand reach and resonate with the right audience.",
+      title: "Digital Marketing & SEO",
+      description: "Search engine optimization (SEO), social media marketing, PPC advertising, and content marketing strategies to increase online visibility and generate qualified leads.",
       gradient: "from-orange-600 to-red-600",
       isImage: true
     },
     {
       icon: "/lovable-uploads/ff9994ad-c41c-4256-b109-e4f6d56507b0.png",
-      title: "Data Analytics",
-      description: "Turn data into strategic decisions with real-time insights.",
+      title: "Data Analytics & Business Intelligence",
+      description: "Advanced data analytics, business intelligence dashboards, and performance tracking. Transform raw data into actionable insights for strategic decision-making.",
       gradient: "from-indigo-600 to-purple-600",
       isImage: true
     },
     {
       icon: "/lovable-uploads/eeaca5fc-07f0-4302-8f4d-913c56069ea2.png",
-      title: "DevOps & MLOps",
-      description: "CI/CD pipelines, automation, and model deployment done right.",
+      title: "DevOps & Cloud Solutions",
+      description: "Cloud infrastructure setup, CI/CD pipeline implementation, automated deployments, and MLOps for machine learning model deployment and monitoring.",
       gradient: "from-gray-600 to-slate-600",
       isImage: true
     },
     {
       icon: "/lovable-uploads/c762a07b-6757-48c3-9700-91a8784506bb.png",
-      title: "Team as a Service (TaaS)",
-      description: "Extend your capabilities with our expert on-demand tech teams.",
+      title: "Dedicated Tech Teams",
+      description: "On-demand development teams, project-based specialists, and long-term technical partnerships. Scale your development capacity with experienced professionals.",
       gradient: "from-emerald-600 to-green-600",
       isImage: true
     },
     {
       icon: "/lovable-uploads/4935cf0a-16b7-4f03-905d-3165d10f4581.png",
-      title: "Design Consultancy",
-      description: "Creative direction and digital design strategy to future-proof your product.",
+      title: "Digital Strategy Consulting",
+      description: "Comprehensive digital transformation consulting, technology roadmapping, and strategic planning to optimize your digital presence and competitive advantage.",
       gradient: "from-yellow-600 to-orange-600",
       isImage: true
     }
@@ -72,10 +72,10 @@ const ServicesSection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <header className="text-center mb-16 animate-fade-in">
-          <h2 id="services-heading" className="text-5xl font-bold mb-6 hover:scale-105 transition-transform duration-300 tracking-tight drop-shadow-lg" style={{color: '#F0F4F8'}}>Our Services</h2>
+          <h2 id="services-heading" className="text-5xl font-bold mb-6 hover:scale-105 transition-transform duration-300 tracking-tight drop-shadow-lg" style={{color: '#F0F4F8'}}>Professional Digital Services & Solutions</h2>
           <div className="w-32 h-1 mx-auto mb-8 animate-scale-in rounded-full shadow-lg" style={{background: 'linear-gradient(to right, #00BFFF, #33F3FF)', boxShadow: '0 0 20px #33F3FF50'}}></div>
           <p className="text-xl max-w-3xl mx-auto mb-8 animate-fade-in leading-relaxed drop-shadow-md" style={{animationDelay: '0.2s', color: '#9BE3FF'}}>
-            We offer comprehensive digital solutions to transform your business and drive growth
+            Complete web development, SEO optimization, digital marketing, and AI solutions to increase your online presence, generate leads, and grow your business revenue
           </p>
           <Link to="/schedule-meeting" className="animate-fade-in inline-block" style={{animationDelay: '0.4s'}}>
             <Button 

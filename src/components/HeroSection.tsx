@@ -30,21 +30,21 @@ const HeroSection = () => {
             {/* Left Content */}
             <header className="flex-1 text-center lg:text-left mb-12 lg:mb-0">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-slide-in-left">
-                Innovating the{' '}
+                Professional{' '}
                 <span className="text-white">
-                  Digital Future
+                  Web Development
                 </span>{' '}
-                with Smart Technology
+                & Digital Marketing Services
               </h1>
             
             <p className="text-xl text-white/80 mb-8 max-w-2xl animate-slide-in-left" style={{animationDelay: '0.2s'}}>
-              We empower businesses through cutting-edge software solutions, cloud innovation, and AI integration.
+              Expert web development, AI chatbots, SEO optimization, and digital marketing solutions that drive measurable business growth and online success.
             </p>
 
             <div className="mb-12 animate-slide-in-left" style={{animationDelay: '0.4s'}}>
               <p className="text-white/90 leading-relaxed">
-                Bitroix Solution LLC is a software company focused on delivering intelligent, scalable, and future-ready digital solutions. 
-                From enterprise-grade systems to consumer-facing apps, we enable growth through innovation.
+                Bitroix Solution LLC specializes in custom web development, AI-powered chatbots, search engine optimization (SEO), social media marketing, 
+                data analytics, and DevOps services. We help businesses increase online visibility, generate qualified leads, and maximize ROI through proven digital strategies.
               </p>
             </div>
 
@@ -71,7 +71,7 @@ const HeroSection = () => {
               <div className="relative w-full max-w-lg">
                 <img 
                   src={heroTechImage} 
-                  alt="Futuristic technology background showcasing innovation in web development, AI, and digital solutions"
+                  alt="Professional web development and digital marketing services - custom websites, SEO, AI chatbots, and online marketing solutions"
                   className="w-full h-auto rounded-2xl shadow-2xl glow-primary hover-lift float"
                   loading="eager"
                   width="500"
