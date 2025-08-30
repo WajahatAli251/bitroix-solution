@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useNavigate } from 'react-router-dom';
 
 interface Message {
   id: string;
@@ -10,40 +11,226 @@ interface Message {
   timestamp: Date;
 }
 
-const predefinedResponses = {
-  greetings: [
-    "Hello! Welcome to Bitroix Solution. I'm your 24/7 digital assistant. How can I help you today?",
-    "Hi there! I'm here to help you discover how Bitroix Solution can transform your digital presence. What would you like to know?",
-    "Welcome to Bitroix Solution! I'm available 24/7 to answer your questions about our digital marketing, web development, and IT services. How can I assist you?"
-  ],
-  services: {
-    all: "At Bitroix Solution, we provide comprehensive digital services including:\n\n• Digital Marketing & SEO Optimization\n• Social Media Marketing & Management\n• Professional Web Development\n• Creative Graphic Design\n• Strategic Content Creation\n• IT Solutions & Cloud Services\n\nWould you like me to share details about a specific service, or would you prefer to speak with our team for a custom consultation?",
-    web: "Our web development services include custom website design, responsive development, e-commerce solutions, and modern web applications. We create fast, secure, and user-friendly websites that drive results. Would you like to see our portfolio or get a free quote for your project?",
-    marketing: "Our digital marketing services cover SEO optimization, social media marketing, content strategy, online advertising, and brand development. We help businesses increase their online visibility and drive qualified leads. Would you like me to connect you with our marketing team for a free consultation?",
-    design: "We offer comprehensive graphic design services including logo design, branding, marketing materials, social media graphics, and visual identity development. Our creative team brings your brand vision to life. Interested in seeing our design portfolio?",
-    seo: "Our SEO optimization services help improve your website's search engine rankings, increase organic traffic, and boost online visibility. We use proven strategies and provide detailed analytics. Would you like a free SEO audit of your website?",
-    social: "Our social media marketing includes strategy development, content creation, community management, paid advertising, and performance analytics across all major platforms. Ready to grow your social media presence?",
-    it: "Our IT solutions include cloud services, system integration, cybersecurity, data backup, and technical support. We help businesses streamline their technology infrastructure. Need a consultation about your IT needs?"
+// Menu-based interactive responses
+const responses = {
+  mainMenu: `🤖 **Welcome to Bitroix Solution!** 
+I'm here to help you navigate our website and services. Please select an option:
+
+**📋 MAIN MENU:**
+**1** - Our Services (Web Dev, AI, Design, etc.)
+**2** - Digital Marketing Solutions  
+**3** - Projects & Portfolio
+**4** - Our Products
+**5** - About Us & Mission
+**6** - Career Opportunities
+**7** - Schedule a Meeting
+**8** - Contact Information
+**9** - Pricing & Quotes
+
+Just type the number of your choice! 👆`,
+
+  services: `🛠️ **OUR SERVICES** - Choose what interests you:
+
+**1** - Custom Web Development
+**2** - UI/UX Design Services  
+**3** - DevOps & MLOps
+**4** - Data Analytics & BI
+**5** - Team as Service
+**6** - AI Chatbots & Automation
+**7** - Design Consultancy
+**0** - Back to Main Menu
+
+Type the number to learn more! 🚀`,
+
+  solutions: `📈 **DIGITAL MARKETING SOLUTIONS:**
+
+**1** - Lead Generation Systems
+**2** - SEO Dominance Packages
+**3** - Paid Ads Management
+**4** - Marketing Automation
+**5** - Conversion Optimization
+**6** - Social Media Growth
+**0** - Back to Main Menu
+
+Which solution interests you? 💡`,
+
+  serviceDetails: {
+    webdev: `💻 **Custom Web Development**
+• Modern responsive websites
+• E-commerce platforms  
+• Web applications
+• CMS development
+• API integration
+
+**Ready to start?** Type **"7"** to schedule consultation or **"0"** for main menu`,
+
+    uiux: `🎨 **UI/UX Design Services**
+• User research & analysis
+• Wireframing & prototyping
+• Visual design systems
+• Mobile app design
+• User testing
+
+Type **"7"** to discuss your project or **"0"** for main menu`,
+
+    devops: `⚙️ **DevOps & MLOps**
+• Cloud infrastructure setup
+• CI/CD pipeline development
+• Container orchestration
+• Monitoring & logging
+• ML model deployment
+
+Type **"7"** for consultation or **"0"** for main menu`,
+
+    analytics: `📊 **Data Analytics & BI**
+• Business intelligence dashboards
+• Data visualization
+• Predictive analytics
+• ETL processes
+• Real-time reporting
+
+Type **"7"** to get started or **"0"** for main menu`,
+
+    team: `👥 **Team as Service**
+• Dedicated development teams
+• Flexible engagement models
+• Agile methodology
+• 24/7 support
+• Scalable solutions
+
+Type **"7"** to discuss your needs or **"0"** for main menu`,
+
+    ai: `🤖 **AI Chatbots & Automation**
+• Customer service chatbots
+• Process automation
+• AI-powered workflows
+• Integration services
+• 24/7 intelligent support
+
+Type **"7"** for demo or **"0"** for main menu`,
+
+    design: `🎯 **Design Consultancy**
+• Brand strategy development
+• Design system creation
+• User experience audits
+• Design workshops
+• Strategic guidance
+
+Type **"7"** for consultation or **"0"** for main menu`
   },
-  pricing: "Our pricing depends on your specific project scope and requirements. We offer flexible packages tailored to your budget and goals. I'd be happy to connect you with our team for a free consultation and custom quote. Would you like me to schedule a call for you?",
-  portfolio: "We've successfully completed projects for various clients in digital marketing, web development, branding, and cloud-based solutions. Our portfolio showcases our expertise across different industries. Would you like me to connect you with our team to discuss your project and see relevant case studies?",
-  contact: "I'd be happy to connect you with our expert team! You can:\n\n• Schedule a free consultation call\n• Request a custom quote\n• Chat with our sales team\n• Email us directly\n\nWhich option works best for you? I can help arrange the connection right away.",
-  availability: "I'm available 24/7 to answer your basic questions about Bitroix Solution. For complex inquiries or detailed project discussions, I'll connect you with our human experts who will get back to you promptly. How can I assist you right now?",
-  default: "I'm here to help you learn about Bitroix Solution's services including digital marketing, web development, graphic design, and IT solutions. You can ask me about our services, pricing, portfolio, or I can connect you with our team. What interests you most?"
+
+  projects: `🚀 **Our Projects & Portfolio**
+
+We've delivered 50+ successful projects! 
+
+**Want to see our work?**
+**1** - Visit Projects Page
+**2** - Schedule project discussion  
+**3** - Request case studies
+**0** - Back to Main Menu
+
+Type your choice! 📱`,
+
+  products: `🔥 **Our Products**
+
+Check out our ready-made solutions:
+
+**1** - Visit Products Page
+**2** - AI Chatbot Systems
+**3** - Hotel Management System
+**4** - Exhibition Management
+**0** - Back to Main Menu
+
+Which interests you? 💼`,
+
+  about: `🌟 **About Bitroix Solution**
+
+Leading digital transformation company with:
+✅ 50+ successful projects
+✅ Expert development teams  
+✅ 24/7 technical support
+✅ Agile methodology
+
+**Learn More:**
+**1** - Our mission & values
+**2** - Meet the team
+**3** - Company achievements
+**0** - Back to Main Menu`,
+
+  career: `💼 **Career Opportunities**
+
+Join our innovative team!
+
+**1** - Visit Career Page
+**2** - Current openings
+**3** - Application process
+**4** - Company culture
+**0** - Back to Main Menu
+
+Ready to grow with us? 🚀`,
+
+  contact: `📞 **Contact Information**
+
+**Multiple ways to reach us:**
+📧 Email: contact@bitroixsolution.com
+📱 Phone: [Contact Number]
+🌐 Website: [Your Website]
+
+**Quick Actions:**
+**1** - Schedule a meeting
+**2** - Request a callback
+**3** - Live chat support
+**0** - Back to Main Menu`,
+
+  pricing: `💰 **Pricing & Quotes**
+
+We offer flexible pricing models:
+• Project-based pricing
+• Hourly consultation rates  
+• Monthly retainer packages
+• Team augmentation pricing
+
+**Get Your Quote:**
+**1** - Schedule free consultation
+**2** - Request detailed quote
+**3** - View pricing guide
+**0** - Back to Main Menu`,
+
+  meeting: `📅 **Redirecting to Schedule Meeting...**
+
+Opening our meeting scheduler where you can:
+• Choose your preferred time
+• Select meeting type
+• Add project details
+• Get instant confirmation
+
+**Please wait while we redirect you...** ⏰`,
+
+  default: `❓ **I didn't understand that!**
+
+Please type a number from the menu options or try:
+• **"menu"** - Show main menu
+• **"services"** - View our services
+• **"meeting"** - Schedule consultation
+• **"help"** - Get assistance
+
+How can I help you? 🤔`
 };
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentMenu, setCurrentMenu] = useState('main');
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: predefinedResponses.greetings[0],
+      content: responses.mainMenu,
       isBot: true,
       timestamp: new Date()
     }
   ]);
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -54,70 +241,194 @@ const Chatbot = () => {
   }, [messages]);
 
   const generateResponse = (message: string): string => {
-    const lowerMessage = message.toLowerCase();
+    const userInput = message.trim();
     
-    // Greetings
-    if (lowerMessage.match(/\b(hi|hello|hey|greetings)\b/)) {
-      const responses = predefinedResponses.greetings;
-      return responses[Math.floor(Math.random() * responses.length)];
+    // Handle navigation commands
+    if (userInput.toLowerCase().includes('menu') || userInput === '0') {
+      setCurrentMenu('main');
+      return responses.mainMenu;
     }
-    
-    // All services inquiry
-    if (lowerMessage.match(/\b(services|what do you do|what services|all services)\b/)) {
-      return predefinedResponses.services.all;
+
+    if (userInput.toLowerCase().includes('services')) {
+      setCurrentMenu('services');
+      return responses.services;
     }
-    
-    // Specific services
-    if (lowerMessage.match(/\b(web|website|development|web development)\b/)) {
-      return predefinedResponses.services.web;
+
+    if (userInput.toLowerCase().includes('meeting') || userInput === '7') {
+      setTimeout(() => {
+        navigate('/schedule-meeting');
+      }, 2000);
+      return responses.meeting;
     }
-    
-    if (lowerMessage.match(/\b(marketing|digital marketing|advertising|online marketing)\b/)) {
-      return predefinedResponses.services.marketing;
+
+    // Main menu navigation
+    if (currentMenu === 'main') {
+      switch (userInput) {
+        case '1':
+          setCurrentMenu('services');
+          return responses.services;
+        case '2':
+          setCurrentMenu('solutions');
+          return responses.solutions;
+        case '3':
+          setCurrentMenu('projects');
+          return responses.projects;
+        case '4':
+          setCurrentMenu('products');
+          return responses.products;
+        case '5':
+          setCurrentMenu('about');
+          return responses.about;
+        case '6':
+          setCurrentMenu('career');
+          return responses.career;
+        case '7':
+          setTimeout(() => navigate('/schedule-meeting'), 2000);
+          return responses.meeting;
+        case '8':
+          setCurrentMenu('contact');
+          return responses.contact;
+        case '9':
+          setCurrentMenu('pricing');
+          return responses.pricing;
+        default:
+          return responses.default;
+      }
     }
-    
-    if (lowerMessage.match(/\b(design|graphic design|logo|branding|visual)\b/)) {
-      return predefinedResponses.services.design;
+
+    // Services menu navigation
+    if (currentMenu === 'services') {
+      switch (userInput) {
+        case '1':
+          setCurrentMenu('service-detail');
+          return responses.serviceDetails.webdev;
+        case '2':
+          setCurrentMenu('service-detail');
+          return responses.serviceDetails.uiux;
+        case '3':
+          setCurrentMenu('service-detail');
+          return responses.serviceDetails.devops;
+        case '4':
+          setCurrentMenu('service-detail');
+          return responses.serviceDetails.analytics;
+        case '5':
+          setCurrentMenu('service-detail');
+          return responses.serviceDetails.team;
+        case '6':
+          setCurrentMenu('service-detail');
+          return responses.serviceDetails.ai;
+        case '7':
+          setCurrentMenu('service-detail');
+          return responses.serviceDetails.design;
+        case '0':
+          setCurrentMenu('main');
+          return responses.mainMenu;
+        default:
+          return responses.default;
+      }
     }
-    
-    if (lowerMessage.match(/\b(seo|search engine|optimization|rankings)\b/)) {
-      return predefinedResponses.services.seo;
+
+    // Solutions menu navigation
+    if (currentMenu === 'solutions') {
+      switch (userInput) {
+        case '1':
+          setTimeout(() => navigate('/solutions/lead-generation'), 1000);
+          return "🚀 **Opening Lead Generation page...**\n\nYou'll be redirected to learn about our lead generation systems and strategies.";
+        case '2':
+          setTimeout(() => navigate('/solutions/seo-dominance'), 1000);
+          return "🔍 **Opening SEO Dominance page...**\n\nDiscover our comprehensive SEO packages and strategies.";
+        case '3':
+          setTimeout(() => navigate('/solutions/paid-ads-management'), 1000);
+          return "💰 **Opening Paid Ads Management page...**\n\nLearn about our expert paid advertising management services.";
+        case '4':
+          setTimeout(() => navigate('/solutions/marketing-automation'), 1000);
+          return "⚡ **Opening Marketing Automation page...**\n\nExplore our marketing automation solutions.";
+        case '5':
+          setTimeout(() => navigate('/solutions/conversion-optimization'), 1000);
+          return "📈 **Opening Conversion Optimization page...**\n\nSee how we optimize your conversion rates.";
+        case '6':
+          setTimeout(() => navigate('/solutions/social-media-growth'), 1000);
+          return "📱 **Opening Social Media Growth page...**\n\nDiscover our social media growth strategies.";
+        case '0':
+          setCurrentMenu('main');
+          return responses.mainMenu;
+        default:
+          return responses.default;
+      }
     }
-    
-    if (lowerMessage.match(/\b(social media|social|facebook|instagram|twitter)\b/)) {
-      return predefinedResponses.services.social;
+
+    // Projects menu navigation
+    if (currentMenu === 'projects') {
+      switch (userInput) {
+        case '1':
+          setTimeout(() => navigate('/projects'), 1000);
+          return "📂 **Opening Projects page...**\n\nYou'll see our complete portfolio and case studies.";
+        case '2':
+          setTimeout(() => navigate('/schedule-meeting'), 1000);
+          return "📅 **Opening meeting scheduler...**\n\nSchedule a discussion about your project needs.";
+        case '3':
+          setCurrentMenu('main');
+          return "📋 **Case studies request noted!**\n\nOur team will prepare relevant case studies for your review. Would you like to schedule a meeting to discuss them?\n\nType **7** to schedule or **0** for main menu.";
+        case '0':
+          setCurrentMenu('main');
+          return responses.mainMenu;
+        default:
+          return responses.default;
+      }
     }
-    
-    if (lowerMessage.match(/\b(it|cloud|technical|support|infrastructure)\b/)) {
-      return predefinedResponses.services.it;
+
+    // Products menu navigation  
+    if (currentMenu === 'products') {
+      switch (userInput) {
+        case '1':
+          setTimeout(() => navigate('/products'), 1000);
+          return "🛍️ **Opening Products page...**\n\nExplore our ready-made software solutions.";
+        case '2':
+        case '3':
+        case '4':
+          setTimeout(() => navigate('/products'), 1000);
+          return "🔧 **Opening Products page...**\n\nYou'll find detailed information about all our products.";
+        case '0':
+          setCurrentMenu('main');
+          return responses.mainMenu;
+        default:
+          return responses.default;
+      }
     }
-    
-    // Pricing inquiries
-    if (lowerMessage.match(/\b(price|cost|pricing|quote|how much|budget)\b/)) {
-      return predefinedResponses.pricing;
+
+    // Career menu navigation
+    if (currentMenu === 'career') {
+      switch (userInput) {
+        case '1':
+          setTimeout(() => navigate('/career'), 1000);
+          return "💼 **Opening Career page...**\n\nExplore opportunities to join our team!";
+        case '2':
+        case '3':
+        case '4':
+          setTimeout(() => navigate('/career'), 1000);
+          return "🚀 **Opening Career page...**\n\nFind all career-related information there.";
+        case '0':
+          setCurrentMenu('main');
+          return responses.mainMenu;
+        default:
+          return responses.default;
+      }
     }
-    
-    // Portfolio/projects
-    if (lowerMessage.match(/\b(portfolio|projects|work|examples|case studies)\b/)) {
-      return predefinedResponses.portfolio;
+
+    // Contact, Pricing, About menus
+    if (currentMenu === 'contact' || currentMenu === 'pricing' || currentMenu === 'about') {
+      if (userInput === '1') {
+        setTimeout(() => navigate('/schedule-meeting'), 1000);
+        return responses.meeting;
+      }
+      if (userInput === '0') {
+        setCurrentMenu('main');
+        return responses.mainMenu;
+      }
     }
-    
-    // Contact inquiries
-    if (lowerMessage.match(/\b(contact|reach|connect|talk|consultation|meeting)\b/)) {
-      return predefinedResponses.contact;
-    }
-    
-    // Availability
-    if (lowerMessage.match(/\b(available|hours|support|help|assistance)\b/)) {
-      return predefinedResponses.availability;
-    }
-    
-    // About company
-    if (lowerMessage.match(/\b(about|company|bitroix|who are you|team)\b/)) {
-      return "Bitroix Solution is a leading digital agency specializing in comprehensive digital services. We help businesses transform their online presence through digital marketing, web development, graphic design, and IT solutions. Our expert team is dedicated to delivering results that drive growth and success.";
-    }
-    
-    return predefinedResponses.default;
+
+    // Default fallback
+    return responses.default;
   };
 
   const handleSendMessage = async () => {
