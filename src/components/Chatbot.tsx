@@ -24,18 +24,18 @@ const formatMessage = (content: string) => {
         let formattedLine = line;
         headerMatch.forEach(match => {
           const text = match.replace(/\*\*/g, '');
-          formattedLine = formattedLine.replace(match, `<strong class="text-primary font-bold text-lg">${text}</strong>`);
+          formattedLine = formattedLine.replace(match, `<strong class="text-primary font-bold text-base sm:text-lg">${text}</strong>`);
         });
-        return <div key={index} className="mb-3" dangerouslySetInnerHTML={{ __html: formattedLine }} />;
+        return <div key={index} className="mb-2 sm:mb-3" dangerouslySetInnerHTML={{ __html: formattedLine }} />;
       }
     }
     
     // Handle bullet points
     if (line.startsWith('• ') || line.startsWith('✅ ')) {
       return (
-        <div key={index} className="flex items-start gap-2 mb-2 ml-2">
-          <span className="text-primary text-sm mt-1">•</span>
-          <span className="text-sm leading-relaxed">{line.substring(2)}</span>
+        <div key={index} className="flex items-start gap-2 mb-1.5 sm:mb-2 ml-1 sm:ml-2">
+          <span className="text-primary text-xs sm:text-sm mt-0.5 sm:mt-1 flex-shrink-0">•</span>
+          <span className="text-xs sm:text-sm leading-relaxed">{line.substring(2)}</span>
         </div>
       );
     }
@@ -45,11 +45,11 @@ const formatMessage = (content: string) => {
       const number = line.match(/^\*\*(\d+)\*\*/)?.[1];
       const text = line.replace(/^\*\*\d+\*\*\s*-?\s*/, '');
       return (
-        <div key={index} className="flex items-center gap-3 mb-3 p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer border border-primary/20">
-          <Badge variant="default" className="bg-gradient-to-r from-primary to-blue-600 text-white font-bold px-3 py-1 rounded-full shadow-sm">
+        <div key={index} className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer border border-primary/20">
+          <Badge variant="default" className="bg-gradient-to-r from-primary to-blue-600 text-white font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-sm text-xs sm:text-sm flex-shrink-0">
             {number}
           </Badge>
-          <span className="font-medium text-foreground">{text}</span>
+          <span className="font-medium text-foreground text-xs sm:text-sm leading-tight">{text}</span>
         </div>
       );
     }
@@ -57,13 +57,13 @@ const formatMessage = (content: string) => {
     // Handle regular text
     if (line.trim()) {
       return (
-        <div key={index} className="mb-2">
-          <span className="text-sm leading-relaxed">{line}</span>
+        <div key={index} className="mb-1.5 sm:mb-2">
+          <span className="text-xs sm:text-sm leading-relaxed">{line}</span>
         </div>
       );
     }
     
-    return <div key={index} className="mb-1" />;
+    return <div key={index} className="mb-0.5 sm:mb-1" />;
   });
 };
 
@@ -589,79 +589,79 @@ const Chatbot = () => {
 
   return (
     <>
-      {/* Enhanced Chat Toggle Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      {/* Enhanced Chat Toggle Button - Mobile Responsive */}
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
         {/* Glow effect background */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-blue-600 to-purple-600 rounded-full blur-lg opacity-70 animate-pulse"></div>
         
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="relative h-16 w-16 rounded-full bg-gradient-to-r from-primary via-blue-600 to-purple-600 hover:from-primary/90 hover:via-blue-600/90 hover:to-purple-600/90 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 border-2 border-white/20"
+          className="relative h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-gradient-to-r from-primary via-blue-600 to-purple-600 hover:from-primary/90 hover:via-blue-600/90 hover:to-purple-600/90 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 border-2 border-white/20 touch-manipulation"
           size="icon"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full"></div>
           {isOpen ? (
-            <X className="h-7 w-7 relative z-10 animate-scale-in" />
+            <X className="h-6 w-6 sm:h-7 sm:w-7 relative z-10 animate-scale-in" />
           ) : (
             <div className="relative z-10 flex items-center justify-center">
-              <MessageCircle className="h-7 w-7 animate-bounce" />
-              <div className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 rounded-full flex items-center justify-center">
-                <Sparkles className="h-2 w-2 text-white animate-pulse" />
+              <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7 animate-bounce" />
+              <div className="absolute -top-1 -right-1 h-3 w-3 sm:h-4 sm:w-4 bg-red-500 rounded-full flex items-center justify-center">
+                <Sparkles className="h-1.5 w-1.5 sm:h-2 sm:w-2 text-white animate-pulse" />
               </div>
             </div>
           )}
         </Button>
       </div>
 
-      {/* Enhanced Chat Window */}
+      {/* Enhanced Chat Window - Mobile Responsive */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-[420px] h-[600px] z-40 flex flex-col animate-scale-in">
+        <div className="fixed inset-x-4 bottom-20 sm:bottom-24 sm:right-6 sm:left-auto sm:w-[420px] h-[70vh] sm:h-[600px] max-h-[600px] z-40 flex flex-col animate-scale-in">
           {/* Background with gradient and blur */}
           <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-950 dark:to-purple-950 rounded-2xl shadow-2xl backdrop-blur-xl border border-white/20 dark:border-gray-700/30"></div>
           
-          {/* Enhanced Header */}
-          <div className="relative bg-gradient-to-r from-primary via-blue-600 to-purple-600 text-white p-6 rounded-t-2xl border-b border-white/20">
+          {/* Enhanced Header - Mobile Responsive */}
+          <div className="relative bg-gradient-to-r from-primary via-blue-600 to-purple-600 text-white p-4 sm:p-6 rounded-t-2xl border-b border-white/20">
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-t-2xl"></div>
-            <div className="relative flex items-center gap-3">
-              <div className="p-2 bg-white/20 rounded-full backdrop-blur-sm">
-                <Bot className="h-6 w-6 text-white animate-pulse" />
+            <div className="relative flex items-center gap-2 sm:gap-3">
+              <div className="p-1.5 sm:p-2 bg-white/20 rounded-full backdrop-blur-sm">
+                <Bot className="h-5 w-5 sm:h-6 sm:w-6 text-white animate-pulse" />
               </div>
-              <div>
-                <h3 className="text-xl font-bold flex items-center gap-2">
-                  Bitroix AI Assistant
-                  <Zap className="h-4 w-4 text-yellow-300 animate-bounce" />
+              <div className="min-w-0 flex-1">
+                <h3 className="text-lg sm:text-xl font-bold flex items-center gap-1 sm:gap-2 truncate">
+                  <span className="truncate">Bitroix AI Assistant</span>
+                  <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-300 animate-bounce flex-shrink-0" />
                 </h3>
-                <p className="text-sm text-white/80 font-medium">
+                <p className="text-xs sm:text-sm text-white/80 font-medium truncate">
                   {isTyping ? "🤖 Typing..." : "💬 Ask me anything about our services"}
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Enhanced Messages Container */}
-          <div className="relative flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-transparent to-white/50 dark:to-gray-900/50">
+          {/* Enhanced Messages Container - Mobile Responsive */}
+          <div className="relative flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-gradient-to-b from-transparent to-white/50 dark:to-gray-900/50">
             {messages.map((message, index) => (
               <div
                 key={message.id}
                 className={`flex animate-fade-in ${message.isBot ? 'justify-start' : 'justify-end'}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`flex items-start gap-3 max-w-[85%] ${message.isBot ? 'flex-row' : 'flex-row-reverse'}`}>
+                <div className={`flex items-start gap-2 sm:gap-3 max-w-[90%] sm:max-w-[85%] ${message.isBot ? 'flex-row' : 'flex-row-reverse'}`}>
                   {/* Avatar */}
-                  <div className={`p-2 rounded-full shadow-lg ${
+                  <div className={`p-1.5 sm:p-2 rounded-full shadow-lg flex-shrink-0 ${
                     message.isBot 
                       ? 'bg-gradient-to-r from-primary to-blue-600 text-white' 
                       : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
                   }`}>
                     {message.isBot ? (
-                      <Bot className="h-4 w-4" />
+                      <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
                     ) : (
-                      <User className="h-4 w-4" />
+                      <User className="h-3 w-3 sm:h-4 sm:w-4" />
                     )}
                   </div>
                   
                   {/* Message Bubble */}
-                  <div className={`relative p-4 rounded-2xl shadow-lg backdrop-blur-sm border ${
+                  <div className={`relative p-3 sm:p-4 rounded-2xl shadow-lg backdrop-blur-sm border ${
                     message.isBot
                       ? 'bg-white/80 dark:bg-gray-800/80 text-gray-800 dark:text-gray-200 border-gray-200/50 dark:border-gray-600/50'
                       : 'bg-gradient-to-r from-primary to-blue-600 text-white border-primary/30'
@@ -669,7 +669,7 @@ const Chatbot = () => {
                     {/* Message tail */}
                     <div className={`absolute top-3 ${
                       message.isBot ? '-left-2' : '-right-2'
-                    } w-4 h-4 rotate-45 ${
+                    } w-3 h-3 sm:w-4 sm:h-4 rotate-45 ${
                       message.isBot
                         ? 'bg-white/80 dark:bg-gray-800/80 border-l border-b border-gray-200/50 dark:border-gray-600/50'
                         : 'bg-gradient-to-br from-primary to-blue-600'
@@ -682,12 +682,12 @@ const Chatbot = () => {
                           {formatMessage(message.content)}
                         </div>
                       ) : (
-                        <p className="text-sm font-medium leading-relaxed">{message.content}</p>
+                        <p className="text-xs sm:text-sm font-medium leading-relaxed">{message.content}</p>
                       )}
                     </div>
                     
                     {/* Timestamp */}
-                    <div className={`text-xs mt-2 ${
+                    <div className={`text-xs mt-1.5 sm:mt-2 ${
                       message.isBot ? 'text-gray-500 dark:text-gray-400' : 'text-white/70'
                     }`}>
                       {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
@@ -700,15 +700,15 @@ const Chatbot = () => {
             {/* Typing Indicator */}
             {isTyping && (
               <div className="flex justify-start animate-fade-in">
-                <div className="flex items-start gap-3 max-w-[85%]">
-                  <div className="p-2 rounded-full shadow-lg bg-gradient-to-r from-primary to-blue-600 text-white">
-                    <Bot className="h-4 w-4" />
+                <div className="flex items-start gap-2 sm:gap-3 max-w-[90%] sm:max-w-[85%]">
+                  <div className="p-1.5 sm:p-2 rounded-full shadow-lg bg-gradient-to-r from-primary to-blue-600 text-white flex-shrink-0">
+                    <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
                   </div>
-                  <div className="bg-white/80 dark:bg-gray-800/80 p-4 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
+                  <div className="bg-white/80 dark:bg-gray-800/80 p-3 sm:p-4 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
                     <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                      <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-bounce"></div>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                     </div>
                   </div>
                 </div>
@@ -718,51 +718,51 @@ const Chatbot = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Enhanced Input Section */}
-          <div className="relative p-4 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-b-2xl border-t border-white/20 dark:border-gray-700/30">
-            <div className="flex items-center gap-3">
+          {/* Enhanced Input Section - Mobile Responsive */}
+          <div className="relative p-3 sm:p-4 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-b-2xl border-t border-white/20 dark:border-gray-700/30">
+            <div className="flex items-center gap-2 sm:gap-3">
               <div className="flex-1 relative">
                 <Input
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Type a number (1-9) or ask me anything..."
-                  className="pr-12 h-12 text-base bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-200/50 dark:border-gray-600/50 focus:border-primary/70 rounded-xl shadow-sm transition-all duration-200 focus:shadow-lg"
+                  placeholder="Type a number (1-9) or ask..."
+                  className="pr-10 sm:pr-12 h-10 sm:h-12 text-sm sm:text-base bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-200/50 dark:border-gray-600/50 focus:border-primary/70 rounded-xl shadow-sm transition-all duration-200 focus:shadow-lg touch-manipulation"
                 />
-                <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                  <Sparkles className="h-4 w-4 text-primary animate-pulse" />
+                <div className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2">
+                  <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-primary animate-pulse" />
                 </div>
               </div>
               
               <Button 
                 onClick={handleSendMessage} 
                 disabled={!input.trim() || isTyping}
-                className="h-12 w-12 rounded-xl bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
                 size="icon"
               >
-                <Send className="h-5 w-5" />
+                <Send className="h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
             </div>
             
-            {/* Quick Action Badges */}
-            <div className="flex flex-wrap gap-2 mt-3">
+            {/* Quick Action Badges - Mobile Responsive */}
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2 sm:mt-3">
               <Badge 
                 variant="secondary" 
-                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-3 py-1"
+                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
                 onClick={() => setInput('menu')}
               >
-                📋 Main Menu
+                📋 <span className="hidden xs:inline">Main </span>Menu
               </Badge>
               <Badge 
                 variant="secondary" 
-                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-3 py-1"
+                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
                 onClick={() => setInput('7')}
               >
-                📅 Schedule Meeting
+                📅 <span className="hidden xs:inline">Schedule </span>Meeting
               </Badge>
               <Badge 
                 variant="secondary" 
-                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-3 py-1"
+                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
                 onClick={() => setInput('1')}
               >
                 🛠️ Services
