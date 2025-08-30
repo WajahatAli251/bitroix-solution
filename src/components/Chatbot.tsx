@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Sparkles, Zap } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
 import { useNavigate } from 'react-router-dom';
 
 interface Message {
@@ -10,6 +11,61 @@ interface Message {
   isBot: boolean;
   timestamp: Date;
 }
+
+// Enhanced message formatting function
+const formatMessage = (content: string) => {
+  // Split content into lines and process each line
+  const lines = content.split('\n');
+  return lines.map((line, index) => {
+    // Handle headers (lines with **)
+    if (line.includes('**') && line.includes('**')) {
+      const headerMatch = line.match(/\*\*(.*?)\*\*/g);
+      if (headerMatch) {
+        let formattedLine = line;
+        headerMatch.forEach(match => {
+          const text = match.replace(/\*\*/g, '');
+          formattedLine = formattedLine.replace(match, `<strong class="text-primary font-bold text-lg">${text}</strong>`);
+        });
+        return <div key={index} className="mb-3" dangerouslySetInnerHTML={{ __html: formattedLine }} />;
+      }
+    }
+    
+    // Handle bullet points
+    if (line.startsWith('• ') || line.startsWith('✅ ')) {
+      return (
+        <div key={index} className="flex items-start gap-2 mb-2 ml-2">
+          <span className="text-primary text-sm mt-1">•</span>
+          <span className="text-sm leading-relaxed">{line.substring(2)}</span>
+        </div>
+      );
+    }
+    
+    // Handle numbered options
+    if (line.match(/^\*\*\d+\*\*/)) {
+      const number = line.match(/^\*\*(\d+)\*\*/)?.[1];
+      const text = line.replace(/^\*\*\d+\*\*\s*-?\s*/, '');
+      return (
+        <div key={index} className="flex items-center gap-3 mb-3 p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer border border-primary/20">
+          <Badge variant="default" className="bg-gradient-to-r from-primary to-blue-600 text-white font-bold px-3 py-1 rounded-full shadow-sm">
+            {number}
+          </Badge>
+          <span className="font-medium text-foreground">{text}</span>
+        </div>
+      );
+    }
+    
+    // Handle regular text
+    if (line.trim()) {
+      return (
+        <div key={index} className="mb-2">
+          <span className="text-sm leading-relaxed">{line}</span>
+        </div>
+      );
+    }
+    
+    return <div key={index} className="mb-1" />;
+  });
+};
 
 // Menu-based interactive responses
 const responses = {
@@ -220,6 +276,7 @@ How can I help you? 🤔`
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentMenu, setCurrentMenu] = useState('main');
+  const [isTyping, setIsTyping] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -443,8 +500,9 @@ const Chatbot = () => {
 
     setMessages(prev => [...prev, userMessage]);
     setInput('');
+    setIsTyping(true);
 
-    // Simulate thinking time
+    // Simulate thinking time with typing indicator
     setTimeout(() => {
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
@@ -453,7 +511,8 @@ const Chatbot = () => {
         timestamp: new Date()
       };
       setMessages(prev => [...prev, botResponse]);
-    }, 1000);
+      setIsTyping(false);
+    }, 1500);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -465,58 +524,184 @@ const Chatbot = () => {
 
   return (
     <>
-      {/* Chat Toggle Button */}
-      <Button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg z-50 bg-primary hover:bg-primary/90"
-        size="icon"
-      >
-        {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
-      </Button>
+      {/* Enhanced Chat Toggle Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        {/* Glow effect background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-blue-600 to-purple-600 rounded-full blur-lg opacity-70 animate-pulse"></div>
+        
+        <Button
+          onClick={() => setIsOpen(!isOpen)}
+          className="relative h-16 w-16 rounded-full bg-gradient-to-r from-primary via-blue-600 to-purple-600 hover:from-primary/90 hover:via-blue-600/90 hover:to-purple-600/90 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 border-2 border-white/20"
+          size="icon"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full"></div>
+          {isOpen ? (
+            <X className="h-7 w-7 relative z-10 animate-scale-in" />
+          ) : (
+            <div className="relative z-10 flex items-center justify-center">
+              <MessageCircle className="h-7 w-7 animate-bounce" />
+              <div className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 rounded-full flex items-center justify-center">
+                <Sparkles className="h-2 w-2 text-white animate-pulse" />
+              </div>
+            </div>
+          )}
+        </Button>
+      </div>
 
-      {/* Chat Window */}
+      {/* Enhanced Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-96 h-[500px] bg-background border border-border rounded-lg shadow-xl z-40 flex flex-col">
-          {/* Header */}
-          <div className="bg-primary text-primary-foreground p-4 rounded-t-lg">
-            <h3 className="font-semibold">Bitroix Assistant</h3>
-            <p className="text-sm opacity-90">Ask me about our services</p>
+        <div className="fixed bottom-24 right-6 w-[420px] h-[600px] z-40 flex flex-col animate-scale-in">
+          {/* Background with gradient and blur */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-950 dark:to-purple-950 rounded-2xl shadow-2xl backdrop-blur-xl border border-white/20 dark:border-gray-700/30"></div>
+          
+          {/* Enhanced Header */}
+          <div className="relative bg-gradient-to-r from-primary via-blue-600 to-purple-600 text-white p-6 rounded-t-2xl border-b border-white/20">
+            <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-t-2xl"></div>
+            <div className="relative flex items-center gap-3">
+              <div className="p-2 bg-white/20 rounded-full backdrop-blur-sm">
+                <Bot className="h-6 w-6 text-white animate-pulse" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold flex items-center gap-2">
+                  Bitroix AI Assistant
+                  <Zap className="h-4 w-4 text-yellow-300 animate-bounce" />
+                </h3>
+                <p className="text-sm text-white/80 font-medium">
+                  {isTyping ? "🤖 Typing..." : "💬 Ask me anything about our services"}
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.map((message) => (
+          {/* Enhanced Messages Container */}
+          <div className="relative flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-transparent to-white/50 dark:to-gray-900/50">
+            {messages.map((message, index) => (
               <div
                 key={message.id}
-                className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
+                className={`flex animate-fade-in ${message.isBot ? 'justify-start' : 'justify-end'}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div
-                  className={`max-w-[80%] p-3 rounded-lg ${
+                <div className={`flex items-start gap-3 max-w-[85%] ${message.isBot ? 'flex-row' : 'flex-row-reverse'}`}>
+                  {/* Avatar */}
+                  <div className={`p-2 rounded-full shadow-lg ${
+                    message.isBot 
+                      ? 'bg-gradient-to-r from-primary to-blue-600 text-white' 
+                      : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
+                  }`}>
+                    {message.isBot ? (
+                      <Bot className="h-4 w-4" />
+                    ) : (
+                      <User className="h-4 w-4" />
+                    )}
+                  </div>
+                  
+                  {/* Message Bubble */}
+                  <div className={`relative p-4 rounded-2xl shadow-lg backdrop-blur-sm border ${
                     message.isBot
-                      ? 'bg-muted text-muted-foreground'
-                      : 'bg-primary text-primary-foreground'
-                  }`}
-                >
-                  <p className="text-sm">{message.content}</p>
+                      ? 'bg-white/80 dark:bg-gray-800/80 text-gray-800 dark:text-gray-200 border-gray-200/50 dark:border-gray-600/50'
+                      : 'bg-gradient-to-r from-primary to-blue-600 text-white border-primary/30'
+                  }`}>
+                    {/* Message tail */}
+                    <div className={`absolute top-3 ${
+                      message.isBot ? '-left-2' : '-right-2'
+                    } w-4 h-4 rotate-45 ${
+                      message.isBot
+                        ? 'bg-white/80 dark:bg-gray-800/80 border-l border-b border-gray-200/50 dark:border-gray-600/50'
+                        : 'bg-gradient-to-br from-primary to-blue-600'
+                    }`}></div>
+                    
+                    {/* Message Content */}
+                    <div className="relative z-10">
+                      {message.isBot ? (
+                        <div className="prose prose-sm max-w-none">
+                          {formatMessage(message.content)}
+                        </div>
+                      ) : (
+                        <p className="text-sm font-medium leading-relaxed">{message.content}</p>
+                      )}
+                    </div>
+                    
+                    {/* Timestamp */}
+                    <div className={`text-xs mt-2 ${
+                      message.isBot ? 'text-gray-500 dark:text-gray-400' : 'text-white/70'
+                    }`}>
+                      {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
+            
+            {/* Typing Indicator */}
+            {isTyping && (
+              <div className="flex justify-start animate-fade-in">
+                <div className="flex items-start gap-3 max-w-[85%]">
+                  <div className="p-2 rounded-full shadow-lg bg-gradient-to-r from-primary to-blue-600 text-white">
+                    <Bot className="h-4 w-4" />
+                  </div>
+                  <div className="bg-white/80 dark:bg-gray-800/80 p-4 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
+                    <div className="flex space-x-1">
+                      <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                      <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
-          <div className="p-4 border-t border-border">
-            <div className="flex space-x-2">
-              <Input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Ask about our services..."
-                className="flex-1"
-              />
-              <Button onClick={handleSendMessage} size="icon" className="shrink-0">
-                <Send className="h-4 w-4" />
+          {/* Enhanced Input Section */}
+          <div className="relative p-4 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-b-2xl border-t border-white/20 dark:border-gray-700/30">
+            <div className="flex items-center gap-3">
+              <div className="flex-1 relative">
+                <Input
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Type a number (1-9) or ask me anything..."
+                  className="pr-12 h-12 text-base bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-200/50 dark:border-gray-600/50 focus:border-primary/70 rounded-xl shadow-sm transition-all duration-200 focus:shadow-lg"
+                />
+                <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                  <Sparkles className="h-4 w-4 text-primary animate-pulse" />
+                </div>
+              </div>
+              
+              <Button 
+                onClick={handleSendMessage} 
+                disabled={!input.trim() || isTyping}
+                className="h-12 w-12 rounded-xl bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                size="icon"
+              >
+                <Send className="h-5 w-5" />
               </Button>
+            </div>
+            
+            {/* Quick Action Badges */}
+            <div className="flex flex-wrap gap-2 mt-3">
+              <Badge 
+                variant="secondary" 
+                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-3 py-1"
+                onClick={() => setInput('menu')}
+              >
+                📋 Main Menu
+              </Badge>
+              <Badge 
+                variant="secondary" 
+                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-3 py-1"
+                onClick={() => setInput('7')}
+              >
+                📅 Schedule Meeting
+              </Badge>
+              <Badge 
+                variant="secondary" 
+                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-3 py-1"
+                onClick={() => setInput('1')}
+              >
+                🛠️ Services
+              </Badge>
             </div>
           </div>
         </div>
