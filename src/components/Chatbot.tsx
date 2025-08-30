@@ -108,6 +108,11 @@ Type the number to learn more! 🚀`,
 **6** - Social Media Growth
 **0** - Back to Main Menu
 
+**💰 Popular Packages:**
+• **Starter Package:** $2,000 - $4,000/month
+• **Growth Package:** $4,000 - $8,000/month
+• **Enterprise Package:** $8,000 - $15,000/month
+
 Which solution interests you? 💡`,
 
   serviceDetails: {
@@ -118,6 +123,12 @@ Which solution interests you? 💡`,
 • CMS development
 • API integration
 
+**💰 Pricing:**
+• **Simple Website:** $3,000 - $8,000
+• **E-commerce Store:** $8,000 - $25,000
+• **Web Application:** $15,000 - $50,000+
+• **Hourly Rate:** $35 - $75/hour
+
 **Ready to start?** Type **"7"** to schedule consultation or **"0"** for main menu`,
 
     uiux: `🎨 **UI/UX Design Services**
@@ -126,6 +137,12 @@ Which solution interests you? 💡`,
 • Visual design systems
 • Mobile app design
 • User testing
+
+**💰 Pricing:**
+• **Logo & Branding:** $1,500 - $5,000
+• **Website Design:** $3,000 - $15,000
+• **Mobile App Design:** $8,000 - $25,000
+• **Hourly Rate:** $50 - $85/hour
 
 Type **"7"** to discuss your project or **"0"** for main menu`,
 
@@ -136,6 +153,12 @@ Type **"7"** to discuss your project or **"0"** for main menu`,
 • Monitoring & logging
 • ML model deployment
 
+**💰 Pricing:**
+• **Cloud Setup:** $5,000 - $20,000
+• **CI/CD Pipeline:** $3,000 - $12,000
+• **MLOps Platform:** $2,500 - $8,000/month
+• **Hourly Rate:** $75 - $150/hour
+
 Type **"7"** for consultation or **"0"** for main menu`,
 
     analytics: `📊 **Data Analytics & BI**
@@ -144,6 +167,12 @@ Type **"7"** for consultation or **"0"** for main menu`,
 • Predictive analytics
 • ETL processes
 • Real-time reporting
+
+**💰 Pricing:**
+• **Simple Dashboard:** $5,000 - $15,000
+• **Complex BI System:** $25,000 - $75,000
+• **Monthly Analytics:** $2,000 - $8,000/month
+• **Hourly Rate:** $65 - $125/hour
 
 Type **"7"** to get started or **"0"** for main menu`,
 
@@ -154,6 +183,12 @@ Type **"7"** to get started or **"0"** for main menu`,
 • 24/7 support
 • Scalable solutions
 
+**💰 Pricing:**
+• **Junior Developer:** $2,500 - $4,000/month
+• **Senior Developer:** $4,500 - $7,500/month
+• **Full Team (5-8 people):** $25,000 - $45,000/month
+• **Project Manager:** $3,500 - $6,000/month
+
 Type **"7"** to discuss your needs or **"0"** for main menu`,
 
     ai: `🤖 **AI Chatbots & Automation**
@@ -163,6 +198,12 @@ Type **"7"** to discuss your needs or **"0"** for main menu`,
 • Integration services
 • 24/7 intelligent support
 
+**💰 Pricing:**
+• **Simple Chatbot:** $2,000 - $8,000
+• **Advanced AI Assistant:** $8,000 - $25,000
+• **Enterprise Solution:** $25,000 - $75,000+
+• **Monthly Maintenance:** $500 - $2,500/month
+
 Type **"7"** for demo or **"0"** for main menu`,
 
     design: `🎯 **Design Consultancy**
@@ -171,6 +212,12 @@ Type **"7"** for demo or **"0"** for main menu`,
 • User experience audits
 • Design workshops
 • Strategic guidance
+
+**💰 Pricing:**
+• **Brand Strategy:** $3,000 - $15,000
+• **Design System:** $8,000 - $25,000
+• **UX Audit:** $2,000 - $8,000
+• **Hourly Rate:** $75 - $150/hour
 
 Type **"7"** for consultation or **"0"** for main menu`
   },
@@ -238,18 +285,36 @@ Ready to grow with us? 🚀`,
 **3** - Live chat support
 **0** - Back to Main Menu`,
 
-  pricing: `💰 **Pricing & Quotes**
+  pricing: `💰 **Pricing & Service Packages**
 
-We offer flexible pricing models:
-• Project-based pricing
-• Hourly consultation rates  
-• Monthly retainer packages
-• Team augmentation pricing
+**🎯 POPULAR SERVICE PACKAGES:**
+
+**💼 Starter Package ($3,000 - $8,000)**
+• Basic website or simple app
+• Logo & brand identity
+• 3 months support
+
+**🚀 Growth Package ($8,000 - $25,000)**
+• Custom web application
+• Complete UI/UX design
+• SEO optimization
+• 6 months support
+
+**🏢 Enterprise Package ($25,000 - $75,000+)**
+• Complex web platform
+• Data analytics & BI
+• DevOps & cloud setup
+• 12 months support
+
+**📊 DIGITAL MARKETING PACKAGES:**
+• **Basic:** $2,000 - $4,000/month
+• **Professional:** $4,000 - $8,000/month  
+• **Enterprise:** $8,000 - $15,000/month
 
 **Get Your Quote:**
 **1** - Schedule free consultation
 **2** - Request detailed quote
-**3** - View pricing guide
+**3** - Discuss custom package
 **0** - Back to Main Menu`,
 
   meeting: `📅 **Redirecting to Schedule Meeting...**
