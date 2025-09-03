@@ -1,4 +1,60 @@
 
+import React, { useState, useEffect } from 'react';
+
+const TypewriterText = ({ lines, speed = 50, lineDelay = 800 }: {
+  lines: string[];
+  speed?: number;
+  lineDelay?: number;
+}) => {
+  const [currentLineIndex, setCurrentLineIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    if (currentLineIndex >= lines.length) return;
+
+    const currentLine = lines[currentLineIndex];
+    
+    if (currentText.length < currentLine.length) {
+      const timeout = setTimeout(() => {
+        setCurrentText(currentLine.slice(0, currentText.length + 1));
+      }, speed);
+      return () => clearTimeout(timeout);
+    } else {
+      const timeout = setTimeout(() => {
+        setCurrentLineIndex(prev => prev + 1);
+        setCurrentText('');
+      }, lineDelay);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentText, currentLineIndex, lines, speed, lineDelay]);
+
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+    return () => clearInterval(cursorInterval);
+  }, []);
+
+  return (
+    <div className="font-mono text-lg text-slate-700 leading-relaxed bg-slate-50 rounded-lg p-4 border-l-4 border-primary">
+      {lines.slice(0, currentLineIndex).map((line, index) => (
+        <div key={index} className="mb-2">
+          <span className="text-green-600 mr-2">{index + 1}.</span>
+          <span>{line}</span>
+        </div>
+      ))}
+      {currentLineIndex < lines.length && (
+        <div className="mb-2">
+          <span className="text-green-600 mr-2">{currentLineIndex + 1}.</span>
+          <span>{currentText}</span>
+          {showCursor && <span className="bg-primary text-primary animate-pulse">|</span>}
+        </div>
+      )}
+    </div>
+  );
+};
+
 const MissionSection = () => {
   return (
     <section id="mission" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(135deg, #F8FAFC, #EDF2F7, #E2E8F0)'}}>
@@ -35,10 +91,23 @@ const MissionSection = () => {
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900">Expert Digital Solutions</h3>
                 </div>
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  At Bitroix Solution LLC, we specialize in delivering professional web development, search engine optimization, 
-                  digital marketing, and AI solutions that help businesses achieve higher search rankings, increased online visibility, and sustainable growth through proven digital strategies.
-                </p>
+                <TypewriterText 
+                  lines={[
+                    "// Initializing Bitroix Solution Services",
+                    "const services = {",
+                    "  webDevelopment: \"Professional & Responsive\",",
+                    "  seoOptimization: \"Higher Search Rankings\",",
+                    "  digitalMarketing: \"Increased Visibility\",",
+                    "  aiSolutions: \"Smart Automation\",",
+                    "  dataAnalytics: \"Measurable Results\"",
+                    "};",
+                    "",
+                    "// Delivering sustainable business growth",
+                    "return digitalTransformation.success();"
+                  ]}
+                  speed={30}
+                  lineDelay={600}
+                />
               </div>
             </div>
 
