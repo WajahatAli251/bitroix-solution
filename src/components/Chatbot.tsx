@@ -624,7 +624,7 @@ const Chatbot = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-t-2xl"></div>
             <div className="relative flex items-center gap-2 sm:gap-3">
               <div className="p-1.5 sm:p-2 bg-white/20 rounded-full backdrop-blur-sm">
-                <Bot className="h-5 w-5 sm:h-6 sm:w-6 text-white animate-pulse" />
+                <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white animate-pulse" />
               </div>
               <div className="min-w-0 flex-1">
                 <h3 className="text-lg sm:text-xl font-bold flex items-center gap-1 sm:gap-2 truncate">
@@ -654,7 +654,7 @@ const Chatbot = () => {
                       : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
                   }`}>
                     {message.isBot ? (
-                      <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
+                      <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
                     ) : (
                       <User className="h-3 w-3 sm:h-4 sm:w-4" />
                     )}
@@ -702,7 +702,7 @@ const Chatbot = () => {
               <div className="flex justify-start animate-fade-in">
                 <div className="flex items-start gap-2 sm:gap-3 max-w-[90%] sm:max-w-[85%]">
                   <div className="p-1.5 sm:p-2 rounded-full shadow-lg bg-gradient-to-r from-primary to-blue-600 text-white flex-shrink-0">
-                    <Bot className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
                   </div>
                   <div className="bg-white/80 dark:bg-gray-800/80 p-3 sm:p-4 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
                     <div className="flex space-x-1">
