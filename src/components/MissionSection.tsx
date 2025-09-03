@@ -37,18 +37,18 @@ const TypewriterText = ({ lines, speed = 50, lineDelay = 800 }: {
   }, []);
 
   return (
-    <div className="font-mono text-lg text-slate-700 leading-relaxed bg-slate-50 rounded-lg p-4 border-l-4 border-primary">
+    <div className="text-lg text-slate-700 leading-relaxed bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4 border-l-4 border-primary shadow-sm">
       {lines.slice(0, currentLineIndex).map((line, index) => (
-        <div key={index} className="mb-2">
-          <span className="text-green-600 mr-2">{index + 1}.</span>
+        <div key={index} className="mb-2 flex items-center">
+          <span className="text-primary mr-2 font-semibold">•</span>
           <span>{line}</span>
         </div>
       ))}
       {currentLineIndex < lines.length && (
-        <div className="mb-2">
-          <span className="text-green-600 mr-2">{currentLineIndex + 1}.</span>
+        <div className="mb-2 flex items-center">
+          <span className="text-primary mr-2 font-semibold">•</span>
           <span>{currentText}</span>
-          {showCursor && <span className="bg-primary text-primary animate-pulse">|</span>}
+          {showCursor && <span className="bg-primary text-primary animate-pulse ml-1">|</span>}
         </div>
       )}
     </div>
@@ -93,20 +93,19 @@ const MissionSection = () => {
                 </div>
                 <TypewriterText 
                   lines={[
-                    "// Initializing Bitroix Solution Services",
-                    "const services = {",
-                    "  webDevelopment: \"Professional & Responsive\",",
-                    "  seoOptimization: \"Higher Search Rankings\",",
-                    "  digitalMarketing: \"Increased Visibility\",",
-                    "  aiSolutions: \"Smart Automation\",",
-                    "  dataAnalytics: \"Measurable Results\"",
-                    "};",
-                    "",
-                    "// Delivering sustainable business growth",
-                    "return digitalTransformation.success();"
+                    "Welcome to Bitroix Solution LLC",
+                    "We specialize in professional web development",
+                    "Expert search engine optimization services", 
+                    "Digital marketing that drives results",
+                    "AI solutions for business automation",
+                    "Data analytics for measurable growth",
+                    "Helping businesses achieve higher search rankings",
+                    "Increased online visibility and sustainable growth",
+                    "Through proven digital strategies",
+                    "Your success is our mission"
                   ]}
-                  speed={30}
-                  lineDelay={600}
+                  speed={40}
+                  lineDelay={800}
                 />
               </div>
             </div>
