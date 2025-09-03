@@ -123,10 +123,21 @@ const MissionSection = () => {
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900">Proven Track Record</h3>
                 </div>
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  We deliver measurable results including improved search engine rankings, increased website traffic, higher conversion rates, 
-                  and enhanced online presence for businesses across multiple industries through data-driven digital marketing strategies.
-                </p>
+                <TypewriterText 
+                  lines={[
+                    "Delivering measurable results consistently",
+                    "Improved search engine rankings for clients",
+                    "Increased website traffic and conversions", 
+                    "Enhanced online presence across industries",
+                    "Data-driven digital marketing strategies",
+                    "Higher conversion rates achieved",
+                    "ROI optimization and performance tracking",
+                    "Continuous improvement and growth",
+                    "Building long-term client partnerships"
+                  ]}
+                  speed={40}
+                  lineDelay={800}
+                />
               </div>
             </div>
           </div>
