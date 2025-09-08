@@ -93,16 +93,13 @@ const MissionSection = () => {
                 </div>
                 <TypewriterText 
                   lines={[
-                    "Welcome to Bitroix Solution LLC",
-                    "We specialize in professional web development",
-                    "Expert search engine optimization services", 
-                    "Digital marketing that drives results",
-                    "AI solutions for business automation",
-                    "Data analytics for measurable growth",
-                    "Helping businesses achieve higher search rankings",
-                    "Increased online visibility and sustainable growth",
-                    "Through proven digital strategies",
-                    "Your success is our mission"
+                    "Full-stack web development with modern frameworks",
+                    "SEO optimization that ranks #1 on Google",
+                    "AI-powered marketing automation systems", 
+                    "Real-time data analytics and insights",
+                    "Custom CRM and business management tools",
+                    "Cloud infrastructure and DevOps solutions",
+                    "End-to-end digital transformation strategy"
                   ]}
                   speed={40}
                   lineDelay={800}
@@ -125,15 +122,13 @@ const MissionSection = () => {
                 </div>
                 <TypewriterText 
                   lines={[
-                    "Delivering measurable results consistently",
-                    "Improved search engine rankings for clients",
-                    "Increased website traffic and conversions", 
-                    "Enhanced online presence across industries",
-                    "Data-driven digital marketing strategies",
-                    "Higher conversion rates achieved",
-                    "ROI optimization and performance tracking",
-                    "Continuous improvement and growth",
-                    "Building long-term client partnerships"
+                    "500+ websites launched with 95% client retention",
+                    "Average 300% increase in organic traffic",
+                    "4.8/5 star rating across 50+ client reviews", 
+                    "ROI improvements of 250% within 6 months",
+                    "Page 1 Google rankings in competitive markets",
+                    "24/7 support with <2 hour response time",
+                    "ISO certified processes and data security"
                   ]}
                   speed={40}
                   lineDelay={800}
