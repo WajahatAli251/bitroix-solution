@@ -30,7 +30,7 @@ const Footer = () => {
               <div className="flex space-x-6">
                 <div className="text-center group">
                   <a 
-                    href="https://www.linkedin.com/in/bitroix-solution-a7a7b4372/" 
+                    href="https://www.linkedin.com/company/biroix-solution-llc/?viewAsMember=true" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110 glow-primary group-hover:glow-tech shadow-md"
