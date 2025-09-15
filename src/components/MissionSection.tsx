@@ -76,73 +76,14 @@ const MissionSection = () => {
           </p>
         </div>
 
-        <div className="relative">
-          {/* Large Success Celebration Illustration Overlay */}
-          <div className="absolute inset-0 flex justify-center items-center z-20 pointer-events-none">
-            <div className="relative group animate-fade-in" style={{animationDelay: '0.2s'}}>
-              {/* Animated Purple Lines Background */}
-              <div className="absolute inset-0 -m-16">
-                <svg className="w-full h-full animate-float" viewBox="0 0 600 500" style={{animationDelay: '0.5s'}}>
-                  <defs>
-                    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style={{stopColor: '#8B5CF6', stopOpacity: 0.6}} />
-                      <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.4}} />
-                      <stop offset="100%" style={{stopColor: '#C084FC', stopOpacity: 0.3}} />
-                    </linearGradient>
-                  </defs>
-                  
-                  <path 
-                    d="M50,250 Q200,150 350,250 T650,250" 
-                    stroke="url(#purpleGradient)" 
-                    strokeWidth="3" 
-                    fill="none" 
-                    className="animate-pulse"
-                    style={{animationDelay: '0.2s'}}
-                  />
-                  <path 
-                    d="M0,200 Q150,100 300,200 T600,200" 
-                    stroke="url(#purpleGradient)" 
-                    strokeWidth="2" 
-                    fill="none" 
-                    className="animate-pulse"
-                    style={{animationDelay: '0.8s'}}
-                  />
-                  <path 
-                    d="M100,400 Q250,300 400,400 T700,400" 
-                    stroke="url(#purpleGradient)" 
-                    strokeWidth="2.5" 
-                    fill="none" 
-                    className="animate-pulse"
-                    style={{animationDelay: '1.2s'}}
-                  />
-                </svg>
-              </div>
-              
-              <div className="relative z-10 transform hover:scale-105 transition-all duration-700">
-                <img 
-                  src="/src/assets/success-celebration-no-laptop.png" 
-                  alt="Success Celebration - Digital Solutions Achievement" 
-                  className="w-[500px] h-[400px] object-contain animate-float drop-shadow-2xl"
-                  style={{
-                    filter: 'drop-shadow(0 20px 40px rgba(139, 92, 246, 0.2))',
-                    animationDelay: '0.3s'
-                  }}
-                />
-                
-                {/* Floating purple particles */}
-                <div className="absolute top-10 left-16 w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '0.5s'}}></div>
-                <div className="absolute top-20 right-20 w-2 h-2 bg-purple-500 rounded-full animate-bounce opacity-70" style={{animationDelay: '1s'}}></div>
-                <div className="absolute bottom-20 left-20 w-4 h-4 bg-purple-300 rounded-full animate-bounce opacity-50" style={{animationDelay: '1.5s'}}></div>
-                <div className="absolute bottom-10 right-16 w-2.5 h-2.5 bg-purple-600 rounded-full animate-bounce opacity-65" style={{animationDelay: '2s'}}></div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-1 gap-8 relative z-10">
-            <div className="bg-gradient-to-br from-white to-blue-50 p-10 rounded-2xl border border-blue-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 animate-fade-in hover:scale-105 relative overflow-hidden group">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Side - Text Content */}
+          <div className="space-y-8 animate-fade-in">
+            {/* Expert Digital Solutions */}
+            <div className="bg-gradient-to-br from-white to-purple-50 p-10 rounded-2xl border border-purple-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 hover:scale-105 relative overflow-hidden group">
               <div className="relative z-10">
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mr-4 animate-pulse-glow">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mr-4 animate-pulse-glow">
                     <span className="text-2xl">🎯</span>
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900">Expert Digital Solutions</h3>
@@ -163,10 +104,11 @@ const MissionSection = () => {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-white to-green-50 p-10 rounded-2xl border border-green-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 animate-fade-in hover:scale-105 relative overflow-hidden group" style={{animationDelay: '0.2s'}}>
+            {/* Proven Track Record */}
+            <div className="bg-gradient-to-br from-white to-purple-50 p-10 rounded-2xl border border-purple-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 hover:scale-105 relative overflow-hidden group" style={{animationDelay: '0.2s'}}>
               <div className="relative z-10">
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mr-4 animate-pulse-glow" style={{animationDelay: '0.5s'}}>
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center mr-4 animate-pulse-glow" style={{animationDelay: '0.5s'}}>
                     <span className="text-2xl">🚀</span>
                   </div>
                   <h3 className="text-3xl font-bold text-slate-900">Proven Track Record</h3>
@@ -184,6 +126,102 @@ const MissionSection = () => {
                   speed={40}
                   lineDelay={800}
                 />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Illustration */}
+          <div className="relative flex justify-center items-center">
+            <div className="relative group animate-fade-in" style={{animationDelay: '0.3s'}}>
+              {/* Animated Purple Lines Background */}
+              <div className="absolute inset-0 -m-12">
+                <svg className="w-full h-full animate-float" viewBox="0 0 500 600" style={{animationDelay: '0.5s'}}>
+                  <defs>
+                    <linearGradient id="purpleGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{stopColor: '#8B5CF6', stopOpacity: 0.8}} />
+                      <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.6}} />
+                      <stop offset="100%" style={{stopColor: '#C084FC', stopOpacity: 0.4}} />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Main flowing curves */}
+                  <path 
+                    d="M50,300 Q150,200 250,300 T450,300" 
+                    stroke="url(#purpleGradient1)" 
+                    strokeWidth="4" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '0.2s'}}
+                  />
+                  <path 
+                    d="M0,250 Q100,150 200,250 T400,250" 
+                    stroke="url(#purpleGradient1)" 
+                    strokeWidth="3" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '0.8s'}}
+                  />
+                  <path 
+                    d="M100,450 Q200,350 300,450 T500,450" 
+                    stroke="url(#purpleGradient1)" 
+                    strokeWidth="3" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '1.2s'}}
+                  />
+                  
+                  {/* Accent curves */}
+                  <path 
+                    d="M150,100 Q200,50 250,100 T350,100" 
+                    stroke="#A855F7" 
+                    strokeWidth="2.5" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '0.5s'}}
+                  />
+                  <path 
+                    d="M300,150 Q350,100 400,150" 
+                    stroke="#C084FC" 
+                    strokeWidth="2" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '1.5s'}}
+                  />
+                  <path 
+                    d="M50,500 Q100,450 150,500" 
+                    stroke="#DDD6FE" 
+                    strokeWidth="2" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '2s'}}
+                  />
+                </svg>
+              </div>
+              
+              {/* Main Illustration */}
+              <div className="relative z-10 transform hover:scale-105 transition-all duration-700 group-hover:rotate-2">
+                <img 
+                  src="/src/assets/success-celebration-no-laptop.png" 
+                  alt="Success Celebration - Digital Solutions Achievement" 
+                  className="w-[450px] h-[400px] object-contain animate-float drop-shadow-2xl"
+                  style={{
+                    filter: 'drop-shadow(0 25px 50px rgba(139, 92, 246, 0.4))',
+                    animationDelay: '0.3s'
+                  }}
+                />
+                
+                {/* Enhanced Floating purple particles */}
+                <div className="absolute top-12 left-12 w-4 h-4 bg-purple-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute top-24 right-16 w-3 h-3 bg-purple-500 rounded-full animate-bounce opacity-80" style={{animationDelay: '1s'}}></div>
+                <div className="absolute bottom-20 left-16 w-5 h-5 bg-purple-300 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
+                <div className="absolute bottom-12 right-20 w-3 h-3 bg-purple-600 rounded-full animate-bounce opacity-75" style={{animationDelay: '2s'}}></div>
+                <div className="absolute top-32 left-32 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-65" style={{animationDelay: '2.5s'}}></div>
+                
+                {/* Enhanced Glowing ring effect */}
+                <div className="absolute inset-0 rounded-full animate-pulse opacity-40" style={{
+                  background: 'radial-gradient(circle, transparent 50%, rgba(139, 92, 246, 0.4) 60%, transparent 70%)',
+                  animationDelay: '0.8s'
+                }}></div>
               </div>
             </div>
           </div>
