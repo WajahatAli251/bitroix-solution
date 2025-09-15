@@ -137,56 +137,91 @@ const MissionSection = () => {
             </div>
           </div>
 
-          <div className="space-y-12">
-            {/* Innovation Card */}
-            <div className="text-center animate-fade-in relative group" style={{animationDelay: '0.1s'}}>
-              <div className="relative mx-auto mb-6 w-28 h-28 group-hover:scale-110 transition-all duration-700">
-                <div className="w-28 h-28 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-2xl relative overflow-hidden animate-float">
-                  {/* Background Image */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 group-hover:opacity-50 transition-opacity duration-500"
-                    style={{backgroundImage: "url('/src/assets/it-concepts-revolving.jpg')"}}
+          <div className="relative flex justify-center items-center">
+            {/* Success Celebration Illustration */}
+            <div className="relative group animate-fade-in" style={{animationDelay: '0.2s'}}>
+              {/* Animated Purple Lines Background */}
+              <div className="absolute inset-0 -m-8">
+                {/* Flowing lines with purple gradient */}
+                <svg className="w-full h-full animate-float" viewBox="0 0 400 400" style={{animationDelay: '0.5s'}}>
+                  <defs>
+                    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{stopColor: '#8B5CF6', stopOpacity: 0.8}} />
+                      <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.6}} />
+                      <stop offset="100%" style={{stopColor: '#C084FC', stopOpacity: 0.4}} />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Animated flowing lines */}
+                  <path 
+                    d="M50,200 Q150,100 250,200 T450,200" 
+                    stroke="url(#purpleGradient)" 
+                    strokeWidth="3" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '0.2s'}}
                   />
-                  <span className="text-3xl font-bold text-white relative z-10 animate-pulse-glow">🚀</span>
-                </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-bounce opacity-80"></div>
-              </div>
-              <h4 className="text-2xl font-bold text-slate-900 mb-3 hover:text-blue-600 transition-colors duration-300 animate-slide-in-left">Advanced Technology</h4>
-              <p className="text-slate-600 text-lg leading-relaxed max-w-sm mx-auto">Latest web development frameworks, AI integration, and cloud technologies for competitive advantage</p>
-            </div>
-
-            {/* Integrity Card */}
-            <div className="text-center animate-fade-in relative group" style={{animationDelay: '0.3s'}}>
-              <div className="relative mx-auto mb-6 w-28 h-28 group-hover:scale-110 transition-all duration-700">
-                <div className="w-28 h-28 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-2xl relative overflow-hidden animate-float" style={{animationDelay: '0.5s'}}>
-                  {/* Background Image */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 group-hover:opacity-50 transition-opacity duration-500"
-                    style={{backgroundImage: "url('/src/assets/team-collaboration.jpg')"}}
+                  <path 
+                    d="M0,150 Q100,50 200,150 T400,150" 
+                    stroke="url(#purpleGradient)" 
+                    strokeWidth="2" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '0.8s'}}
                   />
-                  <span className="text-3xl font-bold text-white relative z-10 animate-pulse-glow" style={{animationDelay: '0.3s'}}>🤝</span>
-                </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-bounce opacity-80" style={{animationDelay: '0.3s'}}></div>
-              </div>
-              <h4 className="text-2xl font-bold text-slate-900 mb-3 hover:text-green-600 transition-colors duration-300 animate-slide-in-left" style={{animationDelay: '0.3s'}}>Transparent Process</h4>
-              <p className="text-slate-600 text-lg leading-relaxed max-w-sm mx-auto">Clear project timelines, regular progress updates, and honest communication throughout development</p>
-            </div>
-
-            {/* Impact Card */}
-            <div className="text-center animate-fade-in relative group" style={{animationDelay: '0.5s'}}>
-              <div className="relative mx-auto mb-6 w-28 h-28 group-hover:scale-110 transition-all duration-700">
-                <div className="w-28 h-28 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center hover:rotate-12 transition-all duration-500 cursor-pointer hover:shadow-2xl relative overflow-hidden animate-float" style={{animationDelay: '1s'}}>
-                  {/* Background Image */}
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 group-hover:opacity-50 transition-opacity duration-500"
-                    style={{backgroundImage: "url('/src/assets/devops-infrastructure.jpg')"}}
+                  <path 
+                    d="M100,350 Q200,250 300,350 T500,350" 
+                    stroke="url(#purpleGradient)" 
+                    strokeWidth="2.5" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '1.2s'}}
                   />
-                  <span className="text-3xl font-bold text-white relative z-10 animate-pulse-glow" style={{animationDelay: '0.6s'}}>📈</span>
-                </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-bounce opacity-80" style={{animationDelay: '0.6s'}}></div>
+                  
+                  {/* Smaller accent lines */}
+                  <path 
+                    d="M150,80 Q200,40 250,80" 
+                    stroke="#A855F7" 
+                    strokeWidth="2" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '0.5s'}}
+                  />
+                  <path 
+                    d="M300,120 Q350,80 400,120" 
+                    stroke="#C084FC" 
+                    strokeWidth="1.5" 
+                    fill="none" 
+                    className="animate-pulse"
+                    style={{animationDelay: '1.5s'}}
+                  />
+                </svg>
               </div>
-              <h4 className="text-2xl font-bold text-slate-900 mb-3 hover:text-purple-600 transition-colors duration-300 animate-slide-in-left" style={{animationDelay: '0.5s'}}>Measurable Results</h4>
-              <p className="text-slate-600 text-lg leading-relaxed max-w-sm mx-auto">Data-driven strategies with trackable KPIs, ROI optimization, and continuous performance improvement</p>
+              
+              {/* Main Illustration */}
+              <div className="relative z-10 transform hover:scale-105 transition-all duration-700 group-hover:rotate-2">
+                <img 
+                  src="/src/assets/success-celebration.png" 
+                  alt="Success Celebration - Digital Solutions Achievement" 
+                  className="w-96 h-96 object-contain animate-float drop-shadow-2xl"
+                  style={{
+                    filter: 'drop-shadow(0 20px 40px rgba(139, 92, 246, 0.3))',
+                    animationDelay: '0.3s'
+                  }}
+                />
+                
+                {/* Floating purple particles */}
+                <div className="absolute top-10 left-10 w-3 h-3 bg-purple-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '0.5s'}}></div>
+                <div className="absolute top-20 right-20 w-2 h-2 bg-purple-500 rounded-full animate-bounce opacity-80" style={{animationDelay: '1s'}}></div>
+                <div className="absolute bottom-20 left-20 w-4 h-4 bg-purple-300 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
+                <div className="absolute bottom-10 right-10 w-2.5 h-2.5 bg-purple-600 rounded-full animate-bounce opacity-75" style={{animationDelay: '2s'}}></div>
+                
+                {/* Glowing ring effect */}
+                <div className="absolute inset-0 rounded-full animate-pulse opacity-30" style={{
+                  background: 'radial-gradient(circle, transparent 60%, rgba(139, 92, 246, 0.3) 70%, transparent 80%)',
+                  animationDelay: '0.8s'
+                }}></div>
+              </div>
             </div>
           </div>
         </div>
