@@ -204,7 +204,7 @@ const MissionSection = () => {
                 <img 
                   src={successCelebration} 
                   alt="Success Celebration - Digital Solutions Achievement" 
-                  className="w-[450px] h-[400px] object-contain animate-float drop-shadow-2xl"
+                  className="w-[450px] h-[600px] object-contain animate-float drop-shadow-2xl"
                   style={{
                     filter: 'drop-shadow(0 25px 50px rgba(139, 92, 246, 0.4))',
                     animationDelay: '0.3s'
