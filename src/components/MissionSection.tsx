@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import successCelebration from '@/assets/success-celebration-no-laptop.png';
 
 const TypewriterText = ({ lines, speed = 50, lineDelay = 800 }: {
   lines: string[];
@@ -201,7 +202,7 @@ const MissionSection = () => {
               {/* Main Illustration */}
               <div className="relative z-10 transform hover:scale-105 transition-all duration-700 group-hover:rotate-2">
                 <img 
-                  src="/src/assets/success-celebration-no-laptop.png" 
+                  src={successCelebration} 
                   alt="Success Celebration - Digital Solutions Achievement" 
                   className="w-[450px] h-[400px] object-contain animate-float drop-shadow-2xl"
                   style={{
