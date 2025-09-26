@@ -64,7 +64,7 @@ const AnimatedCounter = ({ end, label, color, suffix = "+" }: CounterProps) => {
           {count}{suffix}
         </span>
       </div>
-      <p className="text-lg font-medium text-gray-300 tracking-wider">
+      <p className="text-lg font-medium text-foreground/80 tracking-wider">
         {label}
       </p>
     </div>
@@ -76,25 +76,25 @@ const StatsSection = () => {
     {
       end: 50,
       label: "Projects",
-      color: "#60A5FA", // Blue
+      color: "hsl(var(--primary))", // Electric Blue
       suffix: "+"
     },
     {
       end: 25,
       label: "Happy Clients",
-      color: "#F87171", // Red/Coral
+      color: "hsl(var(--primary-glow))", // Bright Electric Blue
       suffix: "+"
     },
     {
       end: 2,
       label: "Years Experience",
-      color: "#A78BFA", // Purple
+      color: "hsl(194 100% 70%)", // Lighter Blue
       suffix: "+"
     },
     {
       end: 24,
       label: "Support",
-      color: "#FBBF24", // Yellow/Gold
+      color: "hsl(210 20% 85%)", // Silver Accent
       suffix: "/7"
     }
   ];
@@ -103,16 +103,13 @@ const StatsSection = () => {
     <section className="py-20 relative overflow-hidden">
       {/* Animated Background */}
       <div 
-        className="absolute inset-0"
-        style={{
-          background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 25%, #4c1d95 50%, #7c3aed 75%, #a855f7 100%)'
-        }}
+        className="absolute inset-0 gradient-primary"
       >
         {/* Animated particles */}
-        <div className="absolute top-20 left-20 w-32 h-32 rounded-full blur-3xl animate-pulse opacity-20" style={{backgroundColor: '#60A5FA'}}></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 rounded-full blur-2xl animate-pulse opacity-30" style={{backgroundColor: '#A78BFA', animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-10 w-24 h-24 rounded-full blur-xl animate-bounce opacity-25" style={{backgroundColor: '#F87171', animationDelay: '2s'}}></div>
-        <div className="absolute bottom-10 left-1/2 w-36 h-36 rounded-full blur-2xl animate-pulse opacity-20" style={{backgroundColor: '#FBBF24', animationDelay: '1.5s'}}></div>
+        <div className="absolute top-20 left-20 w-32 h-32 rounded-full blur-3xl animate-pulse opacity-20 bg-primary/30"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 rounded-full blur-2xl animate-pulse opacity-30 bg-primary-glow/40" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/2 left-10 w-24 h-24 rounded-full blur-xl animate-bounce opacity-25 bg-secondary/50" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-10 left-1/2 w-36 h-36 rounded-full blur-2xl animate-pulse opacity-20 bg-accent/30" style={{animationDelay: '1.5s'}}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -138,9 +135,9 @@ const StatsSection = () => {
       </div>
 
       {/* Floating elements */}
-      <div className="absolute top-10 right-10 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '0.5s'}}></div>
-      <div className="absolute bottom-10 left-10 w-4 h-4 bg-purple-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '1s'}}></div>
-      <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-yellow-400 rounded-full animate-bounce opacity-80" style={{animationDelay: '1.5s'}}></div>
+      <div className="absolute top-10 right-10 w-3 h-3 bg-primary rounded-full animate-bounce opacity-60" style={{animationDelay: '0.5s'}}></div>
+      <div className="absolute bottom-10 left-10 w-4 h-4 bg-secondary rounded-full animate-bounce opacity-70" style={{animationDelay: '1s'}}></div>
+      <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-accent rounded-full animate-bounce opacity-80" style={{animationDelay: '1.5s'}}></div>
     </section>
   );
 };
