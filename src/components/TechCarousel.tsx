@@ -70,7 +70,14 @@ const TechCarousel = () => {
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
                   <div className="h-16 mb-4 flex items-center justify-center">
                     {tech.isImage ? (
-                      <img src={tech.logo} alt={tech.name} className="h-12 w-12 object-contain" />
+                      <img 
+                        src={tech.logo} 
+                        alt={`${tech.name} logo - technology used by Bitroix Solution`} 
+                        className="h-12 w-12 object-contain" 
+                        loading="lazy"
+                        width="48"
+                        height="48"
+                      />
                     ) : (
                       <span className="text-4xl">{tech.logo}</span>
                     )}
@@ -85,7 +92,14 @@ const TechCarousel = () => {
                 <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
                   <div className="h-16 mb-4 flex items-center justify-center">
                     {tech.isImage ? (
-                      <img src={tech.logo} alt={tech.name} className="h-12 w-12 object-contain" />
+                      <img 
+                        src={tech.logo} 
+                        alt={`${tech.name} logo - technology used by Bitroix Solution`} 
+                        className="h-12 w-12 object-contain" 
+                        loading="lazy"
+                        width="48"
+                        height="48"
+                      />
                     ) : (
                       <span className="text-4xl">{tech.logo}</span>
                     )}

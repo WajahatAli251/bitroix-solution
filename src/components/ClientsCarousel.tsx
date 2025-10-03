@@ -52,7 +52,14 @@ const ClientsCarousel = () => {
               <div key={index} className="embla__slide flex-none w-64 mr-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
                   <div className="h-24 mb-4 flex items-center justify-center">
-                    <img src={client.logo} alt={client.name} className="max-h-20 max-w-full object-contain" />
+                    <img 
+                      src={client.logo} 
+                      alt={`${client.name} - successful client of Bitroix Solution web development and digital marketing services`} 
+                      className="max-h-20 max-w-full object-contain" 
+                      loading="lazy"
+                      width="200"
+                      height="80"
+                    />
                   </div>
                   <h3 className="text-sm font-semibold text-slate-700">{client.name}</h3>
                 </div>
@@ -63,7 +70,14 @@ const ClientsCarousel = () => {
               <div key={`duplicate-${index}`} className="embla__slide flex-none w-64 mr-8">
                 <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
                   <div className="h-24 mb-4 flex items-center justify-center">
-                    <img src={client.logo} alt={client.name} className="max-h-20 max-w-full object-contain" />
+                    <img 
+                      src={client.logo} 
+                      alt={`${client.name} - successful client of Bitroix Solution web development and digital marketing services`} 
+                      className="max-h-20 max-w-full object-contain" 
+                      loading="lazy"
+                      width="200"
+                      height="80"
+                    />
                   </div>
                   <h3 className="text-sm font-semibold text-slate-700">{client.name}</h3>
                 </div>
