@@ -599,16 +599,10 @@ const Chatbot = () => {
           className="relative h-14 w-14 sm:h-16 sm:w-16 rounded-full bg-gradient-to-r from-primary via-blue-600 to-purple-600 hover:from-primary/90 hover:via-blue-600/90 hover:to-purple-600/90 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 border-2 border-white/20 touch-manipulation"
           size="icon"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-full"></div>
           {isOpen ? (
-            <X className="h-6 w-6 sm:h-7 sm:w-7 relative z-10 animate-scale-in" />
+            <X className="h-6 w-6 sm:h-7 sm:w-7" />
           ) : (
-            <div className="relative z-10 flex items-center justify-center">
-              <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7 animate-bounce" />
-              <div className="absolute -top-1 -right-1 h-3 w-3 sm:h-4 sm:w-4 bg-red-500 rounded-full flex items-center justify-center">
-                <Sparkles className="h-1.5 w-1.5 sm:h-2 sm:w-2 text-white animate-pulse" />
-              </div>
-            </div>
+            <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
           )}
         </Button>
       </div>
