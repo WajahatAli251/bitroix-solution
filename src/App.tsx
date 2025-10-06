@@ -25,6 +25,7 @@ const MarketingAutomation = lazy(() => import("./pages/solutions/MarketingAutoma
 const ConversionOptimization = lazy(() => import("./pages/solutions/ConversionOptimization"));
 const SocialMediaGrowth = lazy(() => import("./pages/solutions/SocialMediaGrowth"));
 const Career = lazy(() => import("./pages/Career"));
+const Blog = lazy(() => import("./pages/Blog"));
 
 const queryClient = new QueryClient();
 
@@ -58,6 +59,7 @@ const App = () => (
             <Route path="/solutions/conversion-optimization" element={<ConversionOptimization />} />
             <Route path="/solutions/social-media-growth" element={<SocialMediaGrowth />} />
             <Route path="/career" element={<Career />} />
+            <Route path="/blog" element={<Blog />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
