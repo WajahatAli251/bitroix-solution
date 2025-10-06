@@ -36,7 +36,7 @@ const MouseTracker = () => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <div className="w-8 h-8 rounded-full border-2 border-blue-500/50 bg-blue-500/10 backdrop-blur-sm transition-transform duration-100 ease-out" />
+        <div className="w-8 h-8 rounded-full border-2 border-primary/50 bg-primary/10 backdrop-blur-sm transition-transform duration-100 ease-out" />
       </div>
 
       {/* Trailing circle with delay */}
@@ -50,7 +50,7 @@ const MouseTracker = () => {
           transform: 'translate(-50%, -50%)',
         }}
       >
-        <div className="w-12 h-12 rounded-full border border-purple-500/30 bg-purple-500/5" />
+        <div className="w-12 h-12 rounded-full border border-primary/20 bg-primary/5" />
       </div>
     </>
   );
