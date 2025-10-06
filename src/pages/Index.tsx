@@ -12,6 +12,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
 import MouseTracker from "@/components/MouseTracker";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
       <ContactSection />
       <Footer />
       <Chatbot />
+      <WhatsAppButton />
       <MouseTracker />
     </div>
   );
