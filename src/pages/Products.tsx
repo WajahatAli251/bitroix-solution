@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -124,6 +125,12 @@ const Products = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-secondary/20">
+      <SEO 
+        title="Software Products & Solutions"
+        description="Explore Bitroix Solution LLC's innovative software products: AI chatbots, hotel management systems, and exhibition management platforms. Ready-to-deploy solutions for your business."
+        keywords="software products, AI chatbot solutions, hotel management software, exhibition management system, SaaS products, business software"
+        canonicalUrl="https://bitroixsolution.com/products"
+      />
       <Navigation />
       
       {/* Hero Section */}

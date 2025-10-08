@@ -1,4 +1,4 @@
-
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -81,6 +81,12 @@ const WebDevelopment = () => {
 
   return (
     <div className="min-h-screen bg-slate-900">
+      <SEO 
+        title="Web Development Services"
+        description="Professional web development services including custom applications, SaaS products, e-commerce platforms, and API development. Expert React, Node.js, Python, and Laravel developers."
+        keywords="web development, custom web applications, SaaS development, e-commerce development, API development, React development, Node.js, Python Django, Laravel"
+        canonicalUrl="https://bitroixsolution.com/web-development"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -220,6 +226,7 @@ const WebDevelopment = () => {
                       src={tech.logo} 
                       alt={`${tech.name} logo`}
                       className="w-12 h-12 object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tech.name}</h4>
@@ -242,6 +249,7 @@ const WebDevelopment = () => {
                       src={tech.logo} 
                       alt={`${tech.name} logo`}
                       className="w-12 h-12 object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tech.name}</h4>

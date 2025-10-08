@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,12 @@ import { ArrowRight, Zap, DollarSign, Target, BarChart, CheckCircle } from "luci
 const PaidAdsManagement = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Paid Ads Management - Google & Facebook Ads"
+        description="Professional paid advertising management for Google Ads, Facebook Ads, and social media. ROI-focused campaigns with advanced targeting and optimization."
+        keywords="paid ads management, Google Ads, Facebook Ads, PPC, social media advertising, paid search, display advertising"
+        canonicalUrl="https://bitroixsolution.com/solutions/paid-ads-management"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -62,7 +69,7 @@ const PaidAdsManagement = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/bec8f18d-ee2a-4a17-bd69-6a1ee4845629.png" alt="Paid Ads Management" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/bec8f18d-ee2a-4a17-bd69-6a1ee4845629.png" alt="Paid Ads Management" className="rounded-xl shadow-xl" loading="lazy" />
             </div>
           </div>
         </div>

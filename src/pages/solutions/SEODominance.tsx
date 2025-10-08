@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,12 @@ import { ArrowRight, Search, Trophy, BarChart3, Globe, CheckCircle } from "lucid
 const SEODominance = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="SEO Dominance - Search Engine Optimization"
+        description="Professional SEO services that dominate Google search results. Comprehensive keyword research, technical optimization, content strategy, and link building to boost organic traffic."
+        keywords="SEO services, search engine optimization, Google rankings, organic traffic, keyword research, technical SEO, link building, content optimization"
+        canonicalUrl="https://bitroixsolution.com/solutions/seo-dominance"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -62,7 +69,7 @@ const SEODominance = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/74657b6a-cd12-40ee-b239-66b76822d751.png" alt="SEO Strategy" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/74657b6a-cd12-40ee-b239-66b76822d751.png" alt="SEO Strategy" className="rounded-xl shadow-xl" loading="lazy" />
             </div>
           </div>
         </div>

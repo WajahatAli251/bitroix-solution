@@ -1,4 +1,4 @@
-
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import MissionSection from "@/components/MissionSection";
@@ -16,6 +16,12 @@ import MouseTracker from "@/components/MouseTracker";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Home"
+        description="Bitroix Solution LLC - Expert web development, AI chatbots, SEO optimization, and digital marketing services. Transform your business with professional custom software solutions, data analytics, and DevOps expertise."
+        keywords="web development, AI chatbots, SEO services, digital marketing, Lancaster PA, Pennsylvania web design, custom software development, data analytics, DevOps, MLOps"
+        canonicalUrl="https://bitroixsolution.com/"
+      />
       <Navigation />
       <HeroSection />
       <MissionSection />

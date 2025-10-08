@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '@/components/SEO';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
@@ -394,6 +395,12 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Our Projects Portfolio"
+        description="Explore innovative projects from Bitroix Solution LLC - IoT solutions, AI chatbots, DevOps implementations, and custom software development. View our successful client projects."
+        keywords="project portfolio, case studies, IoT projects, AI chatbots, DevOps projects, software development, Lancaster PA tech projects"
+        canonicalUrl="https://bitroixsolution.com/projects"
+      />
       <Navigation />
       
       {/* Hero Section */}

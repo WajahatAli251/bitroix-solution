@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,12 @@ import { ArrowRight, TrendingUp, MousePointer, BarChart3, Eye, CheckCircle } fro
 const ConversionOptimization = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Conversion Rate Optimization (CRO)"
+        description="Maximize your website's conversion rates with data-driven CRO strategies. A/B testing, user behavior analysis, and landing page optimization to boost sales."
+        keywords="conversion rate optimization, CRO, A/B testing, landing page optimization, user experience optimization, conversion funnel"
+        canonicalUrl="https://bitroixsolution.com/solutions/conversion-optimization"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -62,7 +69,7 @@ const ConversionOptimization = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/35a9e2d4-2082-408b-ab86-d95889dc822f.png" alt="Conversion Optimization" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/35a9e2d4-2082-408b-ab86-d95889dc822f.png" alt="Conversion Optimization" className="rounded-xl shadow-xl" loading="lazy" />
             </div>
           </div>
         </div>

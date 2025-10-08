@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,12 @@ import { ArrowRight, Target, Zap, TrendingUp, Users, CheckCircle } from "lucide-
 const LeadGeneration = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Lead Generation Systems"
+        description="Automated lead generation systems that deliver qualified prospects to your sales pipeline. Advanced targeting, content marketing, and lead nurturing strategies."
+        keywords="lead generation, lead capture, marketing automation, sales funnel, prospect generation, B2B leads, automated marketing"
+        canonicalUrl="https://bitroixsolution.com/solutions/lead-generation"
+      />
       <Navigation />
       
       {/* Hero Section */}

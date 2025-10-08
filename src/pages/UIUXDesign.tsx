@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -76,6 +77,12 @@ const UIUXDesign = () => {
 
   return (
     <div className="min-h-screen bg-slate-900">
+      <SEO 
+        title="UI/UX Design Services"
+        description="Professional UI/UX design services creating human-centered, intuitive digital experiences. Expert designers using Figma, Adobe XD, and modern design tools."
+        keywords="UI UX design, user interface design, user experience design, Figma design, Adobe XD, prototyping, wireframing, mobile app design"
+        canonicalUrl="https://bitroixsolution.com/ui-ux-design"
+      />
       <Navigation />
       
       {/* Hero Section */}

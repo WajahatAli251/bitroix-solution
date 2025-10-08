@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowUp, Database, Monitor, Shield } from "lucide-react";
@@ -85,6 +86,12 @@ const DataAnalytics = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <SEO 
+        title="Data Analytics Services"
+        description="Transform raw data into actionable insights with our data analytics services. Expert data analysis, visualization, predictive analytics using Python, Power BI, Tableau, and machine learning."
+        keywords="data analytics, business intelligence, data visualization, Power BI, Tableau, Python data analysis, predictive analytics, big data"
+        canonicalUrl="https://bitroixsolution.com/data-analytics"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -190,6 +197,7 @@ const DataAnalytics = () => {
                       src={tool.logo} 
                       alt={`${tool.name} logo`}
                       className="w-12 h-12 object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
@@ -212,6 +220,7 @@ const DataAnalytics = () => {
                       src={tool.logo} 
                       alt={`${tool.name} logo`}
                       className="w-12 h-12 object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>
@@ -234,6 +243,7 @@ const DataAnalytics = () => {
                       src={tool.logo} 
                       alt={`${tool.name} logo`}
                       className="w-12 h-12 object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{tool.name}</h4>

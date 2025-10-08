@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowUp, Database, Cloud, Monitor, Shield } from "lucide-react";
@@ -104,6 +105,12 @@ const DevOpsMLOps = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <SEO 
+        title="DevOps & MLOps Services"
+        description="Professional DevOps and MLOps services with automated CI/CD, infrastructure as code, containerization, and monitoring. Expert Kubernetes, Docker, AWS, and Azure solutions."
+        keywords="DevOps services, MLOps, CI/CD, Kubernetes, Docker, infrastructure automation, Terraform, Jenkins, AWS, Azure, monitoring"
+        canonicalUrl="https://bitroixsolution.com/devops-mlops"
+      />
       <Navigation />
       
       {/* Hero Section */}

@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,12 @@ import { ArrowRight, Heart, Share2, Users2, MessageCircle, CheckCircle } from "l
 const SocialMediaGrowth = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Social Media Growth & Management"
+        description="Accelerate your social media growth with expert content strategy, community management, and engagement tactics. Instagram, Facebook, LinkedIn, and YouTube marketing."
+        keywords="social media marketing, Instagram growth, Facebook marketing, LinkedIn marketing, social media strategy, content marketing"
+        canonicalUrl="https://bitroixsolution.com/solutions/social-media-growth"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -62,7 +69,7 @@ const SocialMediaGrowth = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/a95641c7-884d-48c4-976d-019c9672302b.png" alt="Social Media Growth" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/a95641c7-884d-48c4-976d-019c9672302b.png" alt="Social Media Growth" className="rounded-xl shadow-xl" loading="lazy" />
             </div>
           </div>
         </div>

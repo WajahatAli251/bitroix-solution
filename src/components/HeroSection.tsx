@@ -76,6 +76,7 @@ const HeroSection = () => {
                   loading="eager"
                   width="500"
                   height="400"
+                  fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" aria-hidden="true"></div>
               </div>

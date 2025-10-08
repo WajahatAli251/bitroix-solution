@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
@@ -57,6 +58,12 @@ const Career = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Career Opportunities"
+        description="Join Bitroix Solution LLC team! Explore exciting career opportunities in web development, AI, data analytics, and digital marketing. Remote and flexible positions available."
+        keywords="jobs, careers, web developer jobs, AI jobs, data analyst positions, remote work, internships, Lancaster PA jobs"
+        canonicalUrl="https://bitroixsolution.com/career"
+      />
       <Navigation />
       
       {/* Hero Section */}

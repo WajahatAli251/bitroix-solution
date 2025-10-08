@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,6 +7,12 @@ import { ArrowRight, Cog, Clock, Workflow, Users, CheckCircle } from "lucide-rea
 const MarketingAutomation = () => {
   return (
     <div className="min-h-screen">
+      <SEO 
+        title="Marketing Automation Solutions"
+        description="Streamline your marketing with intelligent automation workflows. Email campaigns, lead nurturing, customer segmentation, and automated engagement strategies."
+        keywords="marketing automation, email marketing, lead nurturing, automated campaigns, customer engagement, workflow automation"
+        canonicalUrl="https://bitroixsolution.com/solutions/marketing-automation"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -62,7 +69,7 @@ const MarketingAutomation = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/4ba4056f-25de-476f-8515-6edff94dbe63.png" alt="Marketing Automation" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/4ba4056f-25de-476f-8515-6edff94dbe63.png" alt="Marketing Automation" className="rounded-xl shadow-xl" loading="lazy" />
             </div>
           </div>
         </div>

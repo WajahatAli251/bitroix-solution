@@ -1,3 +1,4 @@
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -71,6 +72,12 @@ const AIChatbots = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      <SEO 
+        title="AI Chatbot Development"
+        description="Intelligent AI chatbot solutions powered by ChatGPT, OpenAI, and machine learning. Custom conversational AI that revolutionizes customer engagement and automation."
+        keywords="AI chatbots, conversational AI, ChatGPT integration, OpenAI, machine learning, natural language processing, customer service automation"
+        canonicalUrl="https://bitroixsolution.com/ai-chatbots"
+      />
       <Navigation />
       
       {/* Hero Section */}
