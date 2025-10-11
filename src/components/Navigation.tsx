@@ -31,12 +31,12 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 gradient-primary backdrop-blur-lg border-b border-white/10 animate-slide-in-up glow-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14 md:h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 
               onClick={() => navigate('/')} 
-              className="text-2xl font-bold text-white hover-lift cursor-pointer text-gradient-accent"
+              className="text-xl md:text-2xl font-bold text-white hover-lift cursor-pointer text-gradient-accent"
             >
               Bitroix <span className="text-gradient">Solution</span>
             </h1>
@@ -112,7 +112,7 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden animate-slide-in-up">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/10 backdrop-blur-lg rounded-b-xl border-t border-white/10 mx-4">
+            <div className="px-3 pt-3 pb-4 space-y-2 bg-white/10 backdrop-blur-lg rounded-b-xl border-t border-white/10 mx-2">
               <button 
                 onClick={() => scrollToSection('home')}
                 className="text-white/90 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left hover-glow"

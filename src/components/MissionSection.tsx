@@ -67,27 +67,27 @@ const MissionSection = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 hover:scale-105 transition-transform duration-300 animate-slide-in-left">
+        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 md:mb-6 hover:scale-105 transition-transform duration-300 animate-slide-in-left px-4">
             Why Choose <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Bitroix Solution</span>
           </h2>
-          <div className="w-32 h-1.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mx-auto mb-8 animate-scale-in rounded-full shadow-lg"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '0.3s'}}>
+          <div className="w-24 md:w-32 h-1.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mx-auto mb-6 md:mb-8 animate-scale-in rounded-full shadow-lg"></div>
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto animate-fade-in px-4" style={{animationDelay: '0.3s'}}>
             Leading digital transformation through expert web development, proven SEO strategies, and innovative technology solutions that deliver measurable business results
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Left Side - Text Content */}
-          <div className="space-y-8 animate-fade-in">
+          <div className="space-y-6 md:space-y-8 animate-fade-in">
             {/* Expert Digital Solutions */}
-            <div className="bg-gradient-to-br from-white to-purple-50 p-10 rounded-2xl border border-purple-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 hover:scale-105 relative overflow-hidden group">
+            <div className="bg-gradient-to-br from-white to-purple-50 p-6 md:p-8 lg:p-10 rounded-2xl border border-purple-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 hover:scale-105 relative overflow-hidden group">
               <div className="relative z-10">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mr-4 animate-pulse-glow">
-                    <span className="text-2xl">🎯</span>
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mr-3 md:mr-4 animate-pulse-glow flex-shrink-0">
+                    <span className="text-xl md:text-2xl">🎯</span>
                   </div>
-                  <h3 className="text-3xl font-bold text-slate-900">Expert Digital Solutions</h3>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900">Expert Digital Solutions</h3>
                 </div>
                 <TypewriterText 
                   lines={[
@@ -106,13 +106,13 @@ const MissionSection = () => {
             </div>
 
             {/* Proven Track Record */}
-            <div className="bg-gradient-to-br from-white to-purple-50 p-10 rounded-2xl border border-purple-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 hover:scale-105 relative overflow-hidden group" style={{animationDelay: '0.2s'}}>
+            <div className="bg-gradient-to-br from-white to-purple-50 p-6 md:p-8 lg:p-10 rounded-2xl border border-purple-200 hover:shadow-2xl hover:-translate-y-3 transition-all duration-700 hover:scale-105 relative overflow-hidden group" style={{animationDelay: '0.2s'}}>
               <div className="relative z-10">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center mr-4 animate-pulse-glow" style={{animationDelay: '0.5s'}}>
-                    <span className="text-2xl">🚀</span>
+                <div className="flex items-center mb-4 md:mb-6">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-full flex items-center justify-center mr-3 md:mr-4 animate-pulse-glow flex-shrink-0" style={{animationDelay: '0.5s'}}>
+                    <span className="text-xl md:text-2xl">🚀</span>
                   </div>
-                  <h3 className="text-3xl font-bold text-slate-900">Proven Track Record</h3>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900">Proven Track Record</h3>
                 </div>
                 <TypewriterText 
                   lines={[
@@ -132,10 +132,10 @@ const MissionSection = () => {
           </div>
 
           {/* Right Side - Illustration */}
-          <div className="relative flex justify-center items-center">
+          <div className="relative flex justify-center items-center mt-8 lg:mt-0">
             <div className="relative group animate-fade-in" style={{animationDelay: '0.3s'}}>
               {/* Animated Purple Lines Background */}
-              <div className="absolute inset-0 -m-12">
+              <div className="absolute inset-0 -m-6 md:-m-12">
                 <svg className="w-full h-full animate-float" viewBox="0 0 500 600" style={{animationDelay: '0.5s'}}>
                   <defs>
                     <linearGradient id="purpleGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -204,7 +204,7 @@ const MissionSection = () => {
                 <img 
                   src={successCelebration} 
                   alt="Success Celebration - Digital Solutions Achievement" 
-                  className="w-[450px] h-[600px] object-contain animate-float drop-shadow-2xl"
+                  className="w-[280px] h-[380px] sm:w-[350px] sm:h-[470px] md:w-[400px] md:h-[540px] lg:w-[450px] lg:h-[600px] object-contain animate-float drop-shadow-2xl"
                   style={{
                     filter: 'drop-shadow(0 25px 50px rgba(139, 92, 246, 0.4))',
                     animationDelay: '0.3s'

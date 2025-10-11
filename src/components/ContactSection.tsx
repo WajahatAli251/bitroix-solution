@@ -99,24 +99,24 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl font-bold text-slate-900 mb-6 hover:scale-105 transition-transform duration-300">Contact Us</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8 animate-scale-in"></div>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
+        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 md:mb-6 hover:scale-105 transition-transform duration-300 px-4">Contact Us</h2>
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-6 md:mb-8 animate-scale-in"></div>
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl mx-auto animate-fade-in px-4" style={{animationDelay: '0.2s'}}>
             Ready to transform your business? Let's discuss your project and build something amazing together.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl border border-blue-100 animate-fade-in hover:shadow-xl hover:scale-105 transition-all duration-500" style={{animationDelay: '0.1s'}}>
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-semibold text-slate-900">Let's Talk</h3>
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 md:p-8 rounded-xl border border-blue-100 animate-fade-in hover:shadow-xl hover:scale-105 transition-all duration-500" style={{animationDelay: '0.1s'}}>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+              <h3 className="text-xl md:text-2xl font-semibold text-slate-900">Let's Talk</h3>
               <button
                 onClick={() => navigate('/schedule-meeting')}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-110 hover:shadow-lg shadow-md text-sm"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-110 hover:shadow-lg shadow-md text-sm w-full sm:w-auto"
               >
                 Schedule Meeting
               </button>
@@ -185,7 +185,7 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full py-4 px-6 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg border-2 ${
+                className={`w-full py-3 md:py-4 px-6 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg border-2 text-sm md:text-base ${
                   isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
                 }`}
                 style={{
@@ -215,58 +215,58 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8 animate-fade-in" style={{animationDelay: '0.3s'}}>
-            <div className="bg-slate-50 p-8 rounded-xl border border-slate-200 hover:shadow-lg hover:-translate-y-2 transition-all duration-500">
-              <h3 className="text-2xl font-semibold text-slate-900 mb-6">Get in Touch</h3>
+          <div className="space-y-6 md:space-y-8 animate-fade-in" style={{animationDelay: '0.3s'}}>
+            <div className="bg-slate-50 p-6 md:p-8 rounded-xl border border-slate-200 hover:shadow-lg hover:-translate-y-2 transition-all duration-500">
+              <h3 className="text-xl md:text-2xl font-semibold text-slate-900 mb-4 md:mb-6">Get in Touch</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 <div 
-                  className="flex items-start space-x-4 group cursor-pointer" 
+                  className="flex items-start space-x-3 md:space-x-4 group cursor-pointer" 
                   onClick={() => window.open('mailto:info@bitroixsolution.com', '_blank')}
                 >
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-md">
-                    <img src="/lovable-uploads/191a40b9-2313-4c17-babe-1602398a5d77.png" alt="Email" className="w-8 h-8" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-md">
+                    <img src="/lovable-uploads/191a40b9-2313-4c17-babe-1602398a5d77.png" alt="Email" className="w-6 md:w-8 h-6 md:h-8" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900">Email</h4>
-                    <p className="text-slate-600 hover:text-blue-600 transition-colors">info@bitroixsolution.com</p>
+                    <h4 className="font-semibold text-slate-900 text-sm md:text-base">Email</h4>
+                    <p className="text-slate-600 hover:text-blue-600 transition-colors text-sm md:text-base break-all">info@bitroixsolution.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-md">
-                    <img src="/lovable-uploads/736381fa-97c8-4991-8408-188d30b9af20.png" alt="Phone" className="w-8 h-8" />
+                <div className="flex items-start space-x-3 md:space-x-4 group">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-md">
+                    <img src="/lovable-uploads/736381fa-97c8-4991-8408-188d30b9af20.png" alt="Phone" className="w-6 md:w-8 h-6 md:h-8" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900">Phone</h4>
-                    <p className="text-slate-600">+1 (628) 291-2760</p>
+                    <h4 className="font-semibold text-slate-900 text-sm md:text-base">Phone</h4>
+                    <p className="text-slate-600 text-sm md:text-base">+1 (628) 291-2760</p>
                   </div>
                 </div>
 
                 <div 
-                  className="flex items-start space-x-4 group cursor-pointer" 
+                  className="flex items-start space-x-3 md:space-x-4 group cursor-pointer" 
                   onClick={() => window.open('https://maps.google.com/?q=Pacific+Ave,+San+Francisco,+CA+94109,+USA', '_blank')}
                 >
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-md">
-                    <img src="/lovable-uploads/a8de8db8-f140-41ec-b6e9-4c07811f905f.png" alt="Location" className="w-8 h-8" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-md">
+                    <img src="/lovable-uploads/a8de8db8-f140-41ec-b6e9-4c07811f905f.png" alt="Location" className="w-6 md:w-8 h-6 md:h-8" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900">Location</h4>
-                    <p className="text-slate-600 hover:text-blue-600 transition-colors">Pacific Ave, San Francisco, CA 94109, USA</p>
+                    <h4 className="font-semibold text-slate-900 text-sm md:text-base">Location</h4>
+                    <p className="text-slate-600 hover:text-blue-600 transition-colors text-sm md:text-base">Pacific Ave, San Francisco, CA 94109, USA</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="bg-gradient-to-br from-slate-900 to-blue-900 p-8 rounded-xl text-white hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
-              <h3 className="text-xl font-semibold mb-6">Follow Us</h3>
+            <div className="bg-gradient-to-br from-slate-900 to-blue-900 p-6 md:p-8 rounded-xl text-white hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+              <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="https://www.linkedin.com/company/biroix-solution-llc/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-white/90 hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md">
-                  <img src="/lovable-uploads/03513845-3b13-4cf0-87af-8293cad1a3e8.png" alt="LinkedIn" className="w-6 h-6" />
+                <a href="https://www.linkedin.com/company/biroix-solution-llc/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center hover:bg-white/90 hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md">
+                  <img src="/lovable-uploads/03513845-3b13-4cf0-87af-8293cad1a3e8.png" alt="LinkedIn" className="w-5 md:w-6 h-5 md:h-6" />
                 </a>
-                <a href="https://www.instagram.com/bitroix_solution/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-white/90 hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md">
-                  <img src="/lovable-uploads/89639b18-4900-4542-9ccd-d1afd27ac2c9.png" alt="Instagram" className="w-6 h-6" />
+                <a href="https://www.instagram.com/bitroix_solution/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center hover:bg-white/90 hover:scale-110 hover:rotate-12 transition-all duration-300 shadow-md">
+                  <img src="/lovable-uploads/89639b18-4900-4542-9ccd-d1afd27ac2c9.png" alt="Instagram" className="w-5 md:w-6 h-5 md:h-6" />
                 </a>
               </div>
             </div>

@@ -62,24 +62,24 @@ const SolutionsSection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Headline */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight animate-slide-in-left drop-shadow-lg" style={{color: '#F0F4F8'}}>
-            Increase Website <span style={{color: '#00BFFF'}}>Traffic</span> & <span style={{color: '#00BFFF'}}>Sales</span><br />
-            With Proven Digital Marketing
+        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight tracking-tight animate-slide-in-left drop-shadow-lg px-4" style={{color: '#F0F4F8'}}>
+            Increase Website <span style={{color: '#00BFFF'}}>Traffic</span> & <span style={{color: '#00BFFF'}}>Sales</span><br className="hidden sm:block" />
+            <span className="block sm:inline"> With Proven Digital Marketing</span>
           </h2>
-          <div className="w-32 h-1 mx-auto mb-8 animate-scale-in rounded-full shadow-lg" style={{background: 'linear-gradient(to right, #00BFFF, #33F3FF)', boxShadow: '0 0 20px #33F3FF50'}}></div>
-          <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed animate-fade-in drop-shadow-md" style={{animationDelay: '0.3s', color: '#9BE3FF'}}>
+          <div className="w-24 md:w-32 h-1 mx-auto mb-6 md:mb-8 animate-scale-in rounded-full shadow-lg" style={{background: 'linear-gradient(to right, #00BFFF, #33F3FF)', boxShadow: '0 0 20px #33F3FF50'}}></div>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed animate-fade-in drop-shadow-md px-4" style={{animationDelay: '0.3s', color: '#9BE3FF'}}>
             Professional SEO services, PPC advertising, social media marketing, and conversion optimization to <span style={{color: '#F0F4F8', fontWeight: '600'}}>boost your online presence and revenue</span>.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mb-12 md:mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="backdrop-blur-md p-8 rounded-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in relative overflow-hidden shadow-2xl"
+                className="backdrop-blur-md p-6 md:p-8 rounded-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in relative overflow-hidden shadow-2xl"
                 style={{
                   animationDelay: service.delay,
                   background: 'rgba(13, 27, 42, 0.3)',
@@ -94,15 +94,15 @@ const SolutionsSection = () => {
                 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h4 className="text-xl font-bold mb-4 transition-colors duration-300 drop-shadow-md" style={{color: '#F0F4F8'}}>
+                  <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4 transition-colors duration-300 drop-shadow-md" style={{color: '#F0F4F8'}}>
                     {service.title}
                   </h4>
-                  <p className="leading-relaxed mb-6 drop-shadow-sm" style={{color: '#9BE3FF'}}>
+                  <p className="leading-relaxed mb-4 md:mb-6 drop-shadow-sm text-sm md:text-base" style={{color: '#9BE3FF'}}>
                     {service.hook}
                   </p>
                   <button
                     onClick={() => handleCTAClick(service.link)}
-                    className="w-full font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl border-2"
+                    className="w-full font-semibold py-2.5 md:py-3 px-4 md:px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 text-sm md:text-base"
                     style={{
                       background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
                       color: '#0D1B2A',
@@ -129,14 +129,14 @@ const SolutionsSection = () => {
         </div>
 
         {/* Final CTA */}
-        <div className="text-center p-12 animate-fade-in transition-all duration-500" style={{animationDelay: '0.8s'}}>
-          <h3 className="text-4xl md:text-5xl font-bold mb-6 animate-pulse-glow tracking-tight" style={{color: '#F0F4F8'}}>
+        <div className="text-center p-6 md:p-12 animate-fade-in transition-all duration-500" style={{animationDelay: '0.8s'}}>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 animate-pulse-glow tracking-tight px-4" style={{color: '#F0F4F8'}}>
             Let's Turn Your Website into a <span style={{color: '#00BFFF'}}>Growth Machine</span>
           </h3>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
             <button
               onClick={() => handleCTAClick('/schedule-meeting')}
-              className="font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl border-2"
+              className="font-bold py-3 md:py-4 px-6 md:px-10 rounded-xl text-base md:text-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl border-2"
               style={{
                 background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
                 color: '#0D1B2A',
@@ -148,7 +148,7 @@ const SolutionsSection = () => {
             </button>
             <button
               onClick={() => handleCTAClick('/')}
-              className="font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border-2"
+              className="font-bold py-3 md:py-4 px-6 md:px-10 rounded-xl text-base md:text-lg transition-all duration-300 hover:scale-110 backdrop-blur-sm border-2"
               style={{
                 background: 'rgba(13, 27, 42, 0.2)',
                 color: '#9BE3FF',

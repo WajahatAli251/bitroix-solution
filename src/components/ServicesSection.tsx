@@ -71,15 +71,15 @@ const ServicesSection = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <header className="text-center mb-16 animate-fade-in">
-          <h2 id="services-heading" className="text-5xl font-bold mb-6 hover:scale-105 transition-transform duration-300 tracking-tight drop-shadow-lg" style={{color: '#F0F4F8'}}>Professional Digital Services & Solutions</h2>
-          <div className="w-32 h-1 mx-auto mb-8 animate-scale-in rounded-full shadow-lg" style={{background: 'linear-gradient(to right, #00BFFF, #33F3FF)', boxShadow: '0 0 20px #33F3FF50'}}></div>
-          <p className="text-xl max-w-3xl mx-auto mb-8 animate-fade-in leading-relaxed drop-shadow-md" style={{animationDelay: '0.2s', color: '#9BE3FF'}}>
+        <header className="text-center mb-12 md:mb-16 animate-fade-in">
+          <h2 id="services-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 hover:scale-105 transition-transform duration-300 tracking-tight drop-shadow-lg px-4" style={{color: '#F0F4F8'}}>Professional Digital Services & Solutions</h2>
+          <div className="w-24 md:w-32 h-1 mx-auto mb-6 md:mb-8 animate-scale-in rounded-full shadow-lg" style={{background: 'linear-gradient(to right, #00BFFF, #33F3FF)', boxShadow: '0 0 20px #33F3FF50'}}></div>
+          <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-6 md:mb-8 animate-fade-in leading-relaxed drop-shadow-md px-4" style={{animationDelay: '0.2s', color: '#9BE3FF'}}>
             Complete web development, SEO optimization, digital marketing, and AI solutions to increase your online presence, generate leads, and grow your business revenue
           </p>
           <Link to="/schedule-meeting" className="animate-fade-in inline-block" style={{animationDelay: '0.4s'}}>
             <Button 
-              className="px-10 py-4 rounded-xl text-lg font-semibold hover:scale-105 transition-all duration-300 backdrop-blur-sm border-2 hover:shadow-xl"
+              className="px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold hover:scale-105 transition-all duration-300 backdrop-blur-sm border-2 hover:shadow-xl"
               style={{
                 background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
                 color: '#0D1B2A',
@@ -93,10 +93,10 @@ const ServicesSection = () => {
           </Link>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" role="list" aria-label="Available services">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8" role="list" aria-label="Available services">
           {services.map((service, index) => {
             const ServiceCard = ({ children }: { children: React.ReactNode }) => {
-              const baseClasses = "relative backdrop-blur-md p-8 rounded-2xl transition-all duration-500 hover:-translate-y-6 hover:scale-105 group overflow-hidden h-full min-h-[320px] flex flex-col shadow-2xl";
+              const baseClasses = "relative backdrop-blur-md p-6 md:p-8 rounded-2xl transition-all duration-500 hover:-translate-y-4 md:hover:-translate-y-6 hover:scale-105 group overflow-hidden h-full min-h-[280px] md:min-h-[320px] flex flex-col shadow-2xl";
               const cardStyle = {
                 background: 'rgba(13, 27, 42, 0.3)',
                 borderColor: '#264653',
@@ -180,12 +180,12 @@ const ServicesSection = () => {
                   {/* Content */}
                   <div className="relative z-10 flex flex-col h-full">
                     {!service.isImage && (
-                      <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mb-4 text-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 flex-shrink-0`} aria-hidden="true">
+                      <div className={`w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br ${service.gradient} rounded-full flex items-center justify-center mb-3 md:mb-4 text-xl md:text-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 flex-shrink-0`} aria-hidden="true">
                         {service.icon}
                       </div>
                     )}
-                    <h3 className="text-xl font-semibold mb-4 transition-colors duration-300 flex-shrink-0" style={{color: '#F0F4F8'}}>{service.title}</h3>
-                    <p className="leading-relaxed flex-grow text-base" style={{color: '#9BE3FF'}}>{service.description}</p>
+                    <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 transition-colors duration-300 flex-shrink-0" style={{color: '#F0F4F8'}}>{service.title}</h3>
+                    <p className="leading-relaxed flex-grow text-sm md:text-base" style={{color: '#9BE3FF'}}>{service.description}</p>
                   </div>
                 </ServiceCard>
               </article>

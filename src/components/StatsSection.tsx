@@ -54,17 +54,17 @@ const AnimatedCounter = ({ end, label, color, suffix = "+" }: CounterProps) => {
   return (
     <div 
       ref={counterRef}
-      className="text-center p-8 transform hover:scale-105 transition-all duration-300 hover:-translate-y-2"
+      className="text-center p-4 md:p-6 lg:p-8 transform hover:scale-105 transition-all duration-300 hover:-translate-y-2"
     >
-      <div className="mb-4">
+      <div className="mb-2 md:mb-4">
         <span 
-          className="text-5xl md:text-6xl font-bold animate-pulse"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold animate-pulse"
           style={{ color }}
         >
           {count}{suffix}
         </span>
       </div>
-      <p className="text-lg font-medium text-foreground/80 tracking-wider">
+      <p className="text-sm sm:text-base md:text-lg font-medium text-foreground/80 tracking-wider">
         {label}
       </p>
     </div>
@@ -113,7 +113,7 @@ const StatsSection = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <div 
               key={index}
@@ -121,7 +121,7 @@ const StatsSection = () => {
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Glass morphism effect */}
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-2xl"></div>
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-xl md:rounded-2xl border border-white/20 shadow-2xl"></div>
               
               <AnimatedCounter
                 end={stat.end}
