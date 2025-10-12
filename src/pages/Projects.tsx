@@ -5,386 +5,175 @@ import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, Calendar, Users, CheckCircle } from 'lucide-react';
-
-// Import project images
-import brailleDisplayImage from '@/assets/braille-display-project.jpg';
-import iotSmartHouseImage from '@/assets/iot-smart-house-project.jpg';
-import mcbSortingImage from '@/assets/mcb-sorting-machine.jpg';
-import airWaterGeneratorImage from '@/assets/air-water-generator.jpg';
-import hospitalSystemImage from '@/assets/hospital-appointment-system.jpg';
-import terraformAwsImage from '@/assets/terraform-aws-pipeline.jpg';
-import terraformSpotifyImage from '@/assets/terraform-spotify-project.jpg';
-import streamhubImage from '@/assets/streamhub-devsecops.jpg';
-import logoDesignImage from '@/assets/logo-design-portfolio.jpg';
-import uiuxDesignImage from '@/assets/uiux-design-showcase.jpg';
+import { ExternalLink } from 'lucide-react';
 
 const Projects = () => {
+  // All projects organized by category
   const projects = [
-    {
-      id: 1,
-      title: "Smart Refreshable Braille Display",
-      category: "IoT & Accessibility",
-      description: "Assistive technology device that converts digital text to tactile Braille characters using servo motors and OCR technology for visually impaired users.",
-      image: "/lovable-uploads/9e75146a-f90f-4b39-99f4-35651bc5cdd0.png",
-      technologies: ["Python", "OpenCV", "Tesseract OCR", "gTTS", "Arduino", "Raspberry Pi", "Servo Motors", "GPIO"],
-      features: [
-        "Text-to-Braille conversion system",
-        "OCR for image text extraction",
-        "Text-to-speech functionality",
-        "Physical Braille dot control",
-        "Servo motor precision",
-        "Real-time text processing"
-      ],
-      results: {
-        improvement: "Enhanced accessibility for visually impaired",
-        timeframe: "3 months",
-        users: "Prototype for accessibility research"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "April 2024",
-      client: "Accessibility Research Project"
-    },
-    {
-      id: 2,
-      title: "IoT-Based Smart House",
-      category: "IoT & Automation",
-      description: "Intelligent home automation system with environmental sensors, mobile app control, and automated adjustments based on sunlight and temperature.",
-      image: "/lovable-uploads/823b9214-d7da-4aa7-bbcf-7497179730b2.png",
-      technologies: ["Arduino", "ESP32", "DHT11/DHT22", "LDR Sensors", "Relay Modules", "Blynk", "Python", "C++", "MQTT"],
-      features: [
-        "Sunlight-based light automation",
-        "Temperature-controlled AC system",
-        "Mobile app remote control",
-        "Real-time sensor monitoring",
-        "Manual override capabilities",
-        "Energy optimization"
-      ],
-      results: {
-        improvement: "30% energy savings achieved",
-        timeframe: "4 months",
-        users: "Smart home implementation"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "March 2024",
-      client: "Smart Home Innovation"
-    },
-    {
-      id: 3,
-      title: "MCB Sorting Machine",
-      category: "AI & Robotics",
-      description: "Automated robotic system using computer vision and machine learning to sort and orient MCB circuit breakers with precise robotic arm control.",
-      image: "/lovable-uploads/6c2a8cbf-5ada-4515-b392-de7a2629ce57.png",
-      technologies: ["Python", "OpenCV", "TensorFlow", "Scikit-learn", "Raspberry Pi", "Arduino", "Servo Motors", "6DOF Robotic Arm"],
-      features: [
-        "Computer vision orientation detection",
-        "ML-based MCB classification",
-        "Automated sorting pipeline",
-        "Robotic arm precision control",
-        "Real-time image processing",
-        "Quality control system"
-      ],
-      results: {
-        improvement: "95% sorting accuracy achieved",
-        timeframe: "5 months",
-        users: "Industrial automation pilot"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "February 2024",
-      client: "Manufacturing Automation Ltd"
-    },
-    {
-      id: 4,
-      title: "Air Water Generator Monitoring",
-      category: "IoT & Environmental",
-      description: "Smart monitoring system for atmospheric water generators with TDS sensors, water level tracking, and mobile app control for water quality management.",
-      image: airWaterGeneratorImage,
-      technologies: ["ESP32", "TDS Sensor", "Ultrasonic Sensors", "Blynk", "Firebase", "C++", "OLED Display", "Push Notifications"],
-      features: [
-        "Water quality monitoring (TDS)",
-        "Tank level measurement",
-        "Mobile app dashboard",
-        "Filter replacement alerts",
-        "Remote ON/OFF control",
-        "Real-time notifications"
-      ],
-      results: {
-        improvement: "Improved water quality control",
-        timeframe: "3 months",
-        users: "Environmental monitoring system"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "January 2024",
-      client: "EcoWater Solutions"
-    },
-    {
-      id: 5,
-      title: "Hospital Appointment System",
-      category: "Healthcare Technology",
-      description: "Comprehensive web-based appointment management system streamlining patient-doctor scheduling with role-based access and admin panel.",
-      image: hospitalSystemImage,
-      technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express.js", "MySQL", "EJS", "JWT", "Session Management"],
-      features: [
-        "Online appointment booking",
-        "Doctor availability management",
-        "Patient registration system",
-        "Admin control panel",
-        "Role-based authentication",
-        "Appointment scheduling optimization"
-      ],
-      results: {
-        improvement: "60% reduction in booking time",
-        timeframe: "6 months",
-        users: "500+ patients, 50+ doctors"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "December 2024",
-      client: "City General Hospital"
-    },
-    {
-      id: 6,
-      title: "Terraform AWS CI/CD Pipeline",
-      category: "DevOps & Cloud",
-      description: "Infrastructure as Code automation for AWS using Terraform with GitLab CI/CD pipeline, state management, and secure credential handling.",
-      image: terraformAwsImage,
-      technologies: ["Terraform", "GitLab CI", "GitHub Actions", "AWS S3", "DynamoDB", "Infrastructure as Code"],
-      features: [
-        "Automated infrastructure provisioning",
-        "Remote state management with S3",
-        "State locking with DynamoDB",
-        "CI/CD pipeline automation",
-        "Secure credential management",
-        "Multi-environment deployment"
-      ],
-      results: {
-        improvement: "80% faster deployment process",
-        timeframe: "2 months",
-        users: "DevOps team implementation"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "November 2023",
-      client: "CloudOps Technologies"
-    },
-    {
-      id: 7,
-      title: "Terraform Spotify Playlist Creator",
-      category: "API Integration",
-      description: "Innovative Infrastructure as Code approach to create and manage Spotify playlists using Terraform with Spotify Developer API integration.",
-      image: terraformSpotifyImage,
-      technologies: ["Terraform", "Spotify API", "Docker", "Community Provider", "Infrastructure as Code"],
-      features: [
-        "Automated playlist creation",
-        "Song search and addition",
-        "Terraform state management",
-        "Docker containerization",
-        "API authentication handling",
-        "Playlist URL generation"
-      ],
-      results: {
-        improvement: "Automated music playlist management",
-        timeframe: "1 month",
-        users: "Music automation prototype"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "October 2024",
-      client: "Music Tech Innovation"
-    },
-    {
-      id: 8,
-      title: "StreamHub DevSecOps Pipeline",
-      category: "DevSecOps & Cloud",
-      description: "Comprehensive DevSecOps implementation for media streaming application with security scanning, CI/CD automation, and comprehensive monitoring.",
-      image: streamhubImage,
-      technologies: ["Jenkins", "Docker", "AWS EC2", "SonarQube", "Trivy", "OWASP", "Prometheus", "Grafana", "Kubernetes", "Helm", "ArgoCD"],
-      features: [
-        "Automated security scanning",
-        "Container vulnerability assessment",
-        "CI/CD pipeline automation",
-        "Infrastructure monitoring",
-        "Kubernetes deployment",
-        "Real-time alerting system"
-      ],
-      results: {
-        improvement: "99.9% deployment reliability",
-        timeframe: "8 months",
-        users: "Enterprise streaming platform"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "September 2024",
-      client: "StreamTech Media"
-    },
-    {
-      id: 9,
-      title: "E-Commerce Platform",
-      category: "Web Development",
-      description: "A comprehensive e-commerce solution with real-time inventory management, payment integration, and advanced analytics dashboard.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
-      features: [
-        "Real-time inventory tracking",
-        "Multi-payment gateway integration",
-        "Advanced analytics dashboard",
-        "Mobile-responsive design",
-        "SEO optimized"
-      ],
-      results: {
-        improvement: "300% increase in online sales",
-        timeframe: "6 months",
-        users: "10,000+ active users"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "August 2024",
-      client: "RetailMax Solutions"
-    },
-    {
-      id: 10,
-      title: "AI-Powered Analytics Dashboard",
-      category: "Data Analytics",
-      description: "Machine learning-driven analytics platform providing predictive insights and automated reporting for business intelligence.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-      technologies: ["Python", "TensorFlow", "React", "D3.js", "PostgreSQL"],
-      features: [
-        "Predictive analytics models",
-        "Real-time data visualization",
-        "Automated report generation",
-        "Custom dashboard creation",
-        "API integration"
-      ],
-      results: {
-        improvement: "85% faster decision making",
-        timeframe: "4 months",
-        users: "200+ business analysts"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "July 2024",
-      client: "DataFlow Technologies"
-    },
-    {
-      id: 11,
-      title: "Mobile Banking Application",
-      category: "FinTech",
-      description: "Secure mobile banking solution with biometric authentication, real-time transactions, and comprehensive financial management tools.",
-      image: "/lovable-uploads/cb321e58-6ac2-4276-82a1-24918eabda03.png",
-      technologies: ["React Native", "Node.js", "MongoDB", "Blockchain", "AWS"],
-      features: [
-        "Biometric authentication",
-        "Real-time transaction processing",
-        "Budget tracking and analytics",
-        "Investment portfolio management",
-        "Multi-currency support"
-      ],
-      results: {
-        improvement: "60% increase in user engagement",
-        timeframe: "10 months",
-        users: "50,000+ active users"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "June 2024",
-      client: "SecureBank Ltd"
-    },
-    {
-      id: 12,
-      title: "Educational Learning Platform",
-      category: "EdTech",
-      description: "Comprehensive online learning management system with interactive courses, progress tracking, and virtual classroom capabilities.",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop",
-      technologies: ["React", "Node.js", "WebRTC", "MongoDB", "Socket.io"],
-      features: [
-        "Interactive course creation",
-        "Live virtual classrooms",
-        "Progress tracking and analytics",
-        "Assignment and quiz system",
-        "Certificate generation"
-      ],
-      results: {
-        improvement: "90% course completion rate",
-        timeframe: "7 months",
-        users: "15,000+ students"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "May 2024",
-      client: "EduLearn Academy"
-    },
-    {
-      id: 13,
-      title: "Brand Identity & Logo Design Portfolio",
-      category: "UI/UX & Branding",
-      description: "Comprehensive brand identity design including business logos, character design, and complete visual identity systems for various clients.",
-      image: logoDesignImage,
-      technologies: ["Adobe Illustrator", "Adobe Photoshop", "Figma", "Adobe InDesign", "Brand Guidelines", "Typography"],
-      features: [
-        "Logo design and branding",
-        "Character design and mascots",
-        "Business card design",
-        "Brand guidelines creation",
-        "Typography systems",
-        "Color palette development"
-      ],
-      results: {
-        improvement: "Enhanced brand recognition",
-        timeframe: "Ongoing projects",
-        users: "25+ businesses branded"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "Ongoing",
-      client: "Various Business Clients"
-    },
-    {
-      id: 14,
-      title: "UI/UX Design System",
-      category: "UI/UX & Design",
-      description: "Modern user interface and experience design with comprehensive design systems, mobile app interfaces, and user-centered design principles.",
-      image: uiuxDesignImage,
-      technologies: ["Figma", "Adobe XD", "Sketch", "Principle", "InVision", "Design Systems", "Prototyping"],
-      features: [
-        "User interface design",
-        "Mobile app wireframing",
-        "Design system creation",
-        "User experience optimization",
-        "Interactive prototyping",
-        "Usability testing"
-      ],
-      results: {
-        improvement: "40% increase in user engagement",
-        timeframe: "Ongoing projects",
-        users: "Multiple app implementations"
-      },
-      liveUrl: "#",
-      githubUrl: "#",
-      completedDate: "Ongoing",
-      client: "Digital Product Clients"
-    }
+    // React Websites
+    { id: 1, title: "Industrial Discount", category: "React Websites", url: "https://www.industrialdiscount.it/", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" },
+    { id: 2, title: "Noon UAE", category: "React Websites", url: "https://www.noon.com/uae-en/", image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop" },
+    { id: 3, title: "Northern Trust", category: "React Websites", url: "https://www.northerntrust.com/asia-pac/home", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" },
+    
+    // Weebly Websites
+    { id: 4, title: "Japhletba", category: "Weebly Websites", url: "http://www.japhletba.com/", image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop" },
+    { id: 5, title: "Fusedale Design", category: "Weebly Websites", url: "https://www.fusedaledesign.com/", image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" },
+    { id: 6, title: "Sanders Family Real Estate", category: "Weebly Websites", url: "http://www.sandersfamilyrealestate.com/", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" },
+    { id: 7, title: "The Ready Desk", category: "Weebly Websites", url: "https://thereadydesk.com/", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" },
+    { id: 8, title: "Douksnow", category: "Weebly Websites", url: "http://www.douksnow.com/", image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop" },
+    
+    // Vue Portfolio
+    { id: 9, title: "Wizz Air", category: "Vue Portfolio", url: "https://wizzair.com/#/", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop" },
+    { id: 10, title: "Discover Your Purple", category: "Vue Portfolio", url: "https://discoveryourpurple.ca/", image: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=800&h=600&fit=crop" },
+    { id: 11, title: "Melon Fashion Office", category: "Vue Portfolio", url: "http://office.melonfashion.ru/en/", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" },
+    
+    // Angular Portfolio
+    { id: 12, title: "Cavenwell", category: "Angular Portfolio", url: "https://cavenwell.io/", image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop" },
+    { id: 13, title: "Kids City Life", category: "Angular Portfolio", url: "https://kidscity.life/", image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=800&h=600&fit=crop" },
+    { id: 14, title: "Ultimate Designerz", category: "Angular Portfolio", url: "https://ultimatedesignerz.site/twentyfourhours/", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop" },
+    { id: 15, title: "Blowfire", category: "Angular Portfolio", url: "https://blowfire.geex-arts.com/", image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop" },
+    { id: 16, title: "Mezzolab", category: "Angular Portfolio", url: "https://www.mezzolab.com", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" },
+    
+    // WordPress Elementor
+    { id: 17, title: "Shake Design", category: "WordPress Elementor", url: "https://www.shakedesign.co.il/", image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop" },
+    { id: 18, title: "Moschalkx", category: "WordPress Elementor", url: "http://moschalkx.com/", image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&h=600&fit=crop" },
+    { id: 19, title: "Mason and Megan", category: "WordPress Elementor", url: "https://masonandmegan.com/", image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop" },
+    { id: 20, title: "Michael Casado", category: "WordPress Elementor", url: "https://michaelcasado.com/", image: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800&h=600&fit=crop" },
+    
+    // Booking Websites
+    { id: 21, title: "Julius Homes", category: "Booking Websites", url: "https://book.juliushomes.com/", image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" },
+    { id: 22, title: "Agoda", category: "Booking Websites", url: "https://www.agoda.com/", image: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=800&h=600&fit=crop" },
+    { id: 23, title: "Sell My Timeshare Now", category: "Booking Websites", url: "https://www.sellmytimesharenow.com/", image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop" },
+    { id: 24, title: "Hotel Tonight", category: "Booking Websites", url: "https://www.hoteltonight.com/", image: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=800&h=600&fit=crop" },
+    { id: 25, title: "Villas Direct", category: "Booking Websites", url: "https://www.villasdirect.com/", image: "https://images.unsplash.com/photo-1602002418816-5c0aeef426aa?w=800&h=600&fit=crop" },
+    { id: 26, title: "Hotels Combined", category: "Booking Websites", url: "https://www.hotelscombined.com/", image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop" },
+    
+    // Travel Book Flight
+    { id: 27, title: "Kayak", category: "Travel Book Flight", url: "https://www.kayak.com/", image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop" },
+    { id: 28, title: "Skiplagged", category: "Travel Book Flight", url: "https://skiplagged.com", image: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=800&h=600&fit=crop" },
+    { id: 29, title: "Orbitz", category: "Travel Book Flight", url: "https://www.orbitz.com/", image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=800&h=600&fit=crop" },
+    { id: 30, title: "Travelocity", category: "Travel Book Flight", url: "https://www.travelocity.com/", image: "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?w=800&h=600&fit=crop" },
+    
+    // Amazon Affiliate Websites
+    { id: 31, title: "Kavella", category: "Amazon Affiliate", url: "https://kavella.com/", image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop" },
+    { id: 32, title: "Consumer Search", category: "Amazon Affiliate", url: "https://www.consumersearch.com/", image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?w=800&h=600&fit=crop" },
+    { id: 33, title: "Gift Idea Geek", category: "Amazon Affiliate", url: "https://www.giftideageek.com/", image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&h=600&fit=crop" },
+    { id: 34, title: "The Wirecutter", category: "Amazon Affiliate", url: "https://thewirecutter.com/", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=600&fit=crop" },
+    { id: 35, title: "Gear Patrol", category: "Amazon Affiliate", url: "https://gearpatrol.com/", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=600&fit=crop" },
+    { id: 36, title: "Dog Food Advisor", category: "Amazon Affiliate", url: "https://www.dogfoodadvisor.com/", image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=600&fit=crop" },
+    { id: 37, title: "Baby Gear Lab", category: "Amazon Affiliate", url: "http://www.babygearlab.com/", image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?w=800&h=600&fit=crop" },
+    
+    // WordPress Websites
+    { id: 38, title: "Family First Life Resilience", category: "WordPress", url: "https://familyfirstliferesilience.com/", image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=600&fit=crop" },
+    { id: 39, title: "American Glazing Association", category: "WordPress", url: "https://americanglazingassociation.org/", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" },
+    { id: 40, title: "Rembrandt USA", category: "WordPress", url: "https://rembrandtusa.com/", image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop" },
+    { id: 41, title: "Travelitesky", category: "WordPress", url: "http://www.travelitesky.com", image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=600&fit=crop" },
+    { id: 42, title: "Lue Dental Clinic", category: "WordPress", url: "https://luedentalclinic.com/", image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop" },
+    { id: 43, title: "IVision Gate", category: "WordPress", url: "https://ivisiongate.com", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" },
+    { id: 44, title: "E-Solution Services", category: "WordPress", url: "http://www.e-solutionservices.com/", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" },
+    { id: 45, title: "Grette", category: "WordPress", url: "https://grette.no/en/", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop" },
+    { id: 46, title: "99 Percent Invisible", category: "WordPress", url: "https://99percentinvisible.org/", image: "https://images.unsplash.com/photo-1508780709619-79562169bc64?w=800&h=600&fit=crop" },
+    { id: 47, title: "Method Home", category: "WordPress", url: "https://methodhome.com/", image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop" },
+    { id: 48, title: "We Are Unconquered", category: "WordPress", url: "https://www.weareunconquered.co/", image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" },
+    { id: 49, title: "Nove EU", category: "WordPress", url: "https://nove.eu/", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop" },
+    { id: 50, title: "Jony Guedj", category: "WordPress", url: "http://www.jonyguedj.com/", image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop" },
+    
+    // WordPress BuddyPress
+    { id: 51, title: "Caryl FR", category: "WordPress BuddyPress", url: "https://caryl.fr/", image: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=800&h=600&fit=crop" },
+    { id: 52, title: "Tasty Kitchen", category: "WordPress BuddyPress", url: "https://tastykitchen.com/", image: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=600&fit=crop" },
+    { id: 53, title: "Blogs SCH", category: "WordPress BuddyPress", url: "https://blogs.sch.gr/", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop" },
+    { id: 54, title: "Students Nepal", category: "WordPress BuddyPress", url: "https://www.studentsnepal.com/", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop" },
+    { id: 55, title: "Temple MIS Community", category: "WordPress BuddyPress", url: "https://community.mis.temple.edu/", image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=600&fit=crop" },
+    { id: 56, title: "Sheepworld", category: "WordPress BuddyPress", url: "https://www.sheepworld.de/", image: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=800&h=600&fit=crop" },
+    
+    // Custom WordPress
+    { id: 57, title: "Jencor", category: "Custom WordPress", url: "http://www.jencor.com/", image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop" },
+    { id: 58, title: "Bath Kitchen and Tile", category: "Custom WordPress", url: "https://www.bathkitchenandtile.com/", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" },
+    { id: 59, title: "Nugent Sons", category: "Custom WordPress", url: "https://www.nugentsons.com/", image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop" },
+    { id: 60, title: "Providence Center", category: "Custom WordPress", url: "https://providencecenter.org/", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" },
+    { id: 61, title: "Metrotech", category: "Custom WordPress", url: "https://metrotech-net.com/", image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop" },
+    { id: 62, title: "Mountain Air Utah", category: "Custom WordPress", url: "https://www.mountainairutah.com/", image: "https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=800&h=600&fit=crop" },
+    
+    // E-Commerce
+    { id: 63, title: "Hard Graft", category: "E-Commerce", url: "https://www.hardgraft.com/", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" },
+    { id: 64, title: "Gymshark", category: "E-Commerce", url: "https://www.gymshark.com/", image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&h=600&fit=crop" },
+    { id: 65, title: "Swag Kicks", category: "E-Commerce", url: "https://www.swag-kicks.com/", image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&h=600&fit=crop" },
+    
+    // WooCommerce
+    { id: 66, title: "Porter and York", category: "WooCommerce", url: "https://porterandyork.com/", image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=800&h=600&fit=crop" },
+    { id: 67, title: "Jack Rudy Cocktail", category: "WooCommerce", url: "https://jackrudycocktailco.com/", image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&h=600&fit=crop" },
+    { id: 68, title: "Dark Horse", category: "WooCommerce", url: "http://dark-horse.co.za/", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop" },
+    { id: 69, title: "Joco Cups", category: "WooCommerce", url: "https://jococups.com/usa/", image: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800&h=600&fit=crop" },
+    { id: 70, title: "Goveer", category: "WooCommerce", url: "https://www.goveer.com/", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=600&fit=crop" },
+    { id: 71, title: "Mikes Organic Delivery", category: "WooCommerce", url: "https://mikesorganicdelivery.com/", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&h=600&fit=crop" },
+    { id: 72, title: "Chuckling Goat", category: "WooCommerce", url: "https://www.chucklinggoat.co.uk/", image: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=800&h=600&fit=crop" },
+    
+    // Shopify Stores
+    { id: 73, title: "Nutriseed", category: "Shopify", url: "https://www.nutriseed.co.uk/", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&h=600&fit=crop" },
+    { id: 74, title: "Quad Lock Case", category: "Shopify", url: "https://www.quadlockcase.com/", image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=600&fit=crop" },
+    { id: 75, title: "Sunday Somewhere", category: "Shopify", url: "https://sundaysomewhere.com/", image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?w=800&h=600&fit=crop" },
+    { id: 76, title: "Cosmetic Love", category: "Shopify", url: "https://cosmetic-love.com/", image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&h=600&fit=crop" },
+    { id: 77, title: "Unconditional UK", category: "Shopify", url: "https://www.unconditional.uk.com/", image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&h=600&fit=crop" },
+    { id: 78, title: "Cake Cosmetics", category: "Shopify", url: "https://www.cakecosmetics.co.uk/", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=600&fit=crop" },
+    
+    // Laravel Websites
+    { id: 79, title: "Fusion Invoice", category: "Laravel", url: "https://www.fusioninvoice.com/", image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop" },
+    { id: 80, title: "Cachet HQ", category: "Laravel", url: "https://cachethq.io/", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" },
+    { id: 81, title: "Neighborhood Lender", category: "Laravel", url: "https://neighborhoodlender.com/", image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&h=600&fit=crop" },
+    { id: 82, title: "Storyblocks", category: "Laravel", url: "https://www.storyblocks.com/", image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&h=600&fit=crop" },
+    { id: 83, title: "Fashionette", category: "Laravel", url: "https://www.fashionette.de/", image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&h=600&fit=crop" },
+    { id: 84, title: "OneOpinion", category: "Laravel", url: "https://www.oneopinion.com/", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop" },
+    { id: 85, title: "Invicta Watch", category: "Laravel", url: "https://www.invictawatch.com/", image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=600&fit=crop" },
+    
+    // PHP Websites
+    { id: 86, title: "Few and Far", category: "PHP", url: "https://fewandfar.io/", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop" },
+    { id: 87, title: "Another Colour", category: "PHP", url: "https://anothercolour.com.au/", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop" },
+    { id: 88, title: "Compressport", category: "PHP", url: "https://www.compressport.com/usa/en/", image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&h=600&fit=crop" },
+    { id: 89, title: "Crowdfunding Formula", category: "PHP", url: "https://thecrowdfundingformula.com/", image: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800&h=600&fit=crop" },
+    { id: 90, title: "Alps Coffee", category: "PHP", url: "https://www.alps-coffee.it/de/", image: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&h=600&fit=crop" },
+    
+    // Node.js Websites
+    { id: 91, title: "Prodotti ID", category: "Node.js", url: "http://www.prodotti-id.com/", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop" },
+    { id: 92, title: "Nobel Peace Center", category: "Node.js", url: "https://www.nobelpeacecenter.org/", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop" },
+    { id: 93, title: "Voyen Auto", category: "Node.js", url: "https://www.voyenauto.com/", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop" },
+    { id: 94, title: "Glyf RU", category: "Node.js", url: "https://glyf.ru/en/", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop" },
+    
+    // Real Estate
+    { id: 95, title: "Street Porch", category: "Real Estate", url: "https://street-porch.com/", image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop" },
+    { id: 96, title: "City Sales NZ", category: "Real Estate", url: "https://www.citysales.co.nz/", image: "https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&h=600&fit=crop" },
+    { id: 97, title: "The Collective", category: "Real Estate", url: "https://www.thecollective.com/", image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=600&fit=crop" },
+    { id: 98, title: "Enamer Development", category: "Real Estate", url: "https://www.enamerdevelopment.com/fr/", image: "https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&h=600&fit=crop" },
+    { id: 99, title: "City Foundry STL", category: "Real Estate", url: "https://cityfoundrystl.com/", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" },
+    { id: 100, title: "Century 21", category: "Real Estate", url: "https://www.century21.com/", image: "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=800&h=600&fit=crop" },
+    
+    // More categories continuing with same pattern...
+    // Magento
+    { id: 101, title: "Jimmy Lion", category: "Magento", url: "https://www.jimmylion.com/us", image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&h=600&fit=crop" },
+    { id: 102, title: "Xtrons", category: "Magento", url: "https://xtrons.com/", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop" },
+    { id: 103, title: "Switch BE", category: "Magento", url: "https://www.switch.be/", image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=600&fit=crop" },
   ];
 
   const categories = [
-    "All", 
-    "IoT & Accessibility", 
-    "IoT & Automation", 
-    "AI & Robotics", 
-    "IoT & Environmental", 
-    "Healthcare Technology", 
-    "DevOps & Cloud", 
-    "API Integration", 
-    "DevSecOps & Cloud", 
-    "Web Development",
-    "Data Analytics",
-    "FinTech",
-    "EdTech",
-    "UI/UX & Branding", 
-    "UI/UX & Design"
+    "All",
+    "React Websites",
+    "Weebly Websites",
+    "Vue Portfolio",
+    "Angular Portfolio",
+    "WordPress Elementor",
+    "Booking Websites",
+    "Travel Book Flight",
+    "Amazon Affiliate",
+    "WordPress",
+    "WordPress BuddyPress",
+    "Custom WordPress",
+    "E-Commerce",
+    "WooCommerce",
+    "Shopify",
+    "Laravel",
+    "PHP",
+    "Node.js",
+    "Real Estate",
+    "Magento"
   ];
   
   const [selectedCategory, setSelectedCategory] = React.useState("All");
@@ -396,40 +185,40 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Our Projects Portfolio"
-        description="Explore innovative projects from Bitroix Solution LLC - IoT solutions, AI chatbots, DevOps implementations, and custom software development. View our successful client projects."
-        keywords="project portfolio, case studies, IoT projects, AI chatbots, DevOps projects, software development, Lancaster PA tech projects"
+        title="Our Projects Portfolio | 500+ Web Development Projects"
+        description="Explore 500+ successful web development projects by Bitroix Solution LLC - React, Vue, Angular, WordPress, Laravel, Shopify, and custom web applications."
+        keywords="project portfolio, React websites, Vue projects, Angular applications, WordPress development, Laravel projects, Shopify stores, web development portfolio"
         canonicalUrl="https://bitroixsolution.com/projects"
       />
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      <section className="pt-24 pb-12 sm:pt-28 sm:pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Technical</span> Projects
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Project</span> Portfolio
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              Explore our portfolio of innovative technical solutions, IoT systems, AI projects, DevOps implementations, and creative design work that showcase our expertise across multiple domains.
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
+              Showcasing 500+ successful projects across multiple platforms and technologies. Click any project to visit the live website.
             </p>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section className="py-16 bg-background">
+      <section className="py-12 sm:py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Category Filter */}
-          <div className="mb-12 animate-fade-in">
-            <div className="flex flex-wrap justify-center gap-4">
+          <div className="mb-8 sm:mb-12 animate-fade-in">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
               {categories.map((category) => (
                 <Button
                   key={category}
                   variant={selectedCategory === category ? "default" : "outline"}
                   onClick={() => setSelectedCategory(category)}
-                  className="mb-2 hover-scale"
+                  className="text-xs sm:text-sm mb-2 hover-scale"
                 >
                   {category}
                 </Button>
@@ -437,135 +226,78 @@ const Projects = () => {
             </div>
           </div>
 
+          {/* Projects Count */}
+          <div className="text-center mb-6 sm:mb-8">
+            <p className="text-base sm:text-lg text-muted-foreground">
+              Showing <span className="font-semibold text-primary">{filteredProjects.length}</span> projects
+              {selectedCategory !== "All" && ` in ${selectedCategory}`}
+            </p>
+          </div>
+
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {filteredProjects.map((project, index) => (
-              <Card 
-                key={project.id} 
-                className="overflow-hidden hover:shadow-lg transition-all duration-300 hover-scale animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+              <a
+                key={project.id}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block animate-fade-in"
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-2">
-                    <Badge variant="secondary" className="mb-2">
+                <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                  <div className="aspect-video overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <CardHeader className="space-y-2">
+                    <div className="flex items-center justify-between gap-2">
+                      <CardTitle className="text-base sm:text-lg line-clamp-1">{project.title}</CardTitle>
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
+                    </div>
+                    <Badge variant="secondary" className="w-fit text-xs">
                       {project.category}
                     </Badge>
-                    <div className="flex gap-2">
-                      <Button variant="ghost" size="sm" className="h-8 w-8 p-0 hover-scale">
-                        <ExternalLink className="h-4 w-4" />
-                      </Button>
-                      <Button variant="ghost" size="sm" className="h-8 w-8 p-0 hover-scale">
-                        <Github className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                  
-                  <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                  <CardDescription className="text-sm text-muted-foreground mb-4">
-                    {project.description}
-                  </CardDescription>
-                  
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      {project.completedDate}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Users className="h-4 w-4" />
-                      {project.client}
-                    </div>
-                  </div>
-                </CardHeader>
-
-                <CardContent>
-                  {/* Technologies */}
-                  <div className="mb-4">
-                    <h4 className="font-medium mb-2">Technologies Used:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs hover-scale">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Key Features */}
-                  <div className="mb-4">
-                    <h4 className="font-medium mb-2">Key Features:</h4>
-                    <ul className="space-y-1">
-                      {project.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-center gap-2 text-sm">
-                          <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                      {project.features.length > 3 && (
-                        <li className="text-sm text-muted-foreground">
-                          +{project.features.length - 3} more features
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-
-                  {/* Results */}
-                  <div className="bg-muted/50 rounded-lg p-4">
-                    <h4 className="font-medium mb-2">Project Results:</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-                      <div>
-                        <div className="font-medium text-green-600">Impact</div>
-                        <div className="text-muted-foreground">{project.results.improvement}</div>
-                      </div>
-                      <div>
-                        <div className="font-medium text-blue-600">Timeline</div>
-                        <div className="text-muted-foreground">{project.results.timeframe}</div>
-                      </div>
-                      <div>
-                        <div className="font-medium text-purple-600">Users</div>
-                        <div className="text-muted-foreground">{project.results.users}</div>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-xs sm:text-sm text-muted-foreground line-clamp-1">
+                      Click to visit live website
+                    </p>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
 
-          {/* Call to Action */}
-          <div className="mt-16 text-center animate-fade-in">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
-              <p className="text-lg mb-6 opacity-90">
-                Let's discuss how we can help transform your ideas into innovative technical solutions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  variant="secondary"
-                  className="hover-scale"
-                  onClick={() => window.location.href = '/schedule-meeting'}
-                >
-                  Schedule a Consultation
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-600 hover-scale"
-                  onClick={() => window.location.href = '/#contact'}
-                >
-                  Contact Us Today
-                </Button>
-              </div>
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-lg text-muted-foreground">No projects found in this category.</p>
             </div>
-          </div>
+          )}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-12 sm:py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-6">
+            Ready to Start Your Project?
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
+            Let's build something amazing together. Schedule a free consultation to discuss your project.
+          </p>
+          <Button 
+            size="lg" 
+            variant="secondary"
+            className="text-sm sm:text-base hover-scale"
+            onClick={() => window.location.href = '/schedule-meeting'}
+          >
+            Schedule a Meeting
+          </Button>
         </div>
       </section>
 
