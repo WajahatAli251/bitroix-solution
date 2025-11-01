@@ -3,52 +3,52 @@ import { Star } from 'lucide-react';
 const ReviewsSection = () => {
   const reviews = [
     {
-      name: "Sarah Johnson",
-      company: "TechCorp Solutions",
-      position: "CTO",
+      name: "Robert Warren",
+      company: "Warren Cleaning Services",
+      position: "Founder & CEO",
       rating: 5,
-      comment: "Bitroix Solution LLC transformed our digital infrastructure completely. Their expertise in cloud migration and DevOps implementation helped us reduce deployment time by 80%. Exceptional team with outstanding communication skills.",
-      avatar: "👩‍💼"
+      comment: "Bitroix Solution transformed our online presence completely. They built a beautiful, responsive website that showcases our cleaning services perfectly. Our online bookings increased by 60% within the first month. Their team understood our business needs and delivered beyond expectations.",
+      avatar: "👨‍💼"
     },
     {
-      name: "Michael Chen",
-      company: "StartupBase",
-      position: "Founder & CEO",
-      comment: "Working with Bitroix has been a game-changer for our startup. They built our MVP from scratch and helped us scale to 10,000+ users. Their full-stack development skills are top-notch.",
+      name: "James Mitchell",
+      company: "Best Technology",
+      position: "CTO",
+      comment: "Working with Bitroix has been exceptional. They developed our e-commerce platform with cutting-edge technology and intuitive UI/UX design. The custom features they built helped us streamline our operations and improve customer satisfaction significantly. Highly professional team!",
       rating: 5,
       avatar: "👨‍💻"
     },
     {
-      name: "Emily Rodriguez",
-      company: "DataFlow Analytics",
-      position: "Head of Operations",
-      comment: "The data analytics solutions provided by Bitroix gave us insights we never knew we needed. Their machine learning models increased our prediction accuracy by 40%. Highly recommend their data science team.",
+      name: "Michael Rodriguez",
+      company: "iTruck Express",
+      position: "Operations Director",
+      comment: "The logistics management system Bitroix developed for us revolutionized our operations. Real-time tracking, automated dispatching, and comprehensive reporting features have increased our efficiency by 45%. Their expertise in handling complex transportation workflows is remarkable.",
       rating: 5,
-      avatar: "👩‍🔬"
+      avatar: "🚚"
     },
     {
-      name: "David Wilson",
-      company: "E-commerce Plus",
-      position: "Product Manager",
-      comment: "Bitroix redesigned our entire e-commerce platform. The new UI/UX design increased our conversion rates by 35%. Their attention to detail and user-centered approach is remarkable.",
+      name: "Dr. Patricia Anderson",
+      company: "ECC (Educational Care Center)",
+      position: "Director",
+      comment: "Bitroix created a comprehensive learning management system for our educational center. The student portal, attendance tracking, and parent communication features they built have made administration so much easier. The UI is clean, intuitive, and our staff adapted to it immediately.",
       rating: 5,
-      avatar: "👨‍💼"
+      avatar: "👩‍🏫"
     },
     {
-      name: "Lisa Thompson",
-      company: "FinTech Innovations",
-      position: "VP of Technology",
-      comment: "Security and compliance are critical in fintech. Bitroix delivered a robust, secure platform that exceeded all regulatory requirements. Their DevOps practices ensure 99.9% uptime.",
+      name: "Dr. Steven Martinez",
+      company: "U.S. Surgitech",
+      position: "Medical Director",
+      comment: "Security and compliance are critical in medical technology. Bitroix delivered a HIPAA-compliant platform with robust security features for managing our surgical equipment inventory and distribution. Their attention to healthcare regulations and data protection exceeded our expectations.",
       rating: 5,
-      avatar: "👩‍💻"
+      avatar: "⚕️"
     },
     {
-      name: "Ahmed Hassan",
-      company: "Global Logistics Co",
-      position: "IT Director",
-      comment: "The team-as-a-service model worked perfectly for our international expansion. Bitroix provided skilled developers who integrated seamlessly with our existing team. Excellent project management.",
+      name: "Sarah Thompson",
+      company: "ZPD Learning",
+      position: "Founder & CEO",
+      comment: "The e-learning platform Bitroix built for us is outstanding. Interactive course modules, progress tracking, and seamless payment integration - everything works flawlessly. Student engagement increased by 70% and our course completion rates are at an all-time high. Exceptional development team!",
       rating: 5,
-      avatar: "👨‍🏭"
+      avatar: "👩‍💼"
     }
   ];
 

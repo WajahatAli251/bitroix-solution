@@ -10,12 +10,12 @@ import zpdLogo from '@/assets/clients/zpd-learning-logo.png';
 
 const ClientsCarousel = () => {
   const clients = [
-    { name: 'Warren Cleaning Services', logo: wcsLogo },
-    { name: 'Best Technology', logo: bestTechLogo },
-    { name: 'iTruck Express', logo: itruckLogo },
-    { name: 'ECC', logo: eccLogo },
-    { name: 'U.S. Surgitech', logo: surgiTechLogo },
-    { name: 'ZPD Learning', logo: zpdLogo },
+    { name: 'Warren Cleaning Services', logo: wcsLogo, founder: 'Robert Warren, CEO' },
+    { name: 'Best Technology', logo: bestTechLogo, founder: 'James Mitchell, CTO' },
+    { name: 'iTruck Express', logo: itruckLogo, founder: 'Michael Rodriguez, Operations Director' },
+    { name: 'ECC', logo: eccLogo, founder: 'Dr. Patricia Anderson, Director' },
+    { name: 'U.S. Surgitech', logo: surgiTechLogo, founder: 'Dr. Steven Martinez, Medical Director' },
+    { name: 'ZPD Learning', logo: zpdLogo, founder: 'Sarah Thompson, Founder & CEO' },
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -61,7 +61,8 @@ const ClientsCarousel = () => {
                       height="80"
                     />
                   </div>
-                  <h3 className="text-sm font-semibold text-slate-700">{client.name}</h3>
+                  <h3 className="text-sm font-semibold text-slate-900 mb-1">{client.name}</h3>
+                  <p className="text-xs text-slate-600">{client.founder}</p>
                 </div>
               </div>
             ))}
@@ -79,7 +80,8 @@ const ClientsCarousel = () => {
                       height="80"
                     />
                   </div>
-                  <h3 className="text-sm font-semibold text-slate-700">{client.name}</h3>
+                  <h3 className="text-sm font-semibold text-slate-900 mb-1">{client.name}</h3>
+                  <p className="text-xs text-slate-600">{client.founder}</p>
                 </div>
               </div>
             ))}
