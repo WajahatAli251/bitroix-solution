@@ -79,35 +79,35 @@ const HeroSection = () => {
                   fetchPriority="high"
                 />
                 {/* Vibrant gradient overlay with increased saturation */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-primary/30 to-transparent rounded-2xl" aria-hidden="true"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-primary/40 to-transparent rounded-2xl" aria-hidden="true"></div>
                 
-                {/* Animated moving lights */}
+                {/* Animated moving lights - Dark and sharp colors */}
                 <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none" aria-hidden="true">
+                  <div 
+                    className="absolute w-40 h-40 rounded-full blur-3xl"
+                    style={{
+                      background: 'radial-gradient(circle, hsl(194 100% 35% / 0.95), transparent)',
+                      animation: 'movingLight 4s ease-in-out infinite',
+                      top: '10%',
+                      left: '5%'
+                    }}
+                  ></div>
                   <div 
                     className="absolute w-32 h-32 rounded-full blur-2xl"
                     style={{
-                      background: 'radial-gradient(circle, hsl(194 100% 60% / 0.8), transparent)',
-                      animation: 'movingLight 4s ease-in-out infinite',
-                      top: '20%',
-                      left: '10%'
-                    }}
-                  ></div>
-                  <div 
-                    className="absolute w-24 h-24 rounded-full blur-xl"
-                    style={{
-                      background: 'radial-gradient(circle, hsl(220 100% 70% / 0.7), transparent)',
+                      background: 'radial-gradient(circle, hsl(280 100% 40% / 0.9), transparent)',
                       animation: 'movingLight2 5s ease-in-out infinite 1s',
-                      top: '60%',
-                      right: '10%'
+                      top: '50%',
+                      right: '5%'
                     }}
                   ></div>
                   <div 
-                    className="absolute w-28 h-28 rounded-full blur-2xl"
+                    className="absolute w-36 h-36 rounded-full blur-3xl"
                     style={{
-                      background: 'radial-gradient(circle, hsl(180 100% 65% / 0.8), transparent)',
+                      background: 'radial-gradient(circle, hsl(220 100% 38% / 0.95), transparent)',
                       animation: 'movingLight3 4.5s ease-in-out infinite 2s',
-                      bottom: '20%',
-                      left: '30%'
+                      bottom: '15%',
+                      left: '25%'
                     }}
                   ></div>
                 </div>
