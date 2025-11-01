@@ -78,7 +78,39 @@ const HeroSection = () => {
                   height="400"
                   fetchPriority="high"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" aria-hidden="true"></div>
+                {/* Vibrant gradient overlay with increased saturation */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/50 via-primary/30 to-transparent rounded-2xl" aria-hidden="true"></div>
+                
+                {/* Animated moving lights */}
+                <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none" aria-hidden="true">
+                  <div 
+                    className="absolute w-32 h-32 rounded-full blur-2xl"
+                    style={{
+                      background: 'radial-gradient(circle, hsl(194 100% 60% / 0.8), transparent)',
+                      animation: 'movingLight 4s ease-in-out infinite',
+                      top: '20%',
+                      left: '10%'
+                    }}
+                  ></div>
+                  <div 
+                    className="absolute w-24 h-24 rounded-full blur-xl"
+                    style={{
+                      background: 'radial-gradient(circle, hsl(220 100% 70% / 0.7), transparent)',
+                      animation: 'movingLight2 5s ease-in-out infinite 1s',
+                      top: '60%',
+                      right: '10%'
+                    }}
+                  ></div>
+                  <div 
+                    className="absolute w-28 h-28 rounded-full blur-2xl"
+                    style={{
+                      background: 'radial-gradient(circle, hsl(180 100% 65% / 0.8), transparent)',
+                      animation: 'movingLight3 4.5s ease-in-out infinite 2s',
+                      bottom: '20%',
+                      left: '30%'
+                    }}
+                  ></div>
+                </div>
               </div>
             </aside>
 
