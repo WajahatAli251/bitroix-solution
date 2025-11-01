@@ -1,11 +1,13 @@
-
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useTheme } from 'next-themes';
+import { Moon, Sun } from 'lucide-react';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   const scrollToSection = (sectionId: string) => {
     // If we're not on the home page, navigate to home first
@@ -93,11 +95,25 @@ const Navigation = () => {
               >
                 Contact
               </button>
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="text-white/90 hover:text-white p-2 rounded-md hover-lift hover-glow"
+                aria-label="Toggle dark mode"
+              >
+                {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </button>
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and theme toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="text-white/90 hover:text-white p-2 hover-lift rounded-md"
+              aria-label="Toggle dark mode"
+            >
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white/90 hover:text-white p-2 hover-lift rounded-md"
