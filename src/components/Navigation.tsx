@@ -31,9 +31,9 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 gradient-primary backdrop-blur-lg border-b border-white/10 animate-slide-in-up glow-primary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14 md:h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 gradient-primary backdrop-blur-lg border-b border-white/10 animate-slide-in-up glow-primary" role="navigation" aria-label="Main navigation">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 md:h-18">
           {/* Logo */}
           <div className="flex-shrink-0">
             <h1 
@@ -45,8 +45,8 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden lg:block">
+            <div className="ml-6 xl:ml-10 flex items-baseline space-x-4 xl:space-x-6">
               <button 
                 onClick={() => scrollToSection('home')}
                 className="text-white/90 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover-lift hover-glow"
@@ -106,7 +106,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile menu button and theme toggle */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="lg:hidden flex items-center gap-2">
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               className="text-white/90 hover:text-white p-2 hover-lift rounded-md"
@@ -127,7 +127,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden animate-slide-in-up">
+          <div className="lg:hidden animate-slide-in-up">
             <div className="px-3 pt-3 pb-4 space-y-2 bg-white/10 backdrop-blur-lg rounded-b-xl border-t border-white/10 mx-2">
               <button 
                 onClick={() => scrollToSection('home')}
