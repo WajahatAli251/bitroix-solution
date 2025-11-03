@@ -240,19 +240,21 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-slate-900 text-sm md:text-base">Phone</h4>
                     <p className="text-slate-600 text-sm md:text-base">+1 (628) 291-2760</p>
+                    <p className="text-slate-600 text-sm md:text-base">+92 335 2222 578</p>
                   </div>
                 </div>
 
                 <div 
                   className="flex items-start space-x-3 md:space-x-4 group cursor-pointer" 
-                  onClick={() => window.open('https://maps.google.com/?q=Pacific+Ave,+San+Francisco,+CA+94109,+USA', '_blank')}
+                  onClick={() => window.open('https://maps.google.com/?q=San+Francisco,+CA+94109,+USA', '_blank')}
                 >
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 shadow-md">
                     <img src="/lovable-uploads/a8de8db8-f140-41ec-b6e9-4c07811f905f.png" alt="Location" className="w-6 md:w-8 h-6 md:h-8" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 text-sm md:text-base">Location</h4>
-                    <p className="text-slate-600 hover:text-blue-600 transition-colors text-sm md:text-base">Pacific Ave, San Francisco, CA 94109, USA</p>
+                    <h4 className="font-semibold text-slate-900 text-sm md:text-base">Offices</h4>
+                    <p className="text-slate-600 hover:text-blue-600 transition-colors text-sm md:text-base">San Francisco, California, USA</p>
+                    <p className="text-slate-600 hover:text-blue-600 transition-colors text-sm md:text-base mt-1">Gulistan e Johar, Karachi, Pakistan</p>
                   </div>
                 </div>
               </div>
