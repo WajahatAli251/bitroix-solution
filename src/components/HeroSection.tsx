@@ -1,5 +1,5 @@
 
-import heroTechImage from '@/assets/futuristic-hero-bg.jpg';
+import heroTechImage from '@/assets/professional-team-hero.jpg';
 
 const HeroSection = () => {
   const scrollToServices = () => {
