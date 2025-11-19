@@ -151,6 +151,86 @@ const Projects = () => {
     { id: 101, title: "Jimmy Lion", category: "Magento", url: "https://www.jimmylion.com/us", image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&h=600&fit=crop" },
     { id: 102, title: "Xtrons", category: "Magento", url: "https://xtrons.com/", image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop" },
     { id: 103, title: "Switch BE", category: "Magento", url: "https://www.switch.be/", image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=600&fit=crop" },
+    
+    // Transportation
+    { id: 104, title: "Seastreak", category: "Transportation", url: "https://seastreak.com/", image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=600&fit=crop" },
+    { id: 105, title: "Jet Edge", category: "Transportation", url: "https://www.flyjetedge.com/", image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&h=600&fit=crop" },
+    { id: 106, title: "Siemens Mobility", category: "Transportation", url: "http://www.siemens.com.tr/i/Assets/mobility/index_en.html", image: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=800&h=600&fit=crop" },
+    { id: 107, title: "Transfers", category: "Transportation", url: "http://www.themeenergy.com/themes/html/transfers/", image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop" },
+    
+    // Sports
+    { id: 108, title: "Compressport", category: "Sports", url: "https://www.compressport.com/usa/en/", image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&h=600&fit=crop" },
+    { id: 109, title: "Hyperlite", category: "Sports", url: "https://www.hyperlite.com/en/", image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=800&h=600&fit=crop" },
+    { id: 110, title: "Cervelo", category: "Sports", url: "https://www.cervelo.com/en/", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=800&h=600&fit=crop" },
+    { id: 111, title: "Team Elite Kickboxing", category: "Sports", url: "https://teamelitekickboxing.org/", image: "https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&h=600&fit=crop" },
+    { id: 112, title: "Roval Components", category: "Sports", url: "https://rovalcomponents.com/", image: "https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?w=800&h=600&fit=crop" },
+    { id: 113, title: "Ocean Vagabond", category: "Sports", url: "https://www.oceanvagabond.com/fr/", image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop" },
+    
+    // Prestashop
+    { id: 114, title: "Decathlon", category: "Prestashop", url: "https://www.decathlon.ma/", image: "https://images.unsplash.com/photo-1556906781-9a412961c28c?w=800&h=600&fit=crop" },
+    { id: 115, title: "Smallable", category: "Prestashop", url: "https://en.smallable.com/", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop" },
+    { id: 116, title: "My American Market", category: "Prestashop", url: "https://www.myamericanmarket.com/us/", image: "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800&h=600&fit=crop" },
+    { id: 117, title: "Urbanara", category: "Prestashop", url: "https://www.urbanara.co.uk/", image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop" },
+    { id: 118, title: "Botland", category: "Prestashop", url: "https://botland.com.pl/en/", image: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=800&h=600&fit=crop" },
+    { id: 119, title: "Footshop", category: "Prestashop", url: "https://www.footshop.eu/en/", image: "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=800&h=600&fit=crop" },
+    { id: 120, title: "Hat Showroom", category: "Prestashop", url: "https://www.hatshowroom.com/", image: "https://images.unsplash.com/photo-1521369909029-2afed882baee?w=800&h=600&fit=crop" },
+    
+    // Wedding
+    { id: 121, title: "Boutique Weddings", category: "Wedding", url: "https://www.boutique-weddings.com/", image: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop" },
+    { id: 122, title: "Abetel Wedding", category: "Wedding", url: "https://wedding.abetel.com/", image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&h=600&fit=crop" },
+    { id: 123, title: "The Bridal Planner", category: "Wedding", url: "http://thebridalplanner.co/", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop" },
+    
+    // Transportation Services
+    { id: 124, title: "NZTA", category: "Transportation Services", url: "https://nzta.govt.nz/", image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop" },
+    { id: 125, title: "Direct Lease Private", category: "Transportation Services", url: "https://www.directleaseprivate.nl/", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop" },
+    
+    // Salon
+    { id: 126, title: "Lisa Dinh Hair Studio", category: "Salon", url: "http://lisadinhhairstudio.com/olivia-huynh", image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&h=600&fit=crop" },
+    { id: 127, title: "Drybar", category: "Salon", url: "https://www.thedrybar.com/", image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop" },
+    { id: 128, title: "Nine Zero One Salon", category: "Salon", url: "https://www.ninezeroonesalon.com/", image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=600&fit=crop" },
+    { id: 129, title: "Bleach London", category: "Salon", url: "https://bleachlondon.co.uk/", image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&h=600&fit=crop" },
+    { id: 130, title: "Fourteen Jay", category: "Salon", url: "http://www.fourteenjay.com/", image: "https://images.unsplash.com/photo-1470254934819-1c00144c8f5e?w=800&h=600&fit=crop" },
+    
+    // Loan & Finance
+    { id: 131, title: "Lending Club", category: "Loan & Finance", url: "https://www.lendingclub.com/", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop" },
+    { id: 132, title: "LendingTree", category: "Loan & Finance", url: "https://www.lendingtree.com/", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop" },
+    { id: 133, title: "Americas Loans", category: "Loan & Finance", url: "https://www.americashloans.net/", image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&fit=crop" },
+    { id: 134, title: "LSTA", category: "Loan & Finance", url: "https://www.lsta.org/", image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop" },
+    { id: 135, title: "Loans.no", category: "Loan & Finance", url: "https://loans.no/", image: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=800&h=600&fit=crop" },
+    { id: 136, title: "Financial Marketing", category: "Loan & Finance", url: "https://www.financial-marketing.co.uk/", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" },
+    { id: 137, title: "Betterment", category: "Loan & Finance", url: "https://www.betterment.com/", image: "https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&h=600&fit=crop" },
+    { id: 138, title: "Earnest", category: "Loan & Finance", url: "https://www.earnest.com/homepage-new", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" },
+    { id: 139, title: "Nutmeg", category: "Loan & Finance", url: "https://www.nutmeg.com/", image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&h=600&fit=crop" },
+    { id: 140, title: "Xero", category: "Loan & Finance", url: "https://www.xero.com/us/", image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=800&h=600&fit=crop" },
+    
+    // Tender
+    { id: 141, title: "Tender Impulse", category: "Tender", url: "https://tenderimpulse.com/", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop" },
+    { id: 142, title: "eTendering TED", category: "Tender", url: "https://etendering.ted.europa.eu/", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" },
+    { id: 143, title: "Tenderio", category: "Tender", url: "http://www.tenderio.com/", image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&h=600&fit=crop" },
+    
+    // Medical
+    { id: 144, title: "RxList", category: "Medical", url: "https://www.rxlist.com/script/main/hp.asp", image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800&h=600&fit=crop" },
+    { id: 145, title: "Artversion Healthcare", category: "Medical", url: "http://artversionforhealthcare.com/", image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop" },
+    
+    // Bookstore
+    { id: 146, title: "AbeBooks", category: "Bookstore", url: "https://www.abebooks.com/", image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop" },
+    { id: 147, title: "Strand Books", category: "Bookstore", url: "https://www.strandbooks.com/", image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&h=600&fit=crop" },
+    { id: 148, title: "Website Store", category: "Bookstore", url: "https://www.websitestore.co.uk/", image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&h=600&fit=crop" },
+    
+    // Wix
+    { id: 149, title: "VA Group", category: "Wix", url: "https://www.vagroup.com/", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" },
+    { id: 150, title: "Lin-Manuel Miranda", category: "Wix", url: "https://www.linmanuel.com/", image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800&h=600&fit=crop" },
+    { id: 151, title: "eBulletins", category: "Wix", url: "https://www.ebulletins.com/", image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop" },
+    { id: 152, title: "3LB Seed", category: "Wix", url: "https://www.3lbseed.com/", image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&h=600&fit=crop" },
+    { id: 153, title: "Juslyn Vineyards", category: "Wix", url: "https://www.juslynvineyards.com/", image: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&h=600&fit=crop" },
+    
+    // Consulting
+    { id: 154, title: "Simplicity", category: "Consulting", url: "https://simplicityc.com/", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" },
+    { id: 155, title: "Moss Adams", category: "Consulting", url: "https://www.mossadams.com/home", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop" },
+    { id: 156, title: "Fresh Consulting", category: "Consulting", url: "https://www.freshconsulting.com/", image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=600&fit=crop" },
+    { id: 157, title: "Soft Tutor", category: "Consulting", url: "http://softtutor.pl/en/", image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop" },
+    { id: 158, title: "Innoitus", category: "Consulting", url: "https://www.innoitus.com.au/", image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop" },
+    { id: 159, title: "Time is Money Pro", category: "Consulting", url: "http://timeismoneypro.com", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop" },
   ];
 
   const categories = [
@@ -173,7 +253,19 @@ const Projects = () => {
     "PHP",
     "Node.js",
     "Real Estate",
-    "Magento"
+    "Magento",
+    "Transportation",
+    "Sports",
+    "Prestashop",
+    "Wedding",
+    "Transportation Services",
+    "Salon",
+    "Loan & Finance",
+    "Tender",
+    "Medical",
+    "Bookstore",
+    "Wix",
+    "Consulting"
   ];
   
   const [selectedCategory, setSelectedCategory] = React.useState("All");
