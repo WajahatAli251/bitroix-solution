@@ -24,8 +24,10 @@ export default defineConfig(({ mode }) => ({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['@radix-ui/react-dialog', '@radix-ui/react-toast'],
+          'ui-vendor': ['@radix-ui/react-dialog', '@radix-ui/react-toast', '@radix-ui/react-tooltip'],
           'emailjs': ['@emailjs/browser'],
+          'carousel': ['embla-carousel-react'],
+          'charts': ['recharts'],
         },
       },
     },
@@ -35,9 +37,16 @@ export default defineConfig(({ mode }) => ({
       compress: {
         drop_console: true,
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+      },
+      mangle: {
+        safari10: true,
       },
     },
     cssCodeSplit: true,
     cssMinify: true,
+    reportCompressedSize: false,
+    target: 'esnext',
+    sourcemap: false,
   },
 }));
