@@ -7,42 +7,48 @@ const SolutionsSection = () => {
       hook: "Say goodbye to cold outreach. Our systems deliver hot leads — automatically.",
       cta: "Learn More",
       delay: "0s",
-      link: "/solutions/lead-generation"
+      link: "/solutions/lead-generation",
+      image: "/lovable-uploads/976ae802-eca8-4e3b-980e-5670c46536ef.png"
     },
     {
       title: "SEO That Dominates",
       hook: "Be found by customers who are already searching. Top Google rankings, guaranteed.",
       cta: "Learn More",
       delay: "0.1s",
-      link: "/solutions/seo-dominance"
+      link: "/solutions/seo-dominance",
+      image: "/lovable-uploads/74657b6a-cd12-40ee-b239-66b76822d751.png"
     },
     {
       title: "Paid Ads Management",
       hook: "Stop wasting ad spend. We run performance-focused Google & Meta ads that bring results.",
       cta: "Learn More",
       delay: "0.2s",
-      link: "/solutions/paid-ads-management"
+      link: "/solutions/paid-ads-management",
+      image: "/lovable-uploads/bec8f18d-ee2a-4a17-bd69-6a1ee4845629.png"
     },
     {
       title: "Marketing Automation",
       hook: "Work smarter, not harder. Automate follow-ups, lead nurturing, and reporting.",
       cta: "Learn More",
       delay: "0.3s",
-      link: "/solutions/marketing-automation"
+      link: "/solutions/marketing-automation",
+      image: "/lovable-uploads/4ba4056f-25de-476f-8515-6edff94dbe63.png"
     },
     {
       title: "Conversion Rate Optimization (CRO)",
       hook: "Visitors aren't buying? We fix that. Smart UI/UX + psychology-backed CTAs.",
       cta: "Learn More",
       delay: "0.4s",
-      link: "/solutions/conversion-optimization"
+      link: "/solutions/conversion-optimization",
+      image: "/lovable-uploads/35a9e2d4-2082-408b-ab86-d95889dc822f.png"
     },
     {
       title: "Social Media Growth",
       hook: "Build a brand that people follow, trust, and buy from. No fluff — just ROI.",
       cta: "Learn More",
       delay: "0.5s",
-      link: "/solutions/social-media-growth"
+      link: "/solutions/social-media-growth",
+      image: "/lovable-uploads/a95641c7-884d-48c4-976d-019c9672302b.png"
     }
   ];
 
@@ -82,22 +88,29 @@ const SolutionsSection = () => {
                 className="backdrop-blur-md p-6 md:p-8 rounded-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in relative overflow-hidden shadow-2xl"
                 style={{
                   animationDelay: service.delay,
-                  background: 'rgba(13, 27, 42, 0.3)',
                   borderColor: '#264653',
                   borderWidth: '2px',
                   borderStyle: 'solid',
                   boxShadow: '0 10px 30px rgba(51, 243, 255, 0.1)'
                 }}
               >
-                {/* Enhanced Gradient Background */}
-                <div className="absolute inset-0 transition-all duration-500" style={{background: 'linear-gradient(135deg, rgba(0, 191, 255, 0.05), rgba(51, 243, 255, 0.05))'}}></div>
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                  style={{
+                    backgroundImage: `url(${service.image})`,
+                  }}
+                ></div>
+                
+                {/* Dark Overlay for text visibility */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50 transition-all duration-500 group-hover:from-black/95 group-hover:via-black/75"></div>
                 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4 transition-colors duration-300 drop-shadow-md" style={{color: '#F0F4F8'}}>
+                  <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4 transition-colors duration-300 drop-shadow-lg" style={{color: '#F0F4F8'}}>
                     {service.title}
                   </h4>
-                  <p className="leading-relaxed mb-4 md:mb-6 drop-shadow-sm text-sm md:text-base" style={{color: '#9BE3FF'}}>
+                  <p className="leading-relaxed mb-4 md:mb-6 drop-shadow-md text-sm md:text-base" style={{color: '#9BE3FF'}}>
                     {service.hook}
                   </p>
                   <button
