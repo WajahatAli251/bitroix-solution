@@ -242,7 +242,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-white text-xs sm:text-sm md:text-base">Phone</h4>
-                    <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm md:text-base">+1 (628) 291-2760</p>
+                    <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm md:text-base">+1 (210) 201-3312</p>
                     <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm md:text-base">+92 335 2222 578</p>
                   </div>
                 </div>
