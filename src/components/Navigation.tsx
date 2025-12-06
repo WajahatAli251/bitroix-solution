@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from 'next-themes';
 import { Moon, Sun } from 'lucide-react';
-import bitroixLogo from '@/assets/bitroix-logo.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,17 +36,12 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16 md:h-18">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div 
+            <h1 
               onClick={() => navigate('/')} 
-              className="hover-lift cursor-pointer"
+              className="text-xl md:text-2xl font-bold text-white hover-lift cursor-pointer text-gradient-accent"
             >
-              <img 
-                src={bitroixLogo} 
-                alt="Bitroix Solution LLC" 
-                className="h-10 md:h-12 w-auto scale-x-125 origin-left drop-shadow-lg"
-                style={{ filter: 'brightness(1.2) contrast(1.1)' }}
-              />
-            </div>
+              Bitroix <span className="text-gradient">Solution</span>
+            </h1>
           </div>
 
           {/* Desktop Menu */}

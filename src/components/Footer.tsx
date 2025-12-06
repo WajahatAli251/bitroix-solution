@@ -1,4 +1,3 @@
-import bitroixLogo from '@/assets/bitroix-logo.png';
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -21,11 +20,9 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="col-span-1 md:col-span-2">
-              <img 
-                src={bitroixLogo} 
-                alt="Bitroix Solution LLC" 
-                className="h-16 md:h-20 w-auto mb-6 brightness-110 contrast-110"
-              />
+              <h3 className="text-3xl font-bold mb-6 text-white">
+                Bitroix <span className="text-gradient">Solution LLC</span>
+              </h3>
               <p className="text-muted-foreground dark:text-gray-300 mb-8 max-w-md text-lg leading-relaxed">
                 Empowering businesses through cutting-edge software solutions, cloud innovation, and AI integration. 
                 Building the future, one solution at a time.
