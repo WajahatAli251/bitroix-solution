@@ -44,7 +44,7 @@ const Navigation = () => {
               <img 
                 src={bitroixLogo} 
                 alt="Bitroix Solution LLC" 
-                className="h-10 md:h-12 w-auto"
+                className="h-10 md:h-12 w-auto mix-blend-screen"
               />
             </div>
           </div>

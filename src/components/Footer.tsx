@@ -24,7 +24,7 @@ const Footer = () => {
               <img 
                 src={bitroixLogo} 
                 alt="Bitroix Solution LLC" 
-                className="h-12 md:h-14 w-auto mb-6"
+                className="h-12 md:h-14 w-auto mb-6 mix-blend-screen"
               />
               <p className="text-muted-foreground dark:text-gray-300 mb-8 max-w-md text-lg leading-relaxed">
                 Empowering businesses through cutting-edge software solutions, cloud innovation, and AI integration. 
