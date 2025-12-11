@@ -19,7 +19,7 @@ const blogPosts: BlogPost[] = [
     date: "2025-12-08",
     category: "AI",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80",
-    link: "https://www.forbes.com/sites/bernardmarr/2024/09/23/the-10-biggest-ai-trends-in-2025-everyone-must-be-ready-for-now/"
+    link: "https://techcrunch.com/category/artificial-intelligence/"
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const blogPosts: BlogPost[] = [
     date: "2025-12-07",
     category: "Digital Marketing",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
-    link: "https://www.searchenginejournal.com/digital-marketing-trends/473129/"
+    link: "https://www.hubspot.com/marketing-statistics"
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const blogPosts: BlogPost[] = [
     date: "2025-12-06",
     category: "Cloud",
     image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80",
-    link: "https://www.gartner.com/en/articles/what-s-new-in-the-2024-gartner-hype-cycle-for-cloud-platform-services"
+    link: "https://www.zdnet.com/topic/cloud/"
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const blogPosts: BlogPost[] = [
     date: "2025-12-05",
     category: "Cybersecurity",
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80",
-    link: "https://www.csoonline.com/article/3714681/top-cybersecurity-trends-for-2025.html"
+    link: "https://thehackernews.com/"
   }
 ];
 
