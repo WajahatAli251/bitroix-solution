@@ -8,6 +8,7 @@ import SolutionsSection from "@/components/SolutionsSection";
 import TechCarousel from "@/components/TechCarousel";
 import ClientsCarousel from "@/components/ClientsCarousel";
 import ReviewsSection from "@/components/ReviewsSection";
+import BlogsSection from "@/components/BlogsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
@@ -31,6 +32,7 @@ const Index = () => {
       <TechCarousel />
       <ClientsCarousel />
       <ReviewsSection />
+      <BlogsSection />
       <ContactSection />
       <Footer />
       <Chatbot />
