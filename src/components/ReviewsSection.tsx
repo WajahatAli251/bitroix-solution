@@ -71,12 +71,15 @@ const ReviewsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
-            <div key={index} className="relative p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden group min-h-[320px]">
-              {/* Background Image */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                style={{ backgroundImage: `url(${review.image})` }}
-              ></div>
+            <article key={index} className="relative p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden group min-h-[320px]" itemScope itemType="https://schema.org/Review">
+              {/* Background Image with lazy loading */}
+              <img 
+                src={review.image}
+                alt={`${review.company} review background`}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
               
               {/* Dark Overlay for text visibility */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/75 to-black/60 transition-all duration-500 group-hover:from-black/95 group-hover:via-black/80"></div>
@@ -84,22 +87,27 @@ const ReviewsSection = () => {
               {/* Content */}
               <div className="relative z-10">
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-white drop-shadow-lg">{review.name}</h4>
-                  <p className="text-sm text-gray-300">{review.position}</p>
-                  <p className="text-sm text-cyan-400 font-medium">{review.company}</p>
+                  <h4 className="text-lg font-semibold text-white drop-shadow-lg" itemProp="author" itemScope itemType="https://schema.org/Person">
+                    <span itemProp="name">{review.name}</span>
+                  </h4>
+                  <p className="text-sm text-gray-300" itemProp="jobTitle">{review.position}</p>
+                  <p className="text-sm text-cyan-400 font-medium" itemProp="worksFor">{review.company}</p>
                 </div>
 
-                <div className="flex mb-4">
+                <div className="flex mb-4" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+                  <meta itemProp="ratingValue" content={String(review.rating)} />
+                  <meta itemProp="bestRating" content="5" />
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" aria-hidden="true" />
                   ))}
+                  <span className="sr-only">{review.rating} out of 5 stars</span>
                 </div>
 
-                <p className="text-gray-200 leading-relaxed italic drop-shadow-md text-sm">
+                <p className="text-gray-200 leading-relaxed italic drop-shadow-md text-sm" itemProp="reviewBody">
                   "{review.comment}"
                 </p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
