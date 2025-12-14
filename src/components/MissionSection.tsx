@@ -135,71 +135,6 @@ const MissionSection = () => {
           {/* Right Side - Illustration */}
           <div className="relative flex justify-center items-center mt-8 lg:mt-0">
             <div className="relative group animate-fade-in" style={{animationDelay: '0.3s'}}>
-              {/* Animated Purple Lines Background */}
-              <div className="absolute inset-0 -m-6 md:-m-12">
-                <svg className="w-full h-full animate-float" viewBox="0 0 500 600" style={{animationDelay: '0.5s'}}>
-                  <defs>
-                    <linearGradient id="purpleGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style={{stopColor: '#8B5CF6', stopOpacity: 0.8}} />
-                      <stop offset="50%" style={{stopColor: '#A855F7', stopOpacity: 0.6}} />
-                      <stop offset="100%" style={{stopColor: '#C084FC', stopOpacity: 0.4}} />
-                    </linearGradient>
-                  </defs>
-                  
-                  {/* Main flowing curves */}
-                  <path 
-                    d="M50,300 Q150,200 250,300 T450,300" 
-                    stroke="url(#purpleGradient1)" 
-                    strokeWidth="4" 
-                    fill="none" 
-                    className="animate-pulse"
-                    style={{animationDelay: '0.2s'}}
-                  />
-                  <path 
-                    d="M0,250 Q100,150 200,250 T400,250" 
-                    stroke="url(#purpleGradient1)" 
-                    strokeWidth="3" 
-                    fill="none" 
-                    className="animate-pulse"
-                    style={{animationDelay: '0.8s'}}
-                  />
-                  <path 
-                    d="M100,450 Q200,350 300,450 T500,450" 
-                    stroke="url(#purpleGradient1)" 
-                    strokeWidth="3" 
-                    fill="none" 
-                    className="animate-pulse"
-                    style={{animationDelay: '1.2s'}}
-                  />
-                  
-                  {/* Accent curves */}
-                  <path 
-                    d="M150,100 Q200,50 250,100 T350,100" 
-                    stroke="#A855F7" 
-                    strokeWidth="2.5" 
-                    fill="none" 
-                    className="animate-pulse"
-                    style={{animationDelay: '0.5s'}}
-                  />
-                  <path 
-                    d="M300,150 Q350,100 400,150" 
-                    stroke="#C084FC" 
-                    strokeWidth="2" 
-                    fill="none" 
-                    className="animate-pulse"
-                    style={{animationDelay: '1.5s'}}
-                  />
-                  <path 
-                    d="M50,500 Q100,450 150,500" 
-                    stroke="#DDD6FE" 
-                    strokeWidth="2" 
-                    fill="none" 
-                    className="animate-pulse"
-                    style={{animationDelay: '2s'}}
-                  />
-                </svg>
-              </div>
-              
               {/* Main Illustration */}
               <div className="relative z-10">
                 <img 
@@ -210,17 +145,6 @@ const MissionSection = () => {
                     filter: 'drop-shadow(0 25px 50px rgba(139, 92, 246, 0.5))'
                   }}
                 />
-                
-                {/* Flying birds effect */}
-                <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex gap-2 animate-birds-fly">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-slate-800 text-xs" style={{ animationDelay: `${i * 0.2}s` }}>🐦</span>
-                  ))}
-                </div>
-                
-                {/* Cloud particles */}
-                <div className="absolute -bottom-4 -left-8 w-24 h-16 bg-gradient-to-t from-pink-300/60 to-transparent rounded-full blur-xl animate-cloud-drift"></div>
-                <div className="absolute -bottom-8 -right-4 w-32 h-20 bg-gradient-to-t from-pink-200/50 to-transparent rounded-full blur-xl animate-cloud-drift" style={{animationDelay: '2s'}}></div>
               </div>
             </div>
           </div>
