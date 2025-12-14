@@ -139,8 +139,8 @@ const MissionSection = () => {
               <div className="relative z-10">
                 <img 
                   src={astronautImage} 
-                  alt="Astronaut Marketing - Elevated Digital Solutions" 
-                  className="w-full h-auto max-w-[600px] lg:max-w-[750px] xl:max-w-[850px] object-contain drop-shadow-2xl animate-astronaut-float"
+                  alt="Web 3.0 - Experience the Future" 
+                  className="w-full h-auto max-w-[700px] lg:max-w-[900px] xl:max-w-[1000px] min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[800px] object-contain drop-shadow-2xl animate-astronaut-float"
                   style={{
                     filter: 'drop-shadow(0 25px 50px rgba(139, 92, 246, 0.5))'
                   }}
