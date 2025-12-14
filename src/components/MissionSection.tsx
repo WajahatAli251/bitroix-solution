@@ -1,6 +1,7 @@
 
+
 import React, { useState, useEffect } from 'react';
-import successCelebration from '@/assets/success-celebration-no-laptop.png';
+import astronautImage from '@/assets/astronaut-marketing.png';
 
 const TypewriterText = ({ lines, speed = 50, lineDelay = 800 }: {
   lines: string[];
@@ -200,29 +201,26 @@ const MissionSection = () => {
               </div>
               
               {/* Main Illustration */}
-              <div className="relative z-10 transform hover:scale-105 transition-all duration-700 group-hover:rotate-2">
+              <div className="relative z-10">
                 <img 
-                  src={successCelebration} 
-                  alt="Success Celebration - Digital Solutions Achievement" 
-                  className="w-[280px] h-[380px] sm:w-[350px] sm:h-[470px] md:w-[400px] md:h-[540px] lg:w-[450px] lg:h-[600px] object-contain animate-float drop-shadow-2xl"
+                  src={astronautImage} 
+                  alt="Astronaut Marketing - Elevated Digital Solutions" 
+                  className="w-[320px] h-[320px] sm:w-[400px] sm:h-[400px] md:w-[480px] md:h-[480px] lg:w-[550px] lg:h-[550px] object-contain drop-shadow-2xl animate-astronaut-float"
                   style={{
-                    filter: 'drop-shadow(0 25px 50px rgba(139, 92, 246, 0.4))',
-                    animationDelay: '0.3s'
+                    filter: 'drop-shadow(0 25px 50px rgba(139, 92, 246, 0.5))'
                   }}
                 />
                 
-                {/* Enhanced Floating purple particles */}
-                <div className="absolute top-12 left-12 w-4 h-4 bg-purple-400 rounded-full animate-bounce opacity-70" style={{animationDelay: '0.5s'}}></div>
-                <div className="absolute top-24 right-16 w-3 h-3 bg-purple-500 rounded-full animate-bounce opacity-80" style={{animationDelay: '1s'}}></div>
-                <div className="absolute bottom-20 left-16 w-5 h-5 bg-purple-300 rounded-full animate-bounce opacity-60" style={{animationDelay: '1.5s'}}></div>
-                <div className="absolute bottom-12 right-20 w-3 h-3 bg-purple-600 rounded-full animate-bounce opacity-75" style={{animationDelay: '2s'}}></div>
-                <div className="absolute top-32 left-32 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-65" style={{animationDelay: '2.5s'}}></div>
+                {/* Flying birds effect */}
+                <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex gap-2 animate-birds-fly">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-slate-800 text-xs" style={{ animationDelay: `${i * 0.2}s` }}>🐦</span>
+                  ))}
+                </div>
                 
-                {/* Enhanced Glowing ring effect */}
-                <div className="absolute inset-0 rounded-full animate-pulse opacity-40" style={{
-                  background: 'radial-gradient(circle, transparent 50%, rgba(139, 92, 246, 0.4) 60%, transparent 70%)',
-                  animationDelay: '0.8s'
-                }}></div>
+                {/* Cloud particles */}
+                <div className="absolute -bottom-4 -left-8 w-24 h-16 bg-gradient-to-t from-pink-300/60 to-transparent rounded-full blur-xl animate-cloud-drift"></div>
+                <div className="absolute -bottom-8 -right-4 w-32 h-20 bg-gradient-to-t from-pink-200/50 to-transparent rounded-full blur-xl animate-cloud-drift" style={{animationDelay: '2s'}}></div>
               </div>
             </div>
           </div>
