@@ -14,18 +14,20 @@ interface SEOProps {
     author?: string;
   };
   noindex?: boolean;
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
 const SEO = ({ 
   title, 
   description, 
-  keywords = "web development company, AI chatbot development, SEO services, digital marketing agency, data analytics, DevOps MLOps, UI/UX design, custom software development, San Francisco, Karachi, software outsourcing",
+  keywords = "web development company, AI chatbot development, SEO services, digital marketing agency, data analytics, DevOps MLOps, UI/UX design, custom software development, San Francisco, Karachi, software outsourcing, react development, full stack development",
   canonicalUrl,
   ogImage = "https://bitroixsolution.com/lovable-uploads/c1164fdd-5ccc-43cd-b1d6-a0fe104c2807.png",
   ogType = "website",
   schemaMarkup,
   article,
-  noindex = false
+  noindex = false,
+  breadcrumbs
 }: SEOProps) => {
   const fullTitle = title === "Home" 
     ? "Bitroix Solution LLC - Expert Web Development, AI Chatbots & Digital Marketing | San Francisco & Karachi"
@@ -39,6 +41,18 @@ const SEO = ({
   const robotsContent = noindex 
     ? "noindex, nofollow" 
     : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+
+  // Generate breadcrumb schema if provided
+  const breadcrumbSchema = breadcrumbs ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  } : null;
 
   return (
     <Helmet>
@@ -88,7 +102,7 @@ const SEO = ({
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:image:alt" content={title} />
 
-      {/* Geo Tags - Multiple Locations */}
+      {/* Geo Tags - San Francisco */}
       <meta name="geo.region" content="US-CA" />
       <meta name="geo.placename" content="San Francisco, California, USA" />
       <meta name="geo.position" content="37.7749;-122.4194" />
@@ -98,6 +112,13 @@ const SEO = ({
       {schemaMarkup && (
         <script type="application/ld+json">
           {JSON.stringify(schemaMarkup)}
+        </script>
+      )}
+
+      {/* Breadcrumb Schema */}
+      {breadcrumbSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbSchema)}
         </script>
       )}
     </Helmet>
