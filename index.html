@@ -87,7 +87,18 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="/lovable-uploads/c1164fdd-5ccc-43cd-b1d6-a0fe104c2807.png" as="image" type="image/png" />
+    <link rel="preload" href="/lovable-uploads/c1164fdd-5ccc-43cd-b1d6-a0fe104c2807.png" as="image" type="image/png" fetchpriority="high" />
+    
+    <!-- Resource Hints for Performance -->
+    <link rel="modulepreload" href="/src/main.tsx" />
+    
+    <!-- Critical CSS Inline Hint -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      #root { min-height: 100vh; }
+      .gradient-primary { background: linear-gradient(135deg, hsl(210, 100%, 12%) 0%, hsl(210, 100%, 6%) 100%); }
+    </style>
     
     <!-- Google Analytics - Deferred for Performance -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YLGM00Z977"></script>
@@ -308,8 +319,80 @@
             "@type": "Answer",
             "text": "Bitroix Solution has successfully delivered over 150 projects across various industries including e-commerce, healthcare, education, finance, and logistics."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What industries does Bitroix Solution serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bitroix Solution serves clients across e-commerce, healthcare, education, finance, logistics, real estate, and technology industries with custom web and mobile solutions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Bitroix Solution offer free consultations?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Bitroix Solution offers free initial consultations to understand your project requirements and provide tailored recommendations for your business needs."
+          }
         }
       ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://bitroixsolution.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://bitroixsolution.com/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Projects",
+          "item": "https://bitroixsolution.com/projects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contact",
+          "item": "https://bitroixsolution.com/#contact"
+        }
+      ]
+    }
+    </script>
+
+    <!-- SoftwareApplication Schema for Products -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Bitroix Web Solutions",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "150"
+      },
+      "provider": {"@id": "https://bitroixsolution.com/#organization"}
     }
     </script>
   </head>

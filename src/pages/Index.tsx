@@ -19,9 +19,12 @@ const Index = () => {
     <div className="min-h-screen">
       <SEO 
         title="Home"
-        description="Bitroix Solution LLC - Expert web development, AI chatbots, SEO optimization, and digital marketing services. Transform your business with professional custom software solutions, data analytics, and DevOps expertise."
-        keywords="web development, AI chatbots, SEO services, digital marketing, Lancaster PA, Pennsylvania web design, custom software development, data analytics, DevOps, MLOps"
+        description="Bitroix Solution LLC - Award-winning web development, AI chatbots, SEO optimization & digital marketing. 150+ projects, 4.9★ rating. Free consultation!"
+        keywords="web development company San Francisco, AI chatbot development, SEO services California, digital marketing agency, custom software development, data analytics consulting, DevOps MLOps services, UI UX design, react development, full stack developer, software outsourcing Pakistan, Karachi web development"
         canonicalUrl="https://bitroixsolution.com/"
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com/" }
+        ]}
       />
       <Navigation />
       <HeroSection />
