@@ -68,18 +68,17 @@ const HeroSection = () => {
 
             {/* Right Content - Tech Background */}
             <aside className="flex-1 flex justify-center lg:justify-end animate-slide-in-right mt-8 lg:mt-0" aria-label="Technology showcase">
-              <div className="relative w-full max-w-[280px] sm:max-w-md lg:max-w-lg xl:max-w-xl">
+              <div className="relative w-full h-full flex items-center justify-center">
                 <img 
                   src={heroTechImage} 
                   alt="Professional web development and digital marketing services - custom websites, SEO, AI chatbots, and online marketing solutions"
-                  className="w-full h-auto rounded-2xl shadow-2xl glow-primary hover-lift float"
+                  className="w-full h-auto max-w-[500px] sm:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] object-contain animate-float drop-shadow-2xl"
                   loading="eager"
-                  width="600"
-                  height="450"
+                  width="750"
+                  height="600"
                   fetchPriority="high"
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" aria-hidden="true"></div>
               </div>
             </aside>
 
