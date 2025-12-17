@@ -78,10 +78,23 @@ const UIUXDesign = () => {
   return (
     <div className="min-h-screen bg-slate-900">
       <SEO 
-        title="UI/UX Design Services"
-        description="Professional UI/UX design services creating human-centered, intuitive digital experiences. Expert designers using Figma, Adobe XD, and modern design tools."
-        keywords="UI UX design, user interface design, user experience design, Figma design, Adobe XD, prototyping, wireframing, mobile app design"
+        title="UI/UX Design Services - Human-Centered Digital Experiences"
+        description="Expert UI/UX design services creating intuitive digital experiences. Figma, Adobe XD specialists. Mobile & web design, prototyping, user research."
+        keywords="UI UX design services, user interface design, user experience agency, Figma design, Adobe XD, mobile app design, web design, prototyping, wireframing, design system"
         canonicalUrl="https://bitroixsolution.com/ui-ux-design"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "UI/UX Design Services",
+          "provider": {"@type": "Organization", "name": "Bitroix Solution LLC"},
+          "description": "Professional UI/UX design services creating human-centered, intuitive digital experiences.",
+          "serviceType": "Design Services"
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Services", url: "https://bitroixsolution.com/#services" },
+          { name: "UI/UX Design", url: "https://bitroixsolution.com/ui-ux-design" }
+        ]}
       />
       <Navigation />
       

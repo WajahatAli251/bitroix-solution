@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ArrowUp, Users } from "lucide-react";
@@ -62,8 +63,34 @@ const TeamAsService = () => {
     { name: "GitLab", logo: gitlabLogo }
   ];
 
+  const taasSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Team as a Service (TaaS)",
+    "provider": {
+      "@type": "Organization",
+      "name": "Bitroix Solution LLC",
+      "url": "https://bitroixsolution.com"
+    },
+    "description": "Scale your development with expert on-demand tech teams. Full-stack developers, UI/UX designers, and DevOps engineers available.",
+    "areaServed": ["US", "PK", "GB", "CA", "AU", "AE"],
+    "serviceType": "Staff Augmentation"
+  };
+
   return (
     <div className="min-h-screen bg-slate-50">
+      <SEO 
+        title="Team as a Service (TaaS) - On-Demand Tech Teams"
+        description="Scale your development with expert on-demand tech teams. Full-stack developers, UI/UX designers, DevOps engineers. Flexible scaling, 24/7 support."
+        keywords="team as a service, TaaS, staff augmentation, on-demand developers, remote tech team, hire developers, software outsourcing, dedicated development team"
+        canonicalUrl="https://bitroixsolution.com/team-as-service"
+        schemaMarkup={taasSchema}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Services", url: "https://bitroixsolution.com/#services" },
+          { name: "Team as a Service", url: "https://bitroixsolution.com/team-as-service" }
+        ]}
+      />
       <Navigation />
       
       {/* Hero Section */}

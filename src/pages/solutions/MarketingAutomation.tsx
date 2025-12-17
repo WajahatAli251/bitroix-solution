@@ -8,10 +8,23 @@ const MarketingAutomation = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Marketing Automation Solutions"
-        description="Streamline your marketing with intelligent automation workflows. Email campaigns, lead nurturing, customer segmentation, and automated engagement strategies."
-        keywords="marketing automation, email marketing, lead nurturing, automated campaigns, customer engagement, workflow automation"
+        title="Marketing Automation Solutions - Email & Workflow Automation"
+        description="Intelligent marketing automation: email campaigns, lead nurturing, workflow automation. 90% time saved, 8x faster conversions, 250% revenue growth."
+        keywords="marketing automation services, email automation, workflow automation, lead nurturing automation, customer journey automation, HubSpot, Mailchimp, ActiveCampaign"
         canonicalUrl="https://bitroixsolution.com/solutions/marketing-automation"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Marketing Automation Solutions",
+          "provider": {"@type": "Organization", "name": "Bitroix Solution LLC"},
+          "description": "Intelligent marketing automation workflows for email campaigns and lead nurturing.",
+          "serviceType": "Marketing Automation"
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Solutions", url: "https://bitroixsolution.com/#solutions" },
+          { name: "Marketing Automation", url: "https://bitroixsolution.com/solutions/marketing-automation" }
+        ]}
       />
       <Navigation />
       
@@ -69,7 +82,7 @@ const MarketingAutomation = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/4ba4056f-25de-476f-8515-6edff94dbe63.png" alt="Marketing Automation" className="rounded-xl shadow-xl" loading="lazy" />
+              <img src="/lovable-uploads/4ba4056f-25de-476f-8515-6edff94dbe63.png" alt="Marketing Automation" className="rounded-xl shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

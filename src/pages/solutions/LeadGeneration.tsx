@@ -8,10 +8,23 @@ const LeadGeneration = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Lead Generation Systems"
-        description="Automated lead generation systems that deliver qualified prospects to your sales pipeline. Advanced targeting, content marketing, and lead nurturing strategies."
-        keywords="lead generation, lead capture, marketing automation, sales funnel, prospect generation, B2B leads, automated marketing"
+        title="Lead Generation Systems - Automated B2B Lead Capture"
+        description="Automated lead generation systems delivering qualified prospects. Advanced targeting, lead scoring, CRM integration. 300% ROI, 5x more qualified leads."
+        keywords="lead generation services, B2B lead generation, automated lead capture, sales funnel optimization, lead nurturing, prospect generation, marketing automation, CRM integration"
         canonicalUrl="https://bitroixsolution.com/solutions/lead-generation"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Lead Generation Systems",
+          "provider": {"@type": "Organization", "name": "Bitroix Solution LLC"},
+          "description": "Automated lead generation systems that deliver qualified prospects to your sales pipeline.",
+          "serviceType": "Marketing Automation"
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Solutions", url: "https://bitroixsolution.com/#solutions" },
+          { name: "Lead Generation", url: "https://bitroixsolution.com/solutions/lead-generation" }
+        ]}
       />
       <Navigation />
       
@@ -69,7 +82,7 @@ const LeadGeneration = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/976ae802-eca8-4e3b-980e-5670c46536ef.png" alt="Lead Generation Systems" className="rounded-xl shadow-xl" />
+              <img src="/lovable-uploads/976ae802-eca8-4e3b-980e-5670c46536ef.png" alt="Lead Generation Systems" className="rounded-xl shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

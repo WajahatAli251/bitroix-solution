@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import SEO from '@/components/SEO';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -7,7 +7,25 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
 
-const Projects = () => {
+const projectsSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Bitroix Solution Portfolio - 150+ Projects",
+  "description": "Explore our portfolio of 150+ successful web development, e-commerce, and digital projects across React, Vue, Angular, WordPress, Shopify, and more.",
+  "url": "https://bitroixsolution.com/projects",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 150,
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "React Websites"},
+      {"@type": "ListItem", "position": 2, "name": "WordPress Development"},
+      {"@type": "ListItem", "position": 3, "name": "E-Commerce Solutions"},
+      {"@type": "ListItem", "position": 4, "name": "Shopify Stores"}
+    ]
+  }
+};
+
+const Projects = memo(() => {
   // All projects organized by category
   const projects = [
     // React Websites
@@ -277,10 +295,15 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Our Projects Portfolio | 500+ Web Development Projects"
-        description="Explore 500+ successful web development projects by Bitroix Solution LLC - React, Vue, Angular, WordPress, Laravel, Shopify, and custom web applications."
-        keywords="project portfolio, React websites, Vue projects, Angular applications, WordPress development, Laravel projects, Shopify stores, web development portfolio"
+        title="Project Portfolio - 150+ Web Development & E-Commerce Projects"
+        description="Explore 150+ successful web development projects: React, Vue, Angular, WordPress, Shopify, Laravel. E-commerce, booking sites, custom applications."
+        keywords="web development portfolio, React projects, WordPress websites, Shopify stores, e-commerce development, Vue.js applications, Laravel projects, custom web development"
         canonicalUrl="https://bitroixsolution.com/projects"
+        schemaMarkup={projectsSchema}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Projects", url: "https://bitroixsolution.com/projects" }
+        ]}
       />
       <Navigation />
       
@@ -396,6 +419,6 @@ const Projects = () => {
       <Footer />
     </div>
   );
-};
+});
 
 export default Projects;

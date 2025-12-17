@@ -8,10 +8,23 @@ const SocialMediaGrowth = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Social Media Growth & Management"
-        description="Accelerate your social media growth with expert content strategy, community management, and engagement tactics. Instagram, Facebook, LinkedIn, and YouTube marketing."
-        keywords="social media marketing, Instagram growth, Facebook marketing, LinkedIn marketing, social media strategy, content marketing"
+        title="Social Media Growth & Marketing Services"
+        description="Expert social media marketing: Instagram, Facebook, LinkedIn, YouTube growth. 10x follower growth, 500% engagement boost. Content strategy & community management."
+        keywords="social media marketing agency, Instagram growth services, Facebook marketing, LinkedIn marketing, TikTok marketing, social media strategy, influencer marketing, community management"
         canonicalUrl="https://bitroixsolution.com/solutions/social-media-growth"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Social Media Growth & Management",
+          "provider": {"@type": "Organization", "name": "Bitroix Solution LLC"},
+          "description": "Strategic social media marketing that drives engagement and sales.",
+          "serviceType": "Social Media Marketing"
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Solutions", url: "https://bitroixsolution.com/#solutions" },
+          { name: "Social Media Growth", url: "https://bitroixsolution.com/solutions/social-media-growth" }
+        ]}
       />
       <Navigation />
       
@@ -69,7 +82,7 @@ const SocialMediaGrowth = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/a95641c7-884d-48c4-976d-019c9672302b.png" alt="Social Media Growth" className="rounded-xl shadow-xl" loading="lazy" />
+              <img src="/lovable-uploads/a95641c7-884d-48c4-976d-019c9672302b.png" alt="Social Media Growth" className="rounded-xl shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

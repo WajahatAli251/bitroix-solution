@@ -8,10 +8,23 @@ const PaidAdsManagement = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Paid Ads Management - Google & Facebook Ads"
-        description="Professional paid advertising management for Google Ads, Facebook Ads, and social media. ROI-focused campaigns with advanced targeting and optimization."
-        keywords="paid ads management, Google Ads, Facebook Ads, PPC, social media advertising, paid search, display advertising"
+        title="Paid Ads Management - Google Ads & Meta Advertising"
+        description="Professional PPC management: Google Ads, Facebook Ads, Instagram Ads. 4x ROAS, 65% lower CPA. Advanced targeting, A/B testing, conversion tracking."
+        keywords="PPC management, Google Ads agency, Facebook Ads management, Instagram advertising, paid search marketing, display advertising, retargeting campaigns, ROAS optimization"
         canonicalUrl="https://bitroixsolution.com/solutions/paid-ads-management"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Paid Ads Management",
+          "provider": {"@type": "Organization", "name": "Bitroix Solution LLC"},
+          "description": "ROI-focused paid advertising management for Google Ads and Meta platforms.",
+          "serviceType": "PPC Management"
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Solutions", url: "https://bitroixsolution.com/#solutions" },
+          { name: "Paid Ads Management", url: "https://bitroixsolution.com/solutions/paid-ads-management" }
+        ]}
       />
       <Navigation />
       
@@ -69,7 +82,7 @@ const PaidAdsManagement = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/bec8f18d-ee2a-4a17-bd69-6a1ee4845629.png" alt="Paid Ads Management" className="rounded-xl shadow-xl" loading="lazy" />
+              <img src="/lovable-uploads/bec8f18d-ee2a-4a17-bd69-6a1ee4845629.png" alt="Paid Ads Management" className="rounded-xl shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

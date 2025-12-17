@@ -8,10 +8,23 @@ const ConversionOptimization = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Conversion Rate Optimization (CRO)"
-        description="Maximize your website's conversion rates with data-driven CRO strategies. A/B testing, user behavior analysis, and landing page optimization to boost sales."
-        keywords="conversion rate optimization, CRO, A/B testing, landing page optimization, user experience optimization, conversion funnel"
+        title="Conversion Rate Optimization (CRO) Services"
+        description="Data-driven CRO services: A/B testing, heatmap analysis, landing page optimization. 3.5x conversion rate improvement, 60% revenue boost from existing traffic."
+        keywords="conversion rate optimization, CRO services, A/B testing, landing page optimization, user experience optimization, conversion funnel analysis, heatmap analysis, website optimization"
         canonicalUrl="https://bitroixsolution.com/solutions/conversion-optimization"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Conversion Rate Optimization",
+          "provider": {"@type": "Organization", "name": "Bitroix Solution LLC"},
+          "description": "Data-driven CRO strategies to maximize website conversion rates.",
+          "serviceType": "Conversion Optimization"
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Solutions", url: "https://bitroixsolution.com/#solutions" },
+          { name: "Conversion Optimization", url: "https://bitroixsolution.com/solutions/conversion-optimization" }
+        ]}
       />
       <Navigation />
       
@@ -69,7 +82,7 @@ const ConversionOptimization = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/35a9e2d4-2082-408b-ab86-d95889dc822f.png" alt="Conversion Optimization" className="rounded-xl shadow-xl" loading="lazy" />
+              <img src="/lovable-uploads/35a9e2d4-2082-408b-ab86-d95889dc822f.png" alt="Conversion Optimization" className="rounded-xl shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
