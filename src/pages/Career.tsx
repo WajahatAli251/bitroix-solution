@@ -59,10 +59,23 @@ const Career = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO 
-        title="Career Opportunities"
-        description="Join Bitroix Solution LLC team! Explore exciting career opportunities in web development, AI, data analytics, and digital marketing. Remote and flexible positions available."
-        keywords="jobs, careers, web developer jobs, AI jobs, data analyst positions, remote work, internships, Lancaster PA jobs"
+        title="Career Opportunities - Join Our Tech Team"
+        description="Join Bitroix Solution LLC! Web development, AI, data analytics, digital marketing careers. Remote & flexible positions. Paid internships available."
+        keywords="tech jobs, web developer careers, AI jobs, remote work opportunities, software developer jobs, paid internships, digital marketing careers, San Francisco jobs, Karachi jobs"
         canonicalUrl="https://bitroixsolution.com/career"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "JobPosting",
+          "title": "Web Developer Intern",
+          "hiringOrganization": {"@type": "Organization", "name": "Bitroix Solution LLC"},
+          "employmentType": "INTERN",
+          "jobLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressCountry": "Remote"}},
+          "description": "Web Developer Intern position with paid internship and flexible remote work."
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Career", url: "https://bitroixsolution.com/career" }
+        ]}
       />
       <Navigation />
       

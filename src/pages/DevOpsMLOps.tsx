@@ -106,10 +106,23 @@ const DevOpsMLOps = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       <SEO 
-        title="DevOps & MLOps Services"
-        description="Professional DevOps and MLOps services with automated CI/CD, infrastructure as code, containerization, and monitoring. Expert Kubernetes, Docker, AWS, and Azure solutions."
-        keywords="DevOps services, MLOps, CI/CD, Kubernetes, Docker, infrastructure automation, Terraform, Jenkins, AWS, Azure, monitoring"
+        title="DevOps & MLOps Services - CI/CD, Kubernetes, Cloud"
+        description="Professional DevOps and MLOps services: CI/CD pipelines, Kubernetes, Docker, AWS, Azure, GCP. Automate deployment, monitoring, and ML workflows."
+        keywords="DevOps services, MLOps consulting, CI/CD pipeline, Kubernetes deployment, Docker containerization, AWS DevOps, Azure DevOps, Terraform infrastructure, Jenkins automation, cloud migration"
         canonicalUrl="https://bitroixsolution.com/devops-mlops"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "DevOps & MLOps Services",
+          "provider": {"@type": "Organization", "name": "Bitroix Solution LLC"},
+          "description": "Professional DevOps and MLOps services with automated CI/CD, infrastructure as code, containerization, and monitoring.",
+          "serviceType": "DevOps Consulting"
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Services", url: "https://bitroixsolution.com/#services" },
+          { name: "DevOps & MLOps", url: "https://bitroixsolution.com/devops-mlops" }
+        ]}
       />
       <Navigation />
       

@@ -8,10 +8,23 @@ const SEODominance = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="SEO Dominance - Search Engine Optimization"
-        description="Professional SEO services that dominate Google search results. Comprehensive keyword research, technical optimization, content strategy, and link building to boost organic traffic."
-        keywords="SEO services, search engine optimization, Google rankings, organic traffic, keyword research, technical SEO, link building, content optimization"
+        title="SEO Services - Dominate Google Search Rankings"
+        description="Professional SEO services: keyword research, technical optimization, content strategy, link building. Boost organic traffic 400%+ and achieve top 3 rankings."
+        keywords="SEO services, search engine optimization, Google rankings, organic traffic, keyword research, technical SEO, link building, content optimization, local SEO, on-page SEO"
         canonicalUrl="https://bitroixsolution.com/solutions/seo-dominance"
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "SEO Dominance Services",
+          "provider": {"@type": "Organization", "name": "Bitroix Solution LLC"},
+          "description": "Professional SEO services that dominate Google search results with comprehensive optimization.",
+          "serviceType": "SEO Consulting"
+        }}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com" },
+          { name: "Solutions", url: "https://bitroixsolution.com/#solutions" },
+          { name: "SEO Dominance", url: "https://bitroixsolution.com/solutions/seo-dominance" }
+        ]}
       />
       <Navigation />
       
@@ -69,7 +82,7 @@ const SEODominance = () => {
               </div>
             </div>
             <div className="animate-fade-in" style={{animationDelay: '0.2s'}}>
-              <img src="/lovable-uploads/74657b6a-cd12-40ee-b239-66b76822d751.png" alt="SEO Strategy" className="rounded-xl shadow-xl" loading="lazy" />
+              <img src="/lovable-uploads/74657b6a-cd12-40ee-b239-66b76822d751.png" alt="SEO Strategy" className="rounded-xl shadow-xl" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
