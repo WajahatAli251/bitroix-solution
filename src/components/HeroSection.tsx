@@ -1,6 +1,3 @@
-
-import heroTechImage from '@/assets/futuristic-hero-bg.jpg';
-
 const HeroSection = () => {
   const scrollToServices = () => {
     const element = document.getElementById('services');
@@ -66,20 +63,21 @@ const HeroSection = () => {
             </div>
             </header>
 
-            {/* Right Content - Tech Background */}
+            {/* Right Content - Video Background */}
             <aside className="flex-1 flex justify-center lg:justify-end animate-slide-in-right mt-8 lg:mt-0" aria-label="Technology showcase">
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src={heroTechImage} 
-                    alt="Professional web development and digital marketing services - custom websites, SEO, AI chatbots, and online marketing solutions"
-                    className="w-full h-auto max-w-[500px] sm:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] object-contain animate-float"
-                    loading="eager"
-                    width="750"
-                    height="600"
-                    fetchPriority="high"
-                    decoding="async"
-                  />
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-full h-auto max-w-[500px] sm:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] object-cover animate-float"
+                    poster="/videos/hero-background.mp4"
+                  >
+                    <source src="/videos/hero-background.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                   <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 pointer-events-none" aria-hidden="true"></div>
                 </div>
               </div>
