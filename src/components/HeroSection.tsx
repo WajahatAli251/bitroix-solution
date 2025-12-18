@@ -1,3 +1,6 @@
+
+import heroTechImage from '@/assets/futuristic-hero-bg.jpg';
+
 const HeroSection = () => {
   const scrollToServices = () => {
     const element = document.getElementById('services');
@@ -15,9 +18,23 @@ const HeroSection = () => {
 
   return (
     <main>
-      <section id="home" className="min-h-screen gradient-primary pt-16 relative overflow-hidden" role="banner">
+      <section id="home" className="min-h-screen pt-16 relative overflow-hidden" role="banner">
+        {/* Video Background */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Dark overlay for text visibility */}
+        <div className="absolute inset-0 bg-primary/80 z-[1]"></div>
+        
         {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-20" aria-hidden="true">
+        <div className="absolute inset-0 opacity-20 z-[2]" aria-hidden="true">
           <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float float-delayed"></div>
         </div>
@@ -63,21 +80,20 @@ const HeroSection = () => {
             </div>
             </header>
 
-            {/* Right Content - Video Background */}
+            {/* Right Content - Tech Image */}
             <aside className="flex-1 flex justify-center lg:justify-end animate-slide-in-right mt-8 lg:mt-0" aria-label="Technology showcase">
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <video 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                    className="w-full h-auto max-w-[500px] sm:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] object-cover animate-float"
-                    poster="/videos/hero-background.mp4"
-                  >
-                    <source src="/videos/hero-background.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                  <img 
+                    src={heroTechImage} 
+                    alt="Professional web development and digital marketing services - custom websites, SEO, AI chatbots, and online marketing solutions"
+                    className="w-full h-auto max-w-[500px] sm:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] object-contain animate-float"
+                    loading="eager"
+                    width="750"
+                    height="600"
+                    fetchPriority="high"
+                    decoding="async"
+                  />
                   <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 pointer-events-none" aria-hidden="true"></div>
                 </div>
               </div>
