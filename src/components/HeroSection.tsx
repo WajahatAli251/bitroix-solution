@@ -18,20 +18,17 @@ const HeroSection = () => {
 
   return (
     <main>
-      <section id="home" className="min-h-screen pt-16 relative overflow-hidden" role="banner">
+      <section id="home" className="min-h-screen gradient-primary pt-16 relative overflow-hidden" role="banner">
         {/* Video Background */}
         <video 
           autoPlay 
           loop 
           muted 
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
         >
           <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
-        
-        {/* Dark overlay for text visibility */}
-        <div className="absolute inset-0 bg-primary/80 z-[1]"></div>
         
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-20 z-[2]" aria-hidden="true">
