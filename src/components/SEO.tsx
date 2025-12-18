@@ -15,6 +15,8 @@ interface SEOProps {
   };
   noindex?: boolean;
   breadcrumbs?: Array<{ name: string; url: string }>;
+  preloadImages?: string[];
+  jsonLdMultiple?: object[];
 }
 
 const SEO = ({ 
@@ -27,7 +29,9 @@ const SEO = ({
   schemaMarkup,
   article,
   noindex = false,
-  breadcrumbs
+  breadcrumbs,
+  preloadImages = [],
+  jsonLdMultiple = []
 }: SEOProps) => {
   const fullTitle = title === "Home" 
     ? "Bitroix Solution LLC - Expert Web Development, AI Chatbots & Digital Marketing | San Francisco & Karachi"
@@ -54,6 +58,9 @@ const SEO = ({
     }))
   } : null;
 
+  // Current date for freshness signals
+  const currentDate = new Date().toISOString().split('T')[0];
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -71,6 +78,17 @@ const SEO = ({
       <meta name="revisit-after" content="3 days" />
       <meta name="distribution" content="global" />
       <meta name="coverage" content="Worldwide" />
+      <meta name="language" content="English" />
+      <meta name="target" content="all" />
+      <meta name="audience" content="all" />
+      <meta name="HandheldFriendly" content="True" />
+      <meta name="MobileOptimized" content="320" />
+      <meta name="last-modified" content={currentDate} />
+      
+      {/* Performance: Preload critical images */}
+      {preloadImages.map((img, index) => (
+        <link key={index} rel="preload" as="image" href={img} fetchPriority="high" />
+      ))}
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
@@ -86,6 +104,7 @@ const SEO = ({
       <meta property="og:locale" content="en_US" />
       <meta property="og:locale:alternate" content="en_GB" />
       <meta property="og:locale:alternate" content="en_PK" />
+      <meta property="og:updated_time" content={currentDate} />
       
       {/* Article specific tags */}
       {article?.publishedTime && <meta property="article:published_time" content={article.publishedTime} />}
@@ -101,12 +120,23 @@ const SEO = ({
       <meta name="twitter:description" content={optimizedDescription} />
       <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:image:alt" content={title} />
+      <meta name="twitter:domain" content="bitroixsolution.com" />
 
-      {/* Geo Tags - San Francisco */}
+      {/* Geo Tags - San Francisco (Primary) */}
       <meta name="geo.region" content="US-CA" />
       <meta name="geo.placename" content="San Francisco, California, USA" />
       <meta name="geo.position" content="37.7749;-122.4194" />
       <meta name="ICBM" content="37.7749, -122.4194" />
+      
+      {/* Dublin Core Metadata for enhanced discovery */}
+      <meta name="DC.title" content={fullTitle} />
+      <meta name="DC.creator" content="Bitroix Solution LLC" />
+      <meta name="DC.subject" content={keywords} />
+      <meta name="DC.description" content={optimizedDescription} />
+      <meta name="DC.publisher" content="Bitroix Solution LLC" />
+      <meta name="DC.language" content="en" />
+      <meta name="DC.coverage" content="Worldwide" />
+      <meta name="DC.rights" content="Copyright Bitroix Solution LLC" />
 
       {/* Schema Markup */}
       {schemaMarkup && (
@@ -114,6 +144,13 @@ const SEO = ({
           {JSON.stringify(schemaMarkup)}
         </script>
       )}
+
+      {/* Multiple JSON-LD schemas */}
+      {jsonLdMultiple.map((schema, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
 
       {/* Breadcrumb Schema */}
       {breadcrumbSchema && (

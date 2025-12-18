@@ -19,13 +19,15 @@ const HeroSection = () => {
   return (
     <main>
       <section id="home" className="min-h-screen gradient-primary pt-16 relative overflow-hidden" role="banner">
-        {/* Video Background */}
+        {/* Video Background - Lazy loaded for performance */}
         <video 
           autoPlay 
           loop 
           muted 
           playsInline
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
+          aria-hidden="true"
         >
           <source src="/videos/hero-background.mp4" type="video/mp4" />
         </video>
