@@ -70,13 +70,39 @@ const AIChatbots = () => {
     { name: "Node.js", logo: nodejsLogo }
   ];
 
+  const aiChatbotSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI Chatbot Development Services",
+    "provider": { "@id": "https://bitroixsolution.com/#organization" },
+    "serviceType": "AI Development",
+    "description": "Intelligent AI chatbot solutions powered by ChatGPT, OpenAI, and machine learning for customer engagement and automation.",
+    "areaServed": ["US", "PK", "GB", "CA", "AU", "AE"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI-Powered Chatbots" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Document Automation" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Predictive Analytics" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Voice-Based AI Interfaces" } }
+      ]
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       <SEO 
-        title="AI Chatbot Development"
-        description="Intelligent AI chatbot solutions powered by ChatGPT, OpenAI, and machine learning. Custom conversational AI that revolutionizes customer engagement and automation."
-        keywords="AI chatbots, conversational AI, ChatGPT integration, OpenAI, machine learning, natural language processing, customer service automation"
+        title="AI Chatbot Development | ChatGPT, OpenAI Integration"
+        description="Intelligent AI chatbot solutions powered by ChatGPT, OpenAI, and ML. Custom conversational AI for 24/7 customer support and automation. Free consultation!"
+        keywords="AI chatbots development, conversational AI, ChatGPT integration, OpenAI API, machine learning chatbots, natural language processing, NLP solutions, customer service automation, voice AI, AI-powered customer support, enterprise AI solutions"
         canonicalUrl="https://bitroixsolution.com/ai-chatbots"
+        schemaMarkup={aiChatbotSchema}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com/" },
+          { name: "Services", url: "https://bitroixsolution.com/#services" },
+          { name: "AI Chatbots", url: "https://bitroixsolution.com/ai-chatbots" }
+        ]}
       />
       <Navigation />
       

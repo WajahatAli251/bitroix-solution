@@ -79,13 +79,39 @@ const WebDevelopment = () => {
     { name: "MySQL", logo: mysqlLogo, category: "SQL Database" }
   ];
 
+  const webDevSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Web Development Services",
+    "provider": { "@id": "https://bitroixsolution.com/#organization" },
+    "serviceType": "Web Development",
+    "description": "Professional web development services including custom applications, SaaS products, e-commerce platforms, and API development.",
+    "areaServed": ["US", "PK", "GB", "CA", "AU", "AE"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Web Development Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SaaS Products" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Web Applications" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-Commerce Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "API Development" } }
+      ]
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-900">
       <SEO 
-        title="Web Development Services"
-        description="Professional web development services including custom applications, SaaS products, e-commerce platforms, and API development. Expert React, Node.js, Python, and Laravel developers."
-        keywords="web development, custom web applications, SaaS development, e-commerce development, API development, React development, Node.js, Python Django, Laravel"
+        title="Custom Web Development Services | React, Node.js, Python"
+        description="Professional web development services: custom applications, SaaS, e-commerce, and APIs. Expert React, Node.js, Python, and Laravel developers. 150+ projects."
+        keywords="web development services, custom web applications, SaaS development, e-commerce development, API development, React development, Node.js developer, Python Django, Laravel development, full stack web development, responsive web design, enterprise web solutions, San Francisco web developer"
         canonicalUrl="https://bitroixsolution.com/web-development"
+        schemaMarkup={webDevSchema}
+        breadcrumbs={[
+          { name: "Home", url: "https://bitroixsolution.com/" },
+          { name: "Services", url: "https://bitroixsolution.com/#services" },
+          { name: "Web Development", url: "https://bitroixsolution.com/web-development" }
+        ]}
       />
       <Navigation />
       

@@ -36,29 +36,31 @@ const ClientsCarousel = () => {
   }, [emblaApi]);
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Video Background */}
+    <section className="py-20 relative overflow-hidden" aria-labelledby="clients-heading">
+      {/* Video Background - Optimized for performance */}
       <video 
         autoPlay 
         loop 
         muted 
         playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover z-0"
+        aria-hidden="true"
       >
         <source src="/videos/sections-background.mp4" type="video/mp4" />
       </video>
       
       {/* Dark overlay for text visibility */}
-      <div className="absolute inset-0 bg-slate-900/80 z-[1]"></div>
+      <div className="absolute inset-0 bg-slate-900/80 z-[1]" aria-hidden="true"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[2]">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-6">Our Successful Clients</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8"></div>
+        <header className="text-center mb-16">
+          <h2 id="clients-heading" className="text-3xl font-bold text-white mb-6">Our Successful Clients</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mb-8" aria-hidden="true"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Trusted by industry leaders and innovative businesses
           </p>
-        </div>
+        </header>
 
         <div className="embla overflow-hidden" ref={emblaRef}>
           <div className="embla__container flex">
