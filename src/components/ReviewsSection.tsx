@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, memo } from 'react';
 import { Star } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 
-const ReviewsSection = () => {
+const ReviewsSection = memo(() => {
   const reviews = [
     {
       name: "Robert Warren",
@@ -183,6 +183,8 @@ const ReviewsSection = () => {
       </div>
     </section>
   );
-};
+});
+
+ReviewsSection.displayName = 'ReviewsSection';
 
 export default ReviewsSection;

@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, memo } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import LazyVideo from './LazyVideo';
 
 import wcsLogo from '@/assets/clients/wcs-logo.png';
 import bestTechLogo from '@/assets/clients/best-technology-logo.png';
@@ -8,7 +9,7 @@ import eccLogo from '@/assets/clients/ecc-logo.png';
 import surgiTechLogo from '@/assets/clients/us-surgitech-logo.png';
 import zpdLogo from '@/assets/clients/zpd-learning-logo.png';
 
-const ClientsCarousel = () => {
+const ClientsCarousel = memo(() => {
   const clients = [
     { name: 'Warren Cleaning Services', logo: wcsLogo, founder: 'Robert Warren, CEO' },
     { name: 'Best Technology', logo: bestTechLogo, founder: 'James Mitchell, CTO' },
@@ -37,18 +38,11 @@ const ClientsCarousel = () => {
 
   return (
     <section className="py-20 relative overflow-hidden" aria-labelledby="clients-heading">
-      {/* Video Background - Optimized for performance */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        preload="metadata"
+      {/* Video Background - Lazy loaded for performance */}
+      <LazyVideo 
+        src="/videos/sections-background.mp4" 
         className="absolute inset-0 w-full h-full object-cover z-0"
-        aria-hidden="true"
-      >
-        <source src="/videos/sections-background.mp4" type="video/mp4" />
-      </video>
+      />
       
       {/* Dark overlay for text visibility */}
       <div className="absolute inset-0 bg-slate-900/80 z-[1]" aria-hidden="true"></div>
@@ -106,6 +100,8 @@ const ClientsCarousel = () => {
       </div>
     </section>
   );
-};
+});
+
+ClientsCarousel.displayName = 'ClientsCarousel';
 
 export default ClientsCarousel;

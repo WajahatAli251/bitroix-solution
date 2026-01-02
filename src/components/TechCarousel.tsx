@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, memo } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import LazyVideo from './LazyVideo';
 
 import pythonLogo from '@/assets/tech-logos/python.png';
 import reactLogo from '@/assets/tech-logos/react.svg';
@@ -15,7 +16,7 @@ import jenkinsLogo from '@/assets/tech-logos/jenkins.png';
 import gitLogo from '@/assets/tech-logos/git.png';
 import figmaLogo from '@/assets/tech-logos/figma.svg';
 
-const TechCarousel = () => {
+const TechCarousel = memo(() => {
   const technologies = [
     { name: 'React', logo: reactLogo, isImage: true },
     { name: 'Node.js', logo: nodejsLogo, isImage: true },
@@ -54,18 +55,11 @@ const TechCarousel = () => {
 
   return (
     <section className="py-20 relative overflow-hidden" aria-labelledby="tech-heading">
-      {/* Video Background - Optimized for performance */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        preload="metadata"
+      {/* Video Background - Lazy loaded for performance */}
+      <LazyVideo 
+        src="/videos/sections-background.mp4" 
         className="absolute inset-0 w-full h-full object-cover z-0"
-        aria-hidden="true"
-      >
-        <source src="/videos/sections-background.mp4" type="video/mp4" />
-      </video>
+      />
       
       {/* Dark overlay for text visibility */}
       <div className="absolute inset-0 bg-slate-900/80 z-[1]" aria-hidden="true"></div>
@@ -129,6 +123,8 @@ const TechCarousel = () => {
       </div>
     </section>
   );
-};
+});
+
+TechCarousel.displayName = 'TechCarousel';
 
 export default TechCarousel;

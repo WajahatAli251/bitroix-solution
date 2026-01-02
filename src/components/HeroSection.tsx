@@ -1,7 +1,21 @@
-
+import { useEffect, useRef, useState } from 'react';
 import heroTechImage from '@/assets/futuristic-hero-bg.jpg';
 
 const HeroSection = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  useEffect(() => {
+    // Delay video loading for better initial page load
+    const timer = setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.src = '/videos/hero-background.mp4';
+        videoRef.current.load();
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const scrollToServices = () => {
     const element = document.getElementById('services');
     if (element) {
@@ -19,18 +33,18 @@ const HeroSection = () => {
   return (
     <main>
       <section id="home" className="min-h-screen gradient-primary pt-16 relative overflow-hidden" role="banner">
-        {/* Video Background - Lazy loaded for performance */}
+        {/* Video Background - Deferred loading for better performance */}
         <video 
+          ref={videoRef}
           autoPlay 
           loop 
           muted 
           playsInline
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover z-0 opacity-30"
+          preload="none"
+          className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-30' : 'opacity-0'}`}
           aria-hidden="true"
-        >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
-        </video>
+          onLoadedData={() => setVideoLoaded(true)}
+        />
         
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-20 z-[2]" aria-hidden="true">
