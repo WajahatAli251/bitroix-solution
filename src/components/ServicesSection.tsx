@@ -105,49 +105,49 @@ const ServicesSection = () => {
                 boxShadow: '0 10px 30px rgba(51, 243, 255, 0.1)'
               };
               
-              if (service.title === "Web Development") {
+              if (service.title === "Custom Web Development") {
                 return (
                   <Link to="/web-development" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
-              if (service.title === "UI/UX Design") {
+              if (service.title === "UI/UX Design Services") {
                 return (
                   <Link to="/ui-ux-design" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
-              if (service.title === "DevOps & MLOps") {
+              if (service.title === "DevOps & Cloud Solutions") {
                 return (
                   <Link to="/devops-mlops" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
-              if (service.title === "Data Analytics") {
+              if (service.title === "Data Analytics & Business Intelligence") {
                 return (
                   <Link to="/data-analytics" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
-              if (service.title === "Team as a Service (TaaS)") {
+              if (service.title === "Dedicated Tech Teams") {
                 return (
                   <Link to="/team-as-service" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
-              if (service.title === "Design Consultancy") {
+              if (service.title === "Digital Strategy Consulting") {
                 return (
                   <Link to="/design-consultancy" className={baseClasses} style={cardStyle}>
                     {children}
                   </Link>
                 );
               }
-              if (service.title === "AI Chatbots") {
+              if (service.title === "AI Chatbots & Automation") {
                 return (
                   <Link to="/ai-chatbots" className={baseClasses} style={cardStyle}>
                     {children}
