@@ -167,7 +167,7 @@ const ServicesSection = () => {
                   {/* Background Image for services with images */}
                   {service.isImage && (
                     <div 
-                      className="absolute inset-0 bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500"
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                       style={{
                         backgroundImage: `url(${service.icon})`,
                         backgroundSize: 'cover',
@@ -177,6 +177,9 @@ const ServicesSection = () => {
                     />
                   )}
                   
+                  {/* Dark Overlay for text visibility - matching SolutionsSection style */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50 transition-all duration-500 group-hover:from-black/95 group-hover:via-black/75"></div>
+                  
                   {/* Content */}
                   <div className="relative z-10 flex flex-col h-full">
                     {!service.isImage && (
@@ -184,8 +187,8 @@ const ServicesSection = () => {
                         {service.icon}
                       </div>
                     )}
-                    <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 transition-colors duration-300 flex-shrink-0" style={{color: '#F0F4F8'}}>{service.title}</h3>
-                    <p className="leading-relaxed flex-grow text-sm md:text-base" style={{color: '#9BE3FF'}}>{service.description}</p>
+                    <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 transition-colors duration-300 flex-shrink-0 drop-shadow-lg" style={{color: '#F0F4F8'}}>{service.title}</h3>
+                    <p className="leading-relaxed flex-grow text-sm md:text-base drop-shadow-md" style={{color: '#9BE3FF'}}>{service.description}</p>
                   </div>
                 </ServiceCard>
               </article>
