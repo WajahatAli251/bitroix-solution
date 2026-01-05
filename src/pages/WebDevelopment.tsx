@@ -195,26 +195,33 @@ const WebDevelopment = () => {
       />
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: "url('/lovable-uploads/eb7b0242-9c5d-4d81-9044-abe3320bd683.png')"
-          }}
-        />
-        <div className="absolute inset-0 bg-slate-900/40" />
+      {/* Hero Section with Video Background */}
+      <section className="pt-24 pb-12 relative overflow-hidden min-h-[70vh] flex items-center">
+        {/* Video Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute w-full h-full object-cover"
+          >
+            <source src="/videos/digital-solutions-bg.mp4" type="video/mp4" />
+          </video>
+          {/* Dark overlay for text visibility */}
+          <div className="absolute inset-0 bg-slate-900/70" />
+        </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 drop-shadow-lg">
             Custom Web <span className="text-blue-400">Design & Development</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 drop-shadow-md">
             From concept to deployment, we build websites that drive business growth and deliver exceptional user experiences.
           </p>
           <a 
             href="/meeting" 
-            className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/30"
           >
             Start Your Project <ArrowRight className="w-5 h-5" />
           </a>
