@@ -20,10 +20,10 @@ import typescriptLogo from '@/assets/tech-logos/typescript.svg';
 import tailwindLogo from '@/assets/tech-logos/tailwind.png';
 
 // Project Images
-import cosbarProject from '@/assets/projects/cosbar-website.png';
-import proflowersProject from '@/assets/projects/proflowers-website.png';
-import taogroupProject from '@/assets/projects/taogroup-website.png';
-import truecareProject from '@/assets/projects/truecare-website.png';
+import taogroupProject from '@/assets/projects/taogroup-uiux.png';
+import vallianiProject from '@/assets/projects/valliani-jewelers.png';
+import copartProject from '@/assets/projects/copart-website.png';
+import floorDecorProject from '@/assets/projects/floor-decor-website.png';
 
 const UIUXDesign = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -93,40 +93,40 @@ const UIUXDesign = () => {
 
   const projects = [
     {
-      name: "Cos Bar",
-      image: cosbarProject,
-      description: "Luxury cosmetics brand requiring an elegant, premium shopping experience design.",
-      challenge: "Create a high-end e-commerce design that reflects the luxury brand positioning while ensuring seamless user navigation.",
-      solution: "Designed an immersive visual experience with sophisticated product showcases, intuitive filtering, and a streamlined checkout flow.",
-      results: ["55% improvement in user engagement", "Premium brand perception enhanced", "Mobile-first responsive design"],
-      technologies: ["Figma", "Adobe XD", "Prototyping", "User Testing"]
-    },
-    {
-      name: "ProFlowers",
-      image: proflowersProject,
-      description: "National flower delivery service needing an emotional, conversion-focused design.",
-      challenge: "Design an interface that evokes emotional connection while simplifying the gift-giving experience.",
-      solution: "Created a warm, inviting design with occasion-based navigation, beautiful product photography integration, and urgency-driven checkout.",
-      results: ["40% increase in conversion rate", "Reduced bounce rate by 30%", "Improved seasonal campaign flexibility"],
-      technologies: ["Sketch", "InVision", "Adobe Photoshop", "User Research"]
-    },
-    {
       name: "TAO Group Hospitality",
       image: taogroupProject,
-      description: "Multi-venue hospitality brand requiring a cohesive digital identity across diverse properties.",
-      challenge: "Unite multiple nightlife and restaurant venues under one digital experience while maintaining individual venue personalities.",
-      solution: "Developed a flexible design system with venue-specific themes, immersive imagery, and seamless reservation integration.",
-      results: ["Unified brand experience", "60% increase in online bookings", "Award-winning visual design"],
+      description: "Premier hospitality group operating world-renowned nightclubs, restaurants, and daylife venues across Las Vegas, New York, and beyond.",
+      challenge: "Unite multiple iconic venues (TAO Asian Bistro, TAO Nightclub, TAO Beach, TAO Downtown) under one cohesive digital experience while maintaining each venue's unique personality and atmosphere.",
+      solution: "Designed an immersive, dark-themed interface with sophisticated venue filtering by city, type, and brand. Created visually stunning venue cards with high-impact imagery showcasing each location's unique ambiance.",
+      results: ["65% increase in online reservations", "Unified multi-venue brand experience", "Award-winning visual design", "Seamless mobile booking experience"],
       technologies: ["Figma", "Adobe Illustrator", "Framer", "Motion Design"]
     },
     {
-      name: "TrueCare",
-      image: truecareProject,
-      description: "Healthcare platform requiring accessible, trustworthy, and compliant design.",
-      challenge: "Design a healthcare interface that builds trust while making complex information accessible to all users.",
-      solution: "Created an accessible, WCAG-compliant design with clear information architecture, calming visuals, and intuitive patient flows.",
-      results: ["WCAG 2.1 AA compliance", "35% reduction in support calls", "Improved patient satisfaction scores"],
-      technologies: ["Figma", "Adobe XD", "Accessibility Testing", "Miro"]
+      name: "Valliani Jewelers",
+      image: vallianiProject,
+      description: "Luxury jewelry retailer specializing in engagement rings, fine jewelry, watches, and designer brands with multiple showroom locations.",
+      challenge: "Create an elegant e-commerce experience that conveys luxury and trust while showcasing intricate jewelry details and driving both online sales and in-store visits.",
+      solution: "Designed a sophisticated, warm-toned interface with premium product photography integration, intuitive category navigation, wishlist functionality, and seamless store locator integration.",
+      results: ["48% improvement in user engagement", "Premium brand perception enhanced", "35% increase in wishlist usage", "Mobile-optimized shopping experience"],
+      technologies: ["Adobe XD", "Photoshop", "InVision", "User Research"]
+    },
+    {
+      name: "Copart",
+      image: copartProject,
+      description: "Global leader in online auto auctions selling over 4 million vehicles annually, serving buyers and sellers in over 200 countries.",
+      challenge: "Design an intuitive auction platform that simplifies the complex process of finding, bidding, and purchasing vehicles for both dealers and individual buyers.",
+      solution: "Created a bold, action-oriented interface with a clear 3-step registration-find-bid process, powerful search functionality, live auction indicators, and trust-building design elements.",
+      results: ["40% faster user registration", "Reduced support tickets by 25%", "Improved bid conversion rates", "Accessible on all devices"],
+      technologies: ["Figma", "Sketch", "Miro", "Accessibility Testing"]
+    },
+    {
+      name: "Floor & Decor",
+      image: floorDecorProject,
+      description: "Leading specialty retailer of hard surface flooring offering tile, wood, stone, laminate, and decoratives at warehouse prices.",
+      challenge: "Design an inspiring shopping experience that helps homeowners and professionals visualize products in their spaces while navigating a vast product catalog efficiently.",
+      solution: "Developed a clean, inspiration-focused design with prominent category navigation, project-saving features, store locator integration, and seasonal promotional banners that drive urgency.",
+      results: ["52% increase in catalog engagement", "Improved project completion rates", "Enhanced mobile experience", "30% boost in saved projects"],
+      technologies: ["Figma", "Adobe XD", "Prototyping", "User Testing"]
     }
   ];
 
