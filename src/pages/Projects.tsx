@@ -1,8 +1,7 @@
-import React, { memo, useState, useEffect, useMemo } from 'react';
+import React, { memo, useState, useMemo } from 'react';
 import SEO from '@/components/SEO';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import PackagePopup from '@/components/PackagePopup';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -84,23 +83,10 @@ const technologies = [
 ];
 
 const Projects = memo(() => {
-  const [showPopup, setShowPopup] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
   const [selectedTechnology, setSelectedTechnology] = useState("All Technologies");
   const [showFilters, setShowFilters] = useState(false);
-
-  // Show popup after 2 seconds
-  useEffect(() => {
-    const hasSeenPopup = sessionStorage.getItem('hasSeenPackagePopup');
-    if (!hasSeenPopup) {
-      const timer = setTimeout(() => {
-        setShowPopup(true);
-        sessionStorage.setItem('hasSeenPackagePopup', 'true');
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, []);
 
   // All projects with detailed information
   const projects = [
@@ -331,8 +317,6 @@ const Projects = memo(() => {
       />
       <Navigation />
       
-      {/* Package Popup */}
-      <PackagePopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
 
       {/* Hero Section */}
       <section className="pt-24 pb-12 sm:pt-28 sm:pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
@@ -381,7 +365,7 @@ const Projects = memo(() => {
               <Button
                 variant="outline"
                 onClick={() => setShowFilters(!showFilters)}
-                className="border-white/20 text-white hover:bg-white/10"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 border-0 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-cyan-500/25"
               >
                 <Filter className="w-4 h-4 mr-2" />
                 Filters
@@ -392,7 +376,7 @@ const Projects = memo(() => {
               <select
                 value={selectedIndustry}
                 onChange={(e) => setSelectedIndustry(e.target.value)}
-                className="bg-white/10 border border-white/20 text-white rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-400 cursor-pointer"
+                className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/50 text-white rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-purple-400 cursor-pointer hover:from-purple-500/30 hover:to-pink-500/30 transition-all"
               >
                 {industries.map((industry) => (
                   <option key={industry} value={industry} className="bg-slate-800 text-white">
@@ -405,7 +389,7 @@ const Projects = memo(() => {
               <select
                 value={selectedTechnology}
                 onChange={(e) => setSelectedTechnology(e.target.value)}
-                className="bg-white/10 border border-white/20 text-white rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-blue-400 cursor-pointer"
+                className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-400/50 text-white rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-emerald-400 cursor-pointer hover:from-emerald-500/30 hover:to-teal-500/30 transition-all"
               >
                 {technologies.map((tech) => (
                   <option key={tech} value={tech} className="bg-slate-800 text-white">
@@ -418,7 +402,7 @@ const Projects = memo(() => {
                 <Button
                   variant="ghost"
                   onClick={clearFilters}
-                  className="text-red-400 hover:text-red-300 hover:bg-red-500/10"
+                  className="bg-gradient-to-r from-red-500/20 to-orange-500/20 border border-red-400/50 text-red-300 hover:from-red-500/30 hover:to-orange-500/30 hover:text-red-200"
                 >
                   <X className="w-4 h-4 mr-1" />
                   Clear All
@@ -559,13 +543,14 @@ const Projects = memo(() => {
             Let's create something amazing together. Our team is ready to bring your vision to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white"
-              onClick={() => setShowPopup(true)}
-            >
-              View Our Packages
-            </Button>
+            <a href="/schedule-meeting">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white"
+              >
+                View Our Packages
+              </Button>
+            </a>
             <a href="/schedule-meeting">
               <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
                 Schedule a Meeting

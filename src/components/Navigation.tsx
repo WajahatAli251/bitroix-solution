@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from 'next-themes';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Gift } from 'lucide-react';
+import PackagePopup from '@/components/PackagePopup';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showPackagePopup, setShowPackagePopup] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const { theme, setTheme } = useTheme();
@@ -90,6 +92,13 @@ const Navigation = () => {
                 Career
               </button>
               <button 
+                onClick={() => setShowPackagePopup(true)}
+                className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black px-4 py-2 rounded-md text-sm font-bold hover-lift animate-pulse flex items-center gap-1.5"
+              >
+                <Gift className="w-4 h-4" />
+                50% OFF
+              </button>
+              <button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-accent text-accent-foreground px-4 py-2 rounded-md text-sm font-medium hover-lift glow-accent animate-pulse-glow"
               >
@@ -172,6 +181,13 @@ const Navigation = () => {
                 Career
               </button>
               <button 
+                onClick={() => { setShowPackagePopup(true); setIsMenuOpen(false); }}
+                className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black block px-3 py-2 rounded-md text-base font-bold w-full text-left flex items-center gap-2"
+              >
+                <Gift className="w-4 h-4" />
+                50% OFF Packages
+              </button>
+              <button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-accent text-accent-foreground block px-3 py-2 rounded-md text-base font-medium w-full text-left glow-accent"
               >
@@ -181,6 +197,7 @@ const Navigation = () => {
           </div>
         )}
       </div>
+      <PackagePopup isOpen={showPackagePopup} onClose={() => setShowPackagePopup(false)} />
     </nav>
   );
 };

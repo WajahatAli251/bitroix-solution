@@ -1,8 +1,9 @@
-import { lazy, Suspense, memo } from "react";
+import { lazy, Suspense, memo, useState, useEffect } from "react";
 import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
+import PackagePopup from "@/components/PackagePopup";
 
 // Lazy load below-the-fold sections for better performance
 const MissionSection = lazy(() => import("@/components/MissionSection"));
@@ -64,9 +65,23 @@ const servicesOfferedSchema = {
 };
 
 const Index = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem('hasSeenPackagePopup');
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+        sessionStorage.setItem('hasSeenPackagePopup', 'true');
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen">
-      <SEO 
+      <PackagePopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+      <SEO
         title="Home"
         description="Bitroix Solution LLC - Award-winning web development, AI chatbots, SEO optimization & digital marketing. 150+ projects, 4.9★ rating. Free consultation!"
         keywords="web development company San Francisco, AI chatbot development, SEO services California, digital marketing agency, custom software development, data analytics consulting, DevOps MLOps services, UI UX design, react development, full stack developer, software outsourcing Pakistan, Karachi web development, best web development company USA, affordable SEO services, enterprise web solutions"
