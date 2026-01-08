@@ -6,14 +6,11 @@ const HeroSection = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
-    // Delay video loading for better initial page load
-    const timer = setTimeout(() => {
-      if (videoRef.current) {
-        videoRef.current.src = '/videos/hero-background.mp4';
-        videoRef.current.load();
-      }
-    }, 1000);
-    return () => clearTimeout(timer);
+    // Load video immediately for faster display
+    if (videoRef.current) {
+      videoRef.current.src = '/videos/hero-background-new.mp4';
+      videoRef.current.load();
+    }
   }, []);
 
   const scrollToServices = () => {
