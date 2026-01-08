@@ -13,7 +13,7 @@ interface PackagePopupProps {
 const PackagePopup: React.FC<PackagePopupProps> = ({ isOpen, onClose }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl bg-gradient-to-br from-slate-900 via-blue-950 to-purple-950 border-0 text-white overflow-hidden p-0">
+      <DialogContent className="max-w-4xl w-[95vw] max-h-[90vh] bg-gradient-to-br from-slate-900 via-blue-950 to-purple-950 border-0 text-white overflow-hidden p-0 [&>button]:hidden">
         {/* Background Animation */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-20 -right-20 w-60 h-60 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -21,11 +21,12 @@ const PackagePopup: React.FC<PackagePopupProps> = ({ isOpen, onClose }) => {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
         </div>
 
-        <div className="relative z-10 p-6 md:p-8">
-          {/* Close Button */}
+        <div className="relative z-10 p-4 sm:p-6 md:p-8 overflow-y-auto max-h-[90vh]">
+          {/* Close Button - More visible on mobile */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors z-20"
+            className="fixed sm:absolute top-2 right-2 sm:top-4 sm:right-4 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 text-white transition-colors z-50"
+            aria-label="Close popup"
           >
             <X className="w-6 h-6" />
           </button>
