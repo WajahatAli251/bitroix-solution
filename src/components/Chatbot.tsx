@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User, Sparkles, Zap } from 'lucide-react';
+import React, { useState, useRef, useEffect, useCallback, useMemo, memo } from 'react';
+import { MessageCircle, X, Send, User, Sparkles, Zap } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -12,60 +12,65 @@ interface Message {
   timestamp: Date;
 }
 
-// Enhanced message formatting function
-const formatMessage = (content: string) => {
-  // Split content into lines and process each line
-  const lines = content.split('\n');
-  return lines.map((line, index) => {
-    // Handle headers (lines with **)
-    if (line.includes('**') && line.includes('**')) {
-      const headerMatch = line.match(/\*\*(.*?)\*\*/g);
-      if (headerMatch) {
-        let formattedLine = line;
-        headerMatch.forEach(match => {
-          const text = match.replace(/\*\*/g, '');
-          formattedLine = formattedLine.replace(match, `<strong class="text-primary font-bold text-base sm:text-lg">${text}</strong>`);
-        });
-        return <div key={index} className="mb-2 sm:mb-3" dangerouslySetInnerHTML={{ __html: formattedLine }} />;
+// Memoized message formatting component
+const FormattedMessage = memo(({ content }: { content: string }) => {
+  const formattedContent = useMemo(() => {
+    const lines = content.split('\n');
+    return lines.map((line, index) => {
+      // Handle headers (lines with **)
+      if (line.includes('**')) {
+        const headerMatch = line.match(/\*\*(.*?)\*\*/g);
+        if (headerMatch) {
+          let formattedLine = line;
+          headerMatch.forEach(match => {
+            const text = match.replace(/\*\*/g, '');
+            formattedLine = formattedLine.replace(match, `<strong class="text-primary font-bold text-base sm:text-lg">${text}</strong>`);
+          });
+          return <div key={index} className="mb-2 sm:mb-3" dangerouslySetInnerHTML={{ __html: formattedLine }} />;
+        }
       }
-    }
-    
-    // Handle bullet points
-    if (line.startsWith('• ') || line.startsWith('✅ ')) {
-      return (
-        <div key={index} className="flex items-start gap-2 mb-1.5 sm:mb-2 ml-1 sm:ml-2">
-          <span className="text-primary text-xs sm:text-sm mt-0.5 sm:mt-1 flex-shrink-0">•</span>
-          <span className="text-xs sm:text-sm leading-relaxed">{line.substring(2)}</span>
-        </div>
-      );
-    }
-    
-    // Handle numbered options
-    if (line.match(/^\*\*\d+\*\*/)) {
-      const number = line.match(/^\*\*(\d+)\*\*/)?.[1];
-      const text = line.replace(/^\*\*\d+\*\*\s*-?\s*/, '');
-      return (
-        <div key={index} className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer border border-primary/20">
-          <Badge variant="default" className="bg-gradient-to-r from-primary to-blue-600 text-white font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-sm text-xs sm:text-sm flex-shrink-0">
-            {number}
-          </Badge>
-          <span className="font-medium text-foreground text-xs sm:text-sm leading-tight">{text}</span>
-        </div>
-      );
-    }
-    
-    // Handle regular text
-    if (line.trim()) {
-      return (
-        <div key={index} className="mb-1.5 sm:mb-2">
-          <span className="text-xs sm:text-sm leading-relaxed">{line}</span>
-        </div>
-      );
-    }
-    
-    return <div key={index} className="mb-0.5 sm:mb-1" />;
-  });
-};
+      
+      // Handle bullet points
+      if (line.startsWith('• ') || line.startsWith('✅ ')) {
+        return (
+          <div key={index} className="flex items-start gap-2 mb-1.5 sm:mb-2 ml-1 sm:ml-2">
+            <span className="text-primary text-xs sm:text-sm mt-0.5 sm:mt-1 flex-shrink-0">•</span>
+            <span className="text-xs sm:text-sm leading-relaxed">{line.substring(2)}</span>
+          </div>
+        );
+      }
+      
+      // Handle numbered options
+      if (line.match(/^\*\*\d+\*\*/)) {
+        const number = line.match(/^\*\*(\d+)\*\*/)?.[1];
+        const text = line.replace(/^\*\*\d+\*\*\s*-?\s*/, '');
+        return (
+          <div key={index} className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3 p-2 bg-primary/5 rounded-lg hover:bg-primary/10 transition-colors cursor-pointer border border-primary/20">
+            <Badge variant="default" className="bg-gradient-to-r from-primary to-blue-600 text-white font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-sm text-xs sm:text-sm flex-shrink-0">
+              {number}
+            </Badge>
+            <span className="font-medium text-foreground text-xs sm:text-sm leading-tight">{text}</span>
+          </div>
+        );
+      }
+      
+      // Handle regular text
+      if (line.trim()) {
+        return (
+          <div key={index} className="mb-1.5 sm:mb-2">
+            <span className="text-xs sm:text-sm leading-relaxed">{line}</span>
+          </div>
+        );
+      }
+      
+      return <div key={index} className="mb-0.5 sm:mb-1" />;
+    });
+  }, [content]);
+
+  return <div className="prose prose-sm max-w-none">{formattedContent}</div>;
+});
+
+FormattedMessage.displayName = 'FormattedMessage';
 
 // Menu-based interactive responses
 const responses = {
@@ -354,32 +359,31 @@ const Chatbot = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  const scrollToBottom = () => {
+  const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  }, []);
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, scrollToBottom]);
 
-  const generateResponse = (message: string): string => {
+  const generateResponse = useCallback((message: string): string => {
     const userInput = message.trim();
+    const lowerInput = userInput.toLowerCase();
     
     // Handle navigation commands
-    if (userInput.toLowerCase().includes('menu') || userInput === '0') {
+    if (lowerInput.includes('menu') || userInput === '0') {
       setCurrentMenu('main');
       return responses.mainMenu;
     }
 
-    if (userInput.toLowerCase().includes('services')) {
+    if (lowerInput.includes('services')) {
       setCurrentMenu('services');
       return responses.services;
     }
 
-    if (userInput.toLowerCase().includes('meeting') || userInput === '7') {
-      setTimeout(() => {
-        navigate('/schedule-meeting');
-      }, 2000);
+    if (lowerInput.includes('meeting') || userInput === '7') {
+      setTimeout(() => navigate('/schedule-meeting'), 1000);
       return responses.meeting;
     }
 
@@ -405,7 +409,7 @@ const Chatbot = () => {
           setCurrentMenu('career');
           return responses.career;
         case '7':
-          setTimeout(() => navigate('/schedule-meeting'), 2000);
+          setTimeout(() => navigate('/schedule-meeting'), 1000);
           return responses.meeting;
         case '8':
           setCurrentMenu('contact');
@@ -420,127 +424,93 @@ const Chatbot = () => {
 
     // Services menu navigation
     if (currentMenu === 'services') {
-      switch (userInput) {
-        case '1':
-          setCurrentMenu('service-detail');
-          return responses.serviceDetails.webdev;
-        case '2':
-          setCurrentMenu('service-detail');
-          return responses.serviceDetails.uiux;
-        case '3':
-          setCurrentMenu('service-detail');
-          return responses.serviceDetails.devops;
-        case '4':
-          setCurrentMenu('service-detail');
-          return responses.serviceDetails.analytics;
-        case '5':
-          setCurrentMenu('service-detail');
-          return responses.serviceDetails.team;
-        case '6':
-          setCurrentMenu('service-detail');
-          return responses.serviceDetails.ai;
-        case '7':
-          setCurrentMenu('service-detail');
-          return responses.serviceDetails.design;
-        case '0':
-          setCurrentMenu('main');
-          return responses.mainMenu;
-        default:
-          return responses.default;
+      const serviceMap: Record<string, string> = {
+        '1': 'webdev', '2': 'uiux', '3': 'devops', '4': 'analytics',
+        '5': 'team', '6': 'ai', '7': 'design'
+      };
+      if (serviceMap[userInput]) {
+        setCurrentMenu('service-detail');
+        return responses.serviceDetails[serviceMap[userInput] as keyof typeof responses.serviceDetails];
       }
+      if (userInput === '0') {
+        setCurrentMenu('main');
+        return responses.mainMenu;
+      }
+      return responses.default;
     }
 
     // Solutions menu navigation
     if (currentMenu === 'solutions') {
-      switch (userInput) {
-        case '1':
-          setTimeout(() => navigate('/solutions/lead-generation'), 1000);
-          return "🚀 **Opening Lead Generation page...**\n\nYou'll be redirected to learn about our lead generation systems and strategies.";
-        case '2':
-          setTimeout(() => navigate('/solutions/seo-dominance'), 1000);
-          return "🔍 **Opening SEO Dominance page...**\n\nDiscover our comprehensive SEO packages and strategies.";
-        case '3':
-          setTimeout(() => navigate('/solutions/paid-ads-management'), 1000);
-          return "💰 **Opening Paid Ads Management page...**\n\nLearn about our expert paid advertising management services.";
-        case '4':
-          setTimeout(() => navigate('/solutions/marketing-automation'), 1000);
-          return "⚡ **Opening Marketing Automation page...**\n\nExplore our marketing automation solutions.";
-        case '5':
-          setTimeout(() => navigate('/solutions/conversion-optimization'), 1000);
-          return "📈 **Opening Conversion Optimization page...**\n\nSee how we optimize your conversion rates.";
-        case '6':
-          setTimeout(() => navigate('/solutions/social-media-growth'), 1000);
-          return "📱 **Opening Social Media Growth page...**\n\nDiscover our social media growth strategies.";
-        case '0':
-          setCurrentMenu('main');
-          return responses.mainMenu;
-        default:
-          return responses.default;
+      const solutionRoutes: Record<string, { route: string; message: string }> = {
+        '1': { route: '/solutions/lead-generation', message: '🚀 **Opening Lead Generation page...**' },
+        '2': { route: '/solutions/seo-dominance', message: '🔍 **Opening SEO Dominance page...**' },
+        '3': { route: '/solutions/paid-ads-management', message: '💰 **Opening Paid Ads Management page...**' },
+        '4': { route: '/solutions/marketing-automation', message: '⚡ **Opening Marketing Automation page...**' },
+        '5': { route: '/solutions/conversion-optimization', message: '📈 **Opening Conversion Optimization page...**' },
+        '6': { route: '/solutions/social-media-growth', message: '📱 **Opening Social Media Growth page...**' }
+      };
+      if (solutionRoutes[userInput]) {
+        setTimeout(() => navigate(solutionRoutes[userInput].route), 800);
+        return solutionRoutes[userInput].message;
       }
+      if (userInput === '0') {
+        setCurrentMenu('main');
+        return responses.mainMenu;
+      }
+      return responses.default;
     }
 
     // Projects menu navigation
     if (currentMenu === 'projects') {
-      switch (userInput) {
-        case '1':
-          setTimeout(() => navigate('/projects'), 1000);
-          return "📂 **Opening Projects page...**\n\nYou'll see our complete portfolio and case studies.";
-        case '2':
-          setTimeout(() => navigate('/schedule-meeting'), 1000);
-          return "📅 **Opening meeting scheduler...**\n\nSchedule a discussion about your project needs.";
-        case '3':
-          setCurrentMenu('main');
-          return "📋 **Case studies request noted!**\n\nOur team will prepare relevant case studies for your review. Would you like to schedule a meeting to discuss them?\n\nType **7** to schedule or **0** for main menu.";
-        case '0':
-          setCurrentMenu('main');
-          return responses.mainMenu;
-        default:
-          return responses.default;
+      if (userInput === '1') {
+        setTimeout(() => navigate('/projects'), 800);
+        return "📂 **Opening Projects page...**";
       }
+      if (userInput === '2') {
+        setTimeout(() => navigate('/schedule-meeting'), 800);
+        return "📅 **Opening meeting scheduler...**";
+      }
+      if (userInput === '3') {
+        setCurrentMenu('main');
+        return "📋 **Case studies request noted!**\n\nType **7** to schedule or **0** for main menu.";
+      }
+      if (userInput === '0') {
+        setCurrentMenu('main');
+        return responses.mainMenu;
+      }
+      return responses.default;
     }
 
     // Products menu navigation  
     if (currentMenu === 'products') {
-      switch (userInput) {
-        case '1':
-          setTimeout(() => navigate('/products'), 1000);
-          return "🛍️ **Opening Products page...**\n\nExplore our ready-made software solutions.";
-        case '2':
-        case '3':
-        case '4':
-          setTimeout(() => navigate('/products'), 1000);
-          return "🔧 **Opening Products page...**\n\nYou'll find detailed information about all our products.";
-        case '0':
-          setCurrentMenu('main');
-          return responses.mainMenu;
-        default:
-          return responses.default;
+      if (['1', '2', '3', '4'].includes(userInput)) {
+        setTimeout(() => navigate('/products'), 800);
+        return "🛍️ **Opening Products page...**";
       }
+      if (userInput === '0') {
+        setCurrentMenu('main');
+        return responses.mainMenu;
+      }
+      return responses.default;
     }
 
     // Career menu navigation
     if (currentMenu === 'career') {
-      switch (userInput) {
-        case '1':
-          setTimeout(() => navigate('/career'), 1000);
-          return "💼 **Opening Career page...**\n\nExplore opportunities to join our team!";
-        case '2':
-        case '3':
-        case '4':
-          setTimeout(() => navigate('/career'), 1000);
-          return "🚀 **Opening Career page...**\n\nFind all career-related information there.";
-        case '0':
-          setCurrentMenu('main');
-          return responses.mainMenu;
-        default:
-          return responses.default;
+      if (['1', '2', '3', '4'].includes(userInput)) {
+        setTimeout(() => navigate('/career'), 800);
+        return "💼 **Opening Career page...**";
       }
+      if (userInput === '0') {
+        setCurrentMenu('main');
+        return responses.mainMenu;
+      }
+      return responses.default;
     }
 
     // Contact, Pricing, About menus
     if (currentMenu === 'contact' || currentMenu === 'pricing' || currentMenu === 'about') {
       if (userInput === '1') {
-        setTimeout(() => navigate('/schedule-meeting'), 1000);
+        setTimeout(() => navigate('/schedule-meeting'), 800);
         return responses.meeting;
       }
       if (userInput === '0') {
@@ -549,16 +519,16 @@ const Chatbot = () => {
       }
     }
 
-    // Default fallback
     return responses.default;
-  };
+  }, [currentMenu, navigate]);
 
-  const handleSendMessage = async () => {
+  const handleSendMessage = useCallback(() => {
     if (!input.trim()) return;
 
+    const trimmedInput = input.trim();
     const userMessage: Message = {
       id: Date.now().toString(),
-      content: input.trim(),
+      content: trimmedInput,
       isBot: false,
       timestamp: new Date()
     };
@@ -567,25 +537,29 @@ const Chatbot = () => {
     setInput('');
     setIsTyping(true);
 
-    // Simulate thinking time with typing indicator
+    // Faster response time for better UX
     setTimeout(() => {
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: generateResponse(input.trim()),
+        content: generateResponse(trimmedInput),
         isBot: true,
         timestamp: new Date()
       };
       setMessages(prev => [...prev, botResponse]);
       setIsTyping(false);
-    }, 1500);
-  };
+    }, 800);
+  }, [input, generateResponse]);
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyPress = useCallback((e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
-  };
+  }, [handleSendMessage]);
+
+  const handleQuickAction = useCallback((value: string) => {
+    setInput(value);
+  }, []);
 
   return (
     <>
@@ -672,9 +646,7 @@ const Chatbot = () => {
                     {/* Message Content */}
                     <div className="relative z-10">
                       {message.isBot ? (
-                        <div className="prose prose-sm max-w-none">
-                          {formatMessage(message.content)}
-                        </div>
+                        <FormattedMessage content={message.content} />
                       ) : (
                         <p className="text-xs sm:text-sm font-medium leading-relaxed">{message.content}</p>
                       )}
@@ -743,21 +715,21 @@ const Chatbot = () => {
               <Badge 
                 variant="secondary" 
                 className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
-                onClick={() => setInput('menu')}
+                onClick={() => handleQuickAction('menu')}
               >
                 📋 <span className="hidden xs:inline">Main </span>Menu
               </Badge>
               <Badge 
                 variant="secondary" 
                 className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
-                onClick={() => setInput('7')}
+                onClick={() => handleQuickAction('7')}
               >
                 📅 <span className="hidden xs:inline">Schedule </span>Meeting
               </Badge>
               <Badge 
                 variant="secondary" 
                 className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
-                onClick={() => setInput('1')}
+                onClick={() => handleQuickAction('1')}
               >
                 🛠️ Services
               </Badge>
