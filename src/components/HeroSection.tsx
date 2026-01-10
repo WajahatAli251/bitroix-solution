@@ -65,12 +65,6 @@ const HeroSection = () => {
               Expert web development, AI chatbots, SEO optimization, and digital marketing solutions that drive measurable business growth and online success.
             </p>
 
-            <div className="mb-8 md:mb-12 animate-slide-in-left px-4" style={{animationDelay: '0.4s'}}>
-              <p className="text-sm sm:text-base text-white/90 leading-relaxed">
-                Bitroix Solution LLC specializes in custom web development, AI-powered chatbots, search engine optimization (SEO), social media marketing, 
-                data analytics, and DevOps services. We help businesses increase online visibility, generate qualified leads, and maximize ROI through proven digital strategies.
-              </p>
-            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-in-left px-4" style={{animationDelay: '0.6s'}}>
               <button
