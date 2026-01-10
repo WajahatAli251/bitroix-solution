@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from 'next-themes';
 import { Moon, Sun, Gift } from 'lucide-react';
 import PackagePopup from '@/components/PackagePopup';
+import bitroixLogo from '@/assets/bitroix-logo.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,15 +36,15 @@ const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 gradient-primary backdrop-blur-lg border-b border-white/10 animate-slide-in-up glow-primary" role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-18">
+        <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 
+            <img 
+              src={bitroixLogo} 
+              alt="Bitroix Solution" 
               onClick={() => navigate('/')} 
-              className="text-xl md:text-2xl font-bold text-white hover-lift cursor-pointer text-gradient-accent"
-            >
-              Bitroix <span className="text-gradient">Solution</span>
-            </h1>
+              className="h-10 md:h-12 w-auto cursor-pointer hover-lift transition-transform duration-300"
+            />
           </div>
 
           {/* Desktop Menu */}
