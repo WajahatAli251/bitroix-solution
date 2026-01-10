@@ -43,7 +43,7 @@ const Navigation = () => {
               src={bitroixLogo} 
               alt="Bitroix Solution" 
               onClick={() => navigate('/')} 
-              className="h-16 md:h-20 w-auto cursor-pointer hover-lift transition-transform duration-300"
+              className="h-16 md:h-20 w-auto cursor-pointer hover-lift transition-transform duration-300 opacity-90 mix-blend-screen"
             />
           </div>
 
