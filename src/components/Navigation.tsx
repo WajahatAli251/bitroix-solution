@@ -34,16 +34,16 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 gradient-primary backdrop-blur-lg border-b border-white/10 animate-slide-in-up glow-primary" role="navigation" aria-label="Main navigation">
+    <nav className="fixed top-0 left-0 right-0 z-50 gradient-header backdrop-blur-lg border-b border-white/10 animate-slide-in-up" role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
+        <div className="flex justify-between items-center h-18 md:h-22">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
               src={bitroixLogo} 
               alt="Bitroix Solution" 
               onClick={() => navigate('/')} 
-              className="h-10 md:h-12 w-auto cursor-pointer hover-lift transition-transform duration-300"
+              className="h-14 md:h-16 w-auto cursor-pointer hover-lift transition-transform duration-300"
             />
           </div>
 
