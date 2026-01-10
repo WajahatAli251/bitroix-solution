@@ -52,56 +52,56 @@ const Navigation = () => {
             <div className="ml-6 xl:ml-10 flex items-baseline space-x-4 xl:space-x-6">
               <button 
                 onClick={() => scrollToSection('home')}
-                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover-lift hover-glow"
+                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-base font-medium hover-lift hover-glow"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('mission')}
-                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover-lift hover-glow"
+                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-base font-medium hover-lift hover-glow"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('services')}
-                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover-lift hover-glow"
+                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-base font-medium hover-lift hover-glow"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection('solutions')}
-                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover-lift hover-glow"
+                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-base font-medium hover-lift hover-glow"
               >
                 Solutions
               </button>
               <button 
                 onClick={() => navigate('/projects')}
-                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover-lift hover-glow"
+                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-base font-medium hover-lift hover-glow"
               >
                 Projects
               </button>
               <button 
                 onClick={() => navigate('/products')}
-                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover-lift hover-glow"
+                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-base font-medium hover-lift hover-glow"
               >
                 Products
               </button>
               <button 
                 onClick={() => navigate('/career')}
-                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-sm font-medium hover-lift hover-glow"
+                className="text-white/90 hover:text-white px-3 py-2 rounded-md text-base font-medium hover-lift hover-glow"
               >
                 Career
               </button>
               <button 
                 onClick={() => setShowPackagePopup(true)}
-                className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black px-4 py-2 rounded-md text-sm font-bold hover-lift animate-pulse flex items-center gap-1.5"
+                className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-black px-4 py-2 rounded-md text-base font-bold hover-lift animate-pulse flex items-center gap-2"
               >
-                <Gift className="w-4 h-4" />
+                <Gift className="w-5 h-5" />
                 50% OFF
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-accent text-accent-foreground px-4 py-2 rounded-md text-sm font-medium hover-lift glow-accent animate-pulse-glow"
+                className="bg-accent text-accent-foreground px-4 py-2 rounded-md text-base font-medium hover-lift glow-accent animate-pulse-glow"
               >
                 Contact
               </button>
