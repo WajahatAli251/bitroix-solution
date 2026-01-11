@@ -6,10 +6,19 @@ const HeroSection = () => {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
-    // Load video immediately for faster display
-    if (videoRef.current) {
-      videoRef.current.src = '/videos/hero-background-new.mp4';
-      videoRef.current.load();
+    // Defer video loading to after initial paint for faster FCP
+    const loadVideo = () => {
+      if (videoRef.current) {
+        videoRef.current.src = '/videos/hero-background-new.mp4';
+        videoRef.current.load();
+      }
+    };
+    
+    // Use requestIdleCallback for better performance
+    if ('requestIdleCallback' in window) {
+      (window as any).requestIdleCallback(loadVideo, { timeout: 2000 });
+    } else {
+      setTimeout(loadVideo, 100);
     }
   }, []);
 

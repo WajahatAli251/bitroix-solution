@@ -1,7 +1,6 @@
-
-
 import React, { useState, useEffect } from 'react';
 import astronautImage from '@/assets/astronaut-marketing.png';
+import LazyVideo from './LazyVideo';
 
 const TypewriterText = ({ lines, speed = 50, lineDelay = 800 }: {
   lines: string[];
@@ -60,17 +59,12 @@ const TypewriterText = ({ lines, speed = 50, lineDelay = 800 }: {
 const MissionSection = () => {
   return (
     <section id="mission" className="py-20 relative overflow-hidden">
-      {/* Video Background */}
+      {/* Optimized Video Background - Lazy loaded */}
       <div className="absolute inset-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <LazyVideo 
+          src="/videos/digital-solutions-bg.mp4" 
           className="absolute w-full h-full object-cover"
-        >
-          <source src="/videos/digital-solutions-bg.mp4" type="video/mp4" />
-        </video>
+        />
         {/* Dark overlay for text visibility */}
         <div className="absolute inset-0 bg-slate-900/70" />
       </div>

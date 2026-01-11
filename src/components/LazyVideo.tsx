@@ -4,14 +4,17 @@ interface LazyVideoProps {
   src: string;
   className?: string;
   poster?: string;
+  priority?: boolean;
 }
 
-const LazyVideo = memo(({ src, className = '', poster }: LazyVideoProps) => {
+const LazyVideo = memo(({ src, className = '', poster, priority = false }: LazyVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(priority);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
+    if (priority) return;
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -19,7 +22,7 @@ const LazyVideo = memo(({ src, className = '', poster }: LazyVideoProps) => {
           observer.disconnect();
         }
       },
-      { rootMargin: '100px', threshold: 0.1 }
+      { rootMargin: '300px', threshold: 0.01 }
     );
 
     if (videoRef.current) {
@@ -27,13 +30,20 @@ const LazyVideo = memo(({ src, className = '', poster }: LazyVideoProps) => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [priority]);
 
   useEffect(() => {
     if (isVisible && videoRef.current) {
-      videoRef.current.load();
+      // Use requestIdleCallback for non-priority videos
+      if (!priority && 'requestIdleCallback' in window) {
+        (window as any).requestIdleCallback(() => {
+          videoRef.current?.load();
+        });
+      } else {
+        videoRef.current.load();
+      }
     }
-  }, [isVisible]);
+  }, [isVisible, priority]);
 
   return (
     <video
@@ -42,11 +52,12 @@ const LazyVideo = memo(({ src, className = '', poster }: LazyVideoProps) => {
       loop
       muted
       playsInline
-      preload="none"
+      preload={priority ? "auto" : "none"}
       poster={poster}
-      className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500`}
+      className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
       aria-hidden="true"
       onLoadedData={() => setIsLoaded(true)}
+      onCanPlayThrough={() => setIsLoaded(true)}
     >
       {isVisible && <source src={src} type="video/mp4" />}
     </video>
