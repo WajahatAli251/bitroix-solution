@@ -12,22 +12,34 @@ interface Message {
   timestamp: Date;
 }
 
-// Memoized message formatting component
+// Safe text formatting helper - parses bold markers and returns React elements
+const formatBoldText = (text: string): React.ReactNode[] => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      const boldText = part.slice(2, -2);
+      return (
+        <strong key={i} className="text-primary font-bold text-base sm:text-lg">
+          {boldText}
+        </strong>
+      );
+    }
+    return <span key={i}>{part}</span>;
+  });
+};
+
+// Memoized message formatting component - uses safe React elements instead of dangerouslySetInnerHTML
 const FormattedMessage = memo(({ content }: { content: string }) => {
   const formattedContent = useMemo(() => {
     const lines = content.split('\n');
     return lines.map((line, index) => {
-      // Handle headers (lines with **)
-      if (line.includes('**')) {
-        const headerMatch = line.match(/\*\*(.*?)\*\*/g);
-        if (headerMatch) {
-          let formattedLine = line;
-          headerMatch.forEach(match => {
-            const text = match.replace(/\*\*/g, '');
-            formattedLine = formattedLine.replace(match, `<strong class="text-primary font-bold text-base sm:text-lg">${text}</strong>`);
-          });
-          return <div key={index} className="mb-2 sm:mb-3" dangerouslySetInnerHTML={{ __html: formattedLine }} />;
-        }
+      // Handle headers and text with ** (bold markers) - safely formatted
+      if (line.includes('**') && !line.match(/^\*\*\d+\*\*/)) {
+        return (
+          <div key={index} className="mb-2 sm:mb-3">
+            {formatBoldText(line)}
+          </div>
+        );
       }
       
       // Handle bullet points
