@@ -1,6 +1,6 @@
 import { useEffect, memo } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import LazyVideo from './LazyVideo';
+import OptimizedVideo from './OptimizedVideo';
 
 import wcsLogo from '@/assets/clients/wcs-logo.png';
 import bestTechLogo from '@/assets/clients/best-technology-logo.png';
@@ -39,9 +39,9 @@ const ClientsCarousel = memo(() => {
   return (
     <section className="py-20 relative overflow-hidden" aria-labelledby="clients-heading">
       {/* Video Background - Lazy loaded for performance */}
-      <LazyVideo 
+      <OptimizedVideo 
         src="/videos/sections-background.mp4" 
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full"
       />
       
       {/* Dark overlay for text visibility */}
@@ -67,6 +67,7 @@ const ClientsCarousel = memo(() => {
                       alt={`${client.name} - successful client of Bitroix Solution web development and digital marketing services`} 
                       className="max-h-20 max-w-full object-contain" 
                       loading="lazy"
+                      decoding="async"
                       width="200"
                       height="80"
                     />
@@ -86,6 +87,7 @@ const ClientsCarousel = memo(() => {
                       alt={`${client.name} - successful client of Bitroix Solution web development and digital marketing services`} 
                       className="max-h-20 max-w-full object-contain" 
                       loading="lazy"
+                      decoding="async"
                       width="200"
                       height="80"
                     />

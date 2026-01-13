@@ -1,65 +1,181 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-const SolutionsSection = () => {
-  const services = [
-    {
-      title: "Lead Generation Systems",
-      hook: "Say goodbye to cold outreach. Our systems deliver hot leads — automatically.",
-      cta: "Learn More",
-      delay: "0s",
-      link: "/solutions/lead-generation",
-      image: "/lovable-uploads/976ae802-eca8-4e3b-980e-5670c46536ef.png"
-    },
-    {
-      title: "SEO That Dominates",
-      hook: "Be found by customers who are already searching. Top Google rankings, guaranteed.",
-      cta: "Learn More",
-      delay: "0.1s",
-      link: "/solutions/seo-dominance",
-      image: "/lovable-uploads/74657b6a-cd12-40ee-b239-66b76822d751.png"
-    },
-    {
-      title: "Paid Ads Management",
-      hook: "Stop wasting ad spend. We run performance-focused Google & Meta ads that bring results.",
-      cta: "Learn More",
-      delay: "0.2s",
-      link: "/solutions/paid-ads-management",
-      image: "/lovable-uploads/bec8f18d-ee2a-4a17-bd69-6a1ee4845629.png"
-    },
-    {
-      title: "Marketing Automation",
-      hook: "Work smarter, not harder. Automate follow-ups, lead nurturing, and reporting.",
-      cta: "Learn More",
-      delay: "0.3s",
-      link: "/solutions/marketing-automation",
-      image: "/lovable-uploads/4ba4056f-25de-476f-8515-6edff94dbe63.png"
-    },
-    {
-      title: "Conversion Rate Optimization (CRO)",
-      hook: "Visitors aren't buying? We fix that. Smart UI/UX + psychology-backed CTAs.",
-      cta: "Learn More",
-      delay: "0.4s",
-      link: "/solutions/conversion-optimization",
-      image: "/lovable-uploads/35a9e2d4-2082-408b-ab86-d95889dc822f.png"
-    },
-    {
-      title: "Social Media Growth",
-      hook: "Build a brand that people follow, trust, and buy from. No fluff — just ROI.",
-      cta: "Learn More",
-      delay: "0.5s",
-      link: "/solutions/social-media-growth",
-      image: "/lovable-uploads/a95641c7-884d-48c4-976d-019c9672302b.png"
-    }
-  ];
+// Pre-define image sources for better caching
+const SERVICE_IMAGES = {
+  leadGen: "/lovable-uploads/976ae802-eca8-4e3b-980e-5670c46536ef.png",
+  seo: "/lovable-uploads/74657b6a-cd12-40ee-b239-66b76822d751.png",
+  paidAds: "/lovable-uploads/bec8f18d-ee2a-4a17-bd69-6a1ee4845629.png",
+  automation: "/lovable-uploads/4ba4056f-25de-476f-8515-6edff94dbe63.png",
+  cro: "/lovable-uploads/35a9e2d4-2082-408b-ab86-d95889dc822f.png",
+  social: "/lovable-uploads/a95641c7-884d-48c4-976d-019c9672302b.png",
+};
 
+const PLATFORM_IMAGES = {
+  google: "/lovable-uploads/cea41c57-635d-4dfa-b81a-9c8bd784b5e9.png",
+  gmail: "/lovable-uploads/8c65f578-4125-440e-a866-fe1ea674ae17.png",
+  googleAds: "/lovable-uploads/3d04489a-89f5-4052-8646-c5530a128f37.png",
+  instagram: "/lovable-uploads/bbc26383-9a27-4521-a917-896380b74f93.png",
+  facebook: "/lovable-uploads/aa4b3aaf-8361-4187-a853-095c5711ffc2.png",
+  bitroix: "/lovable-uploads/7748c8e2-43ed-4252-b3ca-868247963c13.png",
+  linkedin: "/lovable-uploads/96a1d62d-0760-4240-baba-49ada83ac158.png",
+  youtube: "/lovable-uploads/9ed3812d-81ea-4710-b5a0-0cd445a12116.png",
+  pinterest: "/lovable-uploads/a78b49d3-6ebe-4e39-af48-feb615ca9d7d.png",
+};
+
+// Memoized service card component for better performance
+const ServiceCard = memo(({ service, index }: { service: typeof services[0]; index: number }) => {
   const handleCTAClick = (link: string) => {
     window.location.href = link;
   };
 
   return (
+    <div 
+      className="backdrop-blur-md p-6 md:p-8 rounded-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in relative overflow-hidden shadow-2xl"
+      style={{
+        animationDelay: service.delay,
+        borderColor: '#264653',
+        borderWidth: '2px',
+        borderStyle: 'solid',
+        boxShadow: '0 10px 30px rgba(51, 243, 255, 0.1)'
+      }}
+    >
+      {/* Background Image - Lazy loaded */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+        style={{
+          backgroundImage: `url(${service.image})`,
+        }}
+      ></div>
+      
+      {/* Dark Overlay for text visibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50 transition-all duration-500 group-hover:from-black/95 group-hover:via-black/75"></div>
+      
+      {/* Content */}
+      <div className="relative z-10">
+        <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4 transition-colors duration-300 drop-shadow-lg" style={{color: '#F0F4F8'}}>
+          {service.title}
+        </h4>
+        <p className="leading-relaxed mb-4 md:mb-6 drop-shadow-md text-sm md:text-base" style={{color: '#9BE3FF'}}>
+          {service.hook}
+        </p>
+        <button
+          onClick={() => handleCTAClick(service.link)}
+          className="w-full font-semibold py-2.5 md:py-3 px-4 md:px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 text-sm md:text-base"
+          style={{
+            background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
+            color: '#0D1B2A',
+            borderColor: '#264653',
+            boxShadow: '0 8px 25px rgba(0, 191, 255, 0.3)'
+          }}
+          onMouseEnter={(e) => {
+            const target = e.target as HTMLButtonElement;
+            target.style.background = 'linear-gradient(to right, #1EC8E8, #33F3FF)';
+            target.style.boxShadow = '0 12px 35px rgba(30, 200, 232, 0.4)';
+          }}
+          onMouseLeave={(e) => {
+            const target = e.target as HTMLButtonElement;
+            target.style.background = 'linear-gradient(to right, #00BFFF, #33F3FF)';
+            target.style.boxShadow = '0 8px 25px rgba(0, 191, 255, 0.3)';
+          }}
+        >
+          {service.cta} →
+        </button>
+      </div>
+    </div>
+  );
+});
+
+ServiceCard.displayName = 'ServiceCard';
+
+// Memoized platform icon for performance
+const PlatformIcon = memo(({ src, alt, size = 12 }: { src: string; alt: string; size?: number }) => (
+  <img 
+    src={src} 
+    alt={alt} 
+    className={`h-${size} w-${size} object-contain hover:scale-110 transition-transform duration-300`}
+    loading="lazy"
+    decoding="async"
+    width={size * 4}
+    height={size * 4}
+  />
+));
+
+PlatformIcon.displayName = 'PlatformIcon';
+
+const services = [
+  {
+    title: "Lead Generation Systems",
+    hook: "Say goodbye to cold outreach. Our systems deliver hot leads — automatically.",
+    cta: "Learn More",
+    delay: "0s",
+    link: "/solutions/lead-generation",
+    image: SERVICE_IMAGES.leadGen
+  },
+  {
+    title: "SEO That Dominates",
+    hook: "Be found by customers who are already searching. Top Google rankings, guaranteed.",
+    cta: "Learn More",
+    delay: "0.1s",
+    link: "/solutions/seo-dominance",
+    image: SERVICE_IMAGES.seo
+  },
+  {
+    title: "Paid Ads Management",
+    hook: "Stop wasting ad spend. We run performance-focused Google & Meta ads that bring results.",
+    cta: "Learn More",
+    delay: "0.2s",
+    link: "/solutions/paid-ads-management",
+    image: SERVICE_IMAGES.paidAds
+  },
+  {
+    title: "Marketing Automation",
+    hook: "Work smarter, not harder. Automate follow-ups, lead nurturing, and reporting.",
+    cta: "Learn More",
+    delay: "0.3s",
+    link: "/solutions/marketing-automation",
+    image: SERVICE_IMAGES.automation
+  },
+  {
+    title: "Conversion Rate Optimization (CRO)",
+    hook: "Visitors aren't buying? We fix that. Smart UI/UX + psychology-backed CTAs.",
+    cta: "Learn More",
+    delay: "0.4s",
+    link: "/solutions/conversion-optimization",
+    image: SERVICE_IMAGES.cro
+  },
+  {
+    title: "Social Media Growth",
+    hook: "Build a brand that people follow, trust, and buy from. No fluff — just ROI.",
+    cta: "Learn More",
+    delay: "0.5s",
+    link: "/solutions/social-media-growth",
+    image: SERVICE_IMAGES.social
+  }
+];
+
+const SolutionsSection = () => {
+  const handleCTAClick = (link: string) => {
+    window.location.href = link;
+  };
+
+  const platformIcons = [
+    { src: PLATFORM_IMAGES.google, alt: "Google" },
+    { src: PLATFORM_IMAGES.gmail, alt: "Gmail" },
+    { src: PLATFORM_IMAGES.googleAds, alt: "Google Ads" },
+    { src: PLATFORM_IMAGES.instagram, alt: "Instagram" },
+    { src: PLATFORM_IMAGES.facebook, alt: "Facebook" },
+  ];
+
+  const platformIconsAfterBitroix = [
+    { src: PLATFORM_IMAGES.linkedin, alt: "LinkedIn" },
+    { src: PLATFORM_IMAGES.youtube, alt: "YouTube" },
+    { src: PLATFORM_IMAGES.pinterest, alt: "Pinterest" },
+  ];
+
+  return (
     <section id="solutions" className="py-20 relative overflow-hidden" style={{background: 'linear-gradient(to right, #0D1B2A, #1B263B)'}}>
       {/* Futuristic 3D Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute top-32 left-20 w-80 h-80 rounded-full blur-3xl animate-pulse" style={{backgroundColor: '#33F3FF10'}}></div>
         <div className="absolute bottom-32 right-20 w-96 h-96 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1.5s', backgroundColor: '#00BFFF08'}}></div>
         <div className="absolute top-20 right-1/3 w-64 h-64 rounded-full blur-xl animate-bounce" style={{animationDelay: '0.5s', backgroundColor: '#1EC8E808'}}></div>
@@ -83,60 +199,7 @@ const SolutionsSection = () => {
         <div className="mb-12 md:mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
-              <div 
-                key={index}
-                className="backdrop-blur-md p-6 md:p-8 rounded-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 group animate-fade-in relative overflow-hidden shadow-2xl"
-                style={{
-                  animationDelay: service.delay,
-                  borderColor: '#264653',
-                  borderWidth: '2px',
-                  borderStyle: 'solid',
-                  boxShadow: '0 10px 30px rgba(51, 243, 255, 0.1)'
-                }}
-              >
-                {/* Background Image */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{
-                    backgroundImage: `url(${service.image})`,
-                  }}
-                ></div>
-                
-                {/* Dark Overlay for text visibility */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50 transition-all duration-500 group-hover:from-black/95 group-hover:via-black/75"></div>
-                
-                {/* Content */}
-                <div className="relative z-10">
-                  <h4 className="text-lg md:text-xl font-bold mb-3 md:mb-4 transition-colors duration-300 drop-shadow-lg" style={{color: '#F0F4F8'}}>
-                    {service.title}
-                  </h4>
-                  <p className="leading-relaxed mb-4 md:mb-6 drop-shadow-md text-sm md:text-base" style={{color: '#9BE3FF'}}>
-                    {service.hook}
-                  </p>
-                  <button
-                    onClick={() => handleCTAClick(service.link)}
-                    className="w-full font-semibold py-2.5 md:py-3 px-4 md:px-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl border-2 text-sm md:text-base"
-                    style={{
-                      background: 'linear-gradient(to right, #00BFFF, #33F3FF)',
-                      color: '#0D1B2A',
-                      borderColor: '#264653',
-                      boxShadow: '0 8px 25px rgba(0, 191, 255, 0.3)'
-                    }}
-                    onMouseEnter={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.background = 'linear-gradient(to right, #1EC8E8, #33F3FF)';
-                      target.style.boxShadow = '0 12px 35px rgba(30, 200, 232, 0.4)';
-                    }}
-                    onMouseLeave={(e) => {
-                      const target = e.target as HTMLButtonElement;
-                      target.style.background = 'linear-gradient(to right, #00BFFF, #33F3FF)';
-                      target.style.boxShadow = '0 8px 25px rgba(0, 191, 255, 0.3)';
-                    }}
-                  >
-                    {service.cta} →
-                  </button>
-                </div>
-              </div>
+              <ServiceCard key={index} service={service} index={index} />
             ))}
           </div>
         </div>
@@ -196,61 +259,37 @@ const SolutionsSection = () => {
           <div className="relative w-full overflow-hidden">
             <div className="flex gap-8 animate-[moveRightToLeft_30s_linear_infinite]">
               {/* First set */}
-              <div className="flex gap-8 flex-shrink-0">
-                <img src="/lovable-uploads/cea41c57-635d-4dfa-b81a-9c8bd784b5e9.png" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/8c65f578-4125-440e-a866-fe1ea674ae17.png" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/3d04489a-89f5-4052-8646-c5530a128f37.png" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/bbc26383-9a27-4521-a917-896380b74f93.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/aa4b3aaf-8361-4187-a853-095c5711ffc2.png" alt="Facebook" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+              <div className="flex gap-8 flex-shrink-0 items-center">
+                {platformIcons.map((icon, i) => (
+                  <PlatformIcon key={i} src={icon.src} alt={icon.alt} />
+                ))}
                 
                 {/* Bitroix Logo - Larger */}
                 <div className="relative">
-                  <img src="/lovable-uploads/7748c8e2-43ed-4252-b3ca-868247963c13.png" alt="Bitroix Solution" className="h-16 w-16 object-contain hover:scale-110 transition-transform duration-300" />
+                  <img src={PLATFORM_IMAGES.bitroix} alt="Bitroix Solution" className="h-16 w-16 object-contain hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="64" height="64" />
                   <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
                 </div>
                 
-                <img src="/lovable-uploads/96a1d62d-0760-4240-baba-49ada83ac158.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/9ed3812d-81ea-4710-b5a0-0cd445a12116.png" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/a78b49d3-6ebe-4e39-af48-feb615ca9d7d.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
+                {platformIconsAfterBitroix.map((icon, i) => (
+                  <PlatformIcon key={`after-${i}`} src={icon.src} alt={icon.alt} />
+                ))}
               </div>
 
-              {/* Duplicate set for seamless loop */}
-              <div className="flex gap-8 flex-shrink-0">
-                <img src="/lovable-uploads/cea41c57-635d-4dfa-b81a-9c8bd784b5e9.png" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/8c65f578-4125-440e-a866-fe1ea674ae17.png" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/3d04489a-89f5-4052-8646-c5530a128f37.png" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/bbc26383-9a27-4521-a917-896380b74f93.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/aa4b3aaf-8361-4187-a853-095c5711ffc2.png" alt="Facebook" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                
-                {/* Bitroix Logo - Larger */}
-                <div className="relative">
-                  <img src="/lovable-uploads/7748c8e2-43ed-4252-b3ca-868247963c13.png" alt="Bitroix Solution" className="h-16 w-16 object-contain hover:scale-110 transition-transform duration-300" />
-                  <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
+              {/* Duplicate sets for seamless loop */}
+              {[1, 2].map((setNum) => (
+                <div key={setNum} className="flex gap-8 flex-shrink-0 items-center">
+                  {platformIcons.map((icon, i) => (
+                    <PlatformIcon key={`set${setNum}-${i}`} src={icon.src} alt={icon.alt} />
+                  ))}
+                  <div className="relative">
+                    <img src={PLATFORM_IMAGES.bitroix} alt="Bitroix Solution" className="h-16 w-16 object-contain hover:scale-110 transition-transform duration-300" loading="lazy" decoding="async" width="64" height="64" />
+                    <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
+                  </div>
+                  {platformIconsAfterBitroix.map((icon, i) => (
+                    <PlatformIcon key={`set${setNum}-after-${i}`} src={icon.src} alt={icon.alt} />
+                  ))}
                 </div>
-                
-                <img src="/lovable-uploads/96a1d62d-0760-4240-baba-49ada83ac158.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/9ed3812d-81ea-4710-b5a0-0cd445a12116.png" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/a78b49d3-6ebe-4e39-af48-feb615ca9d7d.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-              </div>
-
-              {/* Third set for extra smoothness */}
-              <div className="flex gap-8 flex-shrink-0">
-                <img src="/lovable-uploads/cea41c57-635d-4dfa-b81a-9c8bd784b5e9.png" alt="Google" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/8c65f578-4125-440e-a866-fe1ea674ae17.png" alt="Gmail" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/3d04489a-89f5-4052-8646-c5530a128f37.png" alt="Google Ads" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/bbc26383-9a27-4521-a917-896380b74f93.png" alt="Instagram" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/aa4b3aaf-8361-4187-a853-095c5711ffc2.png" alt="Facebook" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                
-                {/* Bitroix Logo - Larger */}
-                <div className="relative">
-                  <img src="/lovable-uploads/7748c8e2-43ed-4252-b3ca-868247963c13.png" alt="Bitroix Solution" className="h-16 w-16 object-contain hover:scale-110 transition-transform duration-300" />
-                  <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full animate-pulse" style={{backgroundColor: '#33F3FF'}}></div>
-                </div>
-                
-                <img src="/lovable-uploads/96a1d62d-0760-4240-baba-49ada83ac158.png" alt="LinkedIn" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/9ed3812d-81ea-4710-b5a0-0cd445a12116.png" alt="YouTube" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-                <img src="/lovable-uploads/a78b49d3-6ebe-4e39-af48-feb615ca9d7d.png" alt="Pinterest" className="h-12 w-12 object-contain hover:scale-110 transition-transform duration-300" />
-              </div>
+              ))}
             </div>
           </div>
         </div>
