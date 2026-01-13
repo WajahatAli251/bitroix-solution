@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import astronautImage from '@/assets/astronaut-marketing.png';
-import LazyVideo from './LazyVideo';
+import OptimizedVideo from './OptimizedVideo';
 
-const TypewriterText = ({ lines, speed = 50, lineDelay = 800 }: {
+const TypewriterText = memo(({ lines, speed = 50, lineDelay = 800 }: {
   lines: string[];
   speed?: number;
   lineDelay?: number;
@@ -54,16 +54,18 @@ const TypewriterText = ({ lines, speed = 50, lineDelay = 800 }: {
       )}
     </div>
   );
-};
+});
+
+TypewriterText.displayName = 'TypewriterText';
 
 const MissionSection = () => {
   return (
     <section id="mission" className="py-20 relative overflow-hidden">
-      {/* Optimized Video Background - Lazy loaded */}
+      {/* Optimized Video Background - Lazy loaded with poster */}
       <div className="absolute inset-0 overflow-hidden">
-        <LazyVideo 
+        <OptimizedVideo 
           src="/videos/digital-solutions-bg.mp4" 
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full h-full"
         />
         {/* Dark overlay for text visibility */}
         <div className="absolute inset-0 bg-slate-900/70" />
@@ -128,7 +130,7 @@ const MissionSection = () => {
             </div>
           </div>
 
-          {/* Right Side - Illustration */}
+          {/* Right Side - Illustration with lazy loading */}
           <div className="relative flex justify-center items-center mt-8 lg:mt-0">
             <div className="relative group animate-fade-in" style={{animationDelay: '0.3s'}}>
               {/* Main Illustration */}
@@ -137,6 +139,10 @@ const MissionSection = () => {
                   src={astronautImage} 
                   alt="Astronaut Marketing - Elevated Digital Solutions" 
                   className="w-full h-auto max-w-[600px] lg:max-w-[750px] xl:max-w-[850px] object-contain drop-shadow-2xl animate-astronaut-float"
+                  loading="lazy"
+                  decoding="async"
+                  width="850"
+                  height="850"
                   style={{
                     filter: 'drop-shadow(0 25px 50px rgba(139, 92, 246, 0.5))'
                   }}

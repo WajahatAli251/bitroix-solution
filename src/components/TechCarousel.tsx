@@ -1,6 +1,6 @@
 import { useEffect, memo } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import LazyVideo from './LazyVideo';
+import OptimizedVideo from './OptimizedVideo';
 
 import pythonLogo from '@/assets/tech-logos/python.png';
 import reactLogo from '@/assets/tech-logos/react.svg';
@@ -56,9 +56,9 @@ const TechCarousel = memo(() => {
   return (
     <section className="py-20 relative overflow-hidden" aria-labelledby="tech-heading">
       {/* Video Background - Lazy loaded for performance */}
-      <LazyVideo 
+      <OptimizedVideo 
         src="/videos/sections-background.mp4" 
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full"
       />
       
       {/* Dark overlay for text visibility */}
@@ -85,6 +85,7 @@ const TechCarousel = memo(() => {
                         alt={`${tech.name} logo - technology used by Bitroix Solution`} 
                         className="h-12 w-12 object-contain" 
                         loading="lazy"
+                        decoding="async"
                         width="48"
                         height="48"
                       />
@@ -107,6 +108,7 @@ const TechCarousel = memo(() => {
                         alt={`${tech.name} logo - technology used by Bitroix Solution`} 
                         className="h-12 w-12 object-contain" 
                         loading="lazy"
+                        decoding="async"
                         width="48"
                         height="48"
                       />

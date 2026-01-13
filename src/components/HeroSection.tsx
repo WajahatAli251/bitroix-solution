@@ -14,11 +14,11 @@ const HeroSection = () => {
       }
     };
     
-    // Use requestIdleCallback for better performance
+    // Use requestIdleCallback for better performance - longer timeout
     if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(loadVideo, { timeout: 2000 });
+      (window as any).requestIdleCallback(loadVideo, { timeout: 3000 });
     } else {
-      setTimeout(loadVideo, 100);
+      setTimeout(loadVideo, 500);
     }
   }, []);
 
@@ -39,6 +39,12 @@ const HeroSection = () => {
   return (
     <main>
       <section id="home" className="min-h-screen gradient-primary pt-16 relative overflow-hidden" role="banner">
+        {/* Gradient placeholder shown before video loads */}
+        <div 
+          className={`absolute inset-0 z-0 bg-gradient-to-br from-slate-900 via-blue-900/50 to-slate-900 transition-opacity duration-1000 ${videoLoaded ? 'opacity-0' : 'opacity-30'}`}
+          aria-hidden="true"
+        />
+        
         {/* Video Background - Deferred loading for better performance */}
         <video 
           ref={videoRef}
@@ -93,7 +99,7 @@ const HeroSection = () => {
             </div>
             </header>
 
-            {/* Right Content - Tech Image */}
+            {/* Right Content - Tech Image with optimized loading */}
             <aside className="flex-1 flex justify-center lg:justify-end animate-slide-in-right mt-8 lg:mt-0" aria-label="Technology showcase">
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">

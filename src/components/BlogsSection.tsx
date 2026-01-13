@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { ArrowUpRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -11,6 +12,7 @@ interface BlogPost {
   link: string;
 }
 
+// Pre-optimized image URLs with smaller sizes
 const blogPosts: BlogPost[] = [
   {
     id: 1,
@@ -18,7 +20,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "Artificial intelligence continues to reshape industries. Discover the key AI trends that will define business strategies and operations in the coming year.",
     date: "2025-12-08",
     category: "AI",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&q=60&auto=format&fit=crop",
     link: "https://techcrunch.com/category/artificial-intelligence/"
   },
   {
@@ -27,7 +29,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "From AI-powered personalization to video content dominance, learn the digital marketing strategies that are delivering exceptional ROI for businesses.",
     date: "2025-12-07",
     category: "Digital Marketing",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&q=60&auto=format&fit=crop",
     link: "https://www.hubspot.com/marketing-statistics"
   },
   {
@@ -36,7 +38,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "Multi-cloud strategies, edge computing, and serverless architecture are transforming how businesses leverage cloud infrastructure for competitive advantage.",
     date: "2025-12-06",
     category: "Cloud",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&q=60&auto=format&fit=crop",
     link: "https://www.zdnet.com/topic/cloud/"
   },
   {
@@ -45,7 +47,7 @@ const blogPosts: BlogPost[] = [
     excerpt: "With cyber attacks becoming more sophisticated, organizations must adopt proactive security measures. Here's what you need to know to protect your business.",
     date: "2025-12-05",
     category: "Cybersecurity",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&q=60&auto=format&fit=crop",
     link: "https://thehackernews.com/"
   }
 ];
@@ -70,7 +72,72 @@ const getCategoryColor = (category: string) => {
   return colors[category] || "bg-primary";
 };
 
-const BlogsSection = () => {
+// Memoized blog card for better performance
+const BlogCard = memo(({ post }: { post: BlogPost }) => (
+  <article
+    className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border"
+    itemScope
+    itemType="https://schema.org/BlogPosting"
+  >
+    {/* Image with optimized loading */}
+    <div className="relative overflow-hidden h-48">
+      <img
+        src={post.image}
+        alt={post.title}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        itemProp="image"
+        width="400"
+        height="192"
+      />
+      <span
+        className={`absolute top-3 left-3 ${getCategoryColor(post.category)} text-white text-xs font-semibold px-3 py-1 rounded-full`}
+      >
+        {post.category}
+      </span>
+    </div>
+
+    {/* Content */}
+    <div className="p-5">
+      <h3
+        className="font-bold text-foreground text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors"
+        itemProp="headline"
+      >
+        {post.title}
+      </h3>
+
+      <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
+        <Calendar className="h-4 w-4" />
+        <time dateTime={post.date} itemProp="datePublished">
+          {formatDate(post.date)}
+        </time>
+      </div>
+
+      <p
+        className="text-muted-foreground text-sm line-clamp-2 mb-4"
+        itemProp="description"
+      >
+        {post.excerpt}
+      </p>
+
+      <a
+        href={post.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center text-primary font-semibold hover:underline group/link"
+        itemProp="url"
+      >
+        Read More
+        <ArrowUpRight className="ml-1 h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+      </a>
+    </div>
+  </article>
+));
+
+BlogCard.displayName = 'BlogCard';
+
+const BlogsSection = memo(() => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -99,69 +166,14 @@ const BlogsSection = () => {
         {/* Blog Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {blogPosts.map((post) => (
-            <article
-              key={post.id}
-              className="group bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-border"
-              itemScope
-              itemType="https://schema.org/BlogPosting"
-            >
-              {/* Image */}
-              <div className="relative overflow-hidden h-48">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  itemProp="image"
-                />
-                <span
-                  className={`absolute top-3 left-3 ${getCategoryColor(post.category)} text-white text-xs font-semibold px-3 py-1 rounded-full`}
-                >
-                  {post.category}
-                </span>
-              </div>
-
-              {/* Content */}
-              <div className="p-5">
-                <h3
-                  className="font-bold text-foreground text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors"
-                  itemProp="headline"
-                >
-                  {post.title}
-                </h3>
-
-                <div className="flex items-center gap-2 text-muted-foreground text-sm mb-3">
-                  <Calendar className="h-4 w-4" />
-                  <time dateTime={post.date} itemProp="datePublished">
-                    {formatDate(post.date)}
-                  </time>
-                </div>
-
-                <p
-                  className="text-muted-foreground text-sm line-clamp-2 mb-4"
-                  itemProp="description"
-                >
-                  {post.excerpt}
-                </p>
-
-                <a
-                  href={post.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-primary font-semibold hover:underline group/link"
-                  itemProp="url"
-                >
-                  Read More
-                  <ArrowUpRight className="ml-1 h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                </a>
-              </div>
-            </article>
+            <BlogCard key={post.id} post={post} />
           ))}
         </div>
       </div>
     </section>
   );
-};
+});
+
+BlogsSection.displayName = 'BlogsSection';
 
 export default BlogsSection;
