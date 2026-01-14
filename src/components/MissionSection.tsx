@@ -64,7 +64,7 @@ const MissionSection = () => {
       {/* Optimized Video Background - Lazy loaded with poster */}
       <div className="absolute inset-0 overflow-hidden">
         <OptimizedVideo 
-          src="/videos/digital-solutions-bg.mp4" 
+          src="/videos/mission-section-bg.mp4" 
           className="absolute w-full h-full"
         />
         {/* Dark overlay for text visibility */}
