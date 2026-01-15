@@ -1,9 +1,10 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo, memo } from 'react';
-import { MessageCircle, X, Send, User, Sparkles, Zap } from 'lucide-react';
+import { MessageCircle, X, Send, User, Sparkles, Zap, Mic, MessageSquare } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from 'react-router-dom';
+import { VoiceAgent } from './VoiceAgent';
 
 interface Message {
   id: string;
@@ -359,6 +360,7 @@ const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentMenu, setCurrentMenu] = useState('main');
   const [isTyping, setIsTyping] = useState(false);
+  const [mode, setMode] = useState<'text' | 'voice'>('text');
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -370,6 +372,9 @@ const Chatbot = () => {
   const [input, setInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  
+  // Replace with your ElevenLabs Agent ID
+  const ELEVENLABS_AGENT_ID = "your-agent-id-here";
 
   const scrollToBottom = useCallback(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -604,7 +609,11 @@ const Chatbot = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent rounded-t-2xl"></div>
             <div className="relative flex items-center gap-2 sm:gap-3">
               <div className="p-1.5 sm:p-2 bg-white/20 rounded-full backdrop-blur-sm">
-                <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white animate-pulse" />
+                {mode === 'voice' ? (
+                  <Mic className="h-5 w-5 sm:h-6 sm:w-6 text-white animate-pulse" />
+                ) : (
+                  <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 text-white animate-pulse" />
+                )}
               </div>
               <div className="min-w-0 flex-1">
                 <h3 className="text-lg sm:text-xl font-bold flex items-center gap-1 sm:gap-2 truncate">
@@ -612,141 +621,182 @@ const Chatbot = () => {
                   <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-300 animate-bounce flex-shrink-0" />
                 </h3>
                 <p className="text-xs sm:text-sm text-white/80 font-medium truncate">
-                  {isTyping ? "🤖 Typing..." : "💬 Ask me anything about our services"}
+                  {mode === 'voice' 
+                    ? "🎤 Voice mode active" 
+                    : isTyping 
+                      ? "🤖 Typing..." 
+                      : "💬 Ask me anything about our services"}
                 </p>
               </div>
+              
+              {/* Mode Toggle */}
+              <div className="flex gap-1 bg-white/20 rounded-lg p-1">
+                <button
+                  onClick={() => setMode('text')}
+                  className={`p-1.5 rounded-md transition-all ${
+                    mode === 'text' 
+                      ? 'bg-white text-primary' 
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                  title="Text mode"
+                >
+                  <MessageSquare className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => setMode('voice')}
+                  className={`p-1.5 rounded-md transition-all ${
+                    mode === 'voice' 
+                      ? 'bg-white text-primary' 
+                      : 'text-white/70 hover:text-white'
+                  }`}
+                  title="Voice mode"
+                >
+                  <Mic className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Enhanced Messages Container - Mobile Responsive */}
-          <div className="relative flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-gradient-to-b from-transparent to-white/50 dark:to-gray-900/50">
-            {messages.map((message, index) => (
-              <div
-                key={message.id}
-                className={`flex animate-fade-in ${message.isBot ? 'justify-start' : 'justify-end'}`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className={`flex items-start gap-2 sm:gap-3 max-w-[90%] sm:max-w-[85%] ${message.isBot ? 'flex-row' : 'flex-row-reverse'}`}>
-                  {/* Avatar */}
-                  <div className={`p-1.5 sm:p-2 rounded-full shadow-lg flex-shrink-0 ${
-                    message.isBot 
-                      ? 'bg-gradient-to-r from-primary to-blue-600 text-white' 
-                      : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-                  }`}>
-                    {message.isBot ? (
-                      <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
-                    ) : (
-                      <User className="h-3 w-3 sm:h-4 sm:w-4" />
-                    )}
-                  </div>
-                  
-                  {/* Message Bubble */}
-                  <div className={`relative p-3 sm:p-4 rounded-2xl shadow-lg backdrop-blur-sm border ${
-                    message.isBot
-                      ? 'bg-white/80 dark:bg-gray-800/80 text-gray-800 dark:text-gray-200 border-gray-200/50 dark:border-gray-600/50'
-                      : 'bg-gradient-to-r from-primary to-blue-600 text-white border-primary/30'
-                  }`}>
-                    {/* Message tail */}
-                    <div className={`absolute top-3 ${
-                      message.isBot ? '-left-2' : '-right-2'
-                    } w-3 h-3 sm:w-4 sm:h-4 rotate-45 ${
-                      message.isBot
-                        ? 'bg-white/80 dark:bg-gray-800/80 border-l border-b border-gray-200/50 dark:border-gray-600/50'
-                        : 'bg-gradient-to-br from-primary to-blue-600'
-                    }`}></div>
-                    
-                    {/* Message Content */}
-                    <div className="relative z-10">
-                      {message.isBot ? (
-                        <FormattedMessage content={message.content} />
-                      ) : (
-                        <p className="text-xs sm:text-sm font-medium leading-relaxed">{message.content}</p>
-                      )}
+          {/* Content Area - Switch between Text and Voice modes */}
+          {mode === 'voice' ? (
+            <div className="relative flex-1 flex items-center justify-center p-4 bg-gradient-to-b from-transparent to-white/50 dark:to-gray-900/50">
+              <VoiceAgent agentId={ELEVENLABS_AGENT_ID} />
+            </div>
+          ) : (
+            <>
+              {/* Enhanced Messages Container - Mobile Responsive */}
+              <div className="relative flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-gradient-to-b from-transparent to-white/50 dark:to-gray-900/50">
+                {messages.map((message, index) => (
+                  <div
+                    key={message.id}
+                    className={`flex animate-fade-in ${message.isBot ? 'justify-start' : 'justify-end'}`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className={`flex items-start gap-2 sm:gap-3 max-w-[90%] sm:max-w-[85%] ${message.isBot ? 'flex-row' : 'flex-row-reverse'}`}>
+                      {/* Avatar */}
+                      <div className={`p-1.5 sm:p-2 rounded-full shadow-lg flex-shrink-0 ${
+                        message.isBot 
+                          ? 'bg-gradient-to-r from-primary to-blue-600 text-white' 
+                          : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
+                      }`}>
+                        {message.isBot ? (
+                          <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
+                        ) : (
+                          <User className="h-3 w-3 sm:h-4 sm:w-4" />
+                        )}
+                      </div>
+                      
+                      {/* Message Bubble */}
+                      <div className={`relative p-3 sm:p-4 rounded-2xl shadow-lg backdrop-blur-sm border ${
+                        message.isBot
+                          ? 'bg-white/80 dark:bg-gray-800/80 text-gray-800 dark:text-gray-200 border-gray-200/50 dark:border-gray-600/50'
+                          : 'bg-gradient-to-r from-primary to-blue-600 text-white border-primary/30'
+                      }`}>
+                        {/* Message tail */}
+                        <div className={`absolute top-3 ${
+                          message.isBot ? '-left-2' : '-right-2'
+                        } w-3 h-3 sm:w-4 sm:h-4 rotate-45 ${
+                          message.isBot
+                            ? 'bg-white/80 dark:bg-gray-800/80 border-l border-b border-gray-200/50 dark:border-gray-600/50'
+                            : 'bg-gradient-to-br from-primary to-blue-600'
+                        }`}></div>
+                        
+                        {/* Message Content */}
+                        <div className="relative z-10">
+                          {message.isBot ? (
+                            <FormattedMessage content={message.content} />
+                          ) : (
+                            <p className="text-xs sm:text-sm font-medium leading-relaxed">{message.content}</p>
+                          )}
+                        </div>
+                        
+                        {/* Timestamp */}
+                        <div className={`text-xs mt-1.5 sm:mt-2 ${
+                          message.isBot ? 'text-gray-500 dark:text-gray-400' : 'text-white/70'
+                        }`}>
+                          {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        </div>
+                      </div>
                     </div>
-                    
-                    {/* Timestamp */}
-                    <div className={`text-xs mt-1.5 sm:mt-2 ${
-                      message.isBot ? 'text-gray-500 dark:text-gray-400' : 'text-white/70'
-                    }`}>
-                      {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                  </div>
+                ))}
+                
+                {/* Typing Indicator */}
+                {isTyping && (
+                  <div className="flex justify-start animate-fade-in">
+                    <div className="flex items-start gap-2 sm:gap-3 max-w-[90%] sm:max-w-[85%]">
+                      <div className="p-1.5 sm:p-2 rounded-full shadow-lg bg-gradient-to-r from-primary to-blue-600 text-white flex-shrink-0">
+                        <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
+                      </div>
+                      <div className="bg-white/80 dark:bg-gray-800/80 p-3 sm:p-4 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
+                        <div className="flex space-x-1">
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-bounce"></div>
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
+                
+                <div ref={messagesEndRef} />
               </div>
-            ))}
-            
-            {/* Typing Indicator */}
-            {isTyping && (
-              <div className="flex justify-start animate-fade-in">
-                <div className="flex items-start gap-2 sm:gap-3 max-w-[90%] sm:max-w-[85%]">
-                  <div className="p-1.5 sm:p-2 rounded-full shadow-lg bg-gradient-to-r from-primary to-blue-600 text-white flex-shrink-0">
-                    <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" />
-                  </div>
-                  <div className="bg-white/80 dark:bg-gray-800/80 p-3 sm:p-4 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
-                    <div className="flex space-x-1">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-bounce"></div>
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-            
-            <div ref={messagesEndRef} />
-          </div>
+            </>
+          )}
 
-          {/* Enhanced Input Section - Mobile Responsive */}
-          <div className="relative p-3 sm:p-4 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-b-2xl border-t border-white/20 dark:border-gray-700/30">
-            <div className="flex items-center gap-2 sm:gap-3">
-              <div className="flex-1 relative">
-                <Input
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Type a number (1-9) or ask..."
-                  className="pr-10 sm:pr-12 h-10 sm:h-12 text-sm sm:text-base bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-200/50 dark:border-gray-600/50 focus:border-primary/70 rounded-xl shadow-sm transition-all duration-200 focus:shadow-lg touch-manipulation"
-                />
-                <div className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2">
-                  <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-primary animate-pulse" />
+          {/* Enhanced Input Section - Only show in text mode */}
+          {mode === 'text' && (
+            <div className="relative p-3 sm:p-4 bg-white/60 dark:bg-gray-900/60 backdrop-blur-xl rounded-b-2xl border-t border-white/20 dark:border-gray-700/30">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="flex-1 relative">
+                  <Input
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    placeholder="Type a number (1-9) or ask..."
+                    className="pr-10 sm:pr-12 h-10 sm:h-12 text-sm sm:text-base bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-gray-200/50 dark:border-gray-600/50 focus:border-primary/70 rounded-xl shadow-sm transition-all duration-200 focus:shadow-lg touch-manipulation"
+                  />
+                  <div className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2">
+                    <Sparkles className="h-3 w-3 sm:h-4 sm:w-4 text-primary animate-pulse" />
+                  </div>
                 </div>
+                
+                <Button 
+                  onClick={handleSendMessage} 
+                  disabled={!input.trim() || isTyping}
+                  className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
+                  size="icon"
+                >
+                  <Send className="h-4 w-4 sm:h-5 sm:w-5" />
+                </Button>
               </div>
               
-              <Button 
-                onClick={handleSendMessage} 
-                disabled={!input.trim() || isTyping}
-                className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
-                size="icon"
-              >
-                <Send className="h-4 w-4 sm:h-5 sm:w-5" />
-              </Button>
+              {/* Quick Action Badges - Mobile Responsive */}
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2 sm:mt-3">
+                <Badge 
+                  variant="secondary" 
+                  className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
+                  onClick={() => handleQuickAction('menu')}
+                >
+                  📋 <span className="hidden xs:inline">Main </span>Menu
+                </Badge>
+                <Badge 
+                  variant="secondary" 
+                  className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
+                  onClick={() => handleQuickAction('7')}
+                >
+                  📅 <span className="hidden xs:inline">Schedule </span>Meeting
+                </Badge>
+                <Badge 
+                  variant="secondary" 
+                  className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
+                  onClick={() => handleQuickAction('1')}
+                >
+                  🛠️ Services
+                </Badge>
+              </div>
             </div>
-            
-            {/* Quick Action Badges - Mobile Responsive */}
-            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2 sm:mt-3">
-              <Badge 
-                variant="secondary" 
-                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
-                onClick={() => handleQuickAction('menu')}
-              >
-                📋 <span className="hidden xs:inline">Main </span>Menu
-              </Badge>
-              <Badge 
-                variant="secondary" 
-                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
-                onClick={() => handleQuickAction('7')}
-              >
-                📅 <span className="hidden xs:inline">Schedule </span>Meeting
-              </Badge>
-              <Badge 
-                variant="secondary" 
-                className="cursor-pointer hover:bg-primary/20 transition-colors text-xs px-2 sm:px-3 py-1 touch-manipulation"
-                onClick={() => handleQuickAction('1')}
-              >
-                🛠️ Services
-              </Badge>
-            </div>
-          </div>
+          )}
         </div>
       )}
     </>
