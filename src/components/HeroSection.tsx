@@ -1,11 +1,22 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, memo } from 'react';
 import heroTechImage from '@/assets/futuristic-hero-bg.jpg';
+import { usePrefersReducedMotion } from '@/hooks/use-lazy-load';
 
-const HeroSection = () => {
+const HeroSection = memo(() => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    // Skip video on reduced motion preference or slow connections
+    if (prefersReducedMotion) return;
+    
+    // Check for slow connection
+    const connection = (navigator as any).connection;
+    if (connection && (connection.saveData || connection.effectiveType === '2g')) {
+      return; // Don't load video on slow connections
+    }
+
     // Defer video loading to after initial paint for faster FCP
     const loadVideo = () => {
       if (videoRef.current) {
@@ -14,13 +25,13 @@ const HeroSection = () => {
       }
     };
     
-    // Use requestIdleCallback for better performance - longer timeout
+    // Use requestIdleCallback for better performance
     if ('requestIdleCallback' in window) {
-      (window as any).requestIdleCallback(loadVideo, { timeout: 3000 });
+      (window as any).requestIdleCallback(loadVideo, { timeout: 2000 });
     } else {
-      setTimeout(loadVideo, 500);
+      setTimeout(loadVideo, 300);
     }
-  }, []);
+  }, [prefersReducedMotion]);
 
   const scrollToServices = () => {
     const element = document.getElementById('services');
@@ -39,30 +50,34 @@ const HeroSection = () => {
   return (
     <main>
       <section id="home" className="min-h-screen gradient-primary pt-16 relative overflow-hidden" role="banner">
-        {/* Gradient placeholder shown before video loads */}
+        {/* Gradient placeholder - always visible for fast FCP */}
         <div 
-          className={`absolute inset-0 z-0 bg-gradient-to-br from-slate-900 via-blue-900/50 to-slate-900 transition-opacity duration-1000 ${videoLoaded ? 'opacity-0' : 'opacity-30'}`}
+          className={`absolute inset-0 z-0 bg-gradient-to-br from-slate-900 via-blue-900/50 to-slate-900 transition-opacity duration-500 ${videoLoaded ? 'opacity-0' : 'opacity-30'}`}
           aria-hidden="true"
         />
         
-        {/* Video Background - Deferred loading for better performance */}
-        <video 
-          ref={videoRef}
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          preload="none"
-          className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${videoLoaded ? 'opacity-30' : 'opacity-0'}`}
-          aria-hidden="true"
-          onLoadedData={() => setVideoLoaded(true)}
-        />
+        {/* Video Background - Only load if not reduced motion */}
+        {!prefersReducedMotion && (
+          <video 
+            ref={videoRef}
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            preload="none"
+            className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${videoLoaded ? 'opacity-30' : 'opacity-0'}`}
+            aria-hidden="true"
+            onLoadedData={() => setVideoLoaded(true)}
+          />
+        )}
         
-        {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-20 z-[2]" aria-hidden="true">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float float-delayed"></div>
-        </div>
+        {/* Animated background elements - Skip on reduced motion */}
+        {!prefersReducedMotion && (
+          <div className="absolute inset-0 opacity-20 z-[2]" aria-hidden="true">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/30 rounded-full blur-3xl animate-float"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float float-delayed"></div>
+          </div>
+        )}
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-4rem)]">
@@ -100,13 +115,13 @@ const HeroSection = () => {
             </header>
 
             {/* Right Content - Tech Image with optimized loading */}
-            <aside className="flex-1 flex justify-center lg:justify-end animate-slide-in-right mt-8 lg:mt-0" aria-label="Technology showcase">
+            <aside className="flex-1 flex justify-center lg:justify-end mt-8 lg:mt-0" aria-label="Technology showcase">
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
                     src={heroTechImage} 
-                    alt="Professional web development and digital marketing services - custom websites, SEO, AI chatbots, and online marketing solutions"
-                    className="w-full h-auto max-w-[500px] sm:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] object-contain animate-float"
+                    alt="Professional web development and digital marketing services"
+                    className={`w-full h-auto max-w-[500px] sm:max-w-[550px] lg:max-w-[650px] xl:max-w-[750px] object-contain ${!prefersReducedMotion ? 'animate-float' : ''}`}
                     loading="eager"
                     width="750"
                     height="600"
@@ -123,6 +138,8 @@ const HeroSection = () => {
       </section>
     </main>
   );
-};
+});
+
+HeroSection.displayName = 'HeroSection';
 
 export default HeroSection;

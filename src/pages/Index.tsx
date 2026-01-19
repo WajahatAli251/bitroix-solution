@@ -1,4 +1,4 @@
-import { lazy, Suspense, memo, useState, useEffect } from "react";
+import { lazy, Suspense, memo, useState, useEffect, useCallback } from "react";
 import SEO from "@/components/SEO";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
@@ -64,7 +64,7 @@ const servicesOfferedSchema = {
   ]
 };
 
-const Index = () => {
+const Index = memo(() => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
@@ -73,14 +73,16 @@ const Index = () => {
       const timer = setTimeout(() => {
         setShowPopup(true);
         sessionStorage.setItem('hasSeenPackagePopup', 'true');
-      }, 2000);
+      }, 3000); // Slightly delay popup for better UX
       return () => clearTimeout(timer);
     }
   }, []);
 
+  const handleClosePopup = useCallback(() => setShowPopup(false), []);
+
   return (
     <div className="min-h-screen">
-      <PackagePopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+      <PackagePopup isOpen={showPopup} onClose={handleClosePopup} />
       <SEO
         title="Home"
         description="Bitroix Solution LLC - Award-winning web development, AI chatbots, SEO optimization & digital marketing. 150+ projects, 4.9★ rating. Free consultation!"
@@ -130,6 +132,8 @@ const Index = () => {
       </Suspense>
     </div>
   );
-};
+});
+
+Index.displayName = 'Index';
 
 export default Index;

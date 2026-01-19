@@ -128,6 +128,14 @@ const SEO = ({
       <meta name="geo.position" content="37.7749;-122.4194" />
       <meta name="ICBM" content="37.7749, -122.4194" />
       
+      {/* Additional Geo Targeting for Pakistan */}
+      <meta name="geo.region" content="PK-SD" />
+      <meta name="geo.placename" content="Karachi, Sindh, Pakistan" />
+      
+      {/* Business identity */}
+      <meta name="classification" content="Business" />
+      <meta name="category" content="Web Development, Digital Marketing, Software Development" />
+      
       {/* Dublin Core Metadata for enhanced discovery */}
       <meta name="DC.title" content={fullTitle} />
       <meta name="DC.creator" content="Bitroix Solution LLC" />
@@ -137,6 +145,7 @@ const SEO = ({
       <meta name="DC.language" content="en" />
       <meta name="DC.coverage" content="Worldwide" />
       <meta name="DC.rights" content="Copyright Bitroix Solution LLC" />
+      <meta name="DC.type" content="Service" />
 
       {/* Schema Markup */}
       {schemaMarkup && (
