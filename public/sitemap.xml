@@ -3,14 +3,13 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   
   <!-- Homepage -->
   <url>
     <loc>https://bitroixsolution.com/</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/" />
@@ -28,69 +27,49 @@
   <!-- Core Services -->
   <url>
     <loc>https://bitroixsolution.com/web-development</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://bitroixsolution.com/lovable-uploads/eb7b0242-9c5d-4d81-9044-abe3320bd683.png</image:loc>
-      <image:title>Custom Web Development Services - React, Node.js, Python</image:title>
-    </image:image>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/ai-chatbots</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <image:image>
-      <image:loc>https://bitroixsolution.com/lovable-uploads/1f62994e-f120-42bf-a904-aa533ce1bce1.png</image:loc>
-      <image:title>AI Chatbot Development - ChatGPT &amp; OpenAI Integration</image:title>
-    </image:image>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/ui-ux-design</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://bitroixsolution.com/lovable-uploads/593872ff-f750-4ed1-a46b-40c29bde3106.png</image:loc>
-      <image:title>UI/UX Design Services - User Experience Optimization</image:title>
-    </image:image>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/data-analytics</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://bitroixsolution.com/lovable-uploads/ff9994ad-c41c-4256-b109-e4f6d56507b0.png</image:loc>
-      <image:title>Data Analytics &amp; Business Intelligence Services</image:title>
-    </image:image>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/devops-mlops</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://bitroixsolution.com/lovable-uploads/eeaca5fc-07f0-4302-8f4d-913c56069ea2.png</image:loc>
-      <image:title>DevOps &amp; MLOps Cloud Solutions</image:title>
-    </image:image>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/team-as-service</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/design-consultancy</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -98,42 +77,42 @@
   <!-- Digital Marketing Solutions -->
   <url>
     <loc>https://bitroixsolution.com/solutions/seo-dominance</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/lead-generation</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/paid-ads-management</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/marketing-automation</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/conversion-optimization</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/social-media-growth</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -141,33 +120,29 @@
   <!-- Portfolio & Projects -->
   <url>
     <loc>https://bitroixsolution.com/projects</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://bitroixsolution.com/lovable-uploads/c1164fdd-5ccc-43cd-b1d6-a0fe104c2807.png</image:loc>
-      <image:title>Bitroix Solution Portfolio - 150+ Web Development Projects</image:title>
-    </image:image>
   </url>
   
   <!-- Other Important Pages -->
   <url>
     <loc>https://bitroixsolution.com/career</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/products</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/schedule-meeting</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
