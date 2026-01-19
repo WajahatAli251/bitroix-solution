@@ -76,7 +76,7 @@ const HeroSection = () => {
                 & Digital Marketing Services
               </h1>
             
-            <p className="text-base sm:text-lg md:text-xl text-white/80 mb-6 md:mb-8 max-w-2xl animate-slide-in-left px-4" style={{animationDelay: '0.2s'}}>
+            <p className="text-base sm:text-lg md:text-xl text-white mb-6 md:mb-8 max-w-2xl animate-slide-in-left px-4 drop-shadow-lg" style={{animationDelay: '0.2s'}}>
               Expert web development, AI chatbots, SEO optimization, and digital marketing solutions that drive measurable business growth and online success.
             </p>
 
