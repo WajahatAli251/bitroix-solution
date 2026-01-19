@@ -168,55 +168,50 @@ const ScheduleMeeting = () => {
   }
 
   return (
-    <div className="w-full max-w-7xl mx-auto space-y-12 animate-fade-in">
-      {/* Hero Header Section */}
-      <div className="text-center space-y-6 py-8 px-4">
-        <div className="space-y-4">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight">
-            Schedule Your Free
-            <br />
-            <span className="text-4xl md:text-5xl">💻 Consultation</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ready to transform your digital presence? Let's discuss your project requirements in a 
-            <span className="font-semibold text-primary"> personalized 30-minute session</span>
-          </p>
-        </div>
-        <div className="flex flex-wrap justify-center gap-4 mt-6">
-          <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
-            🆓 100% Free Consultation
-          </Badge>
-          <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
-            ⚡ Instant Confirmation
-          </Badge>
-          <Badge variant="secondary" className="px-4 py-2 text-sm font-medium">
-            🎯 Project-Focused Discussion
-          </Badge>
+    <div className="w-full max-w-6xl mx-auto space-y-8 animate-fade-in">
+      {/* Clean Header Section */}
+      <div className="text-center space-y-4 py-6 px-4">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+          Book a Free Consultation
+        </h1>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          Let's discuss how we can help transform your business with our digital solutions.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 mt-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-muted rounded-full text-sm text-muted-foreground">
+            <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+            Free Consultation
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-muted rounded-full text-sm text-muted-foreground">
+            <Clock className="w-3.5 h-3.5" />
+            30 Minutes
+          </span>
+          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-muted rounded-full text-sm text-muted-foreground">
+            <MessageSquare className="w-3.5 h-3.5" />
+            Video Call
+          </span>
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-10 px-4">
+      <div className="grid lg:grid-cols-2 gap-6 px-4">
         {/* Date and Time Selection */}
-        <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-blue-50 dark:from-gray-900 dark:to-blue-950 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-          <CardHeader className="pb-6">
-            <CardTitle className="flex items-center gap-3 text-2xl font-bold text-primary">
-              <div className="p-2 bg-primary/10 rounded-lg">
-                <Clock className="h-6 w-6 text-primary" />
-              </div>
-              📅 Select Date & Time
+        <Card className="shadow-md border border-border/50 bg-card">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center gap-2 text-xl font-semibold text-foreground">
+              <Clock className="h-5 w-5 text-primary" />
+              Select Date & Time
             </CardTitle>
-            <CardDescription className="text-lg text-muted-foreground">
-              Choose your preferred meeting slot from our available times
+            <CardDescription className="text-muted-foreground">
+              Pick a convenient time for your call
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-8">
+          <CardContent className="space-y-6">
             {/* Calendar */}
-            <div className="space-y-4">
-              <Label className="text-lg font-semibold text-foreground flex items-center gap-2">
-                📆 Select Date
-                <span className="text-sm text-muted-foreground font-normal">(Weekdays only)</span>
+            <div className="space-y-3">
+              <Label className="text-sm font-medium text-foreground">
+                Date <span className="text-muted-foreground font-normal">(Weekdays)</span>
               </Label>
-              <div className="p-4 bg-white/60 dark:bg-black/20 rounded-xl border border-border/50">
+              <div className="rounded-lg border border-border bg-background p-3">
                 <Calendar
                   mode="single"
                   selected={selectedDate}
@@ -233,101 +228,96 @@ const ScheduleMeeting = () => {
 
             {/* Time Slots */}
             {selectedDate && (
-              <div className="space-y-4 animate-fade-in">
-                <Label className="text-lg font-semibold text-foreground flex items-center gap-2">
-                  ⏰ Available Time Slots
-                  <span className="text-sm text-green-600 font-normal">({timeSlots.filter(slot => slot.available).length} available)</span>
+              <div className="space-y-3 animate-fade-in">
+                <Label className="text-sm font-medium text-foreground">
+                  Available Times
                 </Label>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-3 gap-2">
                   {timeSlots.map((slot) => (
                     <Button
                       key={slot.time}
                       variant={selectedTime === slot.time ? "default" : "outline"}
-                      size="default"
+                      size="sm"
                       disabled={!slot.available}
                       onClick={() => setSelectedTime(slot.time)}
-                      className={`text-sm font-medium py-3 transition-all duration-200 ${
+                      className={`text-sm ${
                         selectedTime === slot.time 
-                          ? "bg-primary text-primary-foreground shadow-lg scale-105" 
-                          : "hover:bg-primary/10 hover:border-primary/50 hover:scale-105"
+                          ? "bg-primary text-primary-foreground" 
+                          : "hover:bg-accent"
                       }`}
                     >
                       {slot.time}
                     </Button>
                   ))}
                 </div>
-                <div className="p-3 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
-                  <p className="text-sm text-blue-700 dark:text-blue-300 font-medium">
-                    🌍 <strong>Timezone:</strong> PST (Pacific Standard Time) | Meeting duration: 30 minutes
-                  </p>
-                </div>
+                <p className="text-xs text-muted-foreground">
+                  Times shown in PST • 30 min duration
+                </p>
               </div>
             )}
           </CardContent>
         </Card>
 
         {/* Client Information Form */}
-        <Card className="shadow-xl border-0 bg-gradient-to-br from-white to-purple-50 dark:from-gray-900 dark:to-purple-950 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
-          <CardHeader className="pb-6">
-            <CardTitle className="flex items-center gap-3 text-2xl font-bold text-primary">
-              <div className="p-2 bg-primary/10 rounded-lg">
-                <User className="h-6 w-6 text-primary" />
-              </div>
-              👤 Your Information
+        <Card className="shadow-md border border-border/50 bg-card">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center gap-2 text-xl font-semibold text-foreground">
+              <User className="h-5 w-5 text-primary" />
+              Your Details
             </CardTitle>
-            <CardDescription className="text-lg text-muted-foreground">
-              Tell us about yourself and your project vision
+            <CardDescription className="text-muted-foreground">
+              Tell us about yourself
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="space-y-3">
-              <Label htmlFor="name" className="text-base font-semibold text-foreground flex items-center gap-2">
-                📝 Full Name <span className="text-red-500">*</span>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="name" className="text-sm font-medium">
+                Full Name <span className="text-destructive">*</span>
               </Label>
               <Input
                 id="name"
-                placeholder="Enter your full name"
+                placeholder="John Doe"
                 value={clientInfo.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
-                className="text-base py-3 border-2 focus:border-primary transition-colors duration-200"
+                className="bg-background"
               />
             </div>
 
-            <div className="space-y-3">
-              <Label htmlFor="email" className="text-base font-semibold text-foreground flex items-center gap-2">
-                📧 Email Address <span className="text-red-500">*</span>
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-sm font-medium">
+                Email <span className="text-destructive">*</span>
               </Label>
               <Input
                 id="email"
                 type="email"
-                placeholder="your.email@company.com"
+                placeholder="john@company.com"
                 value={clientInfo.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
-                className="text-base py-3 border-2 focus:border-primary transition-colors duration-200"
+                className="bg-background"
               />
             </div>
 
-            <div className="space-y-3">
-              <Label htmlFor="company" className="text-base font-semibold text-foreground flex items-center gap-2">
-                🏢 Company/Organization
+            <div className="space-y-2">
+              <Label htmlFor="company" className="text-sm font-medium">
+                Company
               </Label>
               <Input
                 id="company"
-                placeholder="Your company name"
+                placeholder="Your company"
                 value={clientInfo.company}
                 onChange={(e) => handleInputChange('company', e.target.value)}
-                className="text-base py-3 border-2 focus:border-primary transition-colors duration-200"
+                className="bg-background"
               />
             </div>
 
-            <div className="space-y-3">
-              <Label htmlFor="message" className="text-base font-semibold text-foreground flex items-center gap-2">
-                💬 Project Details & Requirements
+            <div className="space-y-2">
+              <Label htmlFor="message" className="text-sm font-medium">
+                What would you like to discuss?
               </Label>
               <Textarea
                 id="message"
-                placeholder="Tell us about your project goals, timeline, budget range, and any specific requirements..."
-                className="min-h-[120px] text-base border-2 focus:border-primary transition-colors duration-200 resize-none"
+                placeholder="Brief description of your project or questions..."
+                className="min-h-[100px] bg-background resize-none"
                 value={clientInfo.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}
               />
@@ -335,19 +325,13 @@ const ScheduleMeeting = () => {
 
             {/* Meeting Summary */}
             {selectedDate && selectedTime && (
-              <div className="p-6 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950 dark:to-blue-950 rounded-xl border border-green-200 dark:border-green-800 space-y-4 animate-scale-in">
-                <h4 className="font-bold text-lg text-primary flex items-center gap-2">
-                  📋 Meeting Summary
+              <div className="p-4 bg-muted rounded-lg space-y-2 animate-fade-in">
+                <h4 className="font-medium text-sm text-foreground">
+                  Your Appointment
                 </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                  <div className="space-y-2">
-                    <p className="flex items-center gap-2"><strong>📅 Date:</strong> {selectedDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                    <p className="flex items-center gap-2"><strong>⏰ Time:</strong> {selectedTime} PST</p>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="flex items-center gap-2"><strong>⏱️ Duration:</strong> 30 minutes</p>
-                    <p className="flex items-center gap-2"><strong>📹 Type:</strong> Video Call (Google Meet)</p>
-                  </div>
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <p>{selectedDate.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}</p>
+                  <p>{selectedTime} PST • 30 minutes • Video Call</p>
                 </div>
               </div>
             )}
@@ -355,64 +339,51 @@ const ScheduleMeeting = () => {
             <Button 
               onClick={handleBookMeeting}
               disabled={isSubmitting || !selectedDate || !selectedTime || !clientInfo.name || !clientInfo.email}
-              className="w-full py-4 text-lg font-bold bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full"
               size="lg"
             >
               {isSubmitting ? (
                 <span className="flex items-center gap-2">
-                  <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
-                  Scheduling Meeting...
+                  <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full"></div>
+                  Scheduling...
                 </span>
               ) : (
-                <span className="flex items-center gap-2">
-                  🚀 Schedule My Free Consultation
-                </span>
+                'Schedule Meeting'
               )}
             </Button>
 
-            <div className="p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
-              <p className="text-sm text-blue-700 dark:text-blue-300 text-center">
-                <strong>Privacy Guarantee:</strong> Your information is secure and will only be used to schedule your meeting.
-              </p>
-            </div>
+            <p className="text-xs text-muted-foreground text-center">
+              Your information is secure and private.
+            </p>
           </CardContent>
         </Card>
       </div>
 
       {/* What to Expect Section */}
-      <Card className="shadow-xl border-0 bg-gradient-to-r from-purple-50 via-blue-50 to-green-50 dark:from-purple-950 dark:via-blue-950 dark:to-green-950">
-        <CardContent className="pt-8 pb-8 px-8">
+      <Card className="mx-4 shadow-md border border-border/50 bg-card">
+        <CardContent className="pt-6 pb-6 px-6">
           <div className="text-center space-y-6">
-            <h3 className="text-3xl font-bold text-primary">🎯 What to Expect in Your Meeting</h3>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="space-y-4 p-6 bg-white/60 dark:bg-black/20 rounded-xl border border-border/50 hover:scale-105 transition-transform duration-300">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-lg"></div>
-                  <Clock className="relative h-12 w-12 mx-auto text-blue-600" />
-                </div>
-                <h4 className="text-xl font-bold text-primary">⚡ Quick & Focused</h4>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  <strong>30-minute</strong> power session designed to understand your needs and provide actionable insights
+            <h3 className="text-xl font-semibold text-foreground">What to Expect</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="space-y-3 p-4 rounded-lg bg-muted/50">
+                <Clock className="h-8 w-8 mx-auto text-primary" />
+                <h4 className="font-medium text-foreground">Quick & Focused</h4>
+                <p className="text-sm text-muted-foreground">
+                  30-minute session to understand your needs
                 </p>
               </div>
-              <div className="space-y-4 p-6 bg-white/60 dark:bg-black/20 rounded-xl border border-border/50 hover:scale-105 transition-transform duration-300">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-green-500/20 rounded-full blur-lg"></div>
-                  <Mail className="relative h-12 w-12 mx-auto text-green-600" />
-                </div>
-                <h4 className="text-xl font-bold text-primary">📧 Instant Setup</h4>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Immediate <strong>confirmation email</strong> with Google Meet link and calendar invite
+              <div className="space-y-3 p-4 rounded-lg bg-muted/50">
+                <Mail className="h-8 w-8 mx-auto text-primary" />
+                <h4 className="font-medium text-foreground">Instant Confirmation</h4>
+                <p className="text-sm text-muted-foreground">
+                  Email with meeting link sent immediately
                 </p>
               </div>
-              <div className="space-y-4 p-6 bg-white/60 dark:bg-black/20 rounded-xl border border-border/50 hover:scale-105 transition-transform duration-300">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-lg"></div>
-                  <MessageSquare className="relative h-12 w-12 mx-auto text-purple-600" />
-                </div>
-                <h4 className="text-xl font-bold text-primary">💡 Strategic Discussion</h4>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Deep dive into your <strong>project goals</strong>, timeline, and how we can help achieve them
+              <div className="space-y-3 p-4 rounded-lg bg-muted/50">
+                <MessageSquare className="h-8 w-8 mx-auto text-primary" />
+                <h4 className="font-medium text-foreground">Strategic Discussion</h4>
+                <p className="text-sm text-muted-foreground">
+                  Deep dive into your project goals
                 </p>
               </div>
             </div>

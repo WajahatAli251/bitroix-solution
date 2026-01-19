@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from 'next-themes';
 import { Moon, Sun, Gift } from 'lucide-react';
@@ -8,9 +8,33 @@ import bitroixLogo from '@/assets/bitroix-logo-new.png';
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showPackagePopup, setShowPackagePopup] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const navigate = useNavigate();
   const location = useLocation();
   const { theme, setTheme } = useTheme();
+
+  // Handle scroll to show/hide header on mobile
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Show header when scrolling up or at top, hide when scrolling down
+      if (currentScrollY < 100) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+        setIsMenuOpen(false); // Close mobile menu when hiding
+      } else if (currentScrollY < lastScrollY) {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const scrollToSection = (sectionId: string) => {
     // If we're not on the home page, navigate to home first
@@ -33,16 +57,21 @@ const Navigation = () => {
     setIsMenuOpen(false);
   };
 
+  const handleLogoClick = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 gradient-header backdrop-blur-lg border-b border-white/10 animate-slide-in-up" role="navigation" aria-label="Main navigation">
+    <nav className={`fixed top-0 left-0 right-0 z-50 gradient-header backdrop-blur-lg border-b border-white/10 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`} role="navigation" aria-label="Main navigation">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-18">
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
               src={bitroixLogo} 
-              alt="Bitroix Solution" 
-              onClick={() => navigate('/')} 
+              alt="Bitroix Solution - Go to Home" 
+              onClick={handleLogoClick} 
               className="h-10 md:h-14 w-auto cursor-pointer hover-lift transition-transform duration-300 opacity-90 mix-blend-screen"
             />
           </div>
