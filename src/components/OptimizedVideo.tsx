@@ -108,9 +108,10 @@ const OptimizedVideo = memo(({
         playsInline
         preload={priority ? "metadata" : "none"}
         poster={poster}
-        className={`w-full h-full object-cover transition-opacity duration-500 ${
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
+        } ${className.includes('scale-') ? '' : ''}`}
+        style={{ minWidth: '100%', minHeight: '100%' }}
         aria-hidden="true"
         onLoadedData={() => setIsLoaded(true)}
         onCanPlayThrough={() => setIsLoaded(true)}

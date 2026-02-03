@@ -38,14 +38,16 @@ const ClientsCarousel = memo(() => {
 
   return (
     <section className="py-20 relative overflow-hidden" aria-labelledby="clients-heading">
-      {/* Video Background - Lazy loaded for performance */}
-      <OptimizedVideo 
-        src="/videos/sections-background.mp4" 
-        className="absolute inset-0 w-full h-full"
-      />
+      {/* Video Background - Full coverage with wave effect */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <OptimizedVideo 
+          src="/videos/sections-background.mp4" 
+          className="absolute inset-0 w-full h-full object-cover scale-105"
+        />
+      </div>
       
       {/* Dark overlay for text visibility */}
-      <div className="absolute inset-0 bg-slate-900/80 z-[1]" aria-hidden="true"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/85 via-slate-900/75 to-slate-900/85 z-[1]" aria-hidden="true"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-[2]">
         <header className="text-center mb-16">
