@@ -1,4 +1,10 @@
 import React, { memo } from 'react';
+import awsLogo from '@/assets/tech-logos/aws.png';
+import azureLogo from '@/assets/tech-logos/azure.png';
+import terraformLogo from '@/assets/tech-logos/terraform.png';
+import gcpLogo from '@/assets/tech-logos/gcp.png';
+import kubernetesLogo from '@/assets/tech-logos/kubernetes.png';
+import dockerLogo from '@/assets/tech-logos/docker.png';
 
 // Pre-define image sources for better caching
 const SERVICE_IMAGES = {
@@ -153,14 +159,14 @@ const services = [
   }
 ];
 
-// Certification logos
+// Certification logos - using imported assets for reliable loading
 const CERTIFICATIONS = [
-  { name: "AWS Certified", logo: "/lovable-uploads/41bed1ea-35ec-4ef7-aab7-4f0d0759bcba.png" },
-  { name: "Microsoft Azure", logo: "/lovable-uploads/872e0de5-5323-4cb9-8adb-e7a04b2523c9.png" },
-  { name: "Terraform", logo: "/lovable-uploads/593872ff-f750-4ed1-a46b-40c29bde3106.png" },
-  { name: "Cisco", logo: "/lovable-uploads/cd558444-e92e-4a4d-96ba-889921baf64a.png" },
-  { name: "Google Cloud", logo: "/lovable-uploads/3b0518a5-1130-4236-ab3f-b056fd7a3879.png" },
-  { name: "Kubernetes", logo: "/lovable-uploads/ef0428f3-6e15-4ddb-b663-413981cfa279.png" },
+  { name: "AWS Certified", logo: awsLogo },
+  { name: "Microsoft Azure", logo: azureLogo },
+  { name: "Terraform", logo: terraformLogo },
+  { name: "Google Cloud", logo: gcpLogo },
+  { name: "Kubernetes", logo: kubernetesLogo },
+  { name: "Docker", logo: dockerLogo },
 ];
 
 // Memoized certification badge component
@@ -210,11 +216,12 @@ const SolutionsSection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Certifications Carousel */}
-        <div className="mb-12 animate-fade-in">
-          <div className="text-center mb-6">
-            <p className="text-sm uppercase tracking-widest font-semibold" style={{color: '#9BE3FF'}}>
-              Certified by Industry Leaders
-            </p>
+        <div className="mb-16 animate-fade-in">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide mb-2" style={{color: '#F0F4F8'}}>
+              Certified by <span style={{color: '#00BFFF'}}>Industry Leaders</span>
+            </h3>
+            <div className="w-20 h-1 mx-auto mt-4 rounded-full" style={{background: 'linear-gradient(to right, #00BFFF, #33F3FF)'}}></div>
           </div>
           <div className="relative w-full overflow-hidden">
             <div className="flex gap-6 animate-[moveLeftToRight_25s_linear_infinite]">
