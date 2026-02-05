@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import awsLogo from '@/assets/tech-logos/aws.png';
 import azureLogo from '@/assets/tech-logos/azure.png';
 import terraformLogo from '@/assets/tech-logos/terraform.png';
-import gcpLogo from '@/assets/tech-logos/gcp.png';
+import gcpLogo from '@/assets/tech-logos/google-cloud.png';
 import kubernetesLogo from '@/assets/tech-logos/kubernetes.png';
 import dockerLogo from '@/assets/tech-logos/docker.png';
 
