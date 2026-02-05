@@ -161,12 +161,12 @@ const services = [
 
 // Certification logos - using imported assets for reliable loading
 const CERTIFICATIONS = [
-  { name: "AWS Certified", logo: awsLogo },
+  { name: "Docker", logo: dockerLogo },
+  { name: "Kubernetes", logo: kubernetesLogo },
   { name: "Microsoft Azure", logo: azureLogo },
   { name: "Terraform", logo: terraformLogo },
+  { name: "AWS Certified", logo: awsLogo },
   { name: "Google Cloud", logo: gcpLogo },
-  { name: "Kubernetes", logo: kubernetesLogo },
-  { name: "Docker", logo: dockerLogo },
 ];
 
 // Memoized certification badge component
