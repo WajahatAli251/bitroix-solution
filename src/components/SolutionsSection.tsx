@@ -255,7 +255,7 @@ const SolutionsSection = () => {
         </div>
 
         {/* Final CTA */}
-        <div className="text-center p-6 md:p-12 animate-fade-in transition-all duration-500" style={{animationDelay: '0.8s'}}>
+        <div className="text-center animate-fade-in" style={{animationDelay: '0.8s'}}>
           <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 animate-pulse-glow tracking-tight px-4" style={{color: '#F0F4F8'}}>
             Let's Turn Your Website into a <span style={{color: '#00BFFF'}}>Growth Machine</span>
           </h3>
