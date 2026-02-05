@@ -153,6 +153,32 @@ const services = [
   }
 ];
 
+// Certification logos
+const CERTIFICATIONS = [
+  { name: "AWS Certified", logo: "/lovable-uploads/41bed1ea-35ec-4ef7-aab7-4f0d0759bcba.png" },
+  { name: "Microsoft Azure", logo: "/lovable-uploads/872e0de5-5323-4cb9-8adb-e7a04b2523c9.png" },
+  { name: "Terraform", logo: "/lovable-uploads/593872ff-f750-4ed1-a46b-40c29bde3106.png" },
+  { name: "Cisco", logo: "/lovable-uploads/cd558444-e92e-4a4d-96ba-889921baf64a.png" },
+  { name: "Google Cloud", logo: "/lovable-uploads/3b0518a5-1130-4236-ab3f-b056fd7a3879.png" },
+  { name: "Kubernetes", logo: "/lovable-uploads/ef0428f3-6e15-4ddb-b663-413981cfa279.png" },
+];
+
+// Memoized certification badge component
+const CertificationBadge = memo(({ cert }: { cert: typeof CERTIFICATIONS[0] }) => (
+  <div className="flex-shrink-0 flex items-center gap-3 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105">
+    <img 
+      src={cert.logo} 
+      alt={`${cert.name} certification`} 
+      className="h-10 w-10 object-contain"
+      loading="lazy"
+      decoding="async"
+    />
+    <span className="text-white font-medium whitespace-nowrap">{cert.name}</span>
+  </div>
+));
+
+CertificationBadge.displayName = 'CertificationBadge';
+
 const SolutionsSection = () => {
   const handleCTAClick = (link: string) => {
     window.location.href = link;
@@ -183,6 +209,23 @@ const SolutionsSection = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Certifications Carousel */}
+        <div className="mb-12 animate-fade-in">
+          <div className="text-center mb-6">
+            <p className="text-sm uppercase tracking-widest font-semibold" style={{color: '#9BE3FF'}}>
+              Certified by Industry Leaders
+            </p>
+          </div>
+          <div className="relative w-full overflow-hidden">
+            <div className="flex gap-6 animate-[moveLeftToRight_25s_linear_infinite]">
+              {/* Triple set for seamless loop */}
+              {[...CERTIFICATIONS, ...CERTIFICATIONS, ...CERTIFICATIONS].map((cert, index) => (
+                <CertificationBadge key={`cert-${index}`} cert={cert} />
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Main Headline */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight tracking-tight animate-slide-in-left drop-shadow-lg px-4" style={{color: '#F0F4F8'}}>
