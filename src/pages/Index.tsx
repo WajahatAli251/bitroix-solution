@@ -17,7 +17,6 @@ const BlogsSection = lazy(() => import("@/components/BlogsSection"));
 const ContactSection = lazy(() => import("@/components/ContactSection"));
 const Chatbot = lazy(() => import("@/components/Chatbot"));
 const MouseTracker = lazy(() => import("@/components/MouseTracker"));
-const BackgroundMusic = lazy(() => import("@/components/BackgroundMusic"));
 
 // Loading skeleton for lazy sections
 const SectionLoader = memo(() => (
@@ -125,9 +124,6 @@ const Index = memo(() => {
         <ContactSection />
       </Suspense>
       <Footer />
-      <Suspense fallback={null}>
-        <BackgroundMusic />
-      </Suspense>
       <Suspense fallback={null}>
         <Chatbot />
       </Suspense>
