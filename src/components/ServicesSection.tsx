@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
+import aiChatbotsImage from '@/assets/ai-chatbots-hero.png';
 
 const ServicesSection = () => {
   const services = [
@@ -11,7 +12,7 @@ const ServicesSection = () => {
       isImage: true
     },
     {
-      icon: "/lovable-uploads/1f62994e-f120-42bf-a904-aa533ce1bce1.png",
+      icon: aiChatbotsImage,
       title: "AI Chatbots & Automation",
       description: "Intelligent AI chatbots for customer support, lead generation, and sales automation. 24/7 customer service with natural language processing capabilities.",
       gradient: "from-purple-600 to-pink-600",

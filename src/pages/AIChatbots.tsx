@@ -3,8 +3,11 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUp, Check, ExternalLink } from "lucide-react";
+import { ArrowRight, ArrowUp, Check, ExternalLink, Bot, MessageSquare, Zap, Brain, FileText, Mic, TrendingUp, Image, ShoppingCart, Code } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+
+// Import hero image
+import aiChatbotsHero from "@/assets/ai-chatbots-hero.png";
 
 // Import tech logos
 import pythonLogo from "@/assets/tech-logos/python.png";
@@ -92,31 +95,54 @@ const AIChatbots = () => {
 
   const projects = [
     {
-      name: "E-Commerce AI Assistant",
-      image: "/lovable-uploads/eb7b0242-9c5d-4d81-9044-abe3320bd683.png",
-      description: "Intelligent chatbot for a major online retailer handling customer inquiries and product recommendations.",
-      challenge: "Customer support team overwhelmed with repetitive queries, leading to long wait times and customer dissatisfaction.",
-      solution: "Built a GPT-powered chatbot that handles product inquiries, order status, returns, and personalized recommendations.",
-      results: ["70% reduction in support tickets", "24/7 customer support coverage", "35% increase in product discovery"],
-      technologies: ["OpenAI GPT-4", "Python", "Node.js", "AWS", "MongoDB"]
+      name: "FloorDecor AI Shopping Assistant",
+      image: "/lovable-uploads/3e881009-4665-4ed6-bb89-ce79ed6092ab.png",
+      description: "Intelligent AI chatbot for a major flooring retailer, helping customers find the perfect flooring solutions with personalized recommendations.",
+      challenge: "Customers struggled to navigate thousands of flooring options, leading to decision fatigue and abandoned carts.",
+      solution: "Built a GPT-powered assistant that understands room requirements, style preferences, and budget to recommend ideal flooring products with visual comparisons.",
+      results: ["45% increase in customer engagement", "32% reduction in return rates", "24/7 instant product guidance"],
+      technologies: ["OpenAI GPT-4", "Python", "React", "AWS", "MongoDB"],
+      industry: "E-Commerce / Retail"
     },
     {
-      name: "Healthcare Virtual Assistant",
+      name: "TrueCare24 Healthcare Virtual Assistant",
       image: "/lovable-uploads/89639b18-4900-4542-9ccd-d1afd27ac2c9.png",
-      description: "HIPAA-compliant AI assistant for patient intake and appointment scheduling.",
-      challenge: "Healthcare provider struggling with administrative burden and patient experience during intake process.",
-      solution: "Developed a conversational AI that guides patients through intake forms, schedules appointments, and answers FAQs.",
-      results: ["50% reduction in intake time", "90% patient satisfaction rating", "HIPAA compliant solution"],
-      technologies: ["Python", "TensorFlow", "React", "AWS", "OpenAI"]
+      description: "HIPAA-compliant AI assistant for TrueCare24 healthcare platform, handling patient intake, appointment scheduling, and medical FAQs.",
+      challenge: "Healthcare provider overwhelmed with administrative tasks, long wait times, and inconsistent patient experience during intake.",
+      solution: "Developed a conversational AI that guides patients through intake forms, schedules appointments, provides medication reminders, and answers health-related FAQs.",
+      results: ["50% reduction in intake time", "92% patient satisfaction rating", "HIPAA compliant solution"],
+      technologies: ["Python", "TensorFlow", "React", "AWS", "OpenAI"],
+      industry: "Healthcare"
     },
     {
-      name: "Financial Services Chatbot",
+      name: "Copart Vehicle Inquiry Bot",
+      image: "/lovable-uploads/eb7b0242-9c5d-4d81-9044-abe3320bd683.png",
+      description: "AI-powered chatbot for Copart's online vehicle auction platform, assisting buyers with vehicle information and bidding processes.",
+      challenge: "High volume of repetitive buyer inquiries about vehicle conditions, auction processes, and bidding strategies overwhelming support teams.",
+      solution: "Created an intelligent chatbot that provides real-time vehicle details, explains auction procedures, and guides first-time bidders through the process.",
+      results: ["70% of inquiries resolved without human intervention", "$400K annual support cost savings", "Multi-language support for global buyers"],
+      technologies: ["OpenAI", "Python", "Node.js", "Docker", "Hugging Face"],
+      industry: "Automotive / Auctions"
+    },
+    {
+      name: "Valliani Jewelers Personal Shopper AI",
       image: "/lovable-uploads/bec8f18d-ee2a-4a17-bd69-6a1ee4845629.png",
-      description: "AI-powered chatbot for a fintech company handling account inquiries and transaction support.",
-      challenge: "Growing customer base requiring scalable support solution without proportionally increasing support costs.",
-      solution: "Created an intelligent chatbot with natural language understanding for account queries, transaction disputes, and financial guidance.",
-      results: ["60% of inquiries resolved without human intervention", "$500K annual support cost savings", "Multi-language support"],
-      technologies: ["OpenAI", "Python", "Node.js", "Docker", "Hugging Face"]
+      description: "Luxury jewelry shopping assistant that provides personalized recommendations and answers detailed product questions for high-value purchases.",
+      challenge: "Online jewelry shoppers needed expert guidance similar to in-store experience to make confident purchase decisions.",
+      solution: "Built a sophisticated AI concierge that understands jewelry preferences, occasion requirements, and provides detailed gemstone/metal information with visual comparisons.",
+      results: ["55% increase in average order value", "40% reduction in pre-sale inquiries", "Enhanced luxury shopping experience"],
+      technologies: ["OpenAI GPT-4", "Python", "React", "MongoDB", "AWS"],
+      industry: "Luxury Retail"
+    },
+    {
+      name: "ProFlowers Gift Assistant",
+      image: "/lovable-uploads/c8ef734b-337b-463d-b2bc-fb0cf9520acd.png",
+      description: "AI-powered gift recommendation chatbot helping customers find the perfect floral arrangements for any occasion.",
+      challenge: "Customers often unsure which arrangements suit different occasions, leading to delayed purchases and cart abandonment.",
+      solution: "Developed a conversational AI that understands occasions, recipient preferences, and budget to suggest personalized floral gifts with delivery scheduling.",
+      results: ["38% increase in conversion rate", "60% faster purchase decisions", "Reduced customer support load by 45%"],
+      technologies: ["ChatGPT API", "Python", "React", "Node.js", "PostgreSQL"],
+      industry: "E-Commerce / Gifts"
     }
   ];
 
@@ -163,21 +189,50 @@ const AIChatbots = () => {
       />
       <Navigation />
       
-      {/* Hero Section */}
+      {/* Hero Section with Image */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10" />
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            AI Chatbots & Automation
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-            Intelligent conversational AI solutions that revolutionize customer engagement and automate interactions
-          </p>
-          <Link to="/schedule-meeting">
-            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg rounded-full">
-              Start Your AI Project <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                AI Chatbots & Automation
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+                Intelligent conversational AI solutions that revolutionize customer engagement, automate support, and drive business growth 24/7
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Link to="/schedule-meeting">
+                  <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg rounded-full w-full sm:w-auto">
+                    Start Your AI Project <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link to="/projects">
+                  <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg rounded-full w-full sm:w-auto">
+                    View Our Work
+                  </Button>
+                </Link>
+              </div>
+              <div className="mt-8 flex items-center gap-6 justify-center lg:justify-start text-gray-400">
+                <div className="flex items-center gap-2">
+                  <Bot className="w-5 h-5 text-blue-400" />
+                  <span>GPT-4 Powered</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MessageSquare className="w-5 h-5 text-purple-400" />
+                  <span>24/7 Support</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
+              <img 
+                src={aiChatbotsHero}
+                alt="AI Chatbot Technology - Intelligent Automation Solutions"
+                className="relative rounded-2xl shadow-2xl w-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -204,12 +259,23 @@ const AIChatbots = () => {
               What We <span className="text-gray-500">Offer</span>
             </h3>
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
-              {["AI-Powered Chatbots", "Document Automation", "Voice AI", "Predictive Analytics", "Content Generation", "Image Recognition", "E-commerce AI", "Custom NLP"].map((service, index) => (
-                <div key={index} className="text-center group">
-                  <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                    <div className="w-8 h-8 bg-blue-500 rounded"></div>
+              {[
+                { name: "AI-Powered Chatbots", icon: Bot, color: "bg-blue-500" },
+                { name: "Document Automation", icon: FileText, color: "bg-green-500" },
+                { name: "Voice AI Assistants", icon: Mic, color: "bg-purple-500" },
+                { name: "Predictive Analytics", icon: TrendingUp, color: "bg-orange-500" },
+                { name: "Content Generation", icon: Zap, color: "bg-pink-500" },
+                { name: "Image Recognition", icon: Image, color: "bg-cyan-500" },
+                { name: "E-commerce AI", icon: ShoppingCart, color: "bg-indigo-500" },
+                { name: "Custom NLP Solutions", icon: Code, color: "bg-red-500" }
+              ].map((service, index) => (
+                <div key={index} className="text-center group cursor-pointer">
+                  <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-xl border border-gray-200">
+                    <div className={`w-12 h-12 ${service.color} rounded-xl flex items-center justify-center shadow-inner`}>
+                      <service.icon className="w-6 h-6 text-white" />
+                    </div>
                   </div>
-                  <h4 className="font-semibold text-gray-900">{service}</h4>
+                  <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">{service.name}</h4>
                 </div>
               ))}
             </div>
@@ -311,21 +377,35 @@ const AIChatbots = () => {
                 </div>
 
                 <div className="w-full lg:w-1/2 space-y-6">
+                  <div className="flex items-center gap-3">
+                    <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+                      {project.industry}
+                    </span>
+                  </div>
                   <h3 className="text-3xl font-bold text-gray-900">{project.name}</h3>
                   <p className="text-gray-600 text-lg">{project.description}</p>
                   
-                  <div className="bg-blue-50 rounded-xl p-6">
-                    <h4 className="font-semibold text-blue-800 mb-2">The Challenge</h4>
+                  <div className="bg-gradient-to-r from-blue-50 to-blue-100/50 rounded-xl p-6 border border-blue-100">
+                    <h4 className="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                      The Challenge
+                    </h4>
                     <p className="text-gray-700">{project.challenge}</p>
                   </div>
                   
-                  <div className="bg-green-50 rounded-xl p-6">
-                    <h4 className="font-semibold text-green-800 mb-2">Our Solution</h4>
+                  <div className="bg-gradient-to-r from-green-50 to-green-100/50 rounded-xl p-6 border border-green-100">
+                    <h4 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                      Our Solution
+                    </h4>
                     <p className="text-gray-700">{project.solution}</p>
                   </div>
                   
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Results Achieved</h4>
+                  <div className="bg-gradient-to-r from-amber-50 to-amber-100/50 rounded-xl p-6 border border-amber-100">
+                    <h4 className="font-semibold text-amber-800 mb-3 flex items-center gap-2">
+                      <span className="w-2 h-2 bg-amber-500 rounded-full"></span>
+                      Results Achieved
+                    </h4>
                     <ul className="space-y-2">
                       {project.results.map((result, i) => (
                         <li key={i} className="flex items-center gap-2 text-gray-700">
@@ -340,7 +420,7 @@ const AIChatbots = () => {
                     <h4 className="font-semibold text-gray-900 mb-3">Technologies Used</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, i) => (
-                        <span key={i} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                        <span key={i} className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-lg text-sm font-medium border border-blue-200 hover:scale-105 transition-transform cursor-default">
                           {tech}
                         </span>
                       ))}
