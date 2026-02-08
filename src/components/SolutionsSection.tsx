@@ -3,7 +3,7 @@ import awsLogo from '@/assets/tech-logos/aws.png';
 import azureLogo from '@/assets/tech-logos/azure.png';
 import terraformLogo from '@/assets/tech-logos/terraform.png';
 import gcpLogo from '@/assets/tech-logos/google-cloud.png';
-import kubernetesLogo from '@/assets/tech-logos/kubernetes.png';
+import istqbLogo from '@/assets/tech-logos/istqb.png';
 import dockerLogo from '@/assets/tech-logos/docker.png';
 
 // Pre-define image sources for better caching
@@ -162,7 +162,7 @@ const services = [
 // Certification logos - using imported assets for reliable loading
 const CERTIFICATIONS = [
   { name: "Docker", logo: dockerLogo },
-  { name: "Kubernetes", logo: kubernetesLogo },
+  { name: "ISTQB Certified", logo: istqbLogo },
   { name: "Microsoft Azure", logo: azureLogo },
   { name: "Terraform", logo: terraformLogo },
   { name: "AWS Certified", logo: awsLogo },
