@@ -1,6 +1,6 @@
 # Bitroix Solution - Robots.txt
 # Website: https://bitroixsolution.com
-# Last updated: 2026-01-19
+# Last updated: 2026-02-09
 
 # Allow all crawlers access to the entire site
 User-agent: *
@@ -12,6 +12,9 @@ Disallow: /api/
 Disallow: /*.json$
 Disallow: /node_modules/
 Disallow: /assets/js/*.map
+Disallow: /?*
+Disallow: /*?utm_*
+Disallow: /*?ref=*
 
 # Sitemap location
 Sitemap: https://bitroixsolution.com/sitemap.xml
@@ -24,9 +27,24 @@ Crawl-delay: 0
 User-agent: Googlebot-Image
 Allow: /
 
+User-agent: Googlebot-Video
+Allow: /
+
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
 
 # Social media crawlers
 User-agent: Twitterbot
@@ -41,6 +59,12 @@ Allow: /
 User-agent: Pinterest
 Allow: /
 
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
 # SEO crawlers
 User-agent: SemrushBot
 Allow: /
@@ -49,6 +73,12 @@ User-agent: AhrefsBot
 Allow: /
 
 User-agent: MJ12bot
+Allow: /
+
+User-agent: rogerbot
+Allow: /
+
+User-agent: dotbot
 Allow: /
 
 # AI crawlers - Block to protect content
@@ -68,6 +98,15 @@ User-agent: Claude-Web
 Disallow: /
 
 User-agent: Google-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Cohere-ai
 Disallow: /
 
 # Host directive

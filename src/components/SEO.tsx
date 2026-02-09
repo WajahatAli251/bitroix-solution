@@ -61,6 +61,20 @@ const SEO = ({
   // Current date for freshness signals
   const currentDate = new Date().toISOString().split('T')[0];
 
+  // Enhanced HowTo schema for services
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Work with Bitroix Solution",
+    "description": "Simple steps to start your digital transformation journey with our expert team",
+    "step": [
+      { "@type": "HowToStep", "name": "Schedule Consultation", "text": "Book a free consultation to discuss your project requirements" },
+      { "@type": "HowToStep", "name": "Receive Proposal", "text": "Get a detailed proposal with timeline and pricing" },
+      { "@type": "HowToStep", "name": "Development Begins", "text": "Our expert team starts building your solution" },
+      { "@type": "HowToStep", "name": "Launch & Support", "text": "We launch your project and provide ongoing support" }
+    ]
+  };
+
   return (
     <Helmet>
       {/* Primary Meta Tags */}
@@ -72,10 +86,11 @@ const SEO = ({
       <meta name="robots" content={robotsContent} />
       <meta name="googlebot" content={robotsContent} />
       <meta name="bingbot" content="index, follow" />
+      <meta name="slurp" content="index, follow" />
       <meta httpEquiv="content-language" content="en-US" />
       <meta name="author" content="Bitroix Solution LLC" />
       <meta name="rating" content="General" />
-      <meta name="revisit-after" content="3 days" />
+      <meta name="revisit-after" content="2 days" />
       <meta name="distribution" content="global" />
       <meta name="coverage" content="Worldwide" />
       <meta name="language" content="English" />
@@ -84,6 +99,8 @@ const SEO = ({
       <meta name="HandheldFriendly" content="True" />
       <meta name="MobileOptimized" content="320" />
       <meta name="last-modified" content={currentDate} />
+      <meta name="copyright" content="Bitroix Solution LLC" />
+      <meta name="reply-to" content="info@bitroixsolution.com" />
       
       {/* Performance: Preload critical images */}
       {preloadImages.map((img, index) => (
@@ -104,6 +121,8 @@ const SEO = ({
       <meta property="og:locale" content="en_US" />
       <meta property="og:locale:alternate" content="en_GB" />
       <meta property="og:locale:alternate" content="en_PK" />
+      <meta property="og:locale:alternate" content="en_AE" />
+      <meta property="og:locale:alternate" content="en_IN" />
       <meta property="og:updated_time" content={currentDate} />
       
       {/* Article specific tags */}
@@ -131,10 +150,17 @@ const SEO = ({
       {/* Additional Geo Targeting for Pakistan */}
       <meta name="geo.region" content="PK-SD" />
       <meta name="geo.placename" content="Karachi, Sindh, Pakistan" />
+      <meta name="geo.position" content="24.9262;67.1282" />
+      
+      {/* UAE Geo Targeting */}
+      <meta name="geo.region" content="AE-DU" />
+      <meta name="geo.placename" content="Dubai, UAE" />
       
       {/* Business identity */}
       <meta name="classification" content="Business" />
       <meta name="category" content="Web Development, Digital Marketing, Software Development" />
+      <meta name="page-topic" content="Technology Services" />
+      <meta name="page-type" content="Business" />
       
       {/* Dublin Core Metadata for enhanced discovery */}
       <meta name="DC.title" content={fullTitle} />
@@ -143,9 +169,11 @@ const SEO = ({
       <meta name="DC.description" content={optimizedDescription} />
       <meta name="DC.publisher" content="Bitroix Solution LLC" />
       <meta name="DC.language" content="en" />
-      <meta name="DC.coverage" content="Worldwide" />
+      <meta name="DC.coverage" content="Global - San Francisco, Karachi, Dubai" />
       <meta name="DC.rights" content="Copyright Bitroix Solution LLC" />
       <meta name="DC.type" content="Service" />
+      <meta name="DC.format" content="text/html" />
+      <meta name="DC.identifier" content={fullCanonicalUrl} />
 
       {/* Schema Markup */}
       {schemaMarkup && (
@@ -167,6 +195,11 @@ const SEO = ({
           {JSON.stringify(breadcrumbSchema)}
         </script>
       )}
+
+      {/* HowTo Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(howToSchema)}
+      </script>
     </Helmet>
   );
 };
