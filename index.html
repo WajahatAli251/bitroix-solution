@@ -84,12 +84,22 @@
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://bitroixsolution.com" />
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="/lovable-uploads/c1164fdd-5ccc-43cd-b1d6-a0fe104c2807.png" as="image" type="image/png" fetchpriority="high" />
     
+    <!-- Defer non-critical video loading -->
+    <link rel="prefetch" href="/videos/hero-background-new.mp4" as="video" />
+    
     <!-- Resource Hints for Performance -->
     <link rel="modulepreload" href="/src/main.tsx" />
+    
+    <!-- Additional Geo Meta Tags -->
+    <meta name="geo.region" content="PK-SD" />
+    <meta name="geo.placename" content="Karachi, Sindh, Pakistan" />
+    <meta name="geo.position" content="24.9262;67.1282" />
+    <meta name="DC.coverage" content="San Francisco, California; Karachi, Pakistan" />
     
     <!-- Critical CSS Inline - Above the fold -->
     <style>

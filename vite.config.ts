@@ -33,6 +33,7 @@ export default defineConfig(({ mode }) => ({
           'query': ['@tanstack/react-query'],
           'forms': ['react-hook-form', 'zod', '@hookform/resolvers'],
           'elevenlabs': ['@elevenlabs/react'],
+          'animations': ['lucide-react'],
         },
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name?.split('.') || [];
@@ -52,14 +53,14 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
-    chunkSizeWarningLimit: 800,
+    chunkSizeWarningLimit: 600,
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn', 'console.trace'],
-        passes: 3,
+        passes: 4,
         dead_code: true,
         conditionals: true,
         evaluate: true,
@@ -68,18 +69,27 @@ export default defineConfig(({ mode }) => ({
         unused: true,
         hoist_funs: true,
         keep_fargs: false,
-        hoist_vars: false,
+        hoist_vars: true,
         if_return: true,
         join_vars: true,
         side_effects: true,
+        reduce_vars: true,
+        collapse_vars: true,
+        pure_getters: true,
+        unsafe_math: true,
+        unsafe_methods: true,
       },
       mangle: {
         safari10: true,
         toplevel: true,
+        properties: {
+          regex: /^_/,
+        },
       },
       format: {
         comments: false,
         ascii_only: true,
+        ecma: 2020,
       },
     },
     cssCodeSplit: true,
@@ -90,11 +100,20 @@ export default defineConfig(({ mode }) => ({
     modulePreload: {
       polyfill: false,
     },
-    assetsInlineLimit: 4096, // Inline assets < 4KB as base64
+    assetsInlineLimit: 8192, // Inline assets < 8KB as base64
   },
-  // Optimize deps
+  // Optimize deps with aggressive pre-bundling
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
+    include: ['react', 'react-dom', 'react-router-dom', 'lucide-react', 'clsx', 'tailwind-merge'],
     exclude: ['@elevenlabs/react'],
+    esbuildOptions: {
+      target: 'esnext',
+    },
+  },
+  // Enable experimental features for faster builds
+  esbuild: {
+    legalComments: 'none',
+    target: 'esnext',
+    treeShaking: true,
   },
 }));

@@ -3,73 +3,87 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   
   <!-- Homepage -->
   <url>
     <loc>https://bitroixsolution.com/</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/" />
     <xhtml:link rel="alternate" hreflang="en-pk" href="https://bitroixsolution.com/" />
     <xhtml:link rel="alternate" hreflang="en-gb" href="https://bitroixsolution.com/" />
     <xhtml:link rel="alternate" hreflang="en-ae" href="https://bitroixsolution.com/" />
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://bitroixsolution.com/" />
+    <xhtml:link rel="alternate" hreflang="en-sg" href="https://bitroixsolution.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bitroixsolution.com/" />
     <image:image>
       <image:loc>https://bitroixsolution.com/lovable-uploads/c1164fdd-5ccc-43cd-b1d6-a0fe104c2807.png</image:loc>
       <image:title>Bitroix Solution LLC - Web Development &amp; Digital Marketing</image:title>
       <image:caption>Expert web development, AI chatbots, SEO and digital marketing services in San Francisco &amp; Karachi</image:caption>
+      <image:geo_location>San Francisco, California, USA</image:geo_location>
     </image:image>
   </url>
   
   <!-- Core Services -->
   <url>
     <loc>https://bitroixsolution.com/web-development</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/web-development" />
+    <xhtml:link rel="alternate" hreflang="en-pk" href="https://bitroixsolution.com/web-development" />
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/ai-chatbots</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/ai-chatbots" />
+    <xhtml:link rel="alternate" hreflang="en-pk" href="https://bitroixsolution.com/ai-chatbots" />
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/ui-ux-design</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/ui-ux-design" />
+    <xhtml:link rel="alternate" hreflang="en-pk" href="https://bitroixsolution.com/ui-ux-design" />
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/data-analytics</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/data-analytics" />
+    <xhtml:link rel="alternate" hreflang="en-pk" href="https://bitroixsolution.com/data-analytics" />
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/devops-mlops</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/devops-mlops" />
+    <xhtml:link rel="alternate" hreflang="en-pk" href="https://bitroixsolution.com/devops-mlops" />
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/team-as-service</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/design-consultancy</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -77,42 +91,44 @@
   <!-- Digital Marketing Solutions -->
   <url>
     <loc>https://bitroixsolution.com/solutions/seo-dominance</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/solutions/seo-dominance" />
+    <xhtml:link rel="alternate" hreflang="en-pk" href="https://bitroixsolution.com/solutions/seo-dominance" />
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/lead-generation</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/paid-ads-management</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/marketing-automation</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/conversion-optimization</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/solutions/social-media-growth</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -120,31 +136,35 @@
   <!-- Portfolio & Projects -->
   <url>
     <loc>https://bitroixsolution.com/projects</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/projects" />
+    <xhtml:link rel="alternate" hreflang="en-pk" href="https://bitroixsolution.com/projects" />
   </url>
   
   <!-- Other Important Pages -->
   <url>
     <loc>https://bitroixsolution.com/career</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/products</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>https://bitroixsolution.com/schedule-meeting</loc>
-    <lastmod>2026-01-19</lastmod>
+    <lastmod>2026-02-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://bitroixsolution.com/schedule-meeting" />
+    <xhtml:link rel="alternate" hreflang="en-pk" href="https://bitroixsolution.com/schedule-meeting" />
   </url>
   
 </urlset>
