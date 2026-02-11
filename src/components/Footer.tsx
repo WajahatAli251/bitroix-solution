@@ -1,3 +1,4 @@
+import linkedinLogo from '@/assets/linkedin-logo.png';
 
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
@@ -35,7 +36,7 @@ const Footer = () => {
                     rel="noopener noreferrer" 
                     className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300 hover:scale-110 glow-primary group-hover:glow-tech shadow-md"
                   >
-                    <img src="/lovable-uploads/872e0de5-5323-4cb9-8adb-e7a04b2523c9.png" alt="LinkedIn" className="w-6 h-6" />
+                    <img src={linkedinLogo} alt="LinkedIn" className="w-6 h-6 rounded" />
                   </a>
                   <p className="text-sm text-muted-foreground dark:text-gray-400 mt-2 font-medium">LinkedIn</p>
                 </div>
