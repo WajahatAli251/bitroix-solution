@@ -14,47 +14,27 @@ serve(async (req) => {
     const ELEVENLABS_API_KEY = Deno.env.get("ELEVENLABS_API_KEY");
     
     if (!ELEVENLABS_API_KEY) {
-      console.error("ELEVENLABS_API_KEY not configured");
-      return new Response(
-        JSON.stringify({ error: "Service temporarily unavailable" }),
-        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+      throw new Error("ELEVENLABS_API_KEY not configured");
     }
 
     const { agentId } = await req.json();
     
-    // Validate agentId format
-    if (!agentId || typeof agentId !== "string") {
-      return new Response(
-        JSON.stringify({ error: "agentId is required and must be a string" }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+    if (!agentId) {
+      throw new Error("agentId is required");
     }
 
-    if (!/^[a-zA-Z0-9_-]{1,100}$/.test(agentId)) {
-      return new Response(
-        JSON.stringify({ error: "Invalid agentId format" }),
-        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    // Use URL constructor to safely encode the parameter
-    const url = new URL("https://api.elevenlabs.io/v1/convai/conversation/token");
-    url.searchParams.set("agent_id", agentId);
-
-    const response = await fetch(url.toString(), {
-      headers: {
-        "xi-api-key": ELEVENLABS_API_KEY,
-      },
-    });
+    const response = await fetch(
+      `https://api.elevenlabs.io/v1/convai/conversation/token?agent_id=${agentId}`,
+      {
+        headers: {
+          "xi-api-key": ELEVENLABS_API_KEY,
+        },
+      }
+    );
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error("ElevenLabs API error:", response.status, errorText);
-      return new Response(
-        JSON.stringify({ error: "Unable to start conversation. Please try again." }),
-        { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
+      const error = await response.text();
+      throw new Error(`ElevenLabs API error: ${error}`);
     }
 
     const data = await response.json();
@@ -63,9 +43,9 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error) {
-    console.error("ElevenLabs token generation failed:", error);
+    console.error("Error:", error);
     return new Response(
-      JSON.stringify({ error: "An unexpected error occurred. Please try again later." }),
+      JSON.stringify({ error: error.message }),
       { 
         status: 500,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
