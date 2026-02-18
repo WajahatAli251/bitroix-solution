@@ -65,6 +65,26 @@ To connect a domain, navigate to Project > Settings > Domains and click Connect 
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
 
+## Deployment to Vercel
+
+To deploy this project to Vercel:
+
+1.  **Push your code** to a GitHub repository.
+2.  **Import the project** in Vercel.
+3.  **Configure Project Settings**:
+    *   **Framework Preset**: Vite
+    *   **Root Directory**: `bitroix-solution` (if that is where your `package.json` is) or `./` if you are deploying from the root of the repo.
+    *   **Build Command**: `vite build` or `npm run build`
+    *   **Output Directory**: `dist`
+4.  **Environment Variables**:
+    Add the following variables in the "Environment Variables" section of your Vercel project settings (values can be found in your local `.env` file):
+    *   `VITE_SUPABASE_PROJECT_ID`
+    *   `VITE_SUPABASE_PUBLISHABLE_KEY`
+    *   `VITE_SUPABASE_URL`
+5.  **Deploy**: Click "Deploy" and Vercel will build and serve your site.
+
+> **Note:** A `vercel.json` file has been added to the project to handle Single Page Application (SPA) routing, ensuring that refreshing pages functionality works correctly.
+
 ## EmailJS Setup for Meeting Scheduling
 
 To enable email confirmations, you need to:
