@@ -8,6 +8,10 @@ import itruckLogo from '@/assets/clients/itruck-express-logo.png';
 import eccLogo from '@/assets/clients/ecc-logo.png';
 import surgiTechLogo from '@/assets/clients/us-surgitech-logo.png';
 import zpdLogo from '@/assets/clients/zpd-learning-logo.png';
+import flipdishLogo from '@/assets/clients/flipdish.png';
+import carmaziumLogo from '@/assets/clients/carmazium.png';
+import pulseCarsLogo from '@/assets/clients/pulse-cars.png';
+import topMiniShopLogo from '@/assets/clients/topminishop.png';
 
 const ClientsCarousel = memo(() => {
   const clients = [
@@ -17,6 +21,10 @@ const ClientsCarousel = memo(() => {
     { name: 'ECC', logo: eccLogo, founder: 'Dr. Patricia Anderson, Director' },
     { name: 'U.S. Surgitech', logo: surgiTechLogo, founder: 'Dr. Steven Martinez, Medical Director' },
     { name: 'ZPD Learning', logo: zpdLogo, founder: 'Sarah Thompson, Founder & CEO' },
+    { name: 'Flipdish', logo: flipdishLogo, founder: 'Conor & James McCarthy, Co-Founders' },
+    { name: 'Carmazium', logo: carmaziumLogo, founder: 'Automotive Solutions' },
+    { name: 'Pulse Cars', logo: pulseCarsLogo, founder: 'UK Auto Dealership' },
+    { name: 'Top Mini Shop', logo: topMiniShopLogo, founder: 'E-Commerce Store' },
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ 

@@ -215,24 +215,6 @@ const SolutionsSection = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Certifications Carousel */}
-        <div className="mb-16 animate-fade-in">
-          <div className="text-center mb-10">
-            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide mb-2" style={{color: '#F0F4F8'}}>
-              Certified by <span style={{color: '#00BFFF'}}>Industry Leaders</span>
-            </h3>
-            <div className="w-20 h-1 mx-auto mt-4 rounded-full" style={{background: 'linear-gradient(to right, #00BFFF, #33F3FF)'}}></div>
-          </div>
-          <div className="relative w-full overflow-hidden">
-            <div className="flex gap-6 animate-[moveLeftToRight_25s_linear_infinite]">
-              {/* Triple set for seamless loop */}
-              {[...CERTIFICATIONS, ...CERTIFICATIONS, ...CERTIFICATIONS].map((cert, index) => (
-                <CertificationBadge key={`cert-${index}`} cert={cert} />
-              ))}
-            </div>
-          </div>
-        </div>
-
         {/* Main Headline */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight tracking-tight animate-slide-in-left drop-shadow-lg px-4" style={{color: '#F0F4F8'}}>
