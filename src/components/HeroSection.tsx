@@ -84,11 +84,11 @@ const HeroSection = memo(() => {
             {/* Left Content */}
             <header className="flex-1 text-center lg:text-left mb-12 lg:mb-0">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 animate-slide-in-left px-4">
-                Professional{' '}
+                Web Development,{' '}
                 <span className="text-white">
-                  Web Development
+                  AI Automation
                 </span>{' '}
-                & Digital Marketing Services
+                & Digital Growth Solutions
               </h1>
             
             <p className="text-base sm:text-lg md:text-xl text-white mb-6 md:mb-8 max-w-2xl animate-slide-in-left px-4 drop-shadow-lg" style={{animationDelay: '0.2s'}}>
