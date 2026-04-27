@@ -1,6 +1,6 @@
 # Bitroix Solution - Robots.txt
 # Website: https://bitroixsolution.com
-# Last updated: 2026-02-09
+# Last updated: 2026-04-27
 
 # Allow all crawlers access to the entire site
 User-agent: *
@@ -81,29 +81,42 @@ Allow: /
 User-agent: dotbot
 Allow: /
 
-# AI crawlers - Block to protect content
+# AI crawlers - Allow for visibility in AI-powered search results
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Block low-value AI scrapers
 User-agent: CCBot
 Disallow: /
 
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
 User-agent: Bytespider
-Disallow: /
-
-User-agent: PerplexityBot
 Disallow: /
 
 User-agent: Cohere-ai
