@@ -9,6 +9,13 @@ import { useEffect, useRef, useState } from "react";
 // Import hero image
 import aiChatbotsHero from "@/assets/ai-chatbots-hero.png";
 
+// Import project images
+import virtualTryOnImage from "@/assets/projects/virtual-tryon.jpg";
+import leadGenAIImage from "@/assets/projects/lead-generation-ai.jpg";
+import floorDecorImage from "@/assets/projects/floordecor-ai.jpg";
+import trueCare24Image from "@/assets/projects/truecare24-healthcare.jpg";
+import copartBotImage from "@/assets/projects/copart-vehicle-bot.jpg";
+
 // Import tech logos
 import pythonLogo from "@/assets/tech-logos/python.png";
 import tensorflowLogo from "@/assets/tech-logos/tensorflow.svg";
@@ -95,8 +102,28 @@ const AIChatbots = () => {
 
   const projects = [
     {
+      name: "AI Virtual Try-On for Clothing",
+      image: virtualTryOnImage,
+      description: "Cutting-edge AR-powered virtual try-on solution for fashion e-commerce, enabling customers to visualize clothing on themselves before purchasing.",
+      challenge: "High return rates in online fashion retail due to fit and style uncertainty, costing brands millions and damaging customer trust.",
+      solution: "Built a computer-vision driven virtual try-on platform using pose estimation, body segmentation, and AR rendering to overlay garments on shoppers in real time across web and mobile.",
+      results: ["62% reduction in product returns", "3.8x increase in conversion rate", "Average session time up by 240%"],
+      technologies: ["TensorFlow", "Python", "React", "OpenAI", "AWS"],
+      industry: "Fashion / E-Commerce"
+    },
+    {
+      name: "AI Agent for Lead Generation",
+      image: leadGenAIImage,
+      description: "Autonomous AI sales agent that researches prospects, personalizes outreach, books meetings, and qualifies leads 24/7 across email, LinkedIn, and chat.",
+      challenge: "Sales teams burning hours on manual prospecting and cold outreach with low reply rates and inconsistent lead qualification.",
+      solution: "Deployed a multi-channel GPT-4 agent integrated with CRM, enrichment APIs, and calendar tools to identify ICP leads, run personalized sequences, and hand qualified meetings to AEs.",
+      results: ["10x more qualified meetings booked", "85% reduction in SDR workload", "$1.2M pipeline generated in 90 days"],
+      technologies: ["OpenAI GPT-4", "Node.js", "Python", "MongoDB", "AWS"],
+      industry: "SaaS / B2B Sales"
+    },
+    {
       name: "FloorDecor AI Shopping Assistant",
-      image: "/lovable-uploads/3e881009-4665-4ed6-bb89-ce79ed6092ab.png",
+      image: floorDecorImage,
       description: "Intelligent AI chatbot for a major flooring retailer, helping customers find the perfect flooring solutions with personalized recommendations.",
       challenge: "Customers struggled to navigate thousands of flooring options, leading to decision fatigue and abandoned carts.",
       solution: "Built a GPT-powered assistant that understands room requirements, style preferences, and budget to recommend ideal flooring products with visual comparisons.",
@@ -106,7 +133,7 @@ const AIChatbots = () => {
     },
     {
       name: "TrueCare24 Healthcare Virtual Assistant",
-      image: "/lovable-uploads/89639b18-4900-4542-9ccd-d1afd27ac2c9.png",
+      image: trueCare24Image,
       description: "HIPAA-compliant AI assistant for TrueCare24 healthcare platform, handling patient intake, appointment scheduling, and medical FAQs.",
       challenge: "Healthcare provider overwhelmed with administrative tasks, long wait times, and inconsistent patient experience during intake.",
       solution: "Developed a conversational AI that guides patients through intake forms, schedules appointments, provides medication reminders, and answers health-related FAQs.",
@@ -116,7 +143,7 @@ const AIChatbots = () => {
     },
     {
       name: "Copart Vehicle Inquiry Bot",
-      image: "/lovable-uploads/eb7b0242-9c5d-4d81-9044-abe3320bd683.png",
+      image: copartBotImage,
       description: "AI-powered chatbot for Copart's online vehicle auction platform, assisting buyers with vehicle information and bidding processes.",
       challenge: "High volume of repetitive buyer inquiries about vehicle conditions, auction processes, and bidding strategies overwhelming support teams.",
       solution: "Created an intelligent chatbot that provides real-time vehicle details, explains auction procedures, and guides first-time bidders through the process.",
