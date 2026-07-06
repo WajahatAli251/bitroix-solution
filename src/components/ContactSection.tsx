@@ -36,23 +36,36 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Build WhatsApp handoff to UK number (+44 7514 655227)
     const whatsappNumber = '447514655227';
-    const whatsappText =
-      `New "Let's Talk" enquiry from bitroixsolution.com%0A%0A` +
-      `*Name:* ${encodeURIComponent(formData.name)}%0A` +
-      `*Email:* ${encodeURIComponent(formData.email)}%0A` +
-      `*Phone:* ${encodeURIComponent(formData.phone || 'Not provided')}%0A%0A` +
-      `*Message:*%0A${encodeURIComponent(formData.message)}`;
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+    const displayNumber = '+44 7514 655227';
+    const rawMessage =
+      `New "Let's Talk" enquiry from bitroixsolution.com\n\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || 'Not provided'}\n\n` +
+      `Message:\n${formData.message}`;
+    const encoded = encodeURIComponent(rawMessage);
+    const waMe = `https://wa.me/${whatsappNumber}?text=${encoded}`;
+    const webWa = `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${encoded}`;
 
     try {
-      // Hand off directly to WhatsApp with prefilled details
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      const win = window.open(waMe, '_blank', 'noopener,noreferrer');
+      if (!win) {
+        // Popup blocked — try web.whatsapp.com in same tab as fallback
+        window.location.href = webWa;
+      }
+
+      // Copy message to clipboard so user can paste it if WhatsApp is blocked
+      try {
+        await navigator.clipboard.writeText(
+          `To: ${displayNumber}\n\n${rawMessage}`
+        );
+      } catch {}
 
       toast({
         title: "Opening WhatsApp...",
-        description: "Please tap send in WhatsApp to deliver your message."
+        description:
+          `If WhatsApp doesn't open, message us at ${displayNumber}. Your message has been copied to your clipboard.`,
       });
 
       setFormData({
@@ -65,7 +78,7 @@ const ContactSection = () => {
       console.error('WhatsApp handoff error:', error);
       toast({
         title: "Couldn't open WhatsApp automatically",
-        description: `Please message us at +44 7514 655227.`,
+        description: `Please message us at ${displayNumber} or email info@bitroixsolution.com.`,
         variant: "destructive"
       });
     } finally {
