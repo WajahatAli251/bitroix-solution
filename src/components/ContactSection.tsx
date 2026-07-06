@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { useNavigate } from 'react-router-dom';
-import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -48,41 +47,7 @@ const ContactSection = () => {
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
 
     try {
-      // Initialize EmailJS with public key
-      emailjs.init('EetNNBAg1nuOPQjlT');
-
-      // Send email using EmailJS
-      await emailjs.send(
-        'service_l5hd8qo', // Service ID
-        'template_txvc1qq', // Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone || 'Not provided',
-          message: formData.message,
-        }
-      );
-
-      toast({
-        title: "Message sent successfully!",
-        description: "Opening WhatsApp so we can chat instantly."
-      });
-
-      // Open WhatsApp with prefilled details
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-
-    } catch (error) {
-      console.error('EmailJS error:', error);
-
-      // Fallback: still hand off to WhatsApp so the lead is not lost
+      // Hand off directly to WhatsApp with prefilled details
       window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
       toast({
@@ -90,12 +55,18 @@ const ContactSection = () => {
         description: "Please tap send in WhatsApp to deliver your message."
       });
 
-      // Reset form
       setFormData({
         name: '',
         email: '',
         phone: '',
         message: ''
+      });
+    } catch (error) {
+      console.error('WhatsApp handoff error:', error);
+      toast({
+        title: "Couldn't open WhatsApp automatically",
+        description: `Please message us at +44 7514 655227.`,
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
