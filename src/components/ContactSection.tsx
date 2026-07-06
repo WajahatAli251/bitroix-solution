@@ -37,8 +37,8 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Build WhatsApp handoff to UK number (+44 7546 552227)
-    const whatsappNumber = '447546552227';
+    // Build WhatsApp handoff to UK number (+44 7514 655227)
+    const whatsappNumber = '447514655227';
     const whatsappText =
       `New "Let's Talk" enquiry from bitroixsolution.com%0A%0A` +
       `*Name:* ${encodeURIComponent(formData.name)}%0A` +
