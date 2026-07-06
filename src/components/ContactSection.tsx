@@ -37,6 +37,16 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
+    // Build WhatsApp handoff to UK number (+44 7546 552227)
+    const whatsappNumber = '447546552227';
+    const whatsappText =
+      `New "Let's Talk" enquiry from bitroixsolution.com%0A%0A` +
+      `*Name:* ${encodeURIComponent(formData.name)}%0A` +
+      `*Email:* ${encodeURIComponent(formData.email)}%0A` +
+      `*Phone:* ${encodeURIComponent(formData.phone || 'Not provided')}%0A%0A` +
+      `*Message:*%0A${encodeURIComponent(formData.message)}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
     try {
       // Initialize EmailJS with public key
       emailjs.init('EetNNBAg1nuOPQjlT');
@@ -55,8 +65,11 @@ const ContactSection = () => {
 
       toast({
         title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours."
+        description: "Opening WhatsApp so we can chat instantly."
       });
+
+      // Open WhatsApp with prefilled details
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
       // Reset form
       setFormData({
@@ -68,22 +81,13 @@ const ContactSection = () => {
 
     } catch (error) {
       console.error('EmailJS error:', error);
-      
-      // Fallback to mailto
-      const subject = encodeURIComponent("New Contact Form Submission");
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-        `Email: ${formData.email}\n` +
-        `Phone: ${formData.phone || 'Not provided'}\n\n` +
-        `Message:\n${formData.message}`
-      );
-      
-      const mailtoLink = `mailto:info@bitroixsolution.com?subject=${subject}&body=${body}`;
-      window.open(mailtoLink, '_blank');
+
+      // Fallback: still hand off to WhatsApp so the lead is not lost
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
       toast({
-        title: "Opening email client...",
-        description: "Please send the message from your email client."
+        title: "Opening WhatsApp...",
+        description: "Please tap send in WhatsApp to deliver your message."
       });
 
       // Reset form
