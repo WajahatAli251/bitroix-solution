@@ -23,7 +23,7 @@ const homepageScreenshot = (url: string) =>
 const brandLogoFallback = (url: string) => {
   try {
     const hostname = new URL(url).hostname.replace(/^www\./, '');
-    return `https://logo.clearbit.com/${hostname}`;
+    return `https://www.google.com/s2/favicons?domain=${hostname}&sz=256`;
   } catch {
     return '';
   }
