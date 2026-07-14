@@ -1,0 +1,36 @@
+# Bitroix Solution LLC
+
+> Bitroix Solution LLC is a web development, AI chatbot, UI/UX design, data analytics, DevOps and digital marketing agency with offices in San Francisco and Karachi. 150+ projects delivered.
+
+## Services
+
+- [Web Development](/web-development): Custom websites and web apps built with React, Node and modern stacks.
+- [AI Chatbots](/ai-chatbots): Conversational AI, voice agents and chatbot integration for support and sales.
+- [UI/UX Design](/ui-ux-design): Product design, wireframes, prototypes and design systems.
+- [Data Analytics](/data-analytics): Dashboards, data pipelines and business intelligence.
+- [DevOps & MLOps](/devops-mlops): CI/CD, cloud infrastructure and ML deployment.
+- [Team as a Service](/team-as-service): Dedicated engineering and design teams on demand.
+- [Design Consultancy](/design-consultancy): Strategic design guidance for product and brand teams.
+
+## Solutions
+
+- [SEO Dominance](/solutions/seo-dominance): Keyword research, technical SEO, content and link building.
+- [Lead Generation](/solutions/lead-generation): Multi-channel lead capture and nurture funnels.
+- [Paid Ads Management](/solutions/paid-ads-management): Google, Meta and LinkedIn ad campaigns.
+- [Marketing Automation](/solutions/marketing-automation): Email, CRM and workflow automation.
+- [Conversion Optimization](/solutions/conversion-optimization): CRO testing to lift funnel performance.
+- [Social Media Growth](/solutions/social-media-growth): Organic social strategy and content production.
+
+## Pages
+
+- [Home](/): Overview of services, portfolio and contact.
+- [Projects](/projects): Portfolio of delivered client work.
+- [Products](/products): In-house products and offerings.
+- [Career](/career): Open roles and hiring information.
+- [Schedule a Meeting](/schedule-meeting): Book a free consultation.
+
+## Contact
+
+- Email: info@bitroixsolution.com
+- Phone (US): +1 (210) 201-3312
+- Phone (PK): +92 335 2222 578

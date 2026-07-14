@@ -33,8 +33,8 @@ const SEO = ({
   preloadImages = [],
   jsonLdMultiple = []
 }: SEOProps) => {
-  const fullTitle = title === "Home" 
-    ? "Bitroix Solution LLC - Expert Web Development, AI Chatbots & Digital Marketing | San Francisco & Karachi"
+  const fullTitle = title === "Home"
+    ? "Bitroix Solution — Web Development, AI & Marketing"
     : title.length > 55 ? title : `${title} | Bitroix Solution LLC`;
   const siteUrl = "https://bitroixsolution.com";
   const fullCanonicalUrl = canonicalUrl || siteUrl;
